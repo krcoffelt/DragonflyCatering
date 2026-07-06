@@ -1,0 +1,203 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ivory: #f8f4ed;
+  --color-warmwhite: #fffdf8;
+  --color-plum: #2c1635;
+  --color-royal: #5b2a86;
+  --color-sage: #8c9a75;
+  --color-gold: #c7a45d;
+  --color-charcoal: #1f1a1c;
+  --color-mist: #e8e3da;
+  --color-body: #505855;
+
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-sans: var(--font-dm-sans), system-ui, sans-serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-ivory);
+  color: var(--color-plum);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Verde Vita–matched layout shell: 1500px content, ~22.5px page gutters */
+.vv-container {
+  width: 100%;
+  max-width: 1500px;
+  margin-inline: auto;
+  padding-inline: 22.5px;
+}
+
+/* Legacy Edenly container — kept for interior pages */
+.eden-container {
+  width: 100%;
+  max-width: 1270px;
+  margin-inline: auto;
+  padding-inline: 15px;
+}
+
+/* Display serif — Verde H1 ~52.5px */
+.vv-h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 4.5vw, 3.28rem);
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+/* Section H2 ~40.5px */
+.vv-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.5vw, 2.53rem);
+  line-height: 1.1;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+/* Card caption H3 ~16.875px */
+.vv-h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  line-height: 1.3;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.vv-eyebrow {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--color-plum);
+}
+
+/* Duplicate-text slide hover (Verde nav + buttons) */
+.vv-slide-label {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.group:hover .vv-slide-label,
+.group:focus-visible .vv-slide-label {
+  transform: translateY(-50%);
+}
+
+/* Display serif — hero, accent headings, stat numbers */
+.font-display {
+  font-family: var(--font-display);
+  font-variation-settings: "opsz" 72;
+  letter-spacing: -0.01em;
+}
+
+/* Section headings in Edenly use sans-serif at 48px */
+.eden-h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  font-weight: 500;
+}
+
+.eden-eyebrow {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--color-plum);
+}
+
+.eden-img {
+  border-radius: 3px;
+}
+
+.eden-tag {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  border: 1px solid color-mix(in srgb, var(--color-plum) 15%, transparent);
+  padding: 8px 15px;
+  font-size: 16px;
+  line-height: 1;
+  color: var(--color-plum);
+}
+
+/* Clip-text hover slide (Edenly primary buttons) */
+.clip-text-hover {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.group:hover .clip-text-hover,
+.group:focus-visible .clip-text-hover {
+  transform: translateY(-50%);
+}
+
+::selection {
+  background-color: var(--color-royal);
+  color: var(--color-warmwhite);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-royal);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.field {
+  width: 100%;
+  border: 1px solid var(--color-mist);
+  background-color: var(--color-warmwhite);
+  border-radius: 3px;
+  padding: 0.7rem 0.9rem;
+  font-size: 0.95rem;
+  color: var(--color-charcoal);
+  transition: border-color 150ms ease;
+}
+
+.field::placeholder {
+  color: color-mix(in srgb, var(--color-charcoal) 40%, transparent);
+}
+
+.field:hover {
+  border-color: color-mix(in srgb, var(--color-gold) 60%, var(--color-mist));
+}
+
+.field:focus {
+  border-color: var(--color-royal);
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-royal) 12%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  .clip-text-hover {
+    transform: none !important;
+  }
+  .vv-slide-label {
+    transform: none !important;
+  }
+}

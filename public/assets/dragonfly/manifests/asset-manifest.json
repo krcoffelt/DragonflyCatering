@@ -1,0 +1,283 @@
+{
+  "brand": "Dragonfly Catering LLC",
+  "generated_at": "2026-07-03",
+  "asset_root": "/public/assets/dragonfly",
+  "source_priority_order": [
+    "Google Drive: winners",
+    "Google Drive: Dragonfly imagery",
+    "Google Drive: Catering 10:17",
+    "Google Drive: Engagement Party",
+    "Gmail: pictures email"
+  ],
+  "source_messages": [
+    {
+      "type": "gmail",
+      "subject": "Dragonfly Catering Site",
+      "message_id": "19edcef0c1a4960c",
+      "from": "dragonflycatering727@gmail.com",
+      "sent_at": "2026-06-18T22:51:40",
+      "notes_path": "/public/assets/dragonfly/documents/source-notes/dragonfly-website-notes.md"
+    },
+    {
+      "type": "gmail",
+      "subject": "pictures",
+      "message_id": "19ee022d08741df0",
+      "from": "dragonflycatering727@gmail.com",
+      "sent_at": "2026-06-19T13:47:05",
+      "status": "source links inventoried; not bulk-downloaded"
+    }
+  ],
+  "source_folders": [
+    {
+      "type": "google_drive_folder",
+      "name": "Dragonfly imagery",
+      "id": "1Faax09ITFQeUIIP20u4oaPFS2GVynGMi"
+    },
+    {
+      "type": "google_drive_folder",
+      "name": "Dragonfly Logos New",
+      "id": "1MPKTQ7vGxiO2zytzZGtfiKr-tfLvPKtw"
+    },
+    {
+      "type": "google_drive_folder",
+      "name": "winners",
+      "id": "1qKGyrZLykjwWDLLNPOccuysScKawCawt"
+    },
+    {
+      "type": "google_drive_folder",
+      "name": "Catering 10:17",
+      "id": "177JAN8MTvyTs9coDuD7z3n8YLELmKjIs"
+    },
+    {
+      "type": "google_drive_folder",
+      "name": "Engagement Party",
+      "id": "1-S4OXhSFw8MU-c8p5j9tXCQsSpX1Jeo0"
+    },
+    {
+      "type": "google_drive_folder",
+      "name": "Family Photos",
+      "id": "1qp1v5CYmquSpmFExYM6E-4FSTtMZpzbT",
+      "status": "review-only source due recognizable guests"
+    }
+  ],
+  "logos": [
+    {
+      "role": "header",
+      "source_file": "dragonfly-catering-logo-horizontal-tm-bw-2500x648.png",
+      "source_drive_id": "1svhwGjU4rSllyRtLj7TcmV4FsfXvAR_9",
+      "original_path": "/public/assets/dragonfly/logos/original/dragonfly-catering-logo-horizontal-tm-bw-2500x648.png",
+      "optimized_paths": [
+        "/public/assets/dragonfly/logos/optimized/dragonfly-logo-header-horizontal-bw.png",
+        "/public/assets/dragonfly/logos/optimized/dragonfly-logo-header-horizontal-bw@2x.png"
+      ],
+      "dimensions": {
+        "original": "2500x648",
+        "optimized": "520x135",
+        "optimized_2x": "1040x270"
+      },
+      "background": "transparent",
+      "notes": "Best fit for site header/navigation."
+    },
+    {
+      "role": "footer_social_favicon_source",
+      "source_file": "dragonfly-catering-logo-stacked-tm-bw-2500x1647.png",
+      "source_drive_id": "17HSTM8RnMLbDOj6AjLso2u9o5EdHZ2YM",
+      "original_path": "/public/assets/dragonfly/logos/original/dragonfly-catering-logo-stacked-tm-bw-2500x1647.png",
+      "optimized_paths": [
+        "/public/assets/dragonfly/logos/optimized/dragonfly-logo-footer-stacked-bw.png",
+        "/public/assets/dragonfly/logos/optimized/dragonfly-logo-footer-stacked-bw@2x.png",
+        "/public/assets/dragonfly/logos/optimized/dragonfly-logo-social-preview-bw.jpg",
+        "/public/assets/dragonfly/logos/optimized/dragonfly-favicon-source-icon.png"
+      ],
+      "dimensions": {
+        "original": "2500x1647",
+        "footer": "420x277",
+        "footer_2x": "840x553",
+        "social_preview": "1200x630",
+        "favicon_source": "512x512"
+      },
+      "background": "transparent except social preview JPG",
+      "notes": "Best fit for footer, social preview, and favicon derivation."
+    }
+  ],
+  "photos": [
+    {
+      "title": "Chef plating in kitchen",
+      "status": "selected",
+      "category": "private-chef",
+      "source_folder": "winners",
+      "source_file": "_DSC0934.jpg",
+      "source_drive_id": "1DN10crgbyJDJYi6ellzbEOWHNu7pyZXs",
+      "original_path": "/public/assets/dragonfly/photos/misc-review/original-dsc0934-winners.jpg",
+      "optimized_path": "/public/assets/dragonfly/photos/private-chef/dragonfly-private-chef-plating-winners-001.webp",
+      "hero_variant_path": "/public/assets/dragonfly/photos/hero/dragonfly-hero-chef-plating-winners-001.webp",
+      "dimensions": {
+        "original": "6000x4000",
+        "optimized": "1800x1200",
+        "hero": "2400x1350"
+      },
+      "recommended_uses": [
+        "Private Chef Experiences",
+        "About Chef Matt",
+        "homepage secondary hero"
+      ],
+      "needs_owner_approval": false,
+      "people_visible": true,
+      "notes": "Strong real-client/business image with chef action and professional kitchen context."
+    },
+    {
+      "title": "Dragon fruit prep close-up",
+      "status": "selected",
+      "category": "food",
+      "source_folder": "Catering 10:17",
+      "source_file": "DSC01724.jpg",
+      "source_drive_id": "1BfIIYT2h6w6xNKt9fvuMeonI9vFK-m1_",
+      "original_path": "/public/assets/dragonfly/photos/misc-review/original-dsc01724-catering-1017.jpg",
+      "optimized_path": "/public/assets/dragonfly/photos/food/dragonfly-food-dragon-fruit-prep-catering-1017-001.webp",
+      "hero_variant_path": "/public/assets/dragonfly/photos/hero/dragonfly-hero-dragon-fruit-prep-catering-1017-001.webp",
+      "dimensions": {
+        "original": "5947x3967",
+        "optimized": "1800x1201",
+        "hero": "2400x1350"
+      },
+      "recommended_uses": [
+        "Custom Catering",
+        "seasonal/local food story",
+        "homepage hero option"
+      ],
+      "needs_owner_approval": false,
+      "people_visible": false,
+      "notes": "Graphic food-prep image with distinctive Dragonfly color and process detail."
+    },
+    {
+      "title": "Engagement-party appetizer display",
+      "status": "selected",
+      "category": "engagement-party",
+      "source_folder": "Engagement Party",
+      "source_file": "DSC02960.jpg",
+      "source_drive_id": "1GT22ySTaSEOTQk6vIUDSjgjWvvidPXYH",
+      "original_path": "/public/assets/dragonfly/photos/misc-review/original-dsc02960-engagement-party.jpg",
+      "optimized_path": "/public/assets/dragonfly/photos/engagement-party/dragonfly-engagement-party-passed-appetizers-001.webp",
+      "duplicate_service_path": "/public/assets/dragonfly/photos/private-events/dragonfly-private-event-appetizer-display-001.webp",
+      "hero_variant_path": "/public/assets/dragonfly/photos/hero/dragonfly-hero-appetizer-display-engagement-party-001.webp",
+      "dimensions": {
+        "original": "4318x6477",
+        "optimized": "1800x2700",
+        "hero": "1280x720"
+      },
+      "recommended_uses": [
+        "Engagement Party",
+        "Private Events",
+        "gallery detail image"
+      ],
+      "needs_owner_approval": true,
+      "people_visible": false,
+      "notes": "No recognizable guest faces in reviewed crop, but event/client rights should still be confirmed before launch."
+    },
+    {
+      "title": "Pasta prep in saute pans",
+      "status": "selected",
+      "category": "food",
+      "source_folder": "winners",
+      "source_file": "Copy of _DSC1005.jpg",
+      "source_drive_id": "1PLgyRNQN1yDHiLBIL78T1flyGkpYLAmV",
+      "original_path": "/public/assets/dragonfly/photos/misc-review/original-dsc1005-winners.jpg",
+      "optimized_path": "/public/assets/dragonfly/photos/food/dragonfly-food-pasta-prep-winners-001.webp",
+      "hero_variant_path": "/public/assets/dragonfly/photos/hero/dragonfly-hero-pasta-prep-winners-001.webp",
+      "dimensions": {
+        "original": "6000x4000",
+        "optimized": "1800x1200",
+        "hero": "2400x1350"
+      },
+      "recommended_uses": [
+        "Custom Catering",
+        "food preparation detail",
+        "homepage secondary hero"
+      ],
+      "needs_owner_approval": false,
+      "people_visible": false,
+      "notes": "Strong cooking-process image with no identifiable guests."
+    },
+    {
+      "title": "Roasted root vegetables in catering pan",
+      "status": "selected",
+      "category": "food",
+      "source_folder": "Catering 10:17",
+      "source_file": "DSC02189.jpg",
+      "source_drive_id": "1GH65YNqMzt8yKI9bimuvhl7KnmNu01gY",
+      "original_path": "/public/assets/dragonfly/photos/misc-review/original-dsc02189-catering-1017.jpg",
+      "optimized_path": "/public/assets/dragonfly/photos/food/dragonfly-food-roasted-root-vegetables-catering-1017-001.webp",
+      "duplicate_service_path": "/public/assets/dragonfly/photos/corporate/dragonfly-corporate-catering-roasted-vegetables-001.webp",
+      "dimensions": {
+        "original": "7952x5304",
+        "optimized": "1800x1201",
+        "corporate_service": "1800x1200"
+      },
+      "recommended_uses": [
+        "Custom Catering",
+        "corporate catering placeholder",
+        "buffet or station detail"
+      ],
+      "needs_owner_approval": false,
+      "people_visible": false,
+      "notes": "Fills the corporate folder as a general catering-compatible image until office-specific corporate photos exist."
+    },
+    {
+      "title": "Outdoor champagne toast",
+      "status": "review_only",
+      "category": "misc-review",
+      "source_folder": "Family Photos",
+      "source_file": "DSC07875.jpg",
+      "source_drive_id": "1CSE-EPsUtXzbAySQwkU2ezEPDk8op6q9",
+      "original_path": "/public/assets/dragonfly/photos/misc-review/original-dsc07875-family-photos.jpg",
+      "dimensions": {
+        "original": "2374x3561"
+      },
+      "recommended_uses": [
+        "Do not use publicly until approved"
+      ],
+      "needs_owner_approval": true,
+      "people_visible": true,
+      "notes": "Recognizable guests; retained only as a review candidate from the Family Photos folder."
+    }
+  ],
+  "recommended_hero_images": [
+    "/public/assets/dragonfly/photos/hero/dragonfly-hero-dragon-fruit-prep-catering-1017-001.webp",
+    "/public/assets/dragonfly/photos/hero/dragonfly-hero-chef-plating-winners-001.webp",
+    "/public/assets/dragonfly/photos/hero/dragonfly-hero-pasta-prep-winners-001.webp",
+    "/public/assets/dragonfly/photos/hero/dragonfly-hero-appetizer-display-engagement-party-001.webp"
+  ],
+  "recommended_service_images": {
+    "custom_catering": "/public/assets/dragonfly/photos/food/dragonfly-food-dragon-fruit-prep-catering-1017-001.webp",
+    "custom_catering_alternate": "/public/assets/dragonfly/photos/food/dragonfly-food-pasta-prep-winners-001.webp",
+    "private_chef": "/public/assets/dragonfly/photos/private-chef/dragonfly-private-chef-plating-winners-001.webp",
+    "private_events": "/public/assets/dragonfly/photos/private-events/dragonfly-private-event-appetizer-display-001.webp",
+    "engagement_party": "/public/assets/dragonfly/photos/engagement-party/dragonfly-engagement-party-passed-appetizers-001.webp",
+    "weddings_showers": null,
+    "bartending": null,
+    "event_space": null,
+    "corporate": "/public/assets/dragonfly/photos/corporate/dragonfly-corporate-catering-roasted-vegetables-001.webp",
+    "community": null
+  },
+  "missing_assets": [
+    "Current event-space interior/exterior photos for 4325 W. Lincoln Highway.",
+    "Bartending-specific service photos.",
+    "Wedding and shower photos with explicit client approval.",
+    "Office-specific corporate catering photos.",
+    "Community/event team photos.",
+    "Current sample menu PDFs or approved sample menu copy.",
+    "Approved testimonials or Google review exports.",
+    "Final preferred logo variant and brand color palette.",
+    "Written rights confirmation for guest/event photos before public launch.",
+    "Bulk download or explicit shortlist from the Gmail `pictures` Drive links.",
+    "Client approval decision on the recognizable-guest image saved in `photos/misc-review/original-dsc07875-family-photos.jpg`."
+  ],
+  "implementation_notes": [
+    "Use optimized WebP files for page imagery.",
+    "Use original files only for re-cropping or future resizing.",
+    "Keep source notes with the website build so Claude can avoid old Buchanan Mansion positioning.",
+    "Second Gmail pass found no new unique attachments beyond duplicate logo files already covered by Drive originals.",
+    "Historic Buchanan Mansion menu material is saved as reference only and should not be used as current venue positioning.",
+    "Treat null service image values as placeholders that need new assets before final design."
+  ]
+}

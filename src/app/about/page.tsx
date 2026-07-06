@@ -1,0 +1,135 @@
+import type { Metadata } from "next";
+import { PageHero } from "@/components/PageHero";
+import { SectionHeading } from "@/components/SectionHeading";
+import { EditorialSplit } from "@/components/EditorialSplit";
+import { Reveal } from "@/components/Reveal";
+import { CtaButton } from "@/components/CtaButton";
+import { FinalCta } from "@/components/FinalCta";
+import { JsonLd } from "@/components/JsonLd";
+import { buildMetadata } from "@/lib/seo";
+import { breadcrumbSchema } from "@/lib/schema";
+import { assets, alt } from "@/lib/site";
+
+export const metadata: Metadata = buildMetadata({
+  title: "About Chef Matt | Dragonfly Catering, Downingtown PA",
+  description:
+    "Meet Chef Matthew Stone — Johnson & Wales-trained, with over two decades in fine dining kitchens including The Capital Grille and True Food Kitchen. Founder of Dragonfly Catering in Downingtown, PA.",
+  path: "/about",
+});
+
+const milestones = [
+  {
+    label: "The training",
+    copy: "Johnson & Wales University — Culinary Arts and Food Service Management.",
+  },
+  {
+    label: "The kitchens",
+    copy: "Over two decades in professional kitchens, with leadership roles in fine dining, upscale casual, and concept-driven restaurants including The Capital Grille and True Food Kitchen.",
+  },
+  {
+    label: "The leap",
+    copy: "In 2020, Chef Matt and Rhiannon founded Dragonfly Catering — built on the belief that food is comfort, connection, and craft.",
+  },
+  {
+    label: "Today",
+    copy: "Dragonfly Catering & Event Space in Downingtown serves weddings, private dinners, corporate events, and the Chester County community.",
+  },
+];
+
+export default function AboutPage() {
+  return (
+    <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "About Chef Matt", path: "/about" },
+        ])}
+      />
+
+      <PageHero
+        eyebrow="About Dragonfly"
+        title="Food is comfort, connection & craft"
+        lead="What happens when a career fine-dining chef decides the best table in town should be yours."
+        image={{ src: assets.heroChefPlating, alt: alt.heroChefPlating }}
+        cta={{ label: "Request a Custom Proposal", href: "/contact" }}
+        secondaryCta={{ label: "View the Gallery", href: "/gallery" }}
+      />
+
+      <section className="bg-ivory py-20 lg:py-28">
+        <div className="mx-auto max-w-[1280px] px-5 sm:px-8">
+          <EditorialSplit
+            image={{ src: assets.privateChefPlating, alt: alt.heroChefPlating }}
+            imageAspect="aspect-[4/5]"
+          >
+            <Reveal>
+              <p className="eyebrow mb-3">Chef Matthew Stone</p>
+              <h2 className="font-display text-3xl leading-[1.1] text-plum sm:text-4xl">
+                Two decades in serious kitchens
+              </h2>
+              <div className="mt-6 max-w-md space-y-4 text-[15px] leading-relaxed text-charcoal/75 sm:text-base">
+                <p>
+                  Chef Matt trained at Johnson &amp; Wales, then spent twenty
+                  years leading fine-dining and concept-driven kitchens —
+                  including The Capital Grille and True Food Kitchen.
+                </p>
+                <p>
+                  In 2020, he and Rhiannon founded Dragonfly on a simple idea:
+                  the care of a great restaurant kitchen belongs at personal
+                  gatherings too. Food is love.
+                </p>
+              </div>
+            </Reveal>
+          </EditorialSplit>
+        </div>
+      </section>
+
+      <section className="bg-warmwhite py-20 lg:py-24">
+        <div className="mx-auto max-w-[1280px] px-5 sm:px-8">
+          <SectionHeading
+            eyebrow="The story"
+            title="From restaurant kitchens to your table"
+            align="center"
+          />
+          <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+            {milestones.map((m, i) => (
+              <Reveal key={m.label} delay={0.07 * i}>
+                <div className="border-t-2 border-gold/50 pt-5">
+                  <p className="text-xs font-semibold tracking-[0.2em] text-sage uppercase">
+                    {m.label}
+                  </p>
+                  <p className="mt-3 text-sm leading-relaxed text-charcoal/75">
+                    {m.copy}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-ivory py-20 lg:py-24">
+        <div className="mx-auto max-w-[860px] px-5 text-center sm:px-8">
+          <SectionHeading
+            eyebrow="Rooted here"
+            title="A Chester County company, on purpose"
+            lead="Cooking for local families, businesses, nonprofits, first responders, and healthcare workers."
+            align="center"
+          />
+          <Reveal className="mt-9 flex flex-wrap justify-center gap-4">
+            <CtaButton href="/community" variant="outline" location="about-community">
+              Our Community Work
+            </CtaButton>
+            <CtaButton href="/contact" location="about-cta">
+              Contact Chef Matt
+            </CtaButton>
+          </Reveal>
+        </div>
+      </section>
+
+      <FinalCta
+        title="Cook with us"
+        copy="Whether it's a private dinner for two or a celebration for fifty, Chef Matt would love to hear what you're planning."
+      />
+    </>
+  );
+}
