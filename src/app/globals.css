@@ -55,7 +55,7 @@ body {
   font-size: clamp(2.25rem, 4.5vw, 3.28rem);
   line-height: 1;
   font-weight: 500;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
 }
 
 /* Section H2 ~40.5px */
@@ -64,7 +64,7 @@ body {
   font-size: clamp(1.75rem, 3.5vw, 2.53rem);
   line-height: 1.1;
   font-weight: 500;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
 }
 
 /* Card caption H3 ~16.875px */
@@ -73,7 +73,7 @@ body {
   font-size: 1.05rem;
   line-height: 1.3;
   font-weight: 500;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
 }
 
 .vv-eyebrow {
@@ -99,7 +99,7 @@ body {
 .font-display {
   font-family: var(--font-display);
   font-variation-settings: "opsz" 72;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
 }
 
 /* Section headings in Edenly use sans-serif at 48px */
@@ -115,6 +115,18 @@ body {
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--color-plum);
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: var(--color-sage);
+}
+
+.bg-plum .eyebrow {
+  color: var(--color-gold);
 }
 
 .eden-img {

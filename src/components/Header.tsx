@@ -16,7 +16,10 @@ const leftNav = [
   { label: "Menus", href: "/sample-menus" },
 ];
 
-const rightNav = [{ label: "Gallery", href: "/gallery" }];
+const rightNav = [
+  { label: "Gallery", href: "/gallery" },
+  { label: "Venues", href: "/preferred-venues" },
+];
 
 export function Header() {
   const [open, setOpen] = useState(false);

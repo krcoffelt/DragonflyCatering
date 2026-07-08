@@ -23,7 +23,17 @@ const services = [
     copy: "Weddings, showers, and celebrations — at your venue or ours.",
     href: "/custom-catering",
     ctaLabel: "Custom Catering",
-    image: { src: assets.foodDragonFruit, alt: alt.heroDragonFruit },
+    image: { src: assets.mattAppetizerBoard, alt: alt.mattAppetizerBoard },
+  },
+  {
+    title: "Buffets & Stations",
+    copy: "Abundant displays, grazing-style service, and staffed stations.",
+    href: "/custom-catering",
+    ctaLabel: "Buffets & Stations",
+    image: {
+      src: assets.foodRoastedVegetables,
+      alt: alt.foodRoastedVegetables,
+    },
   },
   {
     title: "Weddings & Showers",
@@ -32,7 +42,7 @@ const services = [
     ctaLabel: "Weddings & Showers",
     image: {
       src: assets.engagementAppetizers,
-      alt: alt.privateEventAppetizers,
+      alt: alt.heroAppetizers,
     },
   },
   {
@@ -41,8 +51,8 @@ const services = [
     href: "/corporate-catering",
     ctaLabel: "Corporate Catering",
     image: {
-      src: assets.corporateRoastedVegetables,
-      alt: alt.corporateRoastedVegetables,
+      src: assets.heroPastaPrep,
+      alt: alt.heroPastaPrep,
     },
   },
   {
@@ -51,8 +61,8 @@ const services = [
     href: "/social-events",
     ctaLabel: "Social Events",
     image: {
-      src: assets.privateEventAppetizers,
-      alt: alt.privateEventAppetizers,
+      src: assets.mattCrabCakes,
+      alt: alt.mattCrabCakes,
     },
   },
   {
@@ -60,18 +70,18 @@ const services = [
     copy: "Restaurant-quality dinners, plated in your home.",
     href: "/private-chef-experiences",
     ctaLabel: "Private Chef",
-    image: { src: assets.privateChefPlating, alt: alt.heroChefPlating },
+    image: { src: assets.chefMattPortrait, alt: alt.chefMattPortrait },
   },
   {
     title: "Event Bartending",
-    copy: "Signature cocktails from RAMP-certified bartenders.",
+    copy: "Signature cocktails, mocktails, and pairings from RAMP-certified bartenders.",
     href: "/event-bartending",
     ctaLabel: "Event Bartending",
-    image: { src: assets.foodPastaPrep, alt: alt.foodPastaPrep },
+    placeholderLabel: "Bar photography coming soon",
   },
   {
     title: "The Event Space",
-    copy: `An intimate Downingtown room for up to ${site.eventSpaceCapacity} guests.`,
+    copy: `An intimate Downingtown room for small gatherings up to ${site.eventSpaceCapacity} guests.`,
     href: "/dragonfly-event-space",
     ctaLabel: "The Event Space",
     image: {
@@ -85,6 +95,13 @@ const services = [
     href: "/preferred-venues",
     ctaLabel: "Preferred Venues",
     placeholderLabel: "Venue photography coming soon",
+  },
+  {
+    title: "Gift Cards",
+    copy: "Private chef dinners and catered moments available by email.",
+    href: "/gift-cards",
+    ctaLabel: "Gift Cards",
+    image: { src: assets.chefMattPortrait, alt: alt.chefMattPortrait },
   },
   {
     title: "Community Events",

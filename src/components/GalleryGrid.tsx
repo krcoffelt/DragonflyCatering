@@ -8,7 +8,7 @@ export type GalleryImage = {
   src: string;
   alt: string;
   category: string;
-  aspect?: "landscape" | "portrait";
+  aspect?: "landscape" | "portrait" | "square";
   needsApproval?: boolean;
 };
 
@@ -67,7 +67,11 @@ export function GalleryGrid({
             >
               <div
                 className={`relative w-full ${
-                  img.aspect === "portrait" ? "aspect-[2/3]" : "aspect-[3/2]"
+                  img.aspect === "portrait"
+                    ? "aspect-[2/3]"
+                    : img.aspect === "square"
+                      ? "aspect-square"
+                      : "aspect-[3/2]"
                 }`}
               >
                 <Image

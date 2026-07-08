@@ -16,6 +16,7 @@ export const metadata: Metadata = buildMetadata({
 
 const categories = [
   "Food",
+  "Chef Matt",
   "Private Events",
   "Private Chef",
   "Engagement Parties",

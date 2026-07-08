@@ -19,7 +19,7 @@ export default function PrivateChefPage() {
       eyebrow="Private chef"
       title="Private chef, at your table"
       lead="A restaurant-quality dinner in your own home, prepared and plated by Chef Matt — no reservations, no rushing, no cleanup."
-      heroImage={{ src: assets.heroChefPlating, alt: alt.heroChefPlating }}
+      heroImage={{ src: assets.chefMattPortrait, alt: alt.chefMattPortrait }}
       coverage={{
         eyebrow: "The experiences",
         title: "Date night to dinner party",
@@ -36,7 +36,7 @@ export default function PrivateChefPage() {
         ],
       }}
       detail={{
-        image: { src: assets.privateChefPlating, alt: alt.heroChefPlating },
+        image: { src: assets.mattAppetizerBoard, alt: alt.mattAppetizerBoard },
         eyebrow: "How the evening works",
         title: "Your kitchen, Chef Matt's craft",
         paragraphs: [

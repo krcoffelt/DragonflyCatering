@@ -19,7 +19,7 @@ export function HomeHero() {
   }, [reduce]);
 
   return (
-    <section className="relative h-[900px] overflow-hidden bg-ivory">
+    <section className="relative h-[100svh] min-h-[680px] max-h-[900px] overflow-hidden bg-ivory">
       {slides.map((slide, i) => (
         <div
           key={slide.src}
@@ -41,7 +41,7 @@ export function HomeHero() {
 
       <div className="absolute inset-0 bg-gradient-to-r from-charcoal/55 via-charcoal/25 to-transparent" aria-hidden />
 
-      <div className="vv-container relative flex h-full flex-col justify-end pb-[90px] pt-[140px]">
+      <div className="vv-container relative flex h-full flex-col justify-end pb-16 pt-[140px] sm:pb-[90px]">
         <motion.div
           initial={reduce ? false : { opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}

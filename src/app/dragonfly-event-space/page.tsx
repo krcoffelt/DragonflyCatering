@@ -14,7 +14,7 @@ import { site, assets, alt } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
   title: "Private Event Space in Downingtown, PA | Dragonfly Catering",
-  description: `An intimate private event space at 4325 W. Lincoln Highway in Downingtown, PA for gatherings up to about ${site.eventSpaceCapacity} guests — showers, rehearsal dinners, private chef dinners, corporate meetings, and community events with Dragonfly catering built in.`,
+  description: `An intimate private event space at 4325 W. Lincoln Highway in Downingtown, PA for small gatherings up to about ${site.eventSpaceCapacity} guests — showers, rehearsal dinners, private chef dinners, corporate meetings, and community events with Dragonfly catering built in.`,
   path: "/dragonfly-event-space",
 });
 
@@ -39,6 +39,10 @@ const faqs = [
     answer: `The space is designed for intimate gatherings of up to approximately ${site.eventSpaceCapacity} guests. Tell us your headcount and layout needs and we'll confirm the right fit.`,
   },
   {
+    question: "Is the space a full wedding venue?",
+    answer: `The room is best for small gatherings up to approximately ${site.eventSpaceCapacity} guests, such as showers, rehearsal dinners, private chef dinners, meetings, and milestone celebrations. For full wedding receptions, Dragonfly can cater at a preferred venue or the venue you already booked.`,
+  },
+  {
     question: "Is catering included?",
     answer:
       "Yes — the event space is an extension of Dragonfly's kitchen. Every booking includes a custom menu conversation with Chef Matt, from passed hors d'oeuvres to plated dinners.",
@@ -61,7 +65,7 @@ export default function EventSpacePage() {
         data={[
           serviceSchema({
             name: "Dragonfly Event Space",
-            description: `Intimate private event space in Downingtown, PA for gatherings up to about ${site.eventSpaceCapacity} guests with chef-led catering.`,
+            description: `Intimate private event space in Downingtown, PA for small gatherings up to about ${site.eventSpaceCapacity} guests with chef-led catering.`,
             path: "/dragonfly-event-space",
           }),
           breadcrumbSchema([
@@ -75,7 +79,7 @@ export default function EventSpacePage() {
       <PageHero
         eyebrow="Dragonfly Event Space · Downingtown"
         title="An intimate event space in Downingtown"
-        lead={`Some celebrations don't need a ballroom — they need a warm room, exceptional food, and people you love. Up to ${site.eventSpaceCapacity} guests.`}
+        lead={`Some gatherings don't need a ballroom — they need a warm room, exceptional food, and people you love. Best for small events up to ${site.eventSpaceCapacity} guests.`}
         cta={{ label: "Inquire About the Space", href: "/contact" }}
         secondaryCta={{ label: "View Sample Menus", href: "/sample-menus" }}
       />
@@ -96,8 +100,9 @@ export default function EventSpacePage() {
               </h2>
               <p className="mt-6 max-w-md text-[15px] leading-relaxed text-charcoal/75 sm:text-base">
                 A flexible room that becomes a shower brunch by morning and a
-                candlelit chef dinner by evening. Because the space is ours,
-                the food, service, and setting all work together.
+                candlelit chef dinner by evening. It is built for small
+                gatherings, not full wedding receptions, so the food, service,
+                and setting all work together.
               </p>
               <address className="mt-6 rounded-xl border border-mist bg-warmwhite p-5 text-sm not-italic leading-relaxed text-charcoal/75">
                 <span className="font-semibold text-plum">{site.fullName}</span>
@@ -170,7 +175,7 @@ export default function EventSpacePage() {
 
       <FinalCta
         title="Host your next gathering at Dragonfly"
-        copy="Tell us the occasion, your date, and your guest count — we'll share availability, menu ideas, and everything the space includes."
+        copy="Tell us the occasion, your date, and your guest count — we'll confirm whether the room is the right fit, then share availability, menu ideas, and everything the space includes."
         ctaLabel="Inquire About the Event Space"
       />
     </>

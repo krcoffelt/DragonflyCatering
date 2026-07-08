@@ -78,6 +78,12 @@ export const assets = {
     "/assets/dragonfly/photos/private-events/dragonfly-private-event-appetizer-display-001.webp",
   engagementAppetizers:
     "/assets/dragonfly/photos/engagement-party/dragonfly-engagement-party-passed-appetizers-001.webp",
+  chefMattPortrait:
+    "/assets/dragonfly/photos/from-matt-source/DSC06191-2.jpg",
+  mattAppetizerBoard:
+    "/assets/dragonfly/photos/from-matt-source/IMG_20210927_085008_854.webp",
+  mattCrabCakes:
+    "/assets/dragonfly/photos/from-matt-source/IMG_20201011_101630_474.jpg",
 };
 
 export const alt = {
@@ -97,31 +103,40 @@ export const alt = {
     "Roasted vegetable catering spread styled for a corporate gathering by Dragonfly Catering",
   privateEventAppetizers:
     "Tray of passed appetizers prepared by Dragonfly Catering for a private event",
+  chefMattPortrait:
+    "Chef Matt Stone of Dragonfly Catering standing in the Downingtown event space",
+  mattAppetizerBoard:
+    "Herb-finished appetizer board with tomato relish prepared by Dragonfly Catering",
+  mattCrabCakes:
+    "Crab cakes searing in a pan during Dragonfly Catering kitchen prep",
 };
 
-/** Homepage hero rotation — all four approved hero variants from the asset manifest. */
+/** Homepage hero rotation — avoids the raw dragon-fruit prep image as the cover. */
 export const heroSlides = [
-  { src: assets.heroDragonFruit, alt: alt.heroDragonFruit },
-  { src: assets.heroChefPlating, alt: alt.heroChefPlating },
-  { src: assets.heroPastaPrep, alt: alt.heroPastaPrep },
-  { src: assets.heroAppetizers, alt: alt.heroAppetizers },
+  { src: assets.mattAppetizerBoard, alt: alt.mattAppetizerBoard },
+] as const;
+
+export const chefAccolades = [
+  "Top Chef alum",
+  "Johnson & Wales trained",
+  "20+ years in professional kitchens",
 ] as const;
 
 export type GalleryPhoto = {
   src: string;
   alt: string;
   category: string;
-  aspect: "landscape" | "portrait";
+  aspect: "landscape" | "portrait" | "square";
   needsApproval?: boolean;
 };
 
 /** All approved public gallery photos from the asset manifest. */
 export const galleryPhotos: GalleryPhoto[] = [
   {
-    src: assets.foodDragonFruit,
-    alt: alt.heroDragonFruit,
+    src: assets.mattAppetizerBoard,
+    alt: alt.mattAppetizerBoard,
     category: "Food",
-    aspect: "landscape",
+    aspect: "square",
   },
   {
     src: assets.foodPastaPrep,
@@ -136,9 +151,15 @@ export const galleryPhotos: GalleryPhoto[] = [
     aspect: "landscape",
   },
   {
-    src: assets.privateChefPlating,
-    alt: alt.heroChefPlating,
-    category: "Private Chef",
+    src: assets.mattCrabCakes,
+    alt: alt.mattCrabCakes,
+    category: "Food",
+    aspect: "square",
+  },
+  {
+    src: assets.chefMattPortrait,
+    alt: alt.chefMattPortrait,
+    category: "Chef Matt",
     aspect: "landscape",
   },
   {
@@ -147,19 +168,6 @@ export const galleryPhotos: GalleryPhoto[] = [
     category: "Engagement Parties",
     aspect: "portrait",
     needsApproval: true,
-  },
-  {
-    src: assets.privateEventAppetizers,
-    alt: alt.privateEventAppetizers,
-    category: "Private Events",
-    aspect: "landscape",
-    needsApproval: true,
-  },
-  {
-    src: assets.corporateRoastedVegetables,
-    alt: alt.corporateRoastedVegetables,
-    category: "Corporate",
-    aspect: "landscape",
   },
 ];
 

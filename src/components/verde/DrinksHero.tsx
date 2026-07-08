@@ -11,7 +11,7 @@ type DrinksHeroProps = {
 /** Verde drinks full-bleed band with centered overlay headline. */
 export function DrinksHero({ image, title }: DrinksHeroProps) {
   return (
-    <section className="relative h-[900px] overflow-hidden bg-ivory">
+    <section className="relative h-[78svh] min-h-[560px] overflow-hidden bg-ivory lg:h-[900px]">
       <Image src={image.src} alt={image.alt} fill sizes="100vw" className="object-cover" />
       <div className="absolute inset-0 bg-charcoal/35" aria-hidden />
 

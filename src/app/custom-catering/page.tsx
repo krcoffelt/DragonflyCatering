@@ -19,7 +19,7 @@ export default function CustomCateringPage() {
       eyebrow="Custom catering"
       title="Custom catering for meaningful gatherings"
       lead="From intimate dinners to milestone celebrations, every menu is built around your guests, your setting, and the feeling you want to create."
-      heroImage={{ src: assets.heroDragonFruit, alt: alt.heroDragonFruit }}
+      heroImage={{ src: assets.mattAppetizerBoard, alt: alt.mattAppetizerBoard }}
       coverage={{
         eyebrow: "Where we cater",
         title: "Your setting. Our kitchen.",
@@ -27,6 +27,7 @@ export default function CustomCateringPage() {
         items: [
           "Private homes & backyard events",
           "Rental venues & estates",
+          "Buffets, grazing displays & staffed stations",
           "Corporate offices & meeting spaces",
           "Weddings & rehearsal dinners",
           "Bridal & baby showers",

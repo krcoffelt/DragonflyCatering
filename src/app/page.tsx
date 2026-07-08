@@ -47,19 +47,19 @@ const faqs = [
 
 const foodSlides = [
   {
-    src: assets.foodPastaPrep,
-    alt: alt.foodPastaPrep,
-    caption: "Fresh pasta prepared with kitchen-level care.",
-  },
-  {
-    src: assets.foodDragonFruit,
-    alt: alt.heroDragonFruit,
-    caption: "Seasonal ingredients, vivid and intentional.",
+    src: assets.mattCrabCakes,
+    alt: alt.mattCrabCakes,
+    caption: "Small bites prepared with kitchen-level care.",
   },
   {
     src: assets.foodRoastedVegetables,
     alt: alt.foodRoastedVegetables,
     caption: "Buffet spreads built for gatherings of every size.",
+  },
+  {
+    src: assets.foodPastaPrep,
+    alt: alt.foodPastaPrep,
+    caption: "Seasonal ingredients, vivid and intentional.",
   },
 ];
 
@@ -75,6 +75,10 @@ const menuItems = [
   {
     name: "Family-Style Service",
     detail: "Shared platters that keep the table warm and conversational.",
+  },
+  {
+    name: "Buffets & Stations",
+    detail: "Abundant displays and chef-attended stations for easy guest flow.",
   },
 ];
 
@@ -95,30 +99,30 @@ const drinkItems = [
 
 const eventBackgrounds = [
   { src: assets.heroAppetizers, alt: alt.heroAppetizers },
-  { src: assets.heroChefPlating, alt: alt.heroChefPlating },
   { src: assets.heroPastaPrep, alt: alt.heroPastaPrep },
+  { src: assets.mattAppetizerBoard, alt: alt.mattAppetizerBoard },
 ];
 
 const eventCards = [
   {
-    title: "Wedding Receptions",
-    copy: "Celebrate love with composed menus and service that runs quietly in the background.",
+    title: "Showers & Rehearsals",
+    copy: "Warm, intimate gatherings with menus built for the people in the room.",
     href: "/wedding-catering-rehearsal-dinners-showers",
     image: { src: assets.engagementAppetizers, alt: alt.heroAppetizers },
   },
   {
-    title: "Engagement Parties",
-    copy: "Passed bites and polished service for the start of your journey together.",
-    href: "/wedding-catering-rehearsal-dinners-showers",
-    image: { src: assets.privateEventAppetizers, alt: alt.privateEventAppetizers },
+    title: "Preferred Venues",
+    copy: "Bring Dragonfly to farm estates, intimate rooms, and places you already love.",
+    href: "/preferred-venues",
+    image: { src: assets.heroPastaPrep, alt: alt.heroPastaPrep },
   },
   {
     title: "Corporate & Social",
     copy: "Board dinners, milestones, and parties designed around your guests.",
     href: "/corporate-catering",
     image: {
-      src: assets.corporateRoastedVegetables,
-      alt: alt.corporateRoastedVegetables,
+      src: assets.foodRoastedVegetables,
+      alt: alt.foodRoastedVegetables,
     },
   },
 ];
@@ -159,7 +163,7 @@ export default function HomePage() {
       <HomeHero />
 
       <SpiritBand
-        image={{ src: assets.heroChefPlating, alt: alt.heroChefPlating }}
+        image={{ src: assets.heroAppetizers, alt: alt.heroAppetizers }}
         title="The spirit of chef-led catering"
         body="From seasonal ingredients to warm, polished service — every detail reflects craft, care, and the people around your table."
         ctaLabel="About Chef Matt"
@@ -167,7 +171,7 @@ export default function HomePage() {
       />
 
       <AboutBand
-        image={{ src: assets.privateChefPlating, alt: alt.heroChefPlating }}
+        image={{ src: assets.chefMattPortrait, alt: alt.chefMattPortrait }}
         title="Rooted in craft, refined by taste"
         body="At Dragonfly, catering is more than a meal — it's a quiet celebration of seasonal food, personal attention, and thoughtful hospitality. Every menu is written for your guests, your setting, and the feeling you want to create."
         ctaLabel="Read more about us"
@@ -181,15 +185,15 @@ export default function HomePage() {
         lead="Every dish on our menus is crafted with carefully selected ingredients, celebrating freshness and the Chester County growing season."
         category="Service styles"
         items={menuItems}
-        image={{ src: assets.foodDragonFruit, alt: alt.heroDragonFruit }}
+        image={{ src: assets.foodRoastedVegetables, alt: alt.foodRoastedVegetables }}
         ctaLabel="View sample menus"
         ctaHref="/sample-menus"
         tagline="Precision in every move, perfection in every plate."
       />
 
       <DrinksHero
-        image={{ src: assets.foodPastaPrep, alt: alt.foodPastaPrep }}
-        title="Craft behind every pour."
+        image={{ src: assets.mattAppetizerBoard, alt: alt.mattAppetizerBoard }}
+        title="Cocktails, mocktails & thoughtful pairings."
       />
 
       <DrinksMenu
@@ -197,7 +201,7 @@ export default function HomePage() {
         lead="From signature cocktails to elevated mocktails, every drink is thoughtfully crafted to complement the flavors of our kitchen."
         category="Event bartending"
         items={drinkItems}
-        image={{ src: assets.engagementAppetizers, alt: alt.heroAppetizers }}
+        image={{ src: assets.mattCrabCakes, alt: alt.mattCrabCakes }}
         ctaLabel="Request bar service"
         ctaHref="/event-bartending"
         tagline="Precision in every move, perfection in every plate."
@@ -211,7 +215,7 @@ export default function HomePage() {
       />
 
       <ReviewsBand
-        title="What our guests experience"
+        title="The Dragonfly standard"
         lead="Real food, honest flavors, and gatherings designed around the people at the table."
         reviews={reviews}
         image={{ src: assets.heroAppetizers, alt: alt.heroAppetizers }}
@@ -221,7 +225,7 @@ export default function HomePage() {
 
       <FinalTableCta
         title="Your table awaits"
-        image={{ src: assets.heroChefPlating, alt: alt.heroChefPlating }}
+        image={{ src: assets.chefMattPortrait, alt: alt.chefMattPortrait }}
       />
     </>
   );

@@ -19,6 +19,7 @@ const quickLinks = [
   { label: "Gallery", href: "/gallery", note: "Real food from real events" },
   { label: "Event Space", href: "/dragonfly-event-space", note: "Our Downingtown home" },
   { label: "Preferred Venues", href: "/preferred-venues", note: "Places we love to cater" },
+  { label: "Gift Cards", href: "/gift-cards", note: "Available by email" },
 ];
 
 export default function ContactPage() {

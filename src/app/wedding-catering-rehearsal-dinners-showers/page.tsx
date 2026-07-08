@@ -38,8 +38,8 @@ export default function WeddingsPage() {
       }}
       detail={{
         image: {
-          src: assets.engagementAppetizers,
-          alt: alt.privateEventAppetizers,
+          src: assets.mattAppetizerBoard,
+          alt: alt.mattAppetizerBoard,
         },
         eyebrow: "The Dragonfly difference",
         title: "A caterer who knows your name",

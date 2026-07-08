@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { ServicePage } from "@/components/ServicePage";
 import { buildMetadata } from "@/lib/seo";
-import { assets, alt } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
   title: "Event Bartending & Mobile Bar Service in Chester County",
@@ -17,8 +16,8 @@ export default function EventBartendingPage() {
       serviceName="Event Bartending"
       serviceDescription="RAMP-certified event bartending and mobile bar service with signature cocktails and elevated mocktails across Chester County and the Main Line."
       eyebrow="Event bartending"
-      title="Event bartending & mobile bar"
-      lead="RAMP-certified bartenders, signature cocktails, and a polished portable bar — wherever your event takes you."
+      title="Event bartending, cocktails & mocktails"
+      lead="RAMP-certified bartenders, signature cocktails, elevated mocktails, and a polished portable bar — wherever your event takes you."
       coverage={{
         eyebrow: "Behind the bar",
         title: "Everything but the alcohol",
@@ -35,9 +34,9 @@ export default function EventBartendingPage() {
         ],
       }}
       detail={{
-        image: { src: assets.foodPastaPrep, alt: alt.foodPastaPrep },
+        placeholderLabel: "Bar and mocktail photography coming soon",
         eyebrow: "The Dragonfly bar",
-        title: "Cocktails with kitchen-level care",
+        title: "Cocktails and mocktails with kitchen-level care",
         paragraphs: [
           "Fresh ingredients, balanced builds, drinks designed for your event — a signature cocktail named for the couple, a bourbon flight, or a bright mocktail program.",
           "Every bartender is RAMP-certified and trained in responsible service. Book the bar alone or alongside catering and private chef dinners.",

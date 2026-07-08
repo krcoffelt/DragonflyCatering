@@ -8,19 +8,19 @@ import { FinalCta } from "@/components/FinalCta";
 import { JsonLd } from "@/components/JsonLd";
 import { buildMetadata } from "@/lib/seo";
 import { breadcrumbSchema } from "@/lib/schema";
-import { assets, alt } from "@/lib/site";
+import { assets, alt, chefAccolades } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
   title: "About Chef Matt | Dragonfly Catering, Downingtown PA",
   description:
-    "Meet Chef Matthew Stone — Johnson & Wales-trained, with over two decades in fine dining kitchens including The Capital Grille and True Food Kitchen. Founder of Dragonfly Catering in Downingtown, PA.",
+    "Meet Chef Matthew Stone — Top Chef alum, Johnson & Wales-trained, with over two decades in fine dining kitchens including The Capital Grille and True Food Kitchen. Founder of Dragonfly Catering in Downingtown, PA.",
   path: "/about",
 });
 
 const milestones = [
   {
     label: "The training",
-    copy: "Johnson & Wales University — Culinary Arts and Food Service Management.",
+    copy: "Top Chef alum and Johnson & Wales University graduate in Culinary Arts and Food Service Management.",
   },
   {
     label: "The kitchens",
@@ -50,7 +50,7 @@ export default function AboutPage() {
         eyebrow="About Dragonfly"
         title="Food is comfort, connection & craft"
         lead="What happens when a career fine-dining chef decides the best table in town should be yours."
-        image={{ src: assets.heroChefPlating, alt: alt.heroChefPlating }}
+        image={{ src: assets.chefMattPortrait, alt: alt.chefMattPortrait }}
         cta={{ label: "Request a Custom Proposal", href: "/contact" }}
         secondaryCta={{ label: "View the Gallery", href: "/gallery" }}
       />
@@ -58,7 +58,7 @@ export default function AboutPage() {
       <section className="bg-ivory py-20 lg:py-28">
         <div className="mx-auto max-w-[1280px] px-5 sm:px-8">
           <EditorialSplit
-            image={{ src: assets.privateChefPlating, alt: alt.heroChefPlating }}
+            image={{ src: assets.mattAppetizerBoard, alt: alt.mattAppetizerBoard }}
             imageAspect="aspect-[4/5]"
           >
             <Reveal>
@@ -66,11 +66,22 @@ export default function AboutPage() {
               <h2 className="font-display text-3xl leading-[1.1] text-plum sm:text-4xl">
                 Two decades in serious kitchens
               </h2>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {chefAccolades.map((accolade) => (
+                  <span
+                    key={accolade}
+                    className="rounded-full border border-gold/40 bg-warmwhite px-3 py-1.5 text-xs font-semibold tracking-wide text-plum"
+                  >
+                    {accolade}
+                  </span>
+                ))}
+              </div>
               <div className="mt-6 max-w-md space-y-4 text-[15px] leading-relaxed text-charcoal/75 sm:text-base">
                 <p>
-                  Chef Matt trained at Johnson &amp; Wales, then spent twenty
-                  years leading fine-dining and concept-driven kitchens —
-                  including The Capital Grille and True Food Kitchen.
+                  Chef Matt is a Top Chef alum who trained at Johnson &amp;
+                  Wales, then spent twenty years leading fine-dining and
+                  concept-driven kitchens — including The Capital Grille and
+                  True Food Kitchen.
                 </p>
                 <p>
                   In 2020, he and Rhiannon founded Dragonfly on a simple idea:

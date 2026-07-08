@@ -165,7 +165,7 @@ export function TrustBadge({
   const isLight = tone === "light";
   return (
     <div
-      className={`inline-flex items-center gap-4 rounded-full px-5 py-3 ${
+      className={`inline-flex max-w-full items-center gap-3 rounded-full px-4 py-3 sm:gap-4 sm:px-5 ${
         isLight ? "bg-warmwhite/10 text-warmwhite backdrop-blur-sm" : "bg-plum/5 text-plum"
       }`}
     >
@@ -176,7 +176,7 @@ export function TrustBadge({
       </div>
       <div className="flex items-baseline gap-1">
         <span className="font-display text-2xl leading-none">20+</span>
-        <span className={`text-sm ${isLight ? "text-warmwhite/80" : "text-plum/70"}`}>
+        <span className={`text-xs sm:text-sm ${isLight ? "text-warmwhite/80" : "text-plum/70"}`}>
           years in professional kitchens
         </span>
       </div>
