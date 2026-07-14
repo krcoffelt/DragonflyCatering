@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { events } from "@/lib/analytics";
 
 export function StarIcon({ className = "h-4 w-4" }: { className?: string }) {
@@ -33,7 +33,7 @@ function SlideLabel({ children }: { children: React.ReactNode }) {
         <span className="block h-[21px] whitespace-nowrap text-[14px] font-semibold leading-[21px]">
           {children}
         </span>
-        <span className="block h-[21px] whitespace-nowrap text-[14px] font-semibold leading-[21px]">
+        <span aria-hidden="true" className="block h-[21px] whitespace-nowrap text-[14px] font-semibold leading-[21px]">
           {children}
         </span>
       </span>
@@ -56,10 +56,10 @@ export function NavPill({
     <Link
       href={href}
       onClick={onClick}
-      className={`group relative inline-flex rounded-full px-[14px] py-[7px] transition-colors duration-300 ${
+      className={`group relative inline-flex px-3 py-2 transition-colors duration-300 ${
         accent
-          ? "text-gold hover:bg-warmwhite/10"
-          : "text-warmwhite hover:bg-warmwhite/10"
+          ? "text-gold hover:text-warmwhite"
+          : "text-warmwhite/82 hover:text-gold"
       }`}
     >
       <SlideLabel>{children}</SlideLabel>
@@ -82,8 +82,8 @@ export function PrimaryButton({
 }) {
   const styles = {
     light:
-      "border border-warmwhite bg-warmwhite text-plum shadow-sm hover:border-gold hover:bg-gold",
-    dark: "border border-plum/15 bg-plum text-warmwhite hover:bg-royal",
+      "border border-gold bg-gold text-plum shadow-sm hover:border-warmwhite hover:bg-warmwhite",
+    dark: "border border-plum bg-plum text-warmwhite hover:border-royal hover:bg-royal",
     "outline-light":
       "border border-warmwhite bg-warmwhite text-plum shadow-sm hover:border-gold hover:bg-gold",
   }[tone];
@@ -92,13 +92,13 @@ export function PrimaryButton({
     <Link
       href={href}
       onClick={() => events.ctaClick(String(children), location)}
-      className={`group inline-flex items-center gap-2 rounded-full px-[15px] py-[11px] text-[15px] font-medium transition-all duration-300 ${styles} ${className}`}
+      className={`group inline-flex min-h-12 items-center gap-2 px-[18px] py-[12px] text-[14px] font-semibold transition-all duration-300 ${styles} ${className}`}
     >
       <ArrowIcon className="h-3 w-3 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
       <span className="relative block h-[22px] overflow-hidden">
         <span className="vv-slide-label">
           <span className="block h-[22px] whitespace-nowrap leading-[22px]">{children}</span>
-          <span className="block h-[22px] whitespace-nowrap leading-[22px]">{children}</span>
+          <span aria-hidden="true" className="block h-[22px] whitespace-nowrap leading-[22px]">{children}</span>
         </span>
       </span>
     </Link>
@@ -123,11 +123,11 @@ export function TextLink({
       onClick={() => events.ctaClick(String(children), location)}
       className={`group inline-flex items-center gap-2 text-[15px] font-medium ${color}`}
     >
-      <ArrowIcon className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+      <ArrowIcon className="h-3 w-3 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
       <span className="relative block h-[22px] overflow-hidden">
         <span className="vv-slide-label">
           <span className="block h-[22px] whitespace-nowrap leading-[22px]">{children}</span>
-          <span className="block h-[22px] whitespace-nowrap leading-[22px]">{children}</span>
+          <span aria-hidden="true" className="block h-[22px] whitespace-nowrap leading-[22px]">{children}</span>
         </span>
       </span>
     </Link>
@@ -143,10 +143,9 @@ export function SectionReveal({
   className?: string;
   delay?: number;
 }) {
-  const reduce = useReducedMotion();
   return (
     <motion.div
-      initial={reduce ? false : { opacity: 0, y: 28 }}
+      initial={false}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.7, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
@@ -165,8 +164,8 @@ export function TrustBadge({
   const isLight = tone === "light";
   return (
     <div
-      className={`inline-flex max-w-full items-center gap-3 rounded-full px-4 py-3 sm:gap-4 sm:px-5 ${
-        isLight ? "bg-warmwhite/10 text-warmwhite backdrop-blur-sm" : "bg-plum/5 text-plum"
+      className={`inline-flex max-w-full items-center gap-3 border-l-2 px-4 py-2 sm:gap-4 sm:px-5 ${
+        isLight ? "border-gold bg-charcoal/25 text-warmwhite backdrop-blur-sm" : "border-gold bg-plum/5 text-plum"
       }`}
     >
       <div className="flex gap-0.5">

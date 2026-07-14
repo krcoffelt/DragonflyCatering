@@ -24,7 +24,7 @@ function ClipLabel({ children }: { children: React.ReactNode }) {
         <span className="block h-[25px] whitespace-nowrap text-[18px] font-medium leading-[25px]">
           {children}
         </span>
-        <span className="block h-[25px] whitespace-nowrap text-[18px] font-medium leading-[25px]">
+        <span aria-hidden="true" className="block h-[25px] whitespace-nowrap text-[18px] font-medium leading-[25px]">
           {children}
         </span>
       </span>

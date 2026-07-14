@@ -80,10 +80,14 @@ export const assets = {
     "/assets/dragonfly/photos/engagement-party/dragonfly-engagement-party-passed-appetizers-001.webp",
   chefMattPortrait:
     "/assets/dragonfly/photos/from-matt-source/DSC06191-2.jpg",
+  chefMattQuickfireHeadshot:
+    "/assets/dragonfly/photos/from-matt-source/chef-matt-stone-top-chef-quickfire-headshot.jpg",
   mattAppetizerBoard:
     "/assets/dragonfly/photos/from-matt-source/IMG_20210927_085008_854.webp",
   mattCrabCakes:
     "/assets/dragonfly/photos/from-matt-source/IMG_20201011_101630_474.jpg",
+  guestToast:
+    "/assets/dragonfly/photos/misc-review/original-dsc07875-family-photos.jpg",
 };
 
 export const alt = {
@@ -105,21 +109,25 @@ export const alt = {
     "Tray of passed appetizers prepared by Dragonfly Catering for a private event",
   chefMattPortrait:
     "Chef Matt Stone of Dragonfly Catering standing in the Downingtown event space",
+  chefMattQuickfireHeadshot:
+    "Chef Matt Stone in his Top Chef Quickfire chef jacket",
   mattAppetizerBoard:
     "Herb-finished appetizer board with tomato relish prepared by Dragonfly Catering",
   mattCrabCakes:
     "Crab cakes searing in a pan during Dragonfly Catering kitchen prep",
+  guestToast:
+    "Guests raising glasses during a Dragonfly Catering celebration in Chester County",
 };
 
 /** Homepage hero rotation — avoids the raw dragon-fruit prep image as the cover. */
 export const heroSlides = [
-  { src: assets.mattAppetizerBoard, alt: alt.mattAppetizerBoard },
+  { src: assets.heroAppetizers, alt: alt.heroAppetizers },
 ] as const;
 
 export const chefAccolades = [
-  "Top Chef alum",
-  "Johnson & Wales trained",
-  "20+ years in professional kitchens",
+  { lead: "Top Chef", detail: "Alum" },
+  { lead: "Johnson & Wales", detail: "Trained" },
+  { lead: "20+", detail: "Years in professional kitchens" },
 ] as const;
 
 export type GalleryPhoto = {

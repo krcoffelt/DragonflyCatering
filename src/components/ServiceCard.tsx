@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 
 type ServiceCardProps = {
   title: string;
@@ -24,10 +24,9 @@ export function ServiceCard({
   placeholderLabel,
   index = 0,
 }: ServiceCardProps) {
-  const reduce = useReducedMotion();
   return (
     <motion.div
-      initial={reduce ? false : { opacity: 0, y: 28 }}
+      initial={false}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.65, delay: 0.08 * index, ease: [0.21, 0.47, 0.32, 0.98] }}
@@ -35,7 +34,7 @@ export function ServiceCard({
       <Link
         href={href}
         aria-label={ctaLabel}
-        className="group relative block aspect-[3/4] overflow-hidden rounded-xl"
+        className="group relative block aspect-[3/4] overflow-hidden rounded-[4px]"
       >
         {image ? (
           <Image
@@ -47,8 +46,9 @@ export function ServiceCard({
           />
         ) : (
           /* Placeholder — replace with an approved photo before launch. */
-          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-plum to-royal">
-            <DragonflyMark className="h-14 w-14 text-gold/50" />
+          <div className="absolute inset-0 flex items-center justify-center bg-plum">
+            <div className="absolute inset-5 border border-warmwhite/12" />
+            <DragonflyMark className="h-14 w-14 text-gold/65" />
             <span className="sr-only">{placeholderLabel}</span>
           </div>
         )}

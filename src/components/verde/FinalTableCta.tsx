@@ -1,39 +1,39 @@
 "use client";
 
-import Image from "next/image";
 import { PrimaryButton, SectionReveal } from "./VerdePrimitives";
 import { getFullAddress, getMapSearchUrl } from "@/lib/site";
 
 type FinalTableCtaProps = {
   title: string;
-  image: { src: string; alt: string };
 };
 
-/** Verde "Your Table Awaits" — full-bleed closing CTA with address. */
-export function FinalTableCta({ title, image }: FinalTableCtaProps) {
+export function FinalTableCta({ title }: FinalTableCtaProps) {
   const address = getFullAddress();
   const mapUrl = getMapSearchUrl();
 
   return (
-    <section className="relative h-[min(990px,100svh)] overflow-hidden bg-ivory">
-      <Image src={image.src} alt={image.alt} fill sizes="100vw" className="object-cover" />
-      <div className="absolute inset-0 bg-charcoal/40" aria-hidden />
-
-      <div className="vv-container relative flex h-full flex-col items-center justify-center text-center">
-        <SectionReveal className="max-w-[500px]">
-          <h2 className="vv-h2 italic text-warmwhite">{title}</h2>
-          <p className="mt-6 text-[15px] leading-[24px] text-warmwhite/85">{address}</p>
+    <section data-sticky-cta-exclude className="relative overflow-hidden bg-plum py-24 text-warmwhite sm:py-32 lg:py-44">
+      <div className="absolute inset-x-0 top-0 overflow-hidden text-center font-display text-[18vw] leading-none text-warmwhite/[0.025]" aria-hidden>
+        Dragonfly
+      </div>
+      <div className="vv-container relative">
+        <SectionReveal className="mx-auto max-w-[980px] text-center">
+          <p className="text-[12px] font-semibold uppercase text-gold">Let us feed your moment</p>
+          <h2 className="mt-6 font-display text-[64px] leading-[0.84] italic sm:text-[96px] lg:text-[150px]">{title}</h2>
+          <p className="mx-auto mt-8 max-w-[500px] text-[15px] leading-[24px] text-warmwhite/68">
+            Tell us about the people, the place, and the feeling you want to create. We will build the menu around it.
+          </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <PrimaryButton href="/contact" location="final-cta" tone="outline-light">
+            <PrimaryButton href="/contact" location="final-cta" tone="light">
               Request a Proposal
             </PrimaryButton>
             <a
               href={mapUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-warmwhite bg-warmwhite px-[15px] py-[11px] text-[15px] font-medium text-plum shadow-sm transition-colors hover:border-gold hover:bg-gold"
+              className="inline-flex min-h-12 items-center border border-warmwhite/45 px-[18px] py-[12px] text-[14px] font-semibold text-warmwhite transition-colors hover:border-gold hover:text-gold"
             >
-              View on map
+              {address} <span className="ml-2" aria-hidden>↗</span>
             </a>
           </div>
         </SectionReveal>

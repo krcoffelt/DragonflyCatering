@@ -2,7 +2,7 @@ import { Reveal } from "./Reveal";
 
 type SectionHeadingProps = {
   eyebrow?: string;
-  title: string;
+  title: React.ReactNode;
   lead?: string;
   align?: "left" | "center";
   tone?: "light" | "dark";

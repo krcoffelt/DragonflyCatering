@@ -35,7 +35,7 @@ export function CtaButton({
     <Link
       href={href}
       onClick={() => events.ctaClick(String(children), location)}
-      className={`inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold tracking-wide transition-all duration-200 ${styles[variant]} ${className}`}
+      className={`inline-flex min-h-12 items-center justify-center gap-2 px-6 py-3 text-sm font-semibold transition-all duration-200 ${styles[variant]} ${className}`}
     >
       {children}
     </Link>

@@ -12,10 +12,8 @@ type DrinksMenuProps = {
   image: { src: string; alt: string };
   ctaLabel: string;
   ctaHref: string;
-  tagline?: string;
 };
 
-/** Verde Art of Drinks — mirrored menu band layout. */
 export function DrinksMenu({
   title,
   lead,
@@ -24,38 +22,46 @@ export function DrinksMenu({
   image,
   ctaLabel,
   ctaHref,
-  tagline,
 }: DrinksMenuProps) {
   return (
-    <section className="bg-ivory py-[60px] lg:py-[90px]">
-      <div className="vv-container">
-        <div className="grid items-start gap-12 lg:grid-cols-[675px_1fr] lg:gap-16">
-          <SectionReveal className="relative order-2 mx-auto h-[min(871px,65vh)] w-full max-w-[675px] lg:order-1 lg:mx-0">
-            <Image src={image.src} alt={image.alt} fill sizes="675px" className="object-cover" />
-            {tagline && (
-              <p className="absolute -bottom-10 left-0 right-0 text-center text-sm italic text-body lg:text-left">
-                {tagline}
-              </p>
-            )}
-          </SectionReveal>
+    <section className="bg-ivory">
+      <div className="grid lg:min-h-[820px] lg:grid-cols-[1.08fr_0.92fr]">
+        <SectionReveal className="relative min-h-[520px] lg:min-h-full">
+          <Image
+            src={image.src}
+            alt={image.alt}
+            fill
+            loading="eager"
+            sizes="(max-width: 1024px) 100vw, 55vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-charcoal/35 to-transparent" aria-hidden />
+          <p className="absolute bottom-7 left-6 text-[11px] font-semibold uppercase text-warmwhite sm:left-9">
+            The same care, beyond the plate
+          </p>
+        </SectionReveal>
 
-          <SectionReveal delay={0.1} className="order-1 lg:order-2">
-            <h2 className="vv-h2 text-plum">{title}</h2>
-            <p className="mt-5 max-w-[420px] text-[15px] leading-[24px] text-body">{lead}</p>
+        <div className="flex items-center px-5 py-20 sm:px-10 lg:px-16 lg:py-24">
+          <SectionReveal delay={0.08} className="w-full max-w-[540px]">
+            <p className="text-[12px] font-semibold uppercase text-royal">{category}</p>
+            <h2 className="mt-5 font-display text-[48px] leading-[0.92] text-plum sm:text-[64px] lg:text-[80px]">
+              {title}
+            </h2>
+            <p className="mt-6 max-w-[470px] text-[15px] leading-[25px] text-body">{lead}</p>
 
-            <div className="mt-12">
-              <h3 className="font-display text-[31.5px] leading-[1.2] text-plum">{category}</h3>
-              <ul className="mt-8 divide-y divide-plum/10">
-                {items.map((item) => (
-                  <li key={item.name} className="flex flex-col gap-1 py-5 first:pt-0">
-                    <span className="font-display text-lg text-plum">{item.name}</span>
-                    <p className="text-sm leading-relaxed text-body">{item.detail}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <ul className="mt-10 border-t border-plum/15">
+              {items.map((item, index) => (
+                <li key={item.name} className="border-b border-plum/15 py-5">
+                  <div className="flex items-baseline gap-4">
+                    <span className="font-display text-sm text-gold">0{index + 1}</span>
+                    <h3 className="font-display text-xl text-plum">{item.name}</h3>
+                  </div>
+                  <p className="mt-2 pl-9 text-[13px] leading-[20px] text-body">{item.detail}</p>
+                </li>
+              ))}
+            </ul>
 
-            <div className="mt-10">
+            <div className="mt-8">
               <PrimaryButton href={ctaHref} location="drinks-menu" tone="dark">
                 {ctaLabel}
               </PrimaryButton>

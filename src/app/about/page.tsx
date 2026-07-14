@@ -50,7 +50,11 @@ export default function AboutPage() {
         eyebrow="About Dragonfly"
         title="Food is comfort, connection & craft"
         lead="What happens when a career fine-dining chef decides the best table in town should be yours."
-        image={{ src: assets.chefMattPortrait, alt: alt.chefMattPortrait }}
+        image={{
+          src: assets.chefMattQuickfireHeadshot,
+          alt: alt.chefMattQuickfireHeadshot,
+          position: "35% top",
+        }}
         cta={{ label: "Request a Custom Proposal", href: "/contact" }}
         secondaryCta={{ label: "View the Gallery", href: "/gallery" }}
       />
@@ -69,10 +73,10 @@ export default function AboutPage() {
               <div className="mt-5 flex flex-wrap gap-2">
                 {chefAccolades.map((accolade) => (
                   <span
-                    key={accolade}
+                    key={accolade.lead}
                     className="rounded-full border border-gold/40 bg-warmwhite px-3 py-1.5 text-xs font-semibold tracking-wide text-plum"
                   >
-                    {accolade}
+                    {accolade.lead} {accolade.detail.toLowerCase()}
                   </span>
                 ))}
               </div>
@@ -98,7 +102,13 @@ export default function AboutPage() {
         <div className="mx-auto max-w-[1280px] px-5 sm:px-8">
           <SectionHeading
             eyebrow="The story"
-            title="From restaurant kitchens to your table"
+            title={
+              <>
+                From restaurant kitchens
+                <br />
+                to your table
+              </>
+            }
             align="center"
           />
           <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">

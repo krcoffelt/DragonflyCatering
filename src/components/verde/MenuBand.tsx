@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { PrimaryButton, SectionReveal } from "./VerdePrimitives";
 
 export type MenuItem = {
@@ -13,61 +12,52 @@ type MenuBandProps = {
   lead: string;
   category: string;
   items: MenuItem[];
-  image: { src: string; alt: string };
   ctaLabel: string;
   ctaHref: string;
-  tagline?: string;
 };
 
-/** Verde Farm to Table — split menu list + portrait image. */
 export function MenuBand({
   title,
   lead,
   category,
   items,
-  image,
   ctaLabel,
   ctaHref,
-  tagline,
 }: MenuBandProps) {
   return (
-    <section className="bg-ivory py-[60px] lg:py-[90px]">
-      <div className="vv-container">
-        <div className="grid items-start gap-12 lg:grid-cols-[1fr_675px] lg:gap-16">
-          <SectionReveal>
-            <h2 className="vv-h2 text-plum">{title}</h2>
-            <p className="mt-5 max-w-[420px] text-[15px] leading-[24px] text-body">{lead}</p>
+    <section className="bg-plum py-20 text-warmwhite sm:py-24 lg:py-32">
+      <div className="vv-container grid gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
+        <SectionReveal className="lg:sticky lg:top-36 lg:self-start">
+          <p className="text-[12px] font-semibold uppercase text-gold">{category}</p>
+          <h2 className="mt-5 max-w-[520px] font-display text-[52px] leading-[0.9] sm:text-[72px] lg:text-[96px]">
+            {title}
+          </h2>
+          <p className="mt-7 max-w-[430px] text-[15px] leading-[25px] text-warmwhite/68">
+            {lead}
+          </p>
+          <div className="mt-9">
+            <PrimaryButton href={ctaHref} location="menu-band" tone="light">
+              {ctaLabel}
+            </PrimaryButton>
+          </div>
+        </SectionReveal>
 
-            <div className="mt-12">
-              <h3 className="font-display text-[31.5px] leading-[1.2] text-plum">{category}</h3>
-              <ul className="mt-8 divide-y divide-plum/10">
-                {items.map((item) => (
-                  <li key={item.name} className="flex flex-col gap-1 py-5 first:pt-0">
-                    <div className="flex items-baseline justify-between gap-4">
-                      <span className="font-display text-lg text-plum">{item.name}</span>
-                    </div>
-                    <p className="text-sm leading-relaxed text-body">{item.detail}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="mt-10">
-              <PrimaryButton href={ctaHref} location="menu-band" tone="dark">
-                {ctaLabel}
-              </PrimaryButton>
-            </div>
-          </SectionReveal>
-
-          <SectionReveal delay={0.15} className="relative mx-auto h-[min(915px,70vh)] w-full max-w-[675px] lg:mx-0">
-            <Image src={image.src} alt={image.alt} fill sizes="675px" className="object-cover" />
-            {tagline && (
-              <p className="absolute -bottom-10 left-0 right-0 text-center text-sm italic text-body lg:text-left">
-                {tagline}
-              </p>
-            )}
-          </SectionReveal>
-        </div>
+        <SectionReveal delay={0.1}>
+          <ol className="border-t border-warmwhite/18">
+            {items.map((item, index) => (
+              <li
+                key={item.name}
+                className="group grid gap-4 border-b border-warmwhite/18 py-7 sm:grid-cols-[70px_0.8fr_1.2fr] sm:items-baseline sm:gap-6 sm:py-9"
+              >
+                <span className="font-display text-lg text-gold">0{index + 1}</span>
+                <h3 className="font-display text-[26px] leading-none transition-colors group-hover:text-gold sm:text-[32px] lg:text-[38px]">
+                  {item.name}
+                </h3>
+                <p className="text-[14px] leading-[22px] text-warmwhite/65">{item.detail}</p>
+              </li>
+            ))}
+          </ol>
+        </SectionReveal>
       </div>
     </section>
   );

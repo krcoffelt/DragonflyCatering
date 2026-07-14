@@ -1,8 +1,7 @@
 "use client";
 
-import { useRef } from "react";
 import Image from "next/image";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 
 export type FoodSlide = {
   src: string;
@@ -10,43 +9,64 @@ export type FoodSlide = {
   caption: string;
 };
 
-/** Verde food gallery slider — 450×613 portrait cards in horizontal track. */
 export function FoodGallery({ slides }: { slides: FoodSlide[] }) {
-  const trackRef = useRef<HTMLDivElement>(null);
-  const reduce = useReducedMotion();
-
   return (
-    <section className="overflow-hidden bg-ivory py-[60px]">
-      <motion.div
-        ref={trackRef}
-        className="flex gap-5 px-[22.5px] md:gap-6 md:px-[calc((100vw-1500px)/2+22.5px)]"
-        drag={reduce ? false : "x"}
-        dragConstraints={trackRef}
-        style={{ cursor: reduce ? "default" : "grab" }}
-      >
-        {slides.map((slide, i) => (
-          <motion.figure
-            key={slide.src}
-            initial={reduce ? false : { opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.6, delay: i * 0.1 }}
-            className="relative h-[613px] w-[min(450px,80vw)] shrink-0 overflow-hidden"
-          >
-            <Image
-              src={slide.src}
-              alt={slide.alt}
-              fill
-              sizes="450px"
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-charcoal/10 to-transparent" />
-            <figcaption className="absolute bottom-0 left-0 right-0 p-6">
-              <h3 className="vv-h3 text-warmwhite">{slide.caption}</h3>
-            </figcaption>
-          </motion.figure>
-        ))}
-      </motion.div>
+    <section className="bg-warmwhite py-20 sm:py-24 lg:py-32">
+      <div className="vv-container">
+        <div className="grid gap-6 border-b border-plum/15 pb-8 lg:grid-cols-[1fr_1fr] lg:items-end">
+          <div>
+            <p className="text-[12px] font-semibold uppercase text-royal">From the kitchen</p>
+            <h2 className="mt-4 max-w-[680px] font-display text-[46px] leading-[0.92] text-plum sm:text-[64px] lg:text-[88px]">
+              A taste of what we do.
+            </h2>
+          </div>
+          <p className="max-w-[480px] text-[15px] leading-[25px] text-body lg:justify-self-end">
+            Food that feels generous, considered, and completely at home in the room.
+            Every plate starts with the season and ends with your guests.
+          </p>
+        </div>
+
+        <div className="mt-8 grid gap-5 md:grid-cols-12 md:items-end">
+          {slides.map((slide, index) => (
+            <motion.figure
+              key={slide.src}
+              initial={false}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.65, delay: index * 0.08 }}
+              className={
+                index === 0
+                  ? "md:col-span-5"
+                  : index === 1
+                    ? "md:col-span-4 md:pb-16"
+                    : "md:col-span-3"
+              }
+            >
+              <div
+                className={`group relative overflow-hidden bg-mist ${
+                  index === 0
+                    ? "aspect-[4/5]"
+                    : index === 1
+                      ? "aspect-[3/4]"
+                      : "aspect-square md:aspect-[3/5]"
+                }`}
+              >
+                <Image
+                  src={slide.src}
+                  alt={slide.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 42vw"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.035]"
+                />
+              </div>
+              <figcaption className="mt-4 grid grid-cols-[32px_1fr] gap-2 border-t border-plum/15 pt-3">
+                <span className="font-display text-sm text-gold">0{index + 1}</span>
+                <p className="text-[13px] leading-[19px] text-plum">{slide.caption}</p>
+              </figcaption>
+            </motion.figure>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

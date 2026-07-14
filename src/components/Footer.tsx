@@ -18,12 +18,26 @@ export function Footer() {
   const mapUrl = getMapSearchUrl();
 
   return (
-    <footer className="bg-plum text-warmwhite">
-      <div className="vv-container py-20">
+    <footer data-sticky-cta-exclude className="bg-charcoal text-warmwhite">
+      <div className="vv-container py-20 lg:py-24">
+        <div className="mb-16 grid gap-8 border-b border-warmwhite/12 pb-12 lg:grid-cols-[1fr_auto] lg:items-end">
+          <div>
+            <p className="text-[12px] font-semibold uppercase text-gold">Dragonfly Catering</p>
+            <p className="mt-4 max-w-[760px] font-display text-[42px] leading-[0.92] sm:text-[60px] lg:text-[82px]">
+              Food is love. Let us feed your moment.
+            </p>
+          </div>
+          <Link
+            href="/contact"
+            className="inline-flex min-h-12 items-center justify-center bg-gold px-5 py-3 text-[14px] font-semibold text-plum transition-colors hover:bg-warmwhite"
+          >
+            Start your proposal <span className="ml-2" aria-hidden>↗</span>
+          </Link>
+        </div>
         <div className="grid gap-12 lg:grid-cols-4 lg:gap-8">
           {/* Explore */}
           <div>
-            <p className="text-[14px] font-semibold uppercase tracking-[0.06em] text-gold">
+            <p className="text-[14px] font-semibold uppercase text-gold">
               Explore
             </p>
             <ul className="mt-5 space-y-3">
@@ -52,7 +66,7 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <p className="text-[14px] font-semibold uppercase tracking-[0.06em] text-gold">
+            <p className="text-[14px] font-semibold uppercase text-gold">
               Services
             </p>
             <ul className="mt-5 space-y-3">
@@ -71,7 +85,7 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <p className="text-[14px] font-semibold uppercase tracking-[0.06em] text-gold">
+            <p className="text-[14px] font-semibold uppercase text-gold">
               Contact
             </p>
             <div className="mt-5 space-y-4 text-[15px] text-warmwhite/75">
@@ -99,7 +113,7 @@ export function Footer() {
 
           {/* Address */}
           <div>
-            <p className="text-[14px] font-semibold uppercase tracking-[0.06em] text-gold">
+            <p className="text-[14px] font-semibold uppercase text-gold">
               Address
             </p>
             <address className="mt-5 not-italic text-[15px] leading-relaxed text-warmwhite/75">
@@ -112,13 +126,13 @@ export function Footer() {
               src={getMapEmbedUrl()}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="mt-5 h-[240px] w-full rounded-[3px] border border-warmwhite/15 bg-warmwhite md:h-[280px] lg:aspect-[4/3] lg:h-auto"
+              className="mt-5 h-[240px] w-full border border-warmwhite/15 bg-warmwhite grayscale md:h-[280px] lg:aspect-[4/3] lg:h-auto"
             />
             <a
               href={mapUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-flex rounded-full bg-warmwhite px-4 py-2 text-[13px] font-semibold text-plum transition-colors hover:bg-gold"
+              className="mt-4 inline-flex bg-warmwhite px-4 py-2.5 text-[13px] font-semibold text-plum transition-colors hover:bg-gold"
             >
               Open in Google Maps
             </a>
@@ -131,7 +145,8 @@ export function Footer() {
             alt="Dragonfly Catering logo"
             width={420}
             height={277}
-            className="h-12 w-auto invert"
+            loading="eager"
+            className="h-16 w-auto invert"
           />
           <p className="mt-8 text-center text-xs text-warmwhite/45">
             © {new Date().getFullYear()} {site.legalName}. All rights reserved.
@@ -144,7 +159,7 @@ export function Footer() {
           type="button"
           onClick={scrollTop}
           aria-label="Back to top"
-          className="mb-0 flex h-12 w-24 items-start justify-center rounded-t-full border-t border-x border-warmwhite/15 bg-warmwhite/5 pt-3 text-warmwhite transition-colors hover:text-gold"
+          className="mb-0 flex h-12 w-24 items-start justify-center border-t border-x border-warmwhite/15 bg-warmwhite/5 pt-3 text-warmwhite transition-colors hover:text-gold"
         >
           <span aria-hidden>↑</span>
         </button>

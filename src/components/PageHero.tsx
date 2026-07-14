@@ -6,7 +6,7 @@ type PageHeroProps = {
   eyebrow: string;
   title: string;
   lead: string;
-  image?: { src: string; alt: string };
+  image?: { src: string; alt: string; position?: string };
   cta?: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
 };
@@ -34,6 +34,7 @@ export function PageHero({
           fetchPriority="high"
           sizes="100vw"
           className="object-cover opacity-70"
+          style={{ objectPosition: image.position ?? "center" }}
         />
         <div
           className="absolute inset-0 bg-gradient-to-t from-plum via-plum/45 to-plum/20"

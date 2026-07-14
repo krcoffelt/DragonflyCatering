@@ -22,7 +22,7 @@ export function EditorialSplit({
   const imageEl = (
     <Reveal className="relative" y={32}>
       {image ? (
-        <div className={`relative ${imageAspect} overflow-hidden rounded-2xl`}>
+        <div className={`relative ${imageAspect} overflow-hidden rounded-[4px]`}>
           <Image
             src={image.src}
             alt={image.alt}
@@ -34,7 +34,7 @@ export function EditorialSplit({
       ) : (
         /* Placeholder — replace with an approved photo before launch. */
         <div
-          className={`flex ${imageAspect} flex-col items-center justify-center gap-3 rounded-2xl bg-gradient-to-br from-plum to-royal p-8 text-center`}
+          className={`flex ${imageAspect} flex-col items-center justify-center gap-3 rounded-[4px] bg-plum p-8 text-center`}
         >
           <DragonflyMark className="h-12 w-12 text-gold/70" />
           <span className="text-xs font-medium tracking-[0.18em] text-warmwhite/60 uppercase">

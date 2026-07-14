@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
-import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
-import { CtaButton } from "@/components/CtaButton";
 import { FinalCta } from "@/components/FinalCta";
 import { JsonLd } from "@/components/JsonLd";
+import { StarIcon } from "@/components/verde/VerdePrimitives";
 import { buildMetadata } from "@/lib/seo";
 import { breadcrumbSchema } from "@/lib/schema";
+import { clientReviews } from "@/lib/reviews";
 
 export const metadata: Metadata = buildMetadata({
   title: "Reviews & Testimonials | Dragonfly Catering",
@@ -15,12 +15,6 @@ export const metadata: Metadata = buildMetadata({
   path: "/reviews",
 });
 
-/**
- * IMPORTANT — no verified testimonials exist in the asset library yet.
- * Per project rules, no reviews are invented. When the client approves
- * real testimonials, add them here with Review schema. Until then this
- * page sets honest expectations and routes visitors to proof that exists.
- */
 export default function ReviewsPage() {
   return (
     <>
@@ -32,51 +26,53 @@ export default function ReviewsPage() {
       />
 
       <PageHero
-        eyebrow="Reviews & testimonials"
-        title="The best reviews happen at the table"
-        lead="We only publish real words from real clients — approved reviews from recent events are on their way."
+        eyebrow="Client reviews"
+        title="Kind words, beautifully earned."
+        lead="Real stories from private dinners, wedding weekends, family celebrations, and gatherings catered across Chester County."
         cta={{ label: "Request a Custom Proposal", href: "/contact" }}
         secondaryCta={{ label: "View the Gallery", href: "/gallery" }}
       />
 
-      <section className="bg-ivory pb-20 lg:pb-24">
-        <div className="mx-auto max-w-[860px] px-5 sm:px-8">
-          <Reveal>
-            <div className="rounded-2xl border border-dashed border-gold/50 bg-warmwhite p-10 text-center sm:p-14">
-              <p className="eyebrow mb-3">Coming soon</p>
-              <h2 className="font-display text-2xl text-plum sm:text-3xl">
-                Testimonials are being collected
-              </h2>
-              <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-charcoal/70">
-                In the meantime, the gallery shows the work — and we&rsquo;re
-                happy to share references during your proposal conversation.
-              </p>
-              <div className="mt-7 flex flex-wrap justify-center gap-4">
-                <CtaButton href="/gallery" variant="outline" location="reviews-gallery">
-                  See the Work
-                </CtaButton>
-                <CtaButton href="/contact" location="reviews-contact">
-                  Ask for References
-                </CtaButton>
+      <section className="bg-warmwhite py-20 sm:py-24 lg:py-32">
+        <div className="mx-auto max-w-[1280px] px-5 sm:px-8">
+          <Reveal className="grid gap-8 border-y border-plum/15 py-9 sm:grid-cols-[0.65fr_1.35fr] sm:items-end lg:py-12">
+            <div>
+              <div className="flex gap-1 text-gold" role="img" aria-label="5 out of 5 stars">
+                {Array.from({ length: 5 }).map((_, index) => (
+                  <StarIcon key={index} className="h-4 w-4" />
+                ))}
               </div>
+              <p className="mt-4 text-[12px] font-semibold uppercase text-plum">From our clients</p>
             </div>
+            <p className="max-w-[760px] font-display text-[29px] leading-[1.08] text-plum sm:text-[38px] lg:text-[46px]">
+              The food matters. So does every detail around it. These are the moments our clients remember.
+            </p>
           </Reveal>
-        </div>
-      </section>
 
-      <section className="bg-warmwhite py-20 lg:py-24">
-        <div className="mx-auto max-w-[860px] px-5 text-center sm:px-8">
-          <SectionHeading
-            eyebrow="Hosted with us?"
-            title="Tell us how it went"
-            lead="A few honest sentences help the next host find us."
-            align="center"
-          />
-          <Reveal className="mt-9">
-            <CtaButton href="/contact" variant="outline" location="reviews-submit">
-              Share Your Experience
-            </CtaButton>
-          </Reveal>
+          <div className="mt-12 border-t border-plum/15 lg:mt-16">
+            {clientReviews.map((review, index) => (
+              <Reveal key={review.id} delay={Math.min(index * 0.025, 0.15)}>
+                <article className="grid gap-7 border-b border-plum/15 py-9 sm:py-11 lg:grid-cols-[270px_1fr] lg:gap-16 lg:py-14">
+                  <div>
+                    <div className="flex gap-0.5 text-gold" role="img" aria-label="5 out of 5 stars">
+                      {Array.from({ length: 5 }).map((_, starIndex) => (
+                        <StarIcon key={starIndex} className="h-3.5 w-3.5" />
+                      ))}
+                    </div>
+                    <p className="mt-4 text-[13px] font-semibold uppercase text-plum">{review.name}</p>
+                    <p className="mt-1 text-[13px] text-body">{review.event}</p>
+                    <p className="mt-3 text-[11px] font-semibold uppercase text-plum/45">{review.source}</p>
+                  </div>
+
+                  <blockquote className="max-w-[850px]">
+                    <p className="font-display text-[25px] leading-[1.18] text-plum sm:text-[30px] lg:text-[34px]">
+                      &ldquo;{review.text}&rdquo;
+                    </p>
+                  </blockquote>
+                </article>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 

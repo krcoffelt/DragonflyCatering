@@ -1,38 +1,57 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { events } from "@/lib/analytics";
 
-/** Sticky proposal CTA that appears on mobile after scrolling past the hero. */
+/** A compact mobile CTA that appears on upward scroll and clears reading/CTA zones. */
 export function MobileStickyCta() {
   const [visible, setVisible] = useState(false);
+  const [blocked, setBlocked] = useState(false);
+  const previousY = useRef(0);
   const pathname = usePathname();
 
   useEffect(() => {
-    const onScroll = () => setVisible(window.scrollY > 560);
-    onScroll();
+    previousY.current = window.scrollY;
+
+    const onScroll = () => {
+      const currentY = window.scrollY;
+      const movingUp = currentY < previousY.current - 3;
+      setVisible(currentY > 720 && movingUp);
+      previousY.current = currentY;
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => setBlocked(entries.some((entry) => entry.isIntersecting)),
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.02 },
+    );
+
+    document.querySelectorAll("[data-sticky-cta-exclude]").forEach((element) => observer.observe(element));
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, [pathname]);
 
   if (pathname === "/contact") return null;
 
+  const shown = visible && !blocked;
+
   return (
     <div
-      className={`fixed inset-x-0 bottom-0 z-40 px-4 pb-4 transition-all duration-300 lg:hidden ${
-        visible
-          ? "translate-y-0 opacity-100"
-          : "pointer-events-none translate-y-full opacity-0"
+      className={`fixed bottom-4 right-4 z-40 transition-all duration-300 lg:hidden ${
+        shown ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-3 opacity-0"
       }`}
     >
       <Link
         href="/contact"
-        onClick={() => events.ctaClick("Request a Custom Proposal", "mobile-sticky")}
-        className="block rounded-full bg-royal px-6 py-4 text-center text-sm font-semibold text-warmwhite shadow-[0_8px_30px_rgba(44,22,53,0.35)]"
+        onClick={() => events.ctaClick("Request a Proposal", "mobile-sticky")}
+        className="flex min-h-12 items-center bg-gold px-5 py-3 text-[13px] font-semibold text-plum shadow-[0_10px_28px_rgba(31,26,28,0.28)]"
       >
-        Request a Custom Proposal
+        Request a Proposal <span className="ml-2" aria-hidden>↗</span>
       </Link>
     </div>
   );
