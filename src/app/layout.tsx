@@ -42,7 +42,14 @@ export const metadata: Metadata = {
     siteName: site.fullName,
     locale: "en_US",
     type: "website",
-    images: [{ url: assets.socialPreview, width: 1200, height: 630 }],
+    images: [
+      {
+        url: assets.socialPreview,
+        width: 1200,
+        height: 630,
+        alt: "Dragonfly Catering chef-led catering in Chester County",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -50,6 +57,12 @@ export const metadata: Metadata = {
       "Dragonfly Catering | Boutique Catering & Private Events in Downingtown, PA",
     description:
       "Chef-led custom catering, private chef experiences, event bartending, and an intimate event space in Downingtown, PA — serving Chester County and the Main Line.",
+    images: [
+      {
+        url: assets.twitterPreview,
+        alt: "Dragonfly Catering chef-led catering in Chester County",
+      },
+    ],
   },
   robots: {
     index: true,
@@ -61,9 +74,6 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
-  },
-  icons: {
-    icon: "/assets/dragonfly/logos/optimized/dragonfly-favicon-source-icon.png",
   },
 };
 

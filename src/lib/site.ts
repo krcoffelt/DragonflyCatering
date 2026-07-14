@@ -55,7 +55,9 @@ export const assets = {
   logoHeader2x: "/assets/dragonfly/logos/optimized/dragonfly-logo-header-horizontal-bw@2x.png",
   logoFooter: "/assets/dragonfly/logos/optimized/dragonfly-logo-footer-stacked-bw.png",
   logoFooter2x: "/assets/dragonfly/logos/optimized/dragonfly-logo-footer-stacked-bw@2x.png",
-  socialPreview: "/assets/dragonfly/logos/optimized/dragonfly-logo-social-preview-bw.jpg",
+  socialIcon: "/icon.png",
+  socialPreview: "/opengraph-image.jpg",
+  twitterPreview: "/twitter-image.jpg",
   heroDragonFruit:
     "/assets/dragonfly/photos/hero/dragonfly-hero-dragon-fruit-prep-catering-1017-001.webp",
   heroChefPlating:

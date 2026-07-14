@@ -25,7 +25,7 @@ export function buildMetadata({ title, description, path }: PageSeo): Metadata {
           url: `${site.url}${assets.socialPreview}`,
           width: 1200,
           height: 630,
-          alt: "Dragonfly Catering logo",
+          alt: "Dragonfly Catering chef-led catering in Chester County",
         },
       ],
     },
@@ -33,6 +33,12 @@ export function buildMetadata({ title, description, path }: PageSeo): Metadata {
       card: "summary_large_image",
       title,
       description,
+      images: [
+        {
+          url: `${site.url}${assets.twitterPreview}`,
+          alt: "Dragonfly Catering chef-led catering in Chester County",
+        },
+      ],
     },
   };
 }
