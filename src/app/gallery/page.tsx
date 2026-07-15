@@ -18,16 +18,7 @@ const categories = [
   "Food",
   "Chef Matt",
   "Private Events",
-  "Private Chef",
   "Engagement Parties",
-  "Corporate",
-];
-
-const pendingCategories = [
-  "Weddings & Showers",
-  "Bartending",
-  "Event Space",
-  "Community",
 ];
 
 export default function GalleryPage() {
@@ -49,11 +40,7 @@ export default function GalleryPage() {
 
       <section className="bg-ivory pb-20 lg:pb-28">
         <div className="mx-auto max-w-[1280px] px-5 sm:px-8">
-          <GalleryGrid
-            images={galleryPhotos}
-            categories={categories}
-            pendingCategories={pendingCategories}
-          />
+          <GalleryGrid images={galleryPhotos} categories={categories} />
         </div>
       </section>
 

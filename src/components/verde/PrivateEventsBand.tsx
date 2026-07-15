@@ -36,7 +36,6 @@ export function PrivateEventsBand({ title, lead, image, cards }: PrivateEventsBa
               src={image.src}
               alt={image.alt}
               fill
-              loading="eager"
               sizes="(max-width: 1024px) 100vw, 58vw"
               className="object-cover object-[center_32%]"
             />

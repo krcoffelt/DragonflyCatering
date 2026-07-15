@@ -16,7 +16,7 @@ import { featuredReviews } from "@/lib/reviews";
 
 export const metadata: Metadata = buildMetadata({
   title:
-    "Dragonfly Catering | Boutique Catering & Private Events in Downingtown, PA",
+    "Dragonfly Catering | Catering in Chester County, PA",
   description:
     "Chef-led custom catering, private chef dinners, event bartending, and an intimate event space in Downingtown, PA. Serving Chester County and the Main Line. Request a custom proposal.",
   path: "/",

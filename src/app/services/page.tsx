@@ -74,7 +74,7 @@ const services = [
   },
   {
     title: "Event Bartending",
-    copy: "Signature cocktails, mocktails, and pairings from RAMP-certified bartenders.",
+    copy: "Professional bar service with signature cocktails, mocktails, and pairings.",
     href: "/event-bartending",
     ctaLabel: "Event Bartending",
     placeholderLabel: "Bar photography coming soon",
@@ -164,7 +164,7 @@ export default function ServicesPage() {
               },
             ].map((item, i) => (
               <Reveal key={item.step} delay={0.08 * i}>
-                <p className="font-display text-3xl text-gold">{item.step}</p>
+                <p className="font-display text-3xl text-royal">{item.step}</p>
                 <h3 className="mt-3 font-display text-lg text-plum">
                   {item.title}
                 </h3>

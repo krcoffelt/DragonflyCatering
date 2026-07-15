@@ -47,7 +47,7 @@ export default function ContactPage() {
                 </p>
 
                 <div className="mt-10 space-y-4 rounded-2xl bg-warmwhite p-7 shadow-[0_1px_3px_rgba(44,22,53,0.07)]">
-                  <p className="text-xs font-semibold tracking-[0.2em] text-gold uppercase">
+                  <p className="text-xs font-semibold uppercase text-royal">
                     Reach us directly
                   </p>
                   <p className="text-sm leading-relaxed text-charcoal/75">
@@ -60,9 +60,6 @@ export default function ContactPage() {
                       {site.email}
                     </a>
                   </p>
-                  {/* Phone hidden until the correct public number is confirmed
-                      (old site lists 484-228-1993; email signature lists
-                      484-947-3296). Set site.phone in src/lib/site.ts. */}
                   {site.phoneDisplay && site.phone && (
                     <p className="text-sm leading-relaxed text-charcoal/75">
                       <span className="font-semibold text-plum">Phone</span>

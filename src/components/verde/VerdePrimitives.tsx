@@ -45,16 +45,19 @@ export function NavPill({
   href,
   children,
   accent = false,
+  current = false,
   onClick,
 }: {
   href: string;
   children: React.ReactNode;
   accent?: boolean;
+  current?: boolean;
   onClick?: () => void;
 }) {
   return (
     <Link
       href={href}
+      aria-current={current ? "page" : undefined}
       onClick={onClick}
       className={`group relative inline-flex px-3 py-2 transition-colors duration-300 ${
         accent

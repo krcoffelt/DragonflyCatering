@@ -4,16 +4,16 @@ import { assets, getMapSearchUrl, site } from "./site";
 export function catererSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": "FoodEstablishment",
-    additionalType: "https://schema.org/Caterer",
-    name: site.legalName,
-    alternateName: site.fullName,
+    "@type": "Caterer",
+    name: site.name,
+    legalName: site.legalName,
     url: site.url,
     hasMap: getMapSearchUrl(),
     image: [`${site.url}${assets.heroAppetizers}`],
     menu: `${site.url}/sample-menus`,
     email: site.email,
-    // Phone intentionally omitted until the public number is confirmed.
+    telephone: site.phone,
+    sameAs: Object.values(site.social),
     address: {
       "@type": "PostalAddress",
       streetAddress: site.address.street,
@@ -31,6 +31,20 @@ export function catererSchema() {
     founder: { "@type": "Person", name: "Matthew Stone", jobTitle: "Chef & Owner" },
     foundingDate: "2020",
     slogan: "Food Is Love.",
+  };
+}
+
+export function websiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: site.name,
+    url: site.url,
+    publisher: {
+      "@type": "Organization",
+      name: site.name,
+      url: site.url,
+    },
   };
 }
 

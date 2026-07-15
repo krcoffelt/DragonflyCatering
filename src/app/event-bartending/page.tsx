@@ -5,7 +5,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Event Bartending & Mobile Bar Service in Chester County",
   description:
-    "Professional event bartending with RAMP-certified bartenders across Downingtown, Chester County, and the Main Line. Signature cocktails, elevated mocktails, portable bar setup, and responsible service.",
+    "Professional event bartending across Downingtown, Chester County, and the Main Line with signature cocktails, elevated mocktails, portable bar setup, and polished service.",
   path: "/event-bartending",
 });
 
@@ -14,16 +14,16 @@ export default function EventBartendingPage() {
     <ServicePage
       path="/event-bartending"
       serviceName="Event Bartending"
-      serviceDescription="RAMP-certified event bartending and mobile bar service with signature cocktails and elevated mocktails across Chester County and the Main Line."
+      serviceDescription="Professional event bartending and mobile bar service with signature cocktails and elevated mocktails across Chester County and the Main Line."
       eyebrow="Event bartending"
       title="Event bartending, cocktails & mocktails"
-      lead="RAMP-certified bartenders, signature cocktails, elevated mocktails, and a polished portable bar — wherever your event takes you."
+      lead="Professional bartenders, signature cocktails, elevated mocktails, and a polished portable bar — wherever your event takes you."
       coverage={{
         eyebrow: "Behind the bar",
         title: "Everything but the alcohol",
         lead: "You provide the bottles; we bring the rest, bar to garnish.",
         items: [
-          "RAMP-certified bartenders",
+          "Professional event bartenders",
           "Signature cocktail design",
           "Elevated mocktails & zero-proof menus",
           "Wine & bourbon pairing guidance",
@@ -39,7 +39,7 @@ export default function EventBartendingPage() {
         title: "Cocktails and mocktails with kitchen-level care",
         paragraphs: [
           "Fresh ingredients, balanced builds, drinks designed for your event — a signature cocktail named for the couple, a bourbon flight, or a bright mocktail program.",
-          "Every bartender is RAMP-certified and trained in responsible service. Book the bar alone or alongside catering and private chef dinners.",
+          "Book the bar on its own or pair it with catering and private chef dinners for one coordinated event team.",
         ],
         ctaLabel: "Request Bar Service",
       }}
@@ -50,9 +50,9 @@ export default function EventBartendingPage() {
             "You do — Dragonfly provides bartenders, the portable bar, mixers, garnishes, and service support. We'll help you plan quantities and selections so nothing runs short. If arrangements differ for your event, we'll confirm details in your proposal.",
         },
         {
-          question: "What does RAMP-certified mean?",
+          question: "How does bar service work?",
           answer:
-            "RAMP (Responsible Alcohol Management Program) is Pennsylvania's certification for responsible alcohol service. Our bartenders are trained in ID checking, safe service, and compliance.",
+            "Dragonfly provides the bartenders, portable bar, mixers, garnishes, and service support. Your proposal will confirm the alcohol plan and the details required for your venue.",
         },
         {
           question: "Can you serve non-drinkers something special?",

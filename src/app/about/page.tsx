@@ -13,14 +13,14 @@ import { assets, alt, chefAccolades } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "About Chef Matt | Dragonfly Catering, Downingtown PA",
   description:
-    "Meet Chef Matthew Stone — Top Chef alum, Johnson & Wales-trained, with over two decades in fine dining kitchens including The Capital Grille and True Food Kitchen. Founder of Dragonfly Catering in Downingtown, PA.",
+    "Meet Chef Matthew Stone, Executive Chef of Top Chef Quickfire Philadelphia, Johnson & Wales-trained, and founder of Dragonfly Catering in Downingtown, PA.",
   path: "/about",
 });
 
 const milestones = [
   {
     label: "The training",
-    copy: "Top Chef alum and Johnson & Wales University graduate in Culinary Arts and Food Service Management.",
+    copy: "Executive Chef of Top Chef Quickfire Philadelphia and Johnson & Wales University graduate in Culinary Arts and Food Service Management.",
   },
   {
     label: "The kitchens",
@@ -32,7 +32,7 @@ const milestones = [
   },
   {
     label: "Today",
-    copy: "Dragonfly Catering & Event Space in Downingtown serves weddings, private dinners, corporate events, and the Chester County community.",
+    copy: "Dragonfly Catering in Downingtown serves weddings, private dinners, corporate events, and the Chester County community.",
   },
 ];
 
@@ -82,10 +82,10 @@ export default function AboutPage() {
               </div>
               <div className="mt-6 max-w-md space-y-4 text-[15px] leading-relaxed text-charcoal/75 sm:text-base">
                 <p>
-                  Chef Matt is a Top Chef alum who trained at Johnson &amp;
-                  Wales, then spent twenty years leading fine-dining and
-                  concept-driven kitchens — including The Capital Grille and
-                  True Food Kitchen.
+                  Chef Matt served as Executive Chef of Top Chef Quickfire
+                  Philadelphia and trained at Johnson &amp; Wales. He then spent
+                  twenty years leading fine-dining and concept-driven kitchens,
+                  including The Capital Grille and True Food Kitchen.
                 </p>
                 <p>
                   In 2020, he and Rhiannon founded Dragonfly on a simple idea:
@@ -115,7 +115,7 @@ export default function AboutPage() {
             {milestones.map((m, i) => (
               <Reveal key={m.label} delay={0.07 * i}>
                 <div className="border-t-2 border-gold/50 pt-5">
-                  <p className="text-xs font-semibold tracking-[0.2em] text-sage uppercase">
+                  <p className="text-xs font-semibold uppercase text-[#65704f]">
                     {m.label}
                   </p>
                   <p className="mt-3 text-sm leading-relaxed text-charcoal/75">

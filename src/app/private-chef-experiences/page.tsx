@@ -64,7 +64,7 @@ export default function PrivateChefPage() {
         {
           question: "Do you offer beverage pairings?",
           answer:
-            "Yes — wine and bourbon pairing guidance is available, along with crafted mocktail pairings. For full bar service, add our RAMP-certified event bartending.",
+            "Yes — wine and bourbon pairing guidance is available, along with crafted mocktail pairings. For full bar service, add our professional event bartending team.",
         },
       ]}
       finalCta={{

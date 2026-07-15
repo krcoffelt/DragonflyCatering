@@ -1,30 +1,21 @@
-/**
- * Central site configuration for Dragonfly Catering LLC.
- * Values marked NEEDS CONFIRMATION must be verified with the client before launch.
- */
+/** Central site configuration for Dragonfly Catering LLC. */
 
 export const site = {
   name: "Dragonfly Catering",
   legalName: "Dragonfly Catering LLC",
-  fullName: "Dragonfly Catering & Event Space",
+  fullName: "Dragonfly Catering",
   url: "https://www.dragonfly-catering.com",
   email: "dragonflycatering727@gmail.com",
-  /**
-   * NEEDS CONFIRMATION — the old site lists 484-228-1993 while Chef Matt's
-   * email signature lists 484-947-3296. Set to the confirmed number to enable
-   * phone display and tel: links across the site. Leave null to hide phone.
-   */
-  phone: null as string | null,
-  phoneDisplay: null as string | null,
+  phone: "+14842281993",
+  phoneDisplay: "(484) 228-1993",
   address: {
-    street: "4325 W. Lincoln Highway",
+    street: "4325 Lincoln Highway",
     city: "Downingtown",
     state: "PA",
-    zip: "19335", // NEEDS CONFIRMATION — zip inferred from Downingtown; verify.
+    zip: "19335",
   },
   serviceArea:
     "Downingtown, Chester County, the Main Line & nearby Pennsylvania communities",
-  /** NEEDS CONFIRMATION — capacity wording ("up to approximately 50 guests"). */
   eventSpaceCapacity: 50,
   taglines: {
     primary: "Food Is Love.",
@@ -32,7 +23,9 @@ export const site = {
     tertiary: "Let us feed your moment.",
   },
   social: {
-    // NEEDS CONFIRMATION — add verified social profile URLs before launch.
+    facebook: "https://www.facebook.com/dragonflycatering1",
+    instagram: "https://www.instagram.com/dragonflycatering/",
+    linkedin: "https://www.linkedin.com/in/matthew-stone-34338678/",
   },
 };
 
@@ -42,7 +35,7 @@ export function getFullAddress() {
 
 export function getMapSearchUrl() {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-    getFullAddress(),
+    `${site.name}, ${getFullAddress()}`,
   )}`;
 }
 
@@ -90,6 +83,12 @@ export const assets = {
     "/assets/dragonfly/photos/from-matt-source/IMG_20201011_101630_474.jpg",
   guestToast:
     "/assets/dragonfly/photos/misc-review/original-dsc07875-family-photos.jpg",
+  galleryPassedAppetizers:
+    "/assets/dragonfly/photos/gallery/dragonfly-event-passed-appetizers.jpg",
+  galleryBuffetService:
+    "/assets/dragonfly/photos/gallery/dragonfly-engagement-buffet-service.jpg",
+  galleryLobsterRolls:
+    "/assets/dragonfly/photos/gallery/dragonfly-lobster-rolls.webp",
 };
 
 export const alt = {
@@ -119,6 +118,12 @@ export const alt = {
     "Crab cakes searing in a pan during Dragonfly Catering kitchen prep",
   guestToast:
     "Guests raising glasses during a Dragonfly Catering celebration in Chester County",
+  galleryPassedAppetizers:
+    "Passed appetizers being arranged for guests at a Dragonfly Catering event",
+  galleryBuffetService:
+    "A guest serving dinner from a Dragonfly Catering buffet at an engagement party",
+  galleryLobsterRolls:
+    "Lobster rolls finished with edible flowers by Dragonfly Catering",
 };
 
 /** Homepage hero rotation — avoids the raw dragon-fruit prep image as the cover. */
@@ -127,7 +132,7 @@ export const heroSlides = [
 ] as const;
 
 export const chefAccolades = [
-  { lead: "Top Chef", detail: "Alum" },
+  { lead: "Top Chef Quickfire", detail: "Executive Chef, Philadelphia" },
   { lead: "Johnson & Wales", detail: "Trained" },
   { lead: "20+", detail: "Years in professional kitchens" },
 ] as const;
@@ -137,7 +142,6 @@ export type GalleryPhoto = {
   alt: string;
   category: string;
   aspect: "landscape" | "portrait" | "square";
-  needsApproval?: boolean;
 };
 
 /** All approved public gallery photos from the asset manifest. */
@@ -177,7 +181,24 @@ export const galleryPhotos: GalleryPhoto[] = [
     alt: alt.heroAppetizers,
     category: "Engagement Parties",
     aspect: "portrait",
-    needsApproval: true,
+  },
+  {
+    src: assets.galleryPassedAppetizers,
+    alt: alt.galleryPassedAppetizers,
+    category: "Private Events",
+    aspect: "landscape",
+  },
+  {
+    src: assets.galleryBuffetService,
+    alt: alt.galleryBuffetService,
+    category: "Engagement Parties",
+    aspect: "portrait",
+  },
+  {
+    src: assets.galleryLobsterRolls,
+    alt: alt.galleryLobsterRolls,
+    category: "Food",
+    aspect: "square",
   },
 ];
 
@@ -235,35 +256,35 @@ export type Venue = {
   verified: boolean;
 };
 
-/** NEEDS CONFIRMATION — every venue partnership below must be verified with the client. */
+/** Venues confirmed by the client as places Dragonfly works with. */
 export const venues: Venue[] = [
   {
     name: "Beale Manor",
     location: "Parkesburg, PA",
     description:
       "A stately private manor setting for weddings and milestone celebrations in western Chester County.",
-    verified: false,
+    verified: true,
   },
   {
     name: "Stone Ridge Farm Inn",
     location: "Perkasie, PA",
     description:
       "A restored Bucks County farm inn with rustic charm for intimate weddings and gatherings.",
-    verified: false,
+    verified: true,
   },
   {
     name: "Work2Gether",
     location: "Multiple Locations",
     description:
       "Flexible coworking and meeting spaces suited to corporate lunches, workshops, and team events.",
-    verified: false,
+    verified: true,
   },
   {
     name: "Upland Farm Park",
     location: "Chester Springs, PA",
     description:
       "A scenic preserved-farm setting for outdoor celebrations and community events.",
-    verified: false,
+    verified: true,
   },
   {
     name: "Lauxmont Farms",
@@ -271,49 +292,49 @@ export const venues: Venue[] = [
     description:
       "Sweeping Susquehanna views and formal gardens for weddings and large celebrations.",
     url: "https://www.lauxmontfarms.com",
-    verified: false,
+    verified: true,
   },
   {
     name: "Cross Gables Estate",
     location: "Exton, PA",
     description:
       "A private estate venue close to Downingtown for elegant gatherings of all sizes.",
-    verified: false,
+    verified: true,
   },
   {
     name: "Westwynd Gardens",
     location: "Pennsylvania",
     description:
       "A garden venue for outdoor ceremonies, showers, and seasonal celebrations.",
-    verified: false,
+    verified: true,
   },
   {
     name: "Wyndsor Farms",
     location: "Elverson, PA",
     description:
       "A countryside farm venue for rustic weddings and relaxed private events.",
-    verified: false,
+    verified: true,
   },
   {
     name: "Twin Linden Inn",
     location: "Narvon, PA",
     description:
       "A historic country inn for intimate weddings, rehearsal dinners, and weekend gatherings.",
-    verified: false,
+    verified: true,
   },
   {
     name: "Wyebrook Farm",
     location: "Honey Brook, PA",
     description:
       "A working farm setting with pastoral views, well suited to seasonal, locally driven menus.",
-    verified: false,
+    verified: true,
   },
   {
     name: "Greystone Mansion",
     location: "Coatesville, PA",
     description:
       "A grand stone mansion for formal weddings, galas, and fundraisers.",
-    verified: false,
+    verified: true,
   },
   {
     name: "Blue Heron",
@@ -321,21 +342,21 @@ export const venues: Venue[] = [
     description:
       "An intimate Malvern event space with a warm, refined hospitality feel.",
     url: "https://www.blueheronmalvern.com",
-    verified: false,
+    verified: true,
   },
   {
     name: "Bask Collective",
     location: "Malvern, PA",
     description:
       "A modern gathering space for showers, brand events, and creative celebrations.",
-    verified: false,
+    verified: true,
   },
   {
     name: "White Chimneys",
     location: "Gap, PA",
     description:
       "A historic estate on the Chester–Lancaster county line for weddings and formal events.",
-    verified: false,
+    verified: true,
   },
 ];
 
@@ -346,9 +367,8 @@ export type MenuCategory = {
 };
 
 /**
- * PLACEHOLDER MENU CONTENT — sample menu PDFs were not found in the asset
- * library. These previews reflect Dragonfly's service styles but every item
- * must be replaced with client-approved menu copy or PDFs before launch.
+ * High-level service styles only. Client-approved menu PDFs will replace these
+ * summaries when they are supplied.
  */
 export const menuCategories: MenuCategory[] = [
   {
@@ -431,7 +451,7 @@ export const menuCategories: MenuCategory[] = [
   {
     title: "Beverage & Bartending",
     description:
-      "Signature cocktails, elevated mocktails, and pairings served by RAMP-certified bartenders.",
+      "Signature cocktails, elevated mocktails, and pairings served with polished event hospitality.",
     items: [
       "Signature cocktail design",
       "Zero-proof mocktail menus",

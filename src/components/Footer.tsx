@@ -108,6 +108,20 @@ export function Footer() {
               >
                 {site.email}
               </a>
+              <div className="flex flex-wrap gap-x-4 gap-y-2 pt-2">
+                {Object.entries(site.social).map(([network, url]) => (
+                  <a
+                    key={network}
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Dragonfly Catering on ${network}`}
+                    className="capitalize text-warmwhite underline decoration-warmwhite/30 underline-offset-4 transition-colors hover:text-gold"
+                  >
+                    {network}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -145,7 +159,6 @@ export function Footer() {
             alt="Dragonfly Catering logo"
             width={420}
             height={277}
-            loading="eager"
             className="h-16 w-auto invert"
           />
           <p className="mt-8 text-center text-xs text-warmwhite/45">

@@ -33,42 +33,21 @@ export default function SampleMenusPage() {
         secondaryCta={{ label: "View the Gallery", href: "/gallery" }}
       />
 
-      {/*
-        PLACEHOLDER — no client-approved menu PDFs exist in the asset library.
-        These preview sections must be replaced with approved menu copy or
-        downloadable PDFs before launch. When PDFs arrive, add download
-        buttons wired to events.menuDownload() for tracking.
-      */}
       <section className="bg-ivory pb-20 lg:pb-28">
         <div className="mx-auto max-w-[1280px] px-5 sm:px-8">
           <div className="grid gap-6 sm:grid-cols-2">
             {menuCategories.map((cat, i) => (
               <Reveal key={cat.title} delay={0.05 * (i % 2)}>
-                <article className="flex h-full flex-col rounded-2xl bg-warmwhite p-8 shadow-[0_1px_3px_rgba(44,22,53,0.07)] sm:p-10">
+                <article className="flex h-full flex-col rounded-lg border border-plum/10 bg-warmwhite p-8 sm:p-10">
                   <h2 className="font-display text-2xl text-plum">
                     {cat.title}
                   </h2>
                   <p className="mt-3 text-sm leading-relaxed text-charcoal/70">
                     {cat.description}
                   </p>
-                  <div className="hairline my-6" />
-                  <ul className="flex-1 space-y-3">
-                    {cat.items.map((item) => (
-                      <li
-                        key={item}
-                        className="flex items-baseline gap-3 text-[15px] text-charcoal/80"
-                      >
-                        <span
-                          aria-hidden
-                          className="h-1.5 w-1.5 shrink-0 translate-y-[-2px] rotate-45 bg-gold"
-                        />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="mt-6 text-xs italic text-charcoal/50">
-                    Full sample menu available on request — detailed menus are
-                    shared during your proposal conversation.
+                  <p className="mt-6 border-t border-plum/10 pt-5 text-xs text-charcoal/60">
+                    Ask for the current sample menu PDF during your proposal
+                    conversation.
                   </p>
                 </article>
               </Reveal>

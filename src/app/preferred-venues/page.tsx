@@ -5,7 +5,6 @@ import { Reveal } from "@/components/Reveal";
 import { CtaButton } from "@/components/CtaButton";
 import { FinalCta } from "@/components/FinalCta";
 import { JsonLd } from "@/components/JsonLd";
-import { DragonflyMark } from "@/components/ServiceCard";
 import { buildMetadata } from "@/lib/seo";
 import { breadcrumbSchema } from "@/lib/schema";
 import { venues } from "@/lib/site";
@@ -34,57 +33,37 @@ export default function PreferredVenuesPage() {
         secondaryCta={{ label: "Explore Our Services", href: "/services" }}
       />
 
-      {/* NEEDS CONFIRMATION — all venue partnerships below must be verified
-          with the client before launch. */}
       <section className="bg-ivory pb-20 lg:pb-28">
         <div className="mx-auto max-w-[1280px] px-5 sm:px-8">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="border-t border-plum/15">
             {venues.map((venue, i) => (
-              <Reveal key={venue.name} delay={0.04 * (i % 3)}>
-                <div className="group flex h-full flex-col overflow-hidden rounded-2xl bg-warmwhite shadow-[0_1px_3px_rgba(44,22,53,0.07)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_36px_rgba(44,22,53,0.12)]">
-                  {/* Venue image placeholder — add approved venue photography. */}
-                  <div className="flex aspect-[16/7] items-center justify-center bg-gradient-to-br from-mist to-ivory">
-                    <DragonflyMark className="h-8 w-8 text-sage/70" />
-                  </div>
-                  <div className="flex flex-1 flex-col p-6">
-                    <h2 className="font-display text-xl text-plum">
+              <Reveal key={venue.name} delay={0.03 * (i % 4)}>
+                <li className="grid gap-3 border-b border-plum/15 py-7 sm:grid-cols-[minmax(0,0.8fr)_minmax(0,1.4fr)] sm:gap-10 lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1.25fr)_auto] lg:items-center lg:py-9">
+                  <div>
+                    <h2 className="font-display text-2xl text-plum sm:text-3xl">
                       {venue.name}
                     </h2>
-                    <p className="mt-1 text-xs font-semibold tracking-[0.14em] text-sage uppercase">
+                    <p className="mt-1 text-xs font-semibold uppercase text-[#65704f]">
                       {venue.location}
                     </p>
-                    <p className="mt-3 flex-1 text-sm leading-relaxed text-charcoal/70">
-                      {venue.description}
-                    </p>
-                    <div className="mt-4 flex items-center justify-between">
-                      {venue.url ? (
-                        <a
-                          href={venue.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[13px] font-semibold text-royal hover:underline"
-                        >
-                          Visit venue site →
-                        </a>
-                      ) : (
-                        <span className="text-[13px] text-charcoal/40">
-                          Venue site coming soon
-                        </span>
-                      )}
-                      {!venue.verified && (
-                        <span
-                          className="rounded-full bg-mist px-2.5 py-1 text-[10px] font-semibold tracking-wide text-charcoal/50 uppercase"
-                          title="Partnership details being confirmed"
-                        >
-                          Confirming details
-                        </span>
-                      )}
-                    </div>
                   </div>
-                </div>
+                  <p className="max-w-2xl text-sm leading-relaxed text-charcoal/70 sm:text-[15px]">
+                    {venue.description}
+                  </p>
+                  {venue.url && (
+                    <a
+                      href={venue.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[13px] font-semibold text-royal hover:underline"
+                    >
+                      Visit venue site →
+                    </a>
+                  )}
+                </li>
               </Reveal>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 

@@ -50,7 +50,7 @@ const faqs = [
   {
     question: "Can we add bar service?",
     answer:
-      "Our RAMP-certified bartending team can run a full bar for your event. You provide the alcohol; we provide bartenders, mixers, garnishes, and setup.",
+      "Our bartending team can run a full bar for your event. You provide the alcohol; we provide bartenders, mixers, garnishes, and setup.",
   },
   {
     question: "Where is the space located?",

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -20,6 +20,8 @@ const navLinks = [
 export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const firstMobileLinkRef = useRef<HTMLAnchorElement>(null);
   const pathname = usePathname();
   const isHome = pathname === "/";
   const solid = !isHome || scrolled || open;
@@ -28,6 +30,26 @@ export function Header() {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  useEffect(() => {
+    if (!open) return;
+
+    const frame = window.requestAnimationFrame(() => {
+      firstMobileLinkRef.current?.focus();
+    });
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      document.removeEventListener("keydown", onKeyDown);
     };
   }, [open]);
 
@@ -70,7 +92,11 @@ export function Header() {
         <div className="hidden items-center gap-1 lg:flex">
           <nav aria-label="Main navigation" className="flex items-center gap-1">
             {navLinks.map((link) => (
-              <NavPill key={link.href} href={link.href}>
+              <NavPill
+                key={link.href}
+                href={link.href}
+                current={pathname === link.href}
+              >
                 {link.label}
               </NavPill>
             ))}
@@ -81,9 +107,11 @@ export function Header() {
         </div>
 
         <button
+          ref={menuButtonRef}
           type="button"
           onClick={() => setOpen((value) => !value)}
           aria-expanded={open}
+          aria-controls="mobile-navigation"
           aria-label={open ? "Close menu" : "Open menu"}
           className="relative z-50 flex h-11 w-11 items-center justify-center border border-warmwhite/35 text-warmwhite lg:hidden"
         >
@@ -110,6 +138,7 @@ export function Header() {
       <AnimatePresence>
         {open && (
           <motion.div
+            id="mobile-navigation"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -126,7 +155,9 @@ export function Header() {
                     transition={{ delay: index * 0.035, duration: 0.28 }}
                   >
                     <Link
+                      ref={index === 0 ? firstMobileLinkRef : undefined}
                       href={link.href}
+                      aria-current={pathname === link.href ? "page" : undefined}
                       onClick={() => setOpen(false)}
                       className={`flex items-center justify-between py-4 font-display text-[28px] leading-none sm:text-[34px] ${
                         pathname === link.href ? "text-gold" : "text-warmwhite"

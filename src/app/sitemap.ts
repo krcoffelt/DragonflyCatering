@@ -24,7 +24,6 @@ const paths = [
 export default function sitemap(): MetadataRoute.Sitemap {
   return paths.map((path) => ({
     url: `${site.url}${path}`,
-    lastModified: new Date(),
     changeFrequency: path === "" ? "weekly" : "monthly",
     priority: path === "" ? 1 : path === "/contact" ? 0.9 : 0.7,
   }));

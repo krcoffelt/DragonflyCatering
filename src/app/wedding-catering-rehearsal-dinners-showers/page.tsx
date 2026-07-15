@@ -68,7 +68,7 @@ export default function WeddingsPage() {
         {
           question: "Do you offer bar service for weddings?",
           answer:
-            "Yes — our RAMP-certified event bartending team can serve signature cocktails, wine, and elevated mocktails alongside your menu. You provide the alcohol; we handle everything else.",
+            "Yes — our event bartending team can serve signature cocktails, wine, and elevated mocktails alongside your menu. You provide the alcohol; we handle the service plan.",
         },
       ]}
       finalCta={{

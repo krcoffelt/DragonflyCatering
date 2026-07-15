@@ -65,7 +65,7 @@ export default function SocialEventsPage() {
         {
           question: "Do you provide bar service for parties?",
           answer:
-            "Our RAMP-certified bartending team can join any social event with signature cocktails, mocktails, and full bar setup. You provide the alcohol; we take care of the rest.",
+            "Our bartending team can join any social event with signature cocktails, mocktails, and full bar setup. You provide the alcohol; we take care of the rest.",
         },
       ]}
       finalCta={{

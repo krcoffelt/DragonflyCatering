@@ -9,20 +9,16 @@ export type GalleryImage = {
   alt: string;
   category: string;
   aspect?: "landscape" | "portrait" | "square";
-  needsApproval?: boolean;
 };
 
 type GalleryGridProps = {
   images: GalleryImage[];
   categories: string[];
-  /** Categories that exist as services but have no approved photos yet. */
-  pendingCategories?: string[];
 };
 
 export function GalleryGrid({
   images,
   categories,
-  pendingCategories = [],
 }: GalleryGridProps) {
   const [active, setActive] = useState("All");
   const filters = ["All", ...categories];
@@ -31,16 +27,11 @@ export function GalleryGrid({
 
   return (
     <div>
-      <div
-        role="tablist"
-        aria-label="Gallery categories"
-        className="flex flex-wrap gap-2"
-      >
+      <div aria-label="Gallery categories" className="flex flex-wrap gap-2">
         {filters.map((cat) => (
           <button
             key={cat}
-            role="tab"
-            aria-selected={active === cat}
+            aria-pressed={active === cat}
             onClick={() => setActive(cat)}
             className={`rounded-full border px-4 py-2 text-[13px] font-medium transition-colors duration-200 ${
               active === cat
@@ -55,7 +46,7 @@ export function GalleryGrid({
 
       <motion.div layout className="mt-10 columns-1 gap-5 sm:columns-2 lg:columns-3">
         <AnimatePresence mode="popLayout">
-          {visible.map((img) => (
+          {visible.map((img, index) => (
             <motion.figure
               key={img.src}
               layout
@@ -78,6 +69,8 @@ export function GalleryGrid({
                   src={img.src}
                   alt={img.alt}
                   fill
+                  loading={index === 0 ? "eager" : "lazy"}
+                  fetchPriority={index === 0 ? "high" : "auto"}
                   sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                   className="object-cover transition-transform duration-700 hover:scale-[1.04]"
                 />
@@ -99,13 +92,6 @@ export function GalleryGrid({
         </p>
       )}
 
-      {pendingCategories.length > 0 && active === "All" && (
-        <p className="mt-10 text-center text-sm text-charcoal/55">
-          More photography is on the way for{" "}
-          {pendingCategories.join(", ").toLowerCase()} — this gallery grows
-          after every event season.
-        </p>
-      )}
     </div>
   );
 }

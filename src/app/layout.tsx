@@ -6,7 +6,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { MobileStickyCta } from "@/components/MobileStickyCta";
 import { JsonLd } from "@/components/JsonLd";
-import { catererSchema } from "@/lib/schema";
+import { catererSchema, websiteSchema } from "@/lib/schema";
 import { GA_MEASUREMENT_ID } from "@/lib/analytics";
 import { site, assets } from "@/lib/site";
 
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
     default:
-      "Dragonfly Catering | Boutique Catering & Private Events in Downingtown, PA",
+      "Dragonfly Catering | Catering in Chester County, PA",
     template: "%s | Dragonfly Catering",
   },
   description:
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title:
-      "Dragonfly Catering | Boutique Catering & Private Events in Downingtown, PA",
+      "Dragonfly Catering | Catering in Chester County, PA",
     description:
       "Chef-led custom catering, private chef experiences, event bartending, and an intimate event space in Downingtown, PA — serving Chester County and the Main Line.",
     url: site.url,
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Dragonfly Catering | Boutique Catering & Private Events in Downingtown, PA",
+      "Dragonfly Catering | Catering in Chester County, PA",
     description:
       "Chef-led custom catering, private chef experiences, event bartending, and an intimate event space in Downingtown, PA — serving Chester County and the Main Line.",
     images: [
@@ -85,7 +85,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${fraunces.variable} ${dmSans.variable} h-full`}>
       <body className="flex min-h-full flex-col">
-        <JsonLd data={catererSchema()} />
+        <a
+          href="#main-content"
+          className="fixed left-4 top-4 z-[100] -translate-y-24 bg-warmwhite px-4 py-3 text-sm font-semibold text-plum shadow-lg transition-transform focus:translate-y-0"
+        >
+          Skip to main content
+        </a>
+        <JsonLd data={[catererSchema(), websiteSchema()]} />
         {/* Analytics placeholder — set NEXT_PUBLIC_GA_MEASUREMENT_ID to activate GA4. */}
         {GA_MEASUREMENT_ID && (
           <>
@@ -102,7 +108,9 @@ export default function RootLayout({
           </>
         )}
         <Header />
-        <main className="flex-1">{children}</main>
+        <main id="main-content" className="flex-1">
+          {children}
+        </main>
         <Footer />
         <MobileStickyCta />
       </body>
