@@ -28,29 +28,8 @@ const services = [
   "Not Sure Yet",
 ];
 
-const cateringStyles = [
-  "Plated Meal",
-  "Buffet",
-  "Stations",
-  "Passed Appetizers",
-  "Drop-Off Catering",
-  "Boxed Meals",
-  "Not Sure Yet",
-];
-
-const referralSources = [
-  "Google Search",
-  "Instagram or Facebook",
-  "Friend or Family",
-  "Past Event Guest",
-  "Venue or Planner Referral",
-  "Community Organization",
-  "Other",
-];
-
 type RequiredField =
-  | "firstName"
-  | "lastName"
+  | "fullName"
   | "email"
   | "phone"
   | "eventType"
@@ -79,8 +58,7 @@ function validateInquiry(data: FormData): FieldErrors {
   const eventDate = getValue(data, "eventDate");
   const guestCount = Number(getValue(data, "guestCount"));
 
-  if (!getValue(data, "firstName")) errors.firstName = "Enter your first name.";
-  if (!getValue(data, "lastName")) errors.lastName = "Enter your last name.";
+  if (!getValue(data, "fullName")) errors.fullName = "Enter your name.";
 
   if (!email) {
     errors.email = "Enter your email address.";
@@ -117,36 +95,31 @@ function Field({
   label,
   htmlFor,
   required,
-  optional,
   error,
   children,
 }: {
   label: string;
   htmlFor: string;
   required?: boolean;
-  optional?: boolean;
   error?: string;
   children: React.ReactNode;
 }) {
   return (
     <div>
-      <label
-        htmlFor={htmlFor}
-        className="mb-1.5 block text-[13px] font-semibold text-plum"
-      >
-        {label}
-        {required && (
-          <span aria-hidden className="ml-0.5 text-gold">
-            *
-          </span>
-        )}
-        {optional && (
-          <span className="ml-1.5 font-normal text-charcoal/50">(optional)</span>
-        )}
-      </label>
+      <div className="mb-2">
+        <label htmlFor={htmlFor} className="text-sm font-semibold text-plum">
+          {label}
+          {required && (
+            <span aria-hidden className="ml-1 text-royal">
+              *
+            </span>
+          )}
+        </label>
+      </div>
       {children}
       {error && (
-        <p id={`${htmlFor}-error`} className="mt-1.5 text-xs font-medium text-red-800">
+        <p id={`${htmlFor}-error`} className="mt-2 flex items-center gap-1.5 text-xs font-semibold text-red-800">
+          <span aria-hidden className="inline-block h-1.5 w-1.5 rounded-full bg-red-700" />
           {error}
         </p>
       )}
@@ -154,32 +127,40 @@ function Field({
   );
 }
 
+function SelectShell({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="relative">
+      {children}
+      <svg
+        aria-hidden
+        viewBox="0 0 20 20"
+        fill="none"
+        className="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-plum/55"
+      >
+        <path d="m6 8 4 4 4-4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    </div>
+  );
+}
+
 function FormSection({
-  number,
+  id,
   title,
-  description,
   children,
 }: {
-  number: string;
+  id: string;
   title: string;
-  description: string;
   children: React.ReactNode;
 }) {
   return (
-    <fieldset className="space-y-6 border-t border-mist pt-7 first:border-t-0 first:pt-0">
-      <legend className="w-full">
-        <span className="flex items-baseline gap-3">
-          <span className="text-[11px] font-semibold tracking-[0.18em] text-gold">
-            {number}
-          </span>
-          <span className="font-display text-xl text-plum sm:text-2xl">{title}</span>
-        </span>
-        <span className="mt-1.5 block text-sm leading-relaxed text-charcoal/60">
-          {description}
-        </span>
-      </legend>
-      {children}
-    </fieldset>
+    <section aria-labelledby={id} className="border-t border-plum/10 pt-7 sm:pt-8">
+      <div className="mb-5 sm:mb-6">
+        <h3 id={id} className="font-display text-2xl leading-tight text-plum sm:text-[28px]">
+          {title}
+        </h3>
+      </div>
+      <div className="space-y-5 sm:space-y-6">{children}</div>
+    </section>
   );
 }
 
@@ -191,10 +172,27 @@ export function ProposalForm() {
   const submittingRef = useRef(false);
 
   useEffect(() => {
-    if (status === "error" || status === "success") {
+    if (status === "success" || (status === "error" && errorKind === "submission")) {
       feedbackRef.current?.focus();
     }
-  }, [status, errorKind, errors]);
+  }, [status, errorKind]);
+
+  function handleInput(event: React.FormEvent<HTMLFormElement>) {
+    const target = event.target as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
+    const name = target.name as RequiredField;
+
+    if (!name || !errors[name]) return;
+
+    setErrors((current) => {
+      const next = { ...current };
+      delete next[name];
+      return next;
+    });
+
+    if (status === "error" && errorKind === "validation") {
+      setStatus("idle");
+    }
+  }
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -208,6 +206,11 @@ export function ProposalForm() {
       setErrors(nextErrors);
       setErrorKind("validation");
       setStatus("error");
+
+      const firstInvalidField = Object.keys(nextErrors)[0] as RequiredField;
+      window.requestAnimationFrame(() => {
+        (form.elements.namedItem(firstInvalidField) as HTMLElement | null)?.focus();
+      });
       return;
     }
 
@@ -249,21 +252,16 @@ export function ProposalForm() {
         role="status"
         aria-live="polite"
         tabIndex={-1}
-        className="border-y border-sage/50 py-10 text-center outline-none sm:py-14"
+        className="flex min-h-[480px] flex-col items-center justify-center px-4 py-12 text-center outline-none"
       >
-        <p className="eyebrow mb-3">Inquiry received</p>
-        <h2 className="font-display text-3xl text-plum">Your event is in good hands.</h2>
-        <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-charcoal/70">
-          Thank you for sharing the details. Chef Matt personally reviews each
-          inquiry, and Dragonfly Catering will follow up to learn more about
-          your event and shape a custom proposal.
-        </p>
-        <p className="mt-5 text-sm text-charcoal/60">
-          Need to add something? Email{" "}
-          <a href={`mailto:${site.email}`} className="font-semibold text-royal underline">
-            {site.email}
-          </a>
-          .
+        <span className="flex h-14 w-14 items-center justify-center rounded-full bg-sage/15 text-sage">
+          <svg aria-hidden viewBox="0 0 24 24" fill="none" className="h-6 w-6">
+            <path d="m5 12.5 4.25 4.25L19 7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </span>
+        <h2 className="mt-6 font-display text-4xl leading-tight text-plum">Inquiry received.</h2>
+        <p className="mx-auto mt-4 max-w-md text-[15px] leading-7 text-charcoal/65">
+          Chef Matt will review your details and follow up about your event.
         </p>
       </div>
     );
@@ -277,9 +275,9 @@ export function ProposalForm() {
       data-netlify="true"
       netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
+      onInput={handleInput}
       noValidate
       aria-busy={status === "submitting"}
-      className="space-y-9"
     >
       <input type="hidden" name="form-name" value={FORM_NAME} />
       <input type="hidden" name="subject" value="New Dragonfly Catering Inquiry" />
@@ -291,11 +289,8 @@ export function ProposalForm() {
         </label>
       </div>
 
-      <div>
-        <p className="text-sm leading-relaxed text-charcoal/65">
-          A few thoughtful details help Chef Matt prepare a proposal that fits
-          your gathering. Fields marked <span className="font-semibold text-gold">*</span> are required.
-        </p>
+      <div className="pb-7 sm:pb-8">
+        <h2 className="font-display text-3xl leading-tight text-plum sm:text-[36px]">Event details</h2>
       </div>
 
       {status === "error" && (
@@ -304,62 +299,41 @@ export function ProposalForm() {
           role="alert"
           aria-live="assertive"
           tabIndex={-1}
-          className="border-l-2 border-gold bg-ivory px-5 py-4 outline-none"
+          className="mb-8 flex gap-3 rounded-xl border border-red-900/15 bg-red-50 px-4 py-4 outline-none"
         >
-          <p className="font-semibold text-plum">
-            {errorKind === "validation"
-              ? "Please review the highlighted fields."
-              : "We couldn’t send your inquiry."}
-          </p>
-          <p className="mt-1 text-sm leading-relaxed text-charcoal/70">
+          <svg aria-hidden viewBox="0 0 24 24" fill="none" className="mt-0.5 h-5 w-5 shrink-0 text-red-800">
+            <path d="M12 8v5m0 3.5v.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+          </svg>
+          <p className="text-sm font-semibold text-red-950">
             {errorKind === "validation" ? (
-              "Your information is still here. Correct the fields below and try again."
+              "Complete the highlighted fields."
             ) : (
               <>
-                Your information is still here. Please try again, or email{" "}
-                <a href={`mailto:${site.email}`} className="font-semibold text-royal underline">
-                  {site.email}
-                </a>
-                .
+                We couldn’t send this. Try again or email{" "}
+                <a href={`mailto:${site.email}`} className="underline">{site.email}</a>.
               </>
             )}
           </p>
         </div>
       )}
 
-      <FormSection
-        number="01"
-        title="Contact information"
-        description="Where we can reach you to continue the conversation."
-      >
-        <div className="grid gap-6 sm:grid-cols-2">
-          <Field label="First name" htmlFor="firstName" required error={errors.firstName}>
-            <input
-              id="firstName"
-              name="firstName"
-              type="text"
-              required
-              autoComplete="given-name"
-              aria-invalid={Boolean(errors.firstName)}
-              aria-describedby={errors.firstName ? "firstName-error" : undefined}
-              className="field"
-            />
-          </Field>
-          <Field label="Last name" htmlFor="lastName" required error={errors.lastName}>
-            <input
-              id="lastName"
-              name="lastName"
-              type="text"
-              required
-              autoComplete="family-name"
-              aria-invalid={Boolean(errors.lastName)}
-              aria-describedby={errors.lastName ? "lastName-error" : undefined}
-              className="field"
-            />
-          </Field>
-        </div>
-
-        <div className="grid gap-6 sm:grid-cols-2">
+      <FormSection id="contact-information" title="Contact">
+        <div className="grid gap-5 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-6">
+          <div className="sm:col-span-2">
+            <Field label="Name" htmlFor="fullName" required error={errors.fullName}>
+              <input
+                id="fullName"
+                name="fullName"
+                type="text"
+                required
+                autoComplete="name"
+                placeholder="Your name"
+                aria-invalid={Boolean(errors.fullName)}
+                aria-describedby={errors.fullName ? "fullName-error" : undefined}
+                className="field"
+              />
+            </Field>
+          </div>
           <Field label="Email address" htmlFor="email" required error={errors.email}>
             <input
               id="email"
@@ -368,6 +342,7 @@ export function ProposalForm() {
               required
               autoComplete="email"
               inputMode="email"
+              placeholder="you@example.com"
               aria-invalid={Boolean(errors.email)}
               aria-describedby={errors.email ? "email-error" : undefined}
               className="field"
@@ -390,33 +365,32 @@ export function ProposalForm() {
         </div>
       </FormSection>
 
-      <FormSection
-        number="02"
-        title="Event details"
-        description="The essentials we need to understand the scale and setting."
-      >
-        <div className="grid gap-6 sm:grid-cols-2">
+      <FormSection id="event-details" title="Event">
+        <div className="grid gap-5 sm:grid-cols-2 sm:gap-6">
           <Field label="Event type" htmlFor="eventType" required error={errors.eventType}>
-            <select
-              id="eventType"
-              name="eventType"
-              required
-              defaultValue=""
-              aria-invalid={Boolean(errors.eventType)}
-              aria-describedby={errors.eventType ? "eventType-error" : undefined}
-              className="field"
-            >
-              <option value="" disabled>Select an event type</option>
-              {eventTypes.map((eventType) => (
-                <option key={eventType} value={eventType}>{eventType}</option>
-              ))}
-            </select>
+            <SelectShell>
+              <select
+                id="eventType"
+                name="eventType"
+                required
+                defaultValue=""
+                aria-invalid={Boolean(errors.eventType)}
+                aria-describedby={errors.eventType ? "eventType-error" : undefined}
+                className="field appearance-none pr-11"
+              >
+                <option value="" disabled>Select an event type</option>
+                {eventTypes.map((eventType) => (
+                  <option key={eventType} value={eventType}>{eventType}</option>
+                ))}
+              </select>
+            </SelectShell>
           </Field>
           <Field label="Event date" htmlFor="eventDate" required error={errors.eventDate}>
             <input
               id="eventDate"
               name="eventDate"
               type="date"
+              min={getTodayInputValue()}
               required
               aria-invalid={Boolean(errors.eventDate)}
               aria-describedby={errors.eventDate ? "eventDate-error" : undefined}
@@ -425,7 +399,7 @@ export function ProposalForm() {
           </Field>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="grid gap-5 sm:grid-cols-2 sm:gap-6">
           <Field label="Estimated guest count" htmlFor="guestCount" required error={errors.guestCount}>
             <input
               id="guestCount"
@@ -441,95 +415,55 @@ export function ProposalForm() {
               className="field"
             />
           </Field>
-          <Field label="City" htmlFor="city" optional>
+          <Field label="Venue or location" htmlFor="venueLocation">
             <input
-              id="city"
-              name="city"
+              id="venueLocation"
+              name="venueLocation"
               type="text"
-              autoComplete="address-level2"
-              placeholder="Event city"
+              autoComplete="street-address"
+              placeholder="Where will the event be?"
+              className="field"
+            />
+          </Field>
+        </div>
+      </FormSection>
+
+      <FormSection id="event-preferences" title="Preferences">
+        <div className="grid gap-5 sm:grid-cols-2 sm:gap-6">
+          <Field label="Service" htmlFor="service">
+            <SelectShell>
+              <select id="service" name="service" defaultValue="" className="field appearance-none pr-11">
+                <option value="">Select a service</option>
+                {services.map((service) => (
+                  <option key={service} value={service}>{service}</option>
+                ))}
+              </select>
+            </SelectShell>
+          </Field>
+          <Field label="Preferred budget" htmlFor="estimatedBudget">
+            <input
+              id="estimatedBudget"
+              name="estimatedBudget"
+              type="text"
+              inputMode="decimal"
+              placeholder="Optional range"
               className="field"
             />
           </Field>
         </div>
 
-        <Field label="Event venue or location" htmlFor="venueLocation" optional>
-          <input
-            id="venueLocation"
-            name="venueLocation"
-            type="text"
-            placeholder="Booked venue, private home, or location you’re considering"
-            className="field"
-          />
-        </Field>
-      </FormSection>
-
-      <FormSection
-        number="03"
-        title="Catering preferences"
-        description="Share what you know now. It’s perfectly fine to be undecided."
-      >
-        <div className="grid gap-6 sm:grid-cols-2">
-          <Field label="Services of interest" htmlFor="service" optional>
-            <select id="service" name="service" className="field" defaultValue="">
-              <option value="">Select a service</option>
-              {services.map((service) => (
-                <option key={service} value={service}>{service}</option>
-              ))}
-            </select>
-          </Field>
-          <Field label="Desired catering style" htmlFor="cateringStyle" optional>
-            <select id="cateringStyle" name="cateringStyle" className="field" defaultValue="">
-              <option value="">Select a style</option>
-              {cateringStyles.map((style) => (
-                <option key={style} value={style}>{style}</option>
-              ))}
-            </select>
-          </Field>
-        </div>
-
-        <Field label="Estimated budget" htmlFor="estimatedBudget" optional>
-          <input
-            id="estimatedBudget"
-            name="estimatedBudget"
-            type="text"
-            inputMode="decimal"
-            placeholder="A total or comfortable range is helpful"
-            className="field"
-          />
-        </Field>
-
-        <Field label="Dietary restrictions or allergies" htmlFor="dietaryRestrictions" optional>
-          <textarea
-            id="dietaryRestrictions"
-            name="dietaryRestrictions"
-            rows={3}
-            placeholder="List known allergies, dietary needs, or preferences"
-            className="field resize-y"
-          />
-        </Field>
-
-        <Field label="How did you hear about us?" htmlFor="referralSource" optional>
-          <select id="referralSource" name="referralSource" className="field" defaultValue="">
-            <option value="">Select one</option>
-            {referralSources.map((source) => (
-              <option key={source} value={source}>{source}</option>
-            ))}
-          </select>
-        </Field>
-
-        <Field label="Additional event details" htmlFor="eventDetails" optional>
+        <Field label="Additional details" htmlFor="eventDetails">
           <textarea
             id="eventDetails"
             name="eventDetails"
             rows={5}
-            placeholder="Tell us about the occasion, the atmosphere you want to create, and anything else Chef Matt should know."
-            className="field resize-y"
+            placeholder="Menu ideas, dietary needs, or anything else"
+            className="field min-h-28 resize-y"
           />
         </Field>
       </FormSection>
 
-      <div>
+      <div className="mt-8 border-t border-plum/10 pt-6">
         <div className="flex items-start gap-3">
           <input
             id="consent"
@@ -538,40 +472,48 @@ export function ProposalForm() {
             value="yes"
             required
             aria-invalid={Boolean(errors.consent)}
-            aria-describedby={errors.consent ? "consent-error" : undefined}
-            className="mt-1 h-5 w-5 shrink-0 accent-royal"
+            aria-describedby={errors.consent ? "consent-error" : "consent-privacy"}
+            className="mt-0.5 h-5 w-5 shrink-0 rounded border-plum/25 accent-royal"
           />
-          <label htmlFor="consent" className="text-sm leading-relaxed text-charcoal/70">
-            I agree that Dragonfly Catering may contact me about this inquiry.
-            <span aria-hidden className="ml-0.5 font-semibold text-gold">*</span>
-          </label>
+          <div>
+            <label htmlFor="consent" className="text-sm font-medium leading-relaxed text-charcoal/70">
+              Dragonfly Catering may contact me about this inquiry.
+              <span aria-hidden className="ml-1 font-semibold text-royal">*</span>
+            </label>
+            <p id="consent-privacy" className="mt-1 text-xs text-charcoal/50">
+              <Link href="/privacy" className="font-semibold text-royal underline underline-offset-4">
+                Privacy Policy
+              </Link>
+            </p>
+          </div>
         </div>
         {errors.consent && (
-          <p id="consent-error" className="ml-8 mt-1.5 text-xs font-medium text-red-800">
+          <p id="consent-error" className="ml-8 mt-2 text-xs font-semibold text-red-800">
             {errors.consent}
           </p>
         )}
-        <p className="ml-8 mt-2 text-xs leading-relaxed text-charcoal/55">
-          Learn how we handle inquiry information in our{" "}
-          <Link href="/privacy" className="font-semibold text-royal underline underline-offset-4">
-            Privacy Policy
-          </Link>
-          .
-        </p>
       </div>
 
-      <div className="border-t border-mist pt-7">
+      <div className="mt-5">
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="min-h-12 w-full rounded-full bg-royal px-8 py-4 text-sm font-semibold tracking-wide text-warmwhite shadow-sm transition-all duration-200 hover:bg-plum hover:shadow-md disabled:cursor-wait disabled:opacity-70 sm:w-auto sm:min-w-64"
+          className="group flex min-h-[54px] w-full items-center justify-center gap-3 rounded-xl bg-royal px-8 py-4 text-sm font-semibold text-warmwhite shadow-[0_8px_24px_rgba(91,42,134,0.2)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-plum hover:shadow-[0_12px_30px_rgba(44,22,53,0.24)] disabled:cursor-wait disabled:opacity-70 disabled:hover:translate-y-0"
         >
-          {status === "submitting" ? "Sending Inquiry…" : site.primaryCta}
+          {status === "submitting" ? (
+            <>
+              <span aria-hidden className="h-4 w-4 animate-spin rounded-full border-2 border-warmwhite/35 border-t-warmwhite" />
+              Sending inquiry…
+            </>
+          ) : (
+            <>
+              {site.primaryCta}
+              <svg aria-hidden viewBox="0 0 20 20" fill="none" className="h-4 w-4 transition-transform group-hover:translate-x-0.5">
+                <path d="M4 10h11m-4-4 4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </>
+          )}
         </button>
-        <p className="mt-4 max-w-xl text-xs leading-relaxed text-charcoal/55">
-          Your details are used only to respond to this event inquiry. This
-          form is protected by a hidden spam-prevention field.
-        </p>
       </div>
     </form>
   );

@@ -44,12 +44,11 @@ export function MenuBand({
 
         <SectionReveal delay={0.1}>
           <ol className="border-t border-warmwhite/18">
-            {items.map((item, index) => (
+            {items.map((item) => (
               <li
                 key={item.name}
-                className="group grid gap-4 border-b border-warmwhite/18 py-7 sm:grid-cols-[70px_0.8fr_1.2fr] sm:items-baseline sm:gap-6 sm:py-9"
+                className="group grid gap-4 border-b border-warmwhite/18 py-7 sm:grid-cols-[0.8fr_1.2fr] sm:items-baseline sm:gap-8 sm:py-9"
               >
-                <span className="font-display text-lg text-gold">0{index + 1}</span>
                 <h3 className="font-display text-[26px] leading-none transition-colors group-hover:text-gold sm:text-[32px] lg:text-[38px]">
                   {item.name}
                 </h3>

@@ -11,7 +11,7 @@ import { FinalTableCta } from "@/components/verde/FinalTableCta";
 import { JsonLd } from "@/components/JsonLd";
 import { buildMetadata } from "@/lib/seo";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
-import { assets, alt } from "@/lib/site";
+import { assets, alt, galleryPhotos } from "@/lib/site";
 import { featuredReviews } from "@/lib/reviews";
 
 export const metadata: Metadata = buildMetadata({
@@ -42,24 +42,6 @@ const faqs = [
     question: "Do you travel to our venue?",
     answer:
       "We cater across Downingtown, Chester County, the Main Line, and nearby Pennsylvania communities.",
-  },
-];
-
-const foodSlides = [
-  {
-    src: assets.foodPastaPrep,
-    alt: alt.foodPastaPrep,
-    caption: "Pasta finished to order in the middle of service.",
-  },
-  {
-    src: assets.foodRoastedVegetables,
-    alt: alt.foodRoastedVegetables,
-    caption: "Buffet spreads built for gatherings of every size.",
-  },
-  {
-    src: assets.mattCrabCakes,
-    alt: alt.mattCrabCakes,
-    caption: "Small bites prepared with kitchen-level care.",
   },
 ];
 
@@ -137,7 +119,7 @@ export default function HomePage() {
         ctaHref="/about"
       />
 
-      <FoodGallery slides={foodSlides} />
+      <FoodGallery slides={galleryPhotos} />
 
       <MenuBand
         title="Seasonal & local"

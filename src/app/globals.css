@@ -200,18 +200,20 @@ select:focus-visible,
 textarea:focus-visible {
   outline: 2px solid var(--color-royal);
   outline-offset: 2px;
-  border-radius: 2px;
 }
 
 .field {
+  display: block;
   width: 100%;
-  border: 1px solid var(--color-mist);
-  background-color: var(--color-warmwhite);
-  border-radius: 3px;
-  padding: 0.7rem 0.9rem;
-  font-size: 0.95rem;
+  min-height: 3.25rem;
+  border: 1px solid color-mix(in srgb, var(--color-plum) 14%, transparent);
+  background-color: #fff;
+  border-radius: 0.75rem;
+  padding: 0.82rem 1rem;
+  font-size: 0.925rem;
+  line-height: 1.4;
   color: var(--color-charcoal);
-  transition: border-color 150ms ease;
+  transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
 }
 
 .field::placeholder {
@@ -219,13 +221,50 @@ textarea:focus-visible {
 }
 
 .field:hover {
-  border-color: color-mix(in srgb, var(--color-gold) 60%, var(--color-mist));
+  border-color: color-mix(in srgb, var(--color-gold) 75%, var(--color-plum));
 }
 
 .field:focus {
   border-color: var(--color-royal);
   outline: none;
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-royal) 12%, transparent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-royal) 11%, transparent);
+}
+
+.field[aria-invalid="true"] {
+  border-color: #b42318;
+  background-color: #fffafa;
+}
+
+select.field {
+  cursor: pointer;
+}
+
+textarea.field {
+  line-height: 1.6;
+}
+
+@keyframes gallery-ribbon-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.gallery-ribbon-track {
+  animation: gallery-ribbon-scroll 68s linear infinite;
+  will-change: transform;
+}
+
+.gallery-ribbon:hover .gallery-ribbon-track {
+  animation-play-state: paused;
+}
+
+@media (min-width: 1024px) {
+  .gallery-ribbon-track {
+    animation-duration: 78s;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -242,6 +281,13 @@ textarea:focus-visible {
     transform: none !important;
   }
   .vv-slide-label {
+    transform: none !important;
+  }
+  .gallery-ribbon {
+    overflow-x: auto;
+  }
+  .gallery-ribbon-track {
+    animation: none !important;
     transform: none !important;
   }
 }

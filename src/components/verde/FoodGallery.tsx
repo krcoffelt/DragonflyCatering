@@ -1,15 +1,49 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 
-export type FoodSlide = {
+type GallerySlide = {
   src: string;
   alt: string;
-  caption: string;
+  aspect?: "landscape" | "portrait" | "square";
 };
 
-export function FoodGallery({ slides }: { slides: FoodSlide[] }) {
+function GalleryRibbonGroup({
+  slides,
+  duplicate = false,
+}: {
+  slides: GallerySlide[];
+  duplicate?: boolean;
+}) {
+  return (
+    <div className="flex shrink-0 gap-3 pr-3 sm:gap-4 sm:pr-4 lg:gap-5 lg:pr-5" aria-hidden={duplicate || undefined}>
+      {slides.map((slide, index) => (
+        <figure
+          key={`${duplicate ? "duplicate" : "original"}-${slide.src}`}
+          className={`relative h-[250px] shrink-0 overflow-hidden bg-mist sm:h-[300px] lg:h-[380px] xl:h-[420px] ${
+            slide.aspect === "portrait"
+              ? "w-[185px] sm:w-[225px] lg:w-[285px] xl:w-[315px]"
+              : slide.aspect === "square"
+                ? "w-[250px] sm:w-[300px] lg:w-[380px] xl:w-[420px]"
+                : "w-[335px] sm:w-[400px] lg:w-[500px] xl:w-[560px]"
+          }`}
+        >
+          <Image
+            src={slide.src}
+            alt={duplicate ? "" : slide.alt}
+            fill
+            loading={index < 2 ? "eager" : "lazy"}
+            sizes="(min-width: 1280px) 560px, (min-width: 1024px) 500px, (min-width: 640px) 400px, 335px"
+            className="object-cover transition-transform duration-700 ease-out hover:scale-[1.025]"
+          />
+          {!duplicate && <figcaption className="sr-only">{slide.alt}</figcaption>}
+        </figure>
+      ))}
+    </div>
+  );
+}
+
+export function FoodGallery({ slides }: { slides: GallerySlide[] }) {
   return (
     <section className="bg-warmwhite py-20 sm:py-24 lg:py-32">
       <div className="vv-container">
@@ -26,45 +60,12 @@ export function FoodGallery({ slides }: { slides: FoodSlide[] }) {
           </p>
         </div>
 
-        <div className="mt-8 grid gap-5 md:grid-cols-12 md:items-end">
-          {slides.map((slide, index) => (
-            <motion.figure
-              key={slide.src}
-              initial={false}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.65, delay: index * 0.08 }}
-              className={
-                index === 0
-                  ? "md:col-span-5"
-                  : index === 1
-                    ? "md:col-span-4 md:pb-16"
-                    : "md:col-span-3"
-              }
-            >
-              <div
-                className={`group relative overflow-hidden bg-mist ${
-                  index === 0
-                    ? "aspect-[4/5]"
-                    : index === 1
-                      ? "aspect-[3/4]"
-                      : "aspect-square md:aspect-[3/5]"
-                }`}
-              >
-                <Image
-                  src={slide.src}
-                  alt={slide.alt}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 42vw"
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.035]"
-                />
-              </div>
-              <figcaption className="mt-4 grid grid-cols-[32px_1fr] gap-2 border-t border-plum/15 pt-3">
-                <span className="font-display text-sm text-gold">0{index + 1}</span>
-                <p className="text-[13px] leading-[19px] text-plum">{slide.caption}</p>
-              </figcaption>
-            </motion.figure>
-          ))}
+      </div>
+
+      <div className="gallery-ribbon mt-8 overflow-hidden">
+        <div className="gallery-ribbon-track flex w-max">
+          <GalleryRibbonGroup slides={slides} />
+          <GalleryRibbonGroup slides={slides} duplicate />
         </div>
       </div>
     </section>
