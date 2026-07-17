@@ -3,13 +3,14 @@
 export const site = {
   name: "Dragonfly Catering",
   legalName: "Dragonfly Catering LLC",
-  fullName: "Dragonfly Catering",
+  fullName: "Dragonfly Catering & Event Space",
   url: "https://www.dragonfly-catering.com",
   email: "dragonflycatering727@gmail.com",
-  phone: "+14842281993",
-  phoneDisplay: "(484) 228-1993",
+  phone: "+14849473296",
+  phoneDisplay: "(484) 947-3296",
+  primaryCta: "Request a Custom Proposal",
   address: {
-    street: "4325 Lincoln Highway",
+    street: "4325 W. Lincoln Highway",
     city: "Downingtown",
     state: "PA",
     zip: "19335",
@@ -35,7 +36,7 @@ export function getFullAddress() {
 
 export function getMapSearchUrl() {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-    `${site.name}, ${getFullAddress()}`,
+    `${site.fullName}, ${getFullAddress()}`,
   )}`;
 }
 
@@ -89,6 +90,22 @@ export const assets = {
     "/assets/dragonfly/photos/gallery/dragonfly-engagement-buffet-service.jpg",
   galleryLobsterRolls:
     "/assets/dragonfly/photos/gallery/dragonfly-lobster-rolls.webp",
+  galleryChefMattFinishingAppetizers:
+    "/assets/dragonfly/photos/gallery/dragonfly-chef-matt-finishing-appetizers.webp",
+  galleryPrivateDinnerGuests:
+    "/assets/dragonfly/photos/gallery/dragonfly-private-dinner-guests.webp",
+  galleryCateredBuffetGuests:
+    "/assets/dragonfly/photos/gallery/dragonfly-catered-buffet-guests.webp",
+  galleryPrivateDiningTableService:
+    "/assets/dragonfly/photos/gallery/dragonfly-private-dining-table-service.webp",
+  galleryRackOfLamb:
+    "/assets/dragonfly/photos/gallery/dragonfly-rack-of-lamb-platter.webp",
+  galleryGrazingTable:
+    "/assets/dragonfly/photos/gallery/dragonfly-grazing-table-charcuterie.webp",
+  gallerySearedScallops:
+    "/assets/dragonfly/photos/gallery/dragonfly-seared-scallops-catering.webp",
+  galleryGuestsServingGrazingBuffet:
+    "/assets/dragonfly/photos/gallery/dragonfly-guests-serving-grazing-buffet.webp",
 };
 
 export const alt = {
@@ -124,6 +141,22 @@ export const alt = {
     "A guest serving dinner from a Dragonfly Catering buffet at an engagement party",
   galleryLobsterRolls:
     "Lobster rolls finished with edible flowers by Dragonfly Catering",
+  galleryChefMattFinishingAppetizers:
+    "Chef Matt Stone finishing a tray of appetizers during a private Dragonfly Catering event",
+  galleryPrivateDinnerGuests:
+    "Guests enjoying a private dinner catered by Dragonfly Catering",
+  galleryCateredBuffetGuests:
+    "Guests choosing dishes from a Dragonfly Catering buffet at an evening event",
+  galleryPrivateDiningTableService:
+    "A Dragonfly Catering chef presenting a course to guests at a private dining table",
+  galleryRackOfLamb:
+    "Sliced rack of lamb with herb sauce prepared by Dragonfly Catering",
+  galleryGrazingTable:
+    "Charcuterie and cheese grazing table arranged by Dragonfly Catering",
+  gallerySearedScallops:
+    "Seared scallops with greens and roasted vegetables prepared by Dragonfly Catering",
+  galleryGuestsServingGrazingBuffet:
+    "Guests serving vegetables and appetizers from a colorful Dragonfly Catering grazing buffet",
 };
 
 /** Homepage hero rotation — avoids the raw dragon-fruit prep image as the cover. */
@@ -159,10 +192,52 @@ export const galleryPhotos: GalleryPhoto[] = [
     aspect: "landscape",
   },
   {
+    src: assets.galleryChefMattFinishingAppetizers,
+    alt: alt.galleryChefMattFinishingAppetizers,
+    category: "Chef Matt",
+    aspect: "square",
+  },
+  {
+    src: assets.galleryCateredBuffetGuests,
+    alt: alt.galleryCateredBuffetGuests,
+    category: "Private Events",
+    aspect: "landscape",
+  },
+  {
+    src: assets.galleryRackOfLamb,
+    alt: alt.galleryRackOfLamb,
+    category: "Food",
+    aspect: "square",
+  },
+  {
+    src: assets.galleryPrivateDinnerGuests,
+    alt: alt.galleryPrivateDinnerGuests,
+    category: "Private Events",
+    aspect: "square",
+  },
+  {
+    src: assets.galleryGrazingTable,
+    alt: alt.galleryGrazingTable,
+    category: "Food",
+    aspect: "portrait",
+  },
+  {
+    src: assets.galleryPrivateDiningTableService,
+    alt: alt.galleryPrivateDiningTableService,
+    category: "Private Events",
+    aspect: "landscape",
+  },
+  {
     src: assets.foodRoastedVegetables,
     alt: alt.foodRoastedVegetables,
     category: "Food",
     aspect: "landscape",
+  },
+  {
+    src: assets.gallerySearedScallops,
+    alt: alt.gallerySearedScallops,
+    category: "Food",
+    aspect: "portrait",
   },
   {
     src: assets.mattCrabCakes,
@@ -193,6 +268,12 @@ export const galleryPhotos: GalleryPhoto[] = [
     alt: alt.galleryBuffetService,
     category: "Engagement Parties",
     aspect: "portrait",
+  },
+  {
+    src: assets.galleryGuestsServingGrazingBuffet,
+    alt: alt.galleryGuestsServingGrazingBuffet,
+    category: "Private Events",
+    aspect: "landscape",
   },
   {
     src: assets.galleryLobsterRolls,
@@ -243,7 +324,7 @@ export const footerNav: { heading: string; links: NavLink[] }[] = [
       { label: "About Chef Matt", href: "/about" },
       { label: "Community", href: "/community" },
       { label: "Gift Cards", href: "/gift-cards" },
-      { label: "Request a Proposal", href: "/contact" },
+      { label: site.primaryCta, href: "/contact" },
     ],
   },
 ];

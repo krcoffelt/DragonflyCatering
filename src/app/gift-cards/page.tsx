@@ -48,7 +48,6 @@ export default function GiftCardsPage() {
         eyebrow="Gift cards"
         title="Give someone the best table in town — theirs"
         lead="A private chef evening, a catered gathering, or a night off from the kitchen. Food is love — it makes a remarkable gift."
-        cta={{ label: "Inquire About Gift Cards", href: "/contact" }}
         secondaryCta={{ label: "Private Chef Experiences", href: "/private-chef-experiences" }}
       />
 
@@ -88,7 +87,6 @@ export default function GiftCardsPage() {
       <FinalCta
         title="Know someone who deserves a night off?"
         copy="Tell us who you're gifting and the occasion — we'll take care of the rest."
-        ctaLabel="Inquire About Gift Cards"
       />
     </>
   );

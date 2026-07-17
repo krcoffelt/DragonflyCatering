@@ -14,21 +14,24 @@ import { site, assets, alt } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
   title: "Private Event Space in Downingtown, PA | Dragonfly Catering",
-  description: `An intimate private event space at 4325 W. Lincoln Highway in Downingtown, PA for small gatherings up to about ${site.eventSpaceCapacity} guests — showers, rehearsal dinners, private chef dinners, corporate meetings, and community events with Dragonfly catering built in.`,
+  description: `An intimate private event space at ${site.address.street} in Downingtown, PA for gatherings up to ${site.eventSpaceCapacity} guests — showers, tea parties, classes, workshops, corporate meetings, and private dinners.`,
   path: "/dragonfly-event-space",
 });
 
 const eventTypes = [
   "Rehearsal dinners",
-  "Bridal showers",
-  "Baby showers",
+  "Bridal & baby showers",
+  "Tea parties & brunches",
   "Birthday celebrations",
   "Engagement parties",
   "Celebrations of life",
   "Corporate meetings & retreats",
+  "Classes & workshops",
+  "Tastings & pop-ups",
   "Crafting & painting events",
   "Cigar dinners",
   "Private chef dinners",
+  "Vendor-hosted gatherings",
   "Nonprofit events & fundraisers",
   "Community gatherings",
 ];
@@ -36,16 +39,26 @@ const eventTypes = [
 const faqs = [
   {
     question: "How many guests does the space hold?",
-    answer: `The space is designed for intimate gatherings of up to approximately ${site.eventSpaceCapacity} guests. Tell us your headcount and layout needs and we'll confirm the right fit.`,
+    answer: `The space is designed for intimate gatherings of up to ${site.eventSpaceCapacity} guests. Tell us your headcount and layout needs and we'll confirm the right fit.`,
   },
   {
     question: "Is the space a full wedding venue?",
-    answer: `The room is best for small gatherings up to approximately ${site.eventSpaceCapacity} guests, such as showers, rehearsal dinners, private chef dinners, meetings, and milestone celebrations. For full wedding receptions, Dragonfly can cater at a preferred venue or the venue you already booked.`,
+    answer: `The room is best for small gatherings up to ${site.eventSpaceCapacity} guests, such as showers, rehearsal dinners, private chef dinners, meetings, and milestone celebrations. For full wedding receptions, Dragonfly can cater at a preferred venue or the venue you already booked.`,
   },
   {
-    question: "Is catering included?",
+    question: "What does the space cost to rent?",
     answer:
-      "Yes — the event space is an extension of Dragonfly's kitchen. Every booking includes a custom menu conversation with Chef Matt, from passed hors d'oeuvres to plated dinners.",
+      "The space rents for $100 per hour. The room rental fee is waived when your Dragonfly event proposal reaches $2,000 or more. Your proposal will confirm the event timeline, staffing, setup, and all final costs.",
+  },
+  {
+    question: "Can I host a class or bring outside vendors?",
+    answer:
+      "Yes. Independent instructors, event professionals, local businesses, and other vendors are welcome for classes, workshops, tastings, pop-ups, and private gatherings. Tell us who is participating and what the setup requires so we can confirm the room is a good fit.",
+  },
+  {
+    question: "Can Dragonfly provide food for the event?",
+    answer:
+      "Yes. Build in anything from coffee and light bites to passed hors d'oeuvres, buffets, or a plated dinner. Chef Matt will shape the menu around your schedule, guests, and event format.",
   },
   {
     question: "Can we add bar service?",
@@ -65,7 +78,7 @@ export default function EventSpacePage() {
         data={[
           serviceSchema({
             name: "Dragonfly Event Space",
-            description: `Intimate private event space in Downingtown, PA for small gatherings up to about ${site.eventSpaceCapacity} guests with chef-led catering.`,
+            description: `Intimate private event space in Downingtown, PA for gatherings up to ${site.eventSpaceCapacity} guests, including showers, tea parties, classes, workshops, meetings, and private dinners.`,
             path: "/dragonfly-event-space",
           }),
           breadcrumbSchema([
@@ -80,7 +93,6 @@ export default function EventSpacePage() {
         eyebrow="Dragonfly Event Space · Downingtown"
         title="An intimate event space in Downingtown"
         lead={`Some gatherings don't need a ballroom — they need a warm room, exceptional food, and people you love. Best for small events up to ${site.eventSpaceCapacity} guests.`}
-        cta={{ label: "Inquire About the Space", href: "/contact" }}
         secondaryCta={{ label: "View Sample Menus", href: "/sample-menus" }}
       />
 
@@ -136,6 +148,32 @@ export default function EventSpacePage() {
         </div>
       </section>
 
+      <section className="bg-plum py-16 text-warmwhite sm:py-20 lg:py-24">
+        <div className="mx-auto max-w-[1280px] px-5 sm:px-8">
+          <Reveal className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-20">
+            <div>
+              <p className="eyebrow text-gold">For hosts, teachers &amp; makers</p>
+              <h2 className="mt-4 max-w-xl font-display text-4xl leading-[1.05] sm:text-5xl">
+                Bring the idea. We&rsquo;ll help set the table.
+              </h2>
+            </div>
+            <div className="border-t border-warmwhite/20 pt-8 lg:border-l lg:border-t-0 lg:py-3 lg:pl-12">
+              <p className="max-w-xl text-base leading-relaxed text-warmwhite/80 sm:text-lg">
+                Independent instructors, local businesses, and event
+                professionals are welcome to host classes, workshops, tastings,
+                tea parties, pop-ups, and private gatherings at Dragonfly.
+                Vendors are welcome.
+              </p>
+              <div className="mt-8">
+                <CtaButton href="/contact" variant="gold" location="event-space-hosts">
+                  Ask About Hosting an Event
+                </CtaButton>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* Photo gallery placeholder — no event-space photos exist in the asset
           library yet. Replace this band with a real gallery before launch. */}
       <section className="bg-ivory py-20 lg:py-24">
@@ -176,7 +214,6 @@ export default function EventSpacePage() {
       <FinalCta
         title="Host your next gathering at Dragonfly"
         copy="Tell us the occasion, your date, and your guest count — we'll confirm whether the room is the right fit, then share availability, menu ideas, and everything the space includes."
-        ctaLabel="Inquire About the Event Space"
       />
     </>
   );

@@ -9,16 +9,6 @@ export type ClientReview = {
 
 export const clientReviews: ClientReview[] = [
   {
-    id: "jennifer-asare",
-    name: "Jennifer Asare",
-    event: "Wedding reception",
-    source: "Google review",
-    featuredText:
-      "We hosted our wedding reception (52 people) at the Buchanan Mansion with Chef Matt/Dragonfly Catering and I am honestly blown away by the level of care, attention, and effort put into making our day so beautiful and memorable.",
-    text:
-      "We hosted our wedding reception (52 people) at the Buchanan Mansion with Chef Matt/Dragonfly Catering and I am honestly blown away by the level of care, attention, and effort put into making our day so beautiful and memorable. Matt was so responsive and helpful from the onset. He curated the most vibrant and delicious menu that was such a hit, orchestrated bar service with a fantastic drinks selection, set up the event space and dining experience so creatively and beautifully to accommodate our vision (including connecting us with Lindona who did such an outstanding job on the decor), and even provided us a day-of coordinator! Everything came together beautifully to achieve the intimate and polished feel we wanted while still allowing for more laid back fun - music, dancing and lots of mingling. I can’t recommend the space, catering services and specifically Matt and his service partners enough. We easily would’ve had to pay double the cost anywhere else. If you’re looking for a place that will handle the details immaculately so you can enjoy your big day, this is it!",
-  },
-  {
     id: "alexandra-barry",
     name: "Alexandra Barry",
     event: "Private chef and bartending",

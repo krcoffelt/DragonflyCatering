@@ -29,7 +29,6 @@ export default function ReviewsPage() {
         eyebrow="Client reviews"
         title="Kind words, beautifully earned."
         lead="Real stories from private dinners, wedding weekends, family celebrations, and gatherings catered across Chester County."
-        cta={{ label: "Request a Custom Proposal", href: "/contact" }}
         secondaryCta={{ label: "View the Gallery", href: "/gallery" }}
       />
 

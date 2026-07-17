@@ -8,6 +8,7 @@ import { CtaButton } from "./CtaButton";
 import { Reveal } from "./Reveal";
 import { JsonLd } from "./JsonLd";
 import { serviceSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
+import { site } from "@/lib/site";
 
 export type ServicePageProps = {
   path: string;
@@ -27,8 +28,6 @@ export type ServicePageProps = {
     eyebrow: string;
     title: string;
     paragraphs: string[];
-    ctaLabel?: string;
-    ctaHref?: string;
   };
   faqs?: FaqItem[];
   finalCta?: { title: string; copy: string };
@@ -111,11 +110,8 @@ export function ServicePage({
                 ))}
               </div>
               <div className="mt-8">
-                <CtaButton
-                  href={detail.ctaHref ?? "/contact"}
-                  location="service-detail"
-                >
-                  {detail.ctaLabel ?? "Request a Custom Proposal"}
+                <CtaButton href="/contact" location="service-detail">
+                  {site.primaryCta}
                 </CtaButton>
               </div>
             </Reveal>

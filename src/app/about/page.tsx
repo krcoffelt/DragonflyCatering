@@ -11,9 +11,9 @@ import { breadcrumbSchema } from "@/lib/schema";
 import { assets, alt, chefAccolades } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
-  title: "About Chef Matt | Dragonfly Catering, Downingtown PA",
+  title: "Our Story | Dragonfly Catering, Downingtown PA",
   description:
-    "Meet Chef Matthew Stone, Executive Chef of Top Chef Quickfire Philadelphia, Johnson & Wales-trained, and founder of Dragonfly Catering in Downingtown, PA.",
+    "Meet Chef Matthew Stone, Executive Chef of Top Chef Quickfire Philadelphia, and learn how Matt and Rhiannon founded Dragonfly Catering in Downingtown, PA.",
   path: "/about",
 });
 
@@ -42,7 +42,7 @@ export default function AboutPage() {
       <JsonLd
         data={breadcrumbSchema([
           { name: "Home", path: "/" },
-          { name: "About Chef Matt", path: "/about" },
+          { name: "Our Story", path: "/about" },
         ])}
       />
 
@@ -55,7 +55,6 @@ export default function AboutPage() {
           alt: alt.chefMattQuickfireHeadshot,
           position: "35% top",
         }}
-        cta={{ label: "Request a Custom Proposal", href: "/contact" }}
         secondaryCta={{ label: "View the Gallery", href: "/gallery" }}
       />
 
@@ -125,6 +124,44 @@ export default function AboutPage() {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="bg-plum py-20 text-warmwhite lg:py-28">
+        <div className="mx-auto grid max-w-[1280px] gap-12 px-5 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
+          <Reveal>
+            <p className="eyebrow text-gold">How Dragonfly began</p>
+            <h2 className="mt-4 max-w-xl font-display text-4xl leading-[1.05] sm:text-5xl lg:text-6xl">
+              A restaurant standard, made personal.
+            </h2>
+            <p className="mt-8 border-l-2 border-gold pl-5 font-display text-2xl text-warmwhite/90 sm:text-3xl">
+              Food is love.
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.1} className="border-t border-warmwhite/20 pt-8 lg:border-l lg:border-t-0 lg:pl-12 lg:pt-1">
+            <div className="max-w-2xl space-y-6 text-[15px] leading-[1.8] text-warmwhite/78 sm:text-base">
+              <p>
+                After more than twenty years in professional kitchens, Matt
+                wanted to bring the same discipline, timing, and care to
+                gatherings that felt more personal than restaurant service. In
+                2020, he and Rhiannon founded Dragonfly Catering in Chester
+                County.
+              </p>
+              <p>
+                They built the company around conversation. Every menu starts
+                with the people at the table, the place they are gathering, and
+                the season. That approach carries through weddings and showers,
+                private chef dinners, corporate events, and community work.
+              </p>
+              <p>
+                Today, Dragonfly pairs chef-led catering and bartending with an
+                intimate event space in Downingtown. The setting may change,
+                but the standard does not: thoughtful food, attentive service,
+                and hospitality that lets the host be present.
+              </p>
+            </div>
+          </Reveal>
         </div>
       </section>
 

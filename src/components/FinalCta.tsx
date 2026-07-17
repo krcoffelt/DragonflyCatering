@@ -1,16 +1,15 @@
 import { Reveal } from "./Reveal";
 import { CtaButton } from "./CtaButton";
+import { site } from "@/lib/site";
 
 type FinalCtaProps = {
   title?: string;
   copy?: string;
-  ctaLabel?: string;
 };
 
 export function FinalCta({
   title = "Let's create something special",
   copy = "Tell us about your event — Chef Matt will shape a custom proposal around it.",
-  ctaLabel = "Request a Custom Proposal",
 }: FinalCtaProps) {
   return (
     <section className="bg-plum">
@@ -25,7 +24,7 @@ export function FinalCta({
           </p>
           <div className="mt-10">
             <CtaButton href="/contact" variant="gold" location="final-cta">
-              {ctaLabel}
+              {site.primaryCta}
             </CtaButton>
           </div>
         </Reveal>

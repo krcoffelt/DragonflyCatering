@@ -5,7 +5,8 @@ export function catererSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Caterer",
-    name: site.name,
+    name: site.fullName,
+    alternateName: site.name,
     legalName: site.legalName,
     url: site.url,
     hasMap: getMapSearchUrl(),
@@ -38,11 +39,11 @@ export function websiteSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: site.name,
+    name: site.fullName,
     url: site.url,
     publisher: {
       "@type": "Organization",
-      name: site.name,
+      name: site.fullName,
       url: site.url,
     },
   };

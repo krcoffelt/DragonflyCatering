@@ -48,7 +48,6 @@ export default function CorporateCateringPage() {
           "No afterthought trays. The same chef-led, seasonal approach we bring to weddings — composed menus, professional presentation, staff who understand a working room.",
           "On-site at your office, at our Downingtown space, or at venues across the region. Recurring service and dietary needs are part of the conversation.",
         ],
-        ctaLabel: "Request a Corporate Proposal",
       }}
       faqs={[
         {

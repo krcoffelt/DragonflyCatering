@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { heroSlides } from "@/lib/site";
+import { heroSlides, site } from "@/lib/site";
 import { PrimaryButton, TrustBadge } from "./verde/VerdePrimitives";
 
 export function HomeHero() {
@@ -57,7 +57,7 @@ export function HomeHero() {
             </p>
             <div className="sm:col-start-2 sm:row-start-2 sm:justify-self-end">
               <PrimaryButton href="/contact" location="home-hero" tone="light">
-                Request a Proposal
+                {site.primaryCta}
               </PrimaryButton>
             </div>
             <div className="sm:col-start-1 sm:row-start-2">

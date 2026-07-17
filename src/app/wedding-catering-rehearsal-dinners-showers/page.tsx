@@ -47,7 +47,6 @@ export default function WeddingsPage() {
           "We keep a boutique wedding calendar on purpose. Chef Matt is part of every menu, tasting, and service day — so the food tastes like it was made for you, because it was.",
           "Booked a venue? We work across Chester County and the Main Line. Something smaller? Our Downingtown space hosts showers and rehearsal dinners beautifully.",
         ],
-        ctaLabel: "Request a Wedding Proposal",
       }}
       faqs={[
         {

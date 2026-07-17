@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { events } from "@/lib/analytics";
+import { site } from "@/lib/site";
 
 type Variant = "solid" | "outline" | "light" | "gold";
 
@@ -31,13 +32,15 @@ export function CtaButton({
   location = "page",
   className = "",
 }: CtaButtonProps) {
+  const label = href === "/contact" ? site.primaryCta : children;
+
   return (
     <Link
       href={href}
-      onClick={() => events.ctaClick(String(children), location)}
+      onClick={() => events.ctaClick(String(label), location)}
       className={`inline-flex min-h-12 items-center justify-center gap-2 px-6 py-3 text-sm font-semibold transition-all duration-200 ${styles[variant]} ${className}`}
     >
-      {children}
+      {label}
     </Link>
   );
 }

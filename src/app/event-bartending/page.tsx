@@ -5,7 +5,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Event Bartending & Mobile Bar Service in Chester County",
   description:
-    "Professional event bartending across Downingtown, Chester County, and the Main Line with signature cocktails, elevated mocktails, portable bar setup, and polished service.",
+    "RAMP-certified event bartending across Downingtown, Chester County, and the Main Line with signature cocktails, elevated mocktails, portable bar setup, and polished service.",
   path: "/event-bartending",
 });
 
@@ -14,16 +14,16 @@ export default function EventBartendingPage() {
     <ServicePage
       path="/event-bartending"
       serviceName="Event Bartending"
-      serviceDescription="Professional event bartending and mobile bar service with signature cocktails and elevated mocktails across Chester County and the Main Line."
+      serviceDescription="RAMP-certified event bartending and mobile bar service with signature cocktails and elevated mocktails across Chester County and the Main Line."
       eyebrow="Event bartending"
       title="Event bartending, cocktails & mocktails"
-      lead="Professional bartenders, signature cocktails, elevated mocktails, and a polished portable bar — wherever your event takes you."
+      lead="RAMP-certified bartenders, signature cocktails, elevated mocktails, and a polished portable bar — wherever your event takes you."
       coverage={{
         eyebrow: "Behind the bar",
         title: "Everything but the alcohol",
         lead: "You provide the bottles; we bring the rest, bar to garnish.",
         items: [
-          "Professional event bartenders",
+          "RAMP-certified event bartenders",
           "Signature cocktail design",
           "Elevated mocktails & zero-proof menus",
           "Wine & bourbon pairing guidance",
@@ -41,7 +41,6 @@ export default function EventBartendingPage() {
           "Fresh ingredients, balanced builds, drinks designed for your event — a signature cocktail named for the couple, a bourbon flight, or a bright mocktail program.",
           "Book the bar on its own or pair it with catering and private chef dinners for one coordinated event team.",
         ],
-        ctaLabel: "Request Bar Service",
       }}
       faqs={[
         {

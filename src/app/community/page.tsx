@@ -44,7 +44,6 @@ export default function CommunityPage() {
         eyebrow="Community"
         title="Cooking for the people who show up"
         lead="Supporting local nonprofits, first responders, and healthcare workers is part of how we run the company — not a side project."
-        cta={{ label: "Plan a Community Event", href: "/contact" }}
         secondaryCta={{ label: "Explore Our Services", href: "/services" }}
       />
 
@@ -89,7 +88,6 @@ export default function CommunityPage() {
       <FinalCta
         title="Let's feed something bigger than an event"
         copy="Fundraisers, appreciation dinners, and community gatherings — tell us what you're organizing and we'll help make it memorable."
-        ctaLabel="Plan a Community Event"
       />
     </>
   );

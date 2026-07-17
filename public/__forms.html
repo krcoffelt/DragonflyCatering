@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <title>Dragonfly Catering form detection</title>
+  </head>
+  <body>
+    <form
+      name="catering-inquiry"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      hidden
+    >
+      <input type="hidden" name="form-name" value="catering-inquiry" />
+      <input type="hidden" name="subject" value="New Dragonfly Catering Inquiry" />
+      <input type="text" name="bot-field" />
+      <input type="text" name="firstName" />
+      <input type="text" name="lastName" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <select name="eventType"><option value=""></option></select>
+      <input type="date" name="eventDate" />
+      <input type="number" name="guestCount" />
+      <input type="text" name="venueLocation" />
+      <input type="text" name="city" />
+      <select name="service"><option value=""></option></select>
+      <select name="cateringStyle"><option value=""></option></select>
+      <input type="text" name="estimatedBudget" />
+      <textarea name="dietaryRestrictions"></textarea>
+      <select name="referralSource"><option value=""></option></select>
+      <textarea name="eventDetails"></textarea>
+      <input type="checkbox" name="consent" value="yes" />
+    </form>
+  </body>
+</html>

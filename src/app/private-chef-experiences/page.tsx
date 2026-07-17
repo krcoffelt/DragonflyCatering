@@ -43,7 +43,6 @@ export default function PrivateChefPage() {
           "Chef Matt arrives with everything the menu needs, cooks in your kitchen, plates each course, and leaves it cleaner than he found it. You stay at the table.",
           "Menus are written for your evening — add a pairing conversation, an interactive course at the counter, or a mocktail progression.",
         ],
-        ctaLabel: "Plan a Private Dinner",
       }}
       faqs={[
         {

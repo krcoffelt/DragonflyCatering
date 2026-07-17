@@ -9,7 +9,7 @@ in Downingtown, PA, serving Chester County and the Main Line.
 - Next.js 16 (App Router, static export-friendly)
 - Tailwind CSS 4
 - TypeScript
-- Framer Motion (subtle reveals, hero crossfade, menu/FAQ transitions)
+- Framer Motion (subtle reveals, hero entrance, menu/review/FAQ transitions)
 
 ## Getting started
 
@@ -22,11 +22,9 @@ npm run start   # serve production build
 
 ## Where things live
 
-- `src/lib/site.ts` — central config: contact info, nav, venues, menu
-  previews, differentiators. **The public phone number is intentionally
-  `null`** until the correct number is confirmed (old site: 484-228-1993 vs
-  email signature: 484-947-3296). Set `site.phone` + `site.phoneDisplay` to
-  enable phone display sitewide.
+- `src/lib/site.ts` — central config for the public business identity, primary
+  CTA, contact information, address, navigation, venues, menu previews, and
+  differentiators.
 - `src/lib/seo.ts` / `src/lib/schema.ts` — per-page metadata and JSON-LD
   (Caterer, Service, FAQ, Breadcrumb).
 - `src/lib/analytics.ts` — GA4/GTM placeholder. Set
@@ -34,11 +32,24 @@ npm run start   # serve production build
   are already wired.
 - `src/components/` — reusable UI (Header, Footer, ServiceCard, PageHero,
   ServicePage template, GalleryGrid, ProposalForm, etc.).
-- `public/assets/dragonfly/` — Codex-prepared brand asset library and
-  manifests (source of truth for imagery).
+- `public/__forms.html` — static Netlify Forms detection markup for the shared
+  `catering-inquiry` form. The React form posts URL-encoded data to this path.
+- `public/assets/dragonfly/` — public runtime photography and logo assets.
+- `docs/dragonfly-assets/` — internal asset manifests, source notes, missing
+  asset lists, and archived reference material. These files are deliberately
+  kept outside the public web root.
+
+## Netlify Forms
+
+The proposal form is registered as `catering-inquiry` and uses Netlify's
+honeypot spam protection. Before accepting production inquiries, enable Forms
+for the `dragonflycatering` project, trigger a new production deployment,
+confirm the form is detected, and configure submission notifications under
+**Project configuration → Notifications** to send inquiries to
+`dragonflycatering727@gmail.com`.
 
 ## Before launch
 
-See `QA-NOTES.md` for the full punch list: form backend integration,
-menu PDFs, venue verifications, photo approvals, and the phone-number
-confirmation.
+See `QA-NOTES.md` for the current punch list: Netlify production activation,
+menu PDFs, venue verification, missing photography, photo approvals, and final
+launch testing.

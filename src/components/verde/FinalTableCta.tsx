@@ -1,7 +1,7 @@
 "use client";
 
 import { PrimaryButton, SectionReveal } from "./VerdePrimitives";
-import { getFullAddress, getMapSearchUrl } from "@/lib/site";
+import { getFullAddress, getMapSearchUrl, site } from "@/lib/site";
 
 type FinalTableCtaProps = {
   title: string;
@@ -25,7 +25,7 @@ export function FinalTableCta({ title }: FinalTableCtaProps) {
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <PrimaryButton href="/contact" location="final-cta" tone="light">
-              Request a Proposal
+              {site.primaryCta}
             </PrimaryButton>
             <a
               href={mapUrl}

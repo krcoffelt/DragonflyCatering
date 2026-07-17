@@ -1,131 +1,71 @@
-# Dragonfly Catering — Final QA Notes
+# Dragonfly Catering — QA Notes
 
-Build date: 2026-07-03 · Next.js 16 / Tailwind CSS 4 / TypeScript / Framer Motion
+Updated: 2026-07-16 · Phase 2 inquiry-form pass
 
-## Pages built (17 routes)
+## Phase 1 completed
 
-| Route | Status |
-| --- | --- |
-| `/` | Complete — full 12-section homepage |
-| `/services` | Complete — 9-service hub + process section |
-| `/custom-catering` | Complete |
-| `/wedding-catering-rehearsal-dinners-showers` | Complete |
-| `/corporate-catering` | Complete (photo placeholder) |
-| `/social-events` | Complete |
-| `/private-chef-experiences` | Complete |
-| `/event-bartending` | Complete (photo placeholder) |
-| `/dragonfly-event-space` | Complete (photo placeholders — no space photos exist) |
-| `/preferred-venues` | Complete — all 14 venues marked "Confirming details" |
-| `/sample-menus` | Complete — preview sections; PDFs missing from assets |
-| `/gallery` | Complete — filterable, 4 real images, honest pending notes |
-| `/reviews` | Complete — no invented testimonials; honest holding state |
-| `/about` | Complete — Chef Matt bio, Buchanan Mansion removed |
-| `/community` | Complete — no unverified pricing promises |
-| `/gift-cards` | Complete — supper club omitted (unconfirmed) |
-| `/contact` | Complete — full proposal form (mailto integration; see below) |
+- Standardized the public business name as **Dragonfly Catering & Event Space**.
+- Updated the public address to **4325 W. Lincoln Highway, Downingtown, PA 19335**.
+- Updated the public phone number to **(484) 947-3296**.
+- Removed Buchanan Mansion references from public-facing site content and reviews.
+- Moved internal source notes, manifests, and asset guidance out of the public web root to `docs/dragonfly-assets/`.
+- Standardized the main conversion CTA as **Request a Custom Proposal**.
+- Added **RAMP-certified** language to event-bartending content.
+- Preserved the existing upscale purple, gold, and ivory visual system and existing motion treatment.
 
-Plus `sitemap.xml` and `robots.txt`.
+## Phase 2 completed
 
-## Verified in browser QA
+- Replaced the email-draft inquiry handoff with a production-ready Netlify Forms integration.
+- Registered one shared Netlify form named **`catering-inquiry`**.
+- Added qualification fields for contact information, event details, catering preferences, dietary needs, referral source, and contact consent.
+- Added a honeypot field, hidden notification subject, URL-encoded submission, duplicate-submit prevention, and an inline success state.
+- Added field-level validation for required information, email, phone, guest count, and past event dates.
+- Added accessible validation, failure, and success feedback with keyboard focus management.
+- Added `public/__forms.html` so Netlify can detect every submitted field in the Next.js build.
 
-- Production build passes with zero TypeScript/ESLint errors; all routes static.
-- Desktop (1280px) and mobile (390px) layouts reviewed page by page.
-- Mobile hamburger menu, mobile sticky proposal CTA, gallery category filter,
-  and FAQ accordions all tested working.
-- Hero crossfade, scroll reveals, and hover states verified.
-- No broken images; all imagery comes from `/public/assets/dragonfly/`.
-- No stock photography anywhere. Missing categories use branded plum
-  "photography coming soon" panels, clearly labeled in code comments.
+## Client details confirmed
 
-## Asset manifest usage
+- Netlify submission notifications should go to **`dragonflycatering727@gmail.com`**.
+- The event space rents for **$100 per hour**.
+- The room-rental fee is waived when the Dragonfly event proposal reaches **$2,000 or more**.
+- Event-space capacity should be stated as **up to 50 guests**.
+- The Downingtown ZIP code is **19335**.
+- Sample-menu files and final menu content are deferred to a later phase.
+- All listed preferred venues are confirmed as current Dragonfly partners.
+- All testimonials currently published on the site are approved.
+- The Facebook, Instagram, and LinkedIn profiles in `src/lib/site.ts` are current.
+- Photography and photo-rights review, community special-pricing language, gift-card fulfillment, and analytics are deferred.
+- A website privacy policy was requested and added at `/privacy`.
 
-- Manifests read: `asset-manifest.json`, `asset-summary.md`,
-  `photo-selection-guide.md`, `missing-assets.md`, source notes.
-- Logos: header horizontal (nav), stacked (footer, inverted), social preview
-  JPG (OpenGraph), favicon source (site icon).
-- Photos used per guide: dragon-fruit hero + food (custom catering, home
-  hero), chef-plating (private chef, about, home hero slide 2), engagement
-  appetizers + private-event duplicate (weddings, social, gallery, home
-  mosaic).
-- Image categories used: hero, food, private-chef, private-events,
-  engagement-party. Empty categories honored as placeholders per the guide.
+## Verification completed
 
-## Placeholders that must be replaced before launch
+- `npm run lint` passes.
+- `npm run build` passes with TypeScript validation and all 27 static outputs generated.
+- Desktop layout checked at 1280 × 720 with no horizontal overflow or header collision.
+- Mobile layout checked at 390 × 844.
+- Mobile menu verified for scroll locking, focus trapping, Escape-to-close, focus restoration, link navigation, and automatic close at the desktop breakpoint.
+- Public source audit found no Buchanan references, old phone number, incomplete street address, or superseded primary CTA labels in `src/` or `public/`.
+- Homepage verification confirmed the new business name, address, phone number, proposal CTA, and RAMP-certified language.
+- Generated contact markup contains `name="catering-inquiry"`, `form-name`, the honeypot field, and all submitted field names.
+- Desktop form checked at 1280 × 720 with a two-column layout and no horizontal overflow.
+- Mobile form checked at 390 × 844 with a single-column layout and no horizontal overflow.
+- Required, email, phone, guest-count, and past-date validation were verified in the browser.
+- Submitting, success, and failure states were verified with controlled local responses; failed submissions preserve entered values.
+- Browser verification completed with no console warnings or errors.
+- Privacy page verified at 1280 × 720 and 390 × 844 with no horizontal overflow; footer and inquiry-form privacy links are present.
 
-1. **Sample menu content** — `menuCategories` in `src/lib/site.ts` is
-   placeholder menu copy. Replace with approved menus/PDFs. Wire PDF
-   downloads to `events.menuDownload()`.
-2. **Venue descriptions** — all 14 preferred venues carry placeholder
-   descriptions and a visible "Confirming details" badge. Verify each
-   partnership, description, and URL (only Lauxmont Farms and Blue Heron
-   have URLs, both unverified).
-3. **Photo placeholder panels** — bartending, corporate, event space,
-   community, venue cards.
-4. **Contact form backend** — currently opens a pre-filled email draft
-   (mailto). Swap in Supabase/Formspree/API route for reliable delivery
-   (`src/components/ProposalForm.tsx`).
-5. **Zip code** — 19335 inferred for Downingtown in `src/lib/site.ts`; verify.
+## Highest-priority remaining work
 
-## Client confirmations needed
+1. Enable Netlify Forms for the `dragonflycatering` project, deploy, configure notifications to `dragonflycatering727@gmail.com`, and complete a real production submission test.
+2. Add approved downloadable sample-menu PDFs without public pricing when the files are ready.
+3. Add or replace photography when the client is ready to resume the deferred photo pass.
+4. Add or correct official venue website links when supplied.
+5. Revisit community special-pricing language, gift-card fulfillment, and analytics when the client is ready.
 
-- **Phone number conflict**: old site lists 484-228-1993; Chef Matt's email
-  signature lists 484-947-3296. Phone is `null` in `src/lib/site.ts` and
-  hidden sitewide until confirmed. Set `site.phone`/`site.phoneDisplay` to enable.
-- Public address display formatting (4325 W. Lincoln Highway used per email).
-- Event-space capacity wording ("up to approximately 50 guests" used).
-- Supper Club status (omitted from site — add back if active).
-- Gift cards remaining active (page built assuming yes; fulfillment is manual/email).
-- Preferred venue list approval (all marked unverified).
-- Approved testimonials (reviews page intentionally has none; add Review
-  schema when real reviews arrive).
-- Menu PDFs / approved menu copy.
-- "Award-winning" — NOT used anywhere (unverified).
-- RAMP-certified bartending language (used per client email; confirm final wording).
-- Nonprofit/first responder/healthcare special pricing language (deliberately
-  omitted; community page uses "generous where we can be" only).
-- Photo rights for engagement-party images (`needs_owner_approval: true` in
-  manifest — used on weddings/social/gallery/home pages pending approval).
-- Social profile URLs for footer/schema.
+## Client confirmations still needed
 
-## Old-site cleanup verified
+- Official website links for preferred venues that do not currently have one.
 
-- No Buchanan Mansion references anywhere.
-- No Thorndale address anywhere.
-- No "historic mansion" positioning.
-- No generic "Book Now" CTAs — all CTAs are proposal/experience-specific.
-- No award claims, no invented testimonials, no Eventbrite links.
-- Preserved and modernized: "Food is Love", "Let us feed your moment",
-  "Seasonal. Local. Special.", chef-led positioning, 2020 origin story with
-  Rhiannon, Johnson & Wales / Capital Grille / True Food Kitchen background,
-  all service styles (plated, buffet, family-style, tapas, a la carte,
-  pairings, mocktails, responsible service).
+## Next recommendation
 
-## Technical SEO shipped
-
-- Unique title + meta description on all 17 pages (matching the recommended
-  titles), canonical URLs, OpenGraph + Twitter cards using the logo social
-  preview image.
-- JSON-LD: FoodEstablishment/Caterer (sitewide), Service (6 service pages +
-  event space), BreadcrumbList (all pages), FAQPage (service + event-space
-  pages). Review schema deliberately withheld until verified reviews exist.
-- `sitemap.xml`, `robots.txt`, semantic H1→H2→H3 hierarchy, descriptive alt
-  text from the manifest, `next/image` with priority hero loading and
-  responsive `sizes` (no layout shift).
-- Local keywords woven through headings, body copy, and metadata:
-  Downingtown PA, Chester County, Main Line, private chef, event bartending,
-  small event space, wedding/rehearsal/shower catering.
-
-## Analytics placeholders
-
-- `src/lib/analytics.ts`: GA4 loads when `NEXT_PUBLIC_GA_MEASUREMENT_ID` is
-  set; events also push to `window.dataLayer` for GTM.
-- Tracked events wired: `cta_click` (with label + location), `form_submit`,
-  `email_click`, `phone_click` (activates with phone), `menu_download`
-  (ready for PDF buttons).
-
-## Accessibility
-
-- Labeled form fields with required indicators, focus-visible outlines,
-  aria-expanded on menu/FAQ toggles, aria-labels on icon buttons, skip-safe
-  contrast (ivory/plum, gold on plum), `prefers-reduced-motion` respected by
-  all animations, semantic landmarks (header/nav/main/footer/address).
+Activate and test the form on the production Netlify deployment first. Then add downloadable menus and improve the most conversion-critical photography.

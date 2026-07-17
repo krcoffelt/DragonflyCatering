@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { site } from "@/lib/site";
 import { Reveal } from "./Reveal";
 import { CtaButton } from "./CtaButton";
 
@@ -20,7 +21,7 @@ export function PageHero({
   title,
   lead,
   image,
-  cta = { label: "Request a Custom Proposal", href: "/contact" },
+  cta = { label: site.primaryCta, href: "/contact" },
   secondaryCta,
 }: PageHeroProps) {
   if (image) {

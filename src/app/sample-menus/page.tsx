@@ -45,10 +45,6 @@ export default function SampleMenusPage() {
                   <p className="mt-3 text-sm leading-relaxed text-charcoal/70">
                     {cat.description}
                   </p>
-                  <p className="mt-6 border-t border-plum/10 pt-5 text-xs text-charcoal/60">
-                    Ask for the current sample menu PDF during your proposal
-                    conversation.
-                  </p>
                 </article>
               </Reveal>
             ))}

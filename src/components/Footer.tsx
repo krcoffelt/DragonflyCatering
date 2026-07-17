@@ -29,9 +29,10 @@ export function Footer() {
           </div>
           <Link
             href="/contact"
+            onClick={() => events.ctaClick(site.primaryCta, "footer")}
             className="inline-flex min-h-12 items-center justify-center bg-gold px-5 py-3 text-[14px] font-semibold text-plum transition-colors hover:bg-warmwhite"
           >
-            Start your proposal <span className="ml-2" aria-hidden>↗</span>
+            {site.primaryCta} <span className="ml-2" aria-hidden>↗</span>
           </Link>
         </div>
         <div className="grid gap-12 lg:grid-cols-4 lg:gap-8">
@@ -164,6 +165,12 @@ export function Footer() {
           <p className="mt-8 text-center text-xs text-warmwhite/45">
             © {new Date().getFullYear()} {site.legalName}. All rights reserved.
           </p>
+          <Link
+            href="/privacy"
+            className="mt-3 text-xs text-warmwhite/55 underline decoration-warmwhite/25 underline-offset-4 transition-colors hover:text-gold"
+          >
+            Privacy Policy
+          </Link>
         </div>
       </div>
 

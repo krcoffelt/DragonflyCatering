@@ -133,7 +133,7 @@ export default function HomePage() {
         image={{ src: assets.chefMattPortrait, alt: alt.chefMattPortrait }}
         title="Rooted in craft. Refined by taste."
         body="At Dragonfly, catering is more than a meal — it's a quiet celebration of seasonal food, personal attention, and thoughtful hospitality. Every menu is written for your guests, your setting, and the feeling you want to create."
-        ctaLabel="Read more about us"
+        ctaLabel="Read Matt & Rhiannon's story"
         ctaHref="/about"
       />
 
@@ -150,7 +150,7 @@ export default function HomePage() {
 
       <DrinksMenu
         title="Cocktails, mocktails & thoughtful pairings."
-        lead="From signature cocktails to elevated mocktails, every drink is thoughtfully crafted to complement the flavors of our kitchen."
+        lead="RAMP-certified bartenders serve signature cocktails and elevated mocktails with the same care we bring to the kitchen."
         category="Event bartending"
         items={drinkItems}
         image={{ src: assets.mattAppetizerBoard, alt: alt.mattAppetizerBoard }}
