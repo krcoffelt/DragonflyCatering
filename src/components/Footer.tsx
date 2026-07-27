@@ -165,6 +165,17 @@ export function Footer() {
           <p className="mt-8 text-center text-xs text-warmwhite/45">
             © {new Date().getFullYear()} {site.legalName}. All rights reserved.
           </p>
+          <p className="mt-3 text-center text-xs text-warmwhite/45">
+            Website created by{" "}
+            <a
+              href="https://hometownkc.agency/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-warmwhite/65 underline decoration-warmwhite/25 underline-offset-4 transition-colors hover:text-gold"
+            >
+              Hometown Marketing Agency
+            </a>
+          </p>
           <Link
             href="/privacy"
             className="mt-3 text-xs text-warmwhite/55 underline decoration-warmwhite/25 underline-offset-4 transition-colors hover:text-gold"
