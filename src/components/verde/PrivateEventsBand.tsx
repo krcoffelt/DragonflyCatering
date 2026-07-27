@@ -52,8 +52,7 @@ export function PrivateEventsBand({ title, lead, image, cards }: PrivateEventsBa
               transition={{ duration: 0.55, delay: index * 0.07 }}
               className="border-b border-plum/15 py-7 md:border-b-0 md:px-8 md:first:pl-0 md:last:pr-0"
             >
-              <p className="font-display text-sm text-gold">0{index + 1}</p>
-              <h3 className="mt-5 font-display text-[28px] leading-[1.05] text-plum sm:text-[32px] lg:text-[38px]">
+              <h3 className="font-display text-[28px] leading-[1.05] text-plum sm:text-[32px] lg:text-[38px]">
                 {card.title}
               </h3>
               <p className="mt-4 text-[14px] leading-[22px] text-body">{card.copy}</p>

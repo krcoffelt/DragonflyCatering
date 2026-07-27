@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
@@ -35,35 +36,56 @@ export default function PreferredVenuesPage() {
 
       <section className="bg-ivory pb-20 lg:pb-28">
         <div className="mx-auto max-w-[1280px] px-5 sm:px-8">
-          <ul className="border-t border-plum/15">
+          <ul className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
             {venues.map((venue, i) => (
-              <Reveal key={venue.name} delay={0.03 * (i % 4)}>
-                <li className="grid gap-3 border-b border-plum/15 py-7 sm:grid-cols-[minmax(0,0.8fr)_minmax(0,1.4fr)] sm:gap-10 lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1.25fr)_auto] lg:items-center lg:py-9">
-                  <div>
-                    <h2 className="font-display text-2xl text-plum sm:text-3xl">
-                      {venue.name}
-                    </h2>
-                    <p className="mt-1 text-xs font-semibold uppercase text-[#65704f]">
-                      {venue.location}
-                    </p>
-                  </div>
-                  <p className="max-w-2xl text-sm leading-relaxed text-charcoal/70 sm:text-[15px]">
-                    {venue.description}
-                  </p>
-                  {venue.url && (
-                    <a
-                      href={venue.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[13px] font-semibold text-royal hover:underline"
-                    >
-                      Visit venue site →
-                    </a>
-                  )}
-                </li>
-              </Reveal>
+              <li key={venue.name}>
+                <Reveal delay={0.03 * (i % 6)}>
+                  <a
+                    href={venue.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Visit ${venue.name} website`}
+                    className="group block"
+                  >
+                    <div className="relative aspect-[3/2] overflow-hidden bg-mist">
+                      <Image
+                        src={venue.image}
+                        alt={venue.imageAlt}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.025]"
+                      />
+                      <div
+                        className="absolute inset-0 bg-gradient-to-t from-plum/20 via-transparent to-transparent opacity-70"
+                        aria-hidden
+                      />
+                    </div>
+
+                    <div className="border-t border-plum/15 pt-5">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-[#65704f]">
+                        {venue.location}
+                      </p>
+                      <h2 className="mt-2 font-display text-[28px] leading-[1.05] text-plum sm:text-[32px]">
+                        {venue.name}
+                      </h2>
+                      <p className="mt-3 max-w-md text-sm leading-relaxed text-charcoal/70">
+                        {venue.description}
+                      </p>
+                      <span className="mt-5 inline-flex items-center gap-2 text-[13px] font-semibold text-royal transition-colors group-hover:text-plum">
+                        Visit venue site <span aria-hidden>↗</span>
+                      </span>
+                    </div>
+                  </a>
+                </Reveal>
+              </li>
             ))}
           </ul>
+
+          <p className="mt-14 max-w-2xl border-t border-plum/15 pt-6 text-sm leading-relaxed text-charcoal/65">
+            Venue details and availability can change. Visit each venue&apos;s
+            website for current information, then tell us where you&apos;re
+            gathering.
+          </p>
         </div>
       </section>
 

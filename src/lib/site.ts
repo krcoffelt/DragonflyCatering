@@ -333,7 +333,9 @@ export type Venue = {
   name: string;
   location: string;
   description: string;
-  url?: string;
+  url: string;
+  image: string;
+  imageAlt: string;
   verified: boolean;
 };
 
@@ -343,100 +345,140 @@ export const venues: Venue[] = [
     name: "Beale Manor",
     location: "Parkesburg, PA",
     description:
-      "A stately private manor setting for weddings and milestone celebrations in western Chester County.",
+      "A Victorian mansion with ornate interiors and an intimate ballroom.",
+    url: "https://www.bealemanor.com/",
+    image: "/images/venues/beale.webp",
+    imageAlt: "The candlelit entrance to historic Beale Manor in Parkesburg",
     verified: true,
   },
   {
     name: "Stone Ridge Farm Inn",
     location: "Perkasie, PA",
     description:
-      "A restored Bucks County farm inn with rustic charm for intimate weddings and gatherings.",
+      "A restored Bucks County farm inn with a barn, carriage house, and guest rooms.",
+    url: "https://www.stoneridgefarminn.com/",
+    image: "/images/venues/stone-ridge.webp",
+    imageAlt: "The restored stone barn at Stone Ridge Farm Inn",
     verified: true,
   },
   {
     name: "Work2Gether",
-    location: "Multiple Locations",
+    location: "Downingtown, Kennett Square & Phoenixville",
     description:
-      "Flexible coworking and meeting spaces suited to corporate lunches, workshops, and team events.",
+      "Flexible Chester County spaces for meetings, workshops, and intimate events.",
+    url: "https://www.work2gether.space/",
+    image: "/images/venues/work2gether.webp",
+    imageAlt: "A bright contemporary meeting and event space at Work2Gether",
     verified: true,
   },
   {
     name: "Upland Farm Park",
     location: "Chester Springs, PA",
     description:
-      "A scenic preserved-farm setting for outdoor celebrations and community events.",
+      "A renovated historic barn set within a 56-acre Chester Springs park.",
+    url: "https://www.upperuwchlan-pa.gov/Facilities/Facility/Details/Upland-Farm-Park-26",
+    image: "/images/venues/upland.webp",
+    imageAlt: "The renovated red barn at Upland Farm Park",
     verified: true,
   },
   {
     name: "Lauxmont Farms",
     location: "Wrightsville, PA",
     description:
-      "Sweeping Susquehanna views and formal gardens for weddings and large celebrations.",
-    url: "https://www.lauxmontfarms.com",
+      "Four distinctive settings with sweeping Susquehanna River views.",
+    url: "https://www.lauxmontweddings.com/",
+    image: "/images/venues/lauxmont.webp",
+    imageAlt: "A wedding couple overlooking the Susquehanna River at Lauxmont Farms",
     verified: true,
   },
   {
     name: "Cross Gables Estate",
     location: "Exton, PA",
     description:
-      "A private estate venue close to Downingtown for elegant gatherings of all sizes.",
+      "A European-inspired 19th-century estate for weddings and private events.",
+    url: "https://www.crossgablesestate.com/",
+    image: "/images/venues/cross-gables.webp",
+    imageAlt: "Cross Gables Estate glowing at dusk among mature trees",
     verified: true,
   },
   {
     name: "Westwynd Gardens",
-    location: "Pennsylvania",
+    location: "Honey Brook, PA",
     description:
-      "A garden venue for outdoor ceremonies, showers, and seasonal celebrations.",
+      "A contemporary garden venue with greenhouse architecture and lush grounds.",
+    url: "https://westwyndgardens.com/",
+    image: "/images/venues/westwynd.webp",
+    imageAlt: "An aerial view of Westwynd Gardens and its landscaped grounds",
     verified: true,
   },
   {
     name: "Wyndsor Farms",
     location: "Elverson, PA",
     description:
-      "A countryside farm venue for rustic weddings and relaxed private events.",
+      "An equestrian farm with picturesque indoor and outdoor celebration spaces.",
+    url: "https://wyndsorfarm.com/",
+    image: "/images/venues/wyndsor.webp",
+    imageAlt: "The event barn and green lawn at Wyndsor Farm",
     verified: true,
   },
   {
     name: "Twin Linden Inn",
     location: "Narvon, PA",
     description:
-      "A historic country inn for intimate weddings, rehearsal dinners, and weekend gatherings.",
+      "A historic country inn surrounded by gardens and Lancaster County farmland.",
+    url: "https://www.innattwinlinden.com/",
+    image: "/images/venues/twin-linden.webp",
+    imageAlt: "The white clapboard facade of the Inn at Twin Linden",
     verified: true,
   },
   {
     name: "Wyebrook Farm",
     location: "Honey Brook, PA",
     description:
-      "A working farm setting with pastoral views, well suited to seasonal, locally driven menus.",
+      "A working Honey Brook farm with broad pastoral views and seasonal gatherings.",
+    url: "https://www.wyebrookfarm.com/",
+    image: "/images/venues/wyebrook.webp",
+    imageAlt: "An aerial view of Wyebrook Farm surrounded by fields and woodland",
     verified: true,
   },
   {
-    name: "Greystone Mansion",
+    name: "Graystone Mansion",
     location: "Coatesville, PA",
     description:
-      "A grand stone mansion for formal weddings, galas, and fundraisers.",
+      "A Collegiate Gothic mansion with wood-paneled rooms and a circular drive.",
+    url: "https://www.steelmuseum.org/bookvenue/graystone.cfm",
+    image: "/images/venues/graystone.webp",
+    imageAlt: "Historic Graystone Mansion framed by flowering trees",
     verified: true,
   },
   {
     name: "Blue Heron",
     location: "Malvern, PA",
     description:
-      "An intimate Malvern event space with a warm, refined hospitality feel.",
-    url: "https://www.blueheronmalvern.com",
+      "A curated King Street micro-venue for gatherings of fewer than 100 guests.",
+    url: "https://www.blueheronmalvern.com/",
+    image: "/images/venues/blue-heron.webp",
+    imageAlt: "The light-filled brick interior of Blue Heron in Malvern",
     verified: true,
   },
   {
     name: "Bask Collective",
     location: "Malvern, PA",
     description:
-      "A modern gathering space for showers, brand events, and creative celebrations.",
+      "A design-led Malvern studio for showers, workshops, and private events.",
+    url: "https://www.bask-collective.com/",
+    image: "/images/venues/bask.webp",
+    imageAlt: "The warm modern interior and cafe tables at Bask Collective",
     verified: true,
   },
   {
     name: "White Chimneys",
     location: "Gap, PA",
     description:
-      "A historic estate on the Chester–Lancaster county line for weddings and formal events.",
+      "An early-1700s estate with European gardens and a restored reception barn.",
+    url: "https://whitechimneys.com/",
+    image: "/images/venues/white-chimneys.webp",
+    imageAlt: "The illuminated garden courtyard at White Chimneys Estate",
     verified: true,
   },
 ];

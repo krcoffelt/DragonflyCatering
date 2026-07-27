@@ -49,13 +49,10 @@ export function DrinksMenu({
             <p className="mt-6 max-w-[470px] text-[15px] leading-[25px] text-body">{lead}</p>
 
             <ul className="mt-10 border-t border-plum/15">
-              {items.map((item, index) => (
+              {items.map((item) => (
                 <li key={item.name} className="border-b border-plum/15 py-5">
-                  <div className="flex items-baseline gap-4">
-                    <span className="font-display text-sm text-gold">0{index + 1}</span>
-                    <h3 className="font-display text-xl text-plum">{item.name}</h3>
-                  </div>
-                  <p className="mt-2 pl-9 text-[13px] leading-[20px] text-body">{item.detail}</p>
+                  <h3 className="font-display text-xl text-plum">{item.name}</h3>
+                  <p className="mt-2 text-[13px] leading-[20px] text-body">{item.detail}</p>
                 </li>
               ))}
             </ul>
