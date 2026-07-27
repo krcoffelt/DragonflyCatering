@@ -23,7 +23,7 @@ export function TrustSignal() {
           >
             In their words
           </p>
-          <p className="mt-5 font-display text-[27px] leading-[1.08] text-plum sm:text-[32px] lg:text-[36px]">
+          <p className="mt-5 font-display text-[25px] leading-[1.08] text-plum sm:text-[30px] lg:text-[34px]">
             &ldquo;{trustQuote}&rdquo;
           </p>
         </blockquote>

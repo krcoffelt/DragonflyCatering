@@ -69,7 +69,7 @@ export function ReviewsBand({ title, lead, reviews, ctaLabel, ctaHref }: Reviews
                     exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -10 }}
                     transition={{ duration: reduceMotion ? 0 : 0.36, ease: [0.21, 0.47, 0.32, 0.98] }}
                   >
-                    <p className="max-w-[900px] font-display text-[23px] leading-[1.28] text-plum sm:text-[32px] lg:text-[40px]">
+                    <p className="max-w-[900px] font-display text-[21px] leading-[1.28] text-plum sm:text-[29px] lg:text-[36px]">
                       &ldquo;{activeReview.featuredText ?? activeReview.text}&rdquo;
                     </p>
                     <footer className="mt-7 border-l-2 border-gold pl-4">

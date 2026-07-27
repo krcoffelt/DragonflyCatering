@@ -4,7 +4,7 @@ export const site = {
   name: "Dragonfly Catering",
   legalName: "Dragonfly Catering LLC",
   fullName: "Dragonfly Catering & Event Space",
-  url: "https://www.dragonfly-catering.com",
+  url: "https://dragonfly-catering.com",
   email: "dragonflycatering727@gmail.com",
   phone: "+14849473296",
   phoneDisplay: "(484) 947-3296",

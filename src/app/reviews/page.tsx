@@ -64,7 +64,7 @@ export default function ReviewsPage() {
                   </div>
 
                   <blockquote className="max-w-[850px]">
-                    <p className="font-display text-[25px] leading-[1.18] text-plum sm:text-[30px] lg:text-[34px]">
+                    <p className="font-display text-[23px] leading-[1.18] text-plum sm:text-[28px] lg:text-[32px]">
                       &ldquo;{review.text}&rdquo;
                     </p>
                   </blockquote>
