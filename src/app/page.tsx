@@ -18,7 +18,7 @@ export const metadata: Metadata = buildMetadata({
   title:
     "Dragonfly Catering | Catering in Chester County, PA",
   description:
-    "Chef-led custom catering, private chef dinners, event bartending, and an intimate event space in Downingtown, PA. Serving Chester County and the Main Line. Request a custom proposal.",
+    "Chef-led custom catering, private chef dinners, bartending, and an intimate event space in Downingtown, PA, serving Chester County and the Main Line.",
   path: "/",
 });
 

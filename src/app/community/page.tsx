@@ -11,7 +11,7 @@ import { breadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = buildMetadata({
   title: "Community & Nonprofit Events | Dragonfly Catering, Chester County",
   description:
-    "Dragonfly Catering supports Chester County nonprofits, first responders, healthcare workers, and community programs with fundraiser catering and community event support.",
+    "Dragonfly Catering supports Chester County nonprofits, first responders, healthcare workers, and community programs with fundraiser and event catering.",
   path: "/community",
 });
 

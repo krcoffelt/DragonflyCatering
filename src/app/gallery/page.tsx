@@ -10,7 +10,7 @@ import { galleryPhotos } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "Gallery | Real Food & Events from Dragonfly Catering",
   description:
-    "A gallery of real Dragonfly Catering events — chef-prepared food, private dinners, engagement parties, and gatherings across Downingtown and Chester County. No stock photography.",
+    "See real Dragonfly Catering events, including chef-prepared food, private dinners, engagement parties, and gatherings across Chester County, PA.",
   path: "/gallery",
 });
 

@@ -5,9 +5,9 @@ import { assets, alt } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
   title:
-    "Social Event Catering in Downingtown & Chester County | Dragonfly Catering",
+    "Social Event Catering | Dragonfly Catering",
   description:
-    "Catering for birthdays, anniversaries, celebrations of life, engagement parties, holiday events, and family gatherings across Downingtown, Chester County, and the Main Line.",
+    "Catering for birthdays, anniversaries, celebrations of life, engagement parties, holiday events, and family gatherings across Chester County.",
   path: "/social-events",
 });
 

@@ -14,7 +14,7 @@ import { site, assets, alt } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
   title: "Private Event Space in Downingtown, PA | Dragonfly Catering",
-  description: `An intimate private event space at ${site.address.street} in Downingtown, PA for gatherings up to ${site.eventSpaceCapacity} guests — showers, tea parties, classes, workshops, corporate meetings, and private dinners.`,
+  description: `Host up to ${site.eventSpaceCapacity} guests at our intimate Downingtown event space for showers, tea parties, classes, workshops, meetings, and private dinners.`,
   path: "/dragonfly-event-space",
 });
 

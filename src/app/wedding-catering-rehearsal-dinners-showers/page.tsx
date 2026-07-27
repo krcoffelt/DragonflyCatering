@@ -5,9 +5,9 @@ import { assets, alt } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
   title:
-    "Wedding Catering, Rehearsal Dinners & Showers in Chester County | Dragonfly Catering",
+    "Wedding Catering in Chester County | Dragonfly Catering",
   description:
-    "Personal wedding catering, rehearsal dinners, bridal showers, and post-wedding brunches across Downingtown, Chester County, and the Main Line — with custom menus and warm, chef-led service.",
+    "Personal wedding catering, rehearsal dinners, bridal showers, and post-wedding brunches in Chester County and the Main Line, with custom menus.",
   path: "/wedding-catering-rehearsal-dinners-showers",
 });
 

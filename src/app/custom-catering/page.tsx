@@ -4,9 +4,9 @@ import { buildMetadata } from "@/lib/seo";
 import { assets, alt } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Custom Catering in Downingtown & Chester County | Dragonfly Catering",
+  title: "Custom Catering in Chester County | Dragonfly Catering",
   description:
-    "Chef-led custom catering for weddings, showers, corporate events, fundraisers, and celebrations across Downingtown, Chester County, and the Main Line. Every menu written for your event.",
+    "Chef-led custom catering for weddings, showers, corporate events, fundraisers, and celebrations across Chester County and the Main Line.",
   path: "/custom-catering",
 });
 

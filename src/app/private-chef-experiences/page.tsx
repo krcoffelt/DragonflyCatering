@@ -6,7 +6,7 @@ import { assets, alt } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "Private Chef Experiences in Downingtown & Chester County",
   description:
-    "Enjoy a restaurant-quality dinner at home, prepared and plated by Chef Matt. Private chef tasting dinners, pairing menus, date nights, and milestone celebrations across Chester County and the Main Line.",
+    "Enjoy an in-home dinner prepared and plated by Chef Matt, from tasting and pairing menus to date nights and milestone celebrations across Chester County.",
   path: "/private-chef-experiences",
 });
 

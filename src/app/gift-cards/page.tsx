@@ -11,7 +11,7 @@ import { breadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = buildMetadata({
   title: "Gift Cards | Give a Dragonfly Catering Experience",
   description:
-    "Give the gift of a private chef dinner, a date night at home, or a catered celebration. Dragonfly Catering gift cards for food lovers in Downingtown and Chester County.",
+    "Give a private chef dinner, date night at home, or catered celebration with a Dragonfly Catering gift card for food lovers in Chester County.",
   path: "/gift-cards",
 });
 

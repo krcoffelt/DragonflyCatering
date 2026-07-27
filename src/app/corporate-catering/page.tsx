@@ -5,9 +5,9 @@ import { assets, alt } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
   title:
-    "Corporate Catering in Chester County & the Main Line | Dragonfly Catering",
+    "Corporate Catering in Chester County | Dragonfly Catering",
   description:
-    "Corporate catering for board dinners, client appreciation, retreats, team celebrations, and nonprofit events across Downingtown, Chester County, and the Main Line.",
+    "Corporate catering for board dinners, client events, retreats, team celebrations, and nonprofit gatherings across Chester County and the Main Line.",
   path: "/corporate-catering",
 });
 

@@ -11,9 +11,9 @@ import { assets, alt, site } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
   title:
-    "Catering, Private Chef & Event Bartending in Chester County | Dragonfly Catering",
+    "Catering Services in Chester County | Dragonfly Catering",
   description:
-    "Explore Dragonfly Catering's services: custom catering, private chef experiences, event bartending, an intimate Downingtown event space, preferred venue catering, and community events.",
+    "Explore custom catering, private chef experiences, event bartending, our Downingtown event space, preferred venues, gift cards, and community events.",
   path: "/services",
 });
 

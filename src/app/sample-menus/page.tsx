@@ -12,7 +12,7 @@ import { menuCategories } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "Sample Catering Menus | Dragonfly Catering",
   description:
-    "Browse sample menus from Dragonfly Catering — weddings, corporate events, private chef dinners, showers, cocktail parties, and seasonal gatherings. Every proposal is customized to your event.",
+    "Browse custom menus for weddings, corporate events, private chef dinners, showers, cocktail parties, and seasonal gatherings from Dragonfly Catering.",
   path: "/sample-menus",
 });
 

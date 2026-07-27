@@ -5,7 +5,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Event Bartending & Mobile Bar Service in Chester County",
   description:
-    "RAMP-certified event bartending across Downingtown, Chester County, and the Main Line with signature cocktails, elevated mocktails, portable bar setup, and polished service.",
+    "RAMP-certified event bartending in Chester County and the Main Line, with signature cocktails, elevated mocktails, portable bars, and polished service.",
   path: "/event-bartending",
 });
 

@@ -11,9 +11,9 @@ import { breadcrumbSchema } from "@/lib/schema";
 import { venues } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Preferred Catering Venues in Chester County, Main Line & Nearby PA",
+  title: "Preferred Catering Venues | Chester County, PA",
   description:
-    "Dragonfly Catering partners with venues across Chester County, the Main Line, and nearby Pennsylvania — from farm estates to intimate event spaces. Browse preferred venues or bring us to yours.",
+    "Browse Dragonfly Catering's preferred venues across Chester County, the Main Line, and nearby Pennsylvania, from farm estates to intimate event spaces.",
   path: "/preferred-venues",
 });
 

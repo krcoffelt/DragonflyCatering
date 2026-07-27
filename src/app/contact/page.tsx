@@ -9,7 +9,7 @@ import { breadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = buildMetadata({
   title: "Request a Custom Proposal | Dragonfly Catering, Downingtown PA",
   description:
-    "Tell Dragonfly Catering about your event — date, guest count, location, and vision — and Chef Matt will shape a custom proposal for catering, private chef dinners, bartending, or the Downingtown event space.",
+    "Tell Dragonfly Catering about your date, guest count, location, and vision. Request a custom proposal from Chef Matt for your Downingtown-area event.",
   path: "/contact",
 });
 
