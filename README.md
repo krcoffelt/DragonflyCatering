@@ -27,9 +27,8 @@ npm run start   # serve production build
   differentiators.
 - `src/lib/seo.ts` / `src/lib/schema.ts` — per-page metadata and JSON-LD
   (Caterer, Service, FAQ, Breadcrumb).
-- `src/lib/analytics.ts` — GA4/GTM placeholder. Set
-  `NEXT_PUBLIC_GA_MEASUREMENT_ID` to activate; CTA/form/email/menu events
-  are already wired.
+- `src/lib/analytics.ts` — GA4 configuration and the shared
+  CTA/form/email/menu event helpers.
 - `src/components/` — reusable UI (Header, Footer, ServiceCard, PageHero,
   ServicePage template, GalleryGrid, ProposalForm, etc.).
 - `public/__forms.html` — static Netlify Forms detection markup for the shared

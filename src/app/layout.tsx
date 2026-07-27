@@ -92,7 +92,7 @@ export default function RootLayout({
           Skip to main content
         </a>
         <JsonLd data={[catererSchema(), websiteSchema()]} />
-        {/* Analytics placeholder — set NEXT_PUBLIC_GA_MEASUREMENT_ID to activate GA4. */}
+        {/* Google Analytics 4 */}
         {GA_MEASUREMENT_ID && (
           <>
             <Script

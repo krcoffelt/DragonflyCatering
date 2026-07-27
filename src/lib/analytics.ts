@@ -1,10 +1,9 @@
 /**
- * Analytics placeholder — GA4/GTM is not yet configured.
- * Set NEXT_PUBLIC_GA_MEASUREMENT_ID (e.g. "G-XXXXXXXXXX") to enable GA4.
+ * Dragonfly Catering's GA4 property.
  * Events are pushed to window.dataLayer so GTM can also consume them.
  */
 
-export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "";
+export const GA_MEASUREMENT_ID = "G-C4TQR2M23G";
 
 type EventParams = Record<string, string | number | boolean | undefined>;
 
