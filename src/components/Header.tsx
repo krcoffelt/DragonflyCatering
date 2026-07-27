@@ -5,9 +5,8 @@ import { createPortal } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { AnimatePresence, motion } from "framer-motion";
 import { assets, site } from "@/lib/site";
-import { events } from "@/lib/analytics";
+import { analyticsDataAttributes } from "@/lib/analytics";
 import { NavPill, PrimaryButton } from "./verde/VerdePrimitives";
 
 const navLinks = [
@@ -135,6 +134,7 @@ export function Header() {
               height={135}
               loading="eager"
               fetchPriority="high"
+              sizes="(min-width: 1024px) 162px, (min-width: 640px) 146px, 131px"
               className="h-[34px] w-auto invert sm:h-[38px] lg:h-[42px]"
             />
           </Link>
@@ -188,16 +188,11 @@ export function Header() {
 
       {typeof document !== "undefined" &&
         createPortal(
-          <AnimatePresence>
-            {open && (
-              <motion.div
+          open ? (
+              <div
                 ref={mobileNavigationRef}
                 id="mobile-navigation"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.25 }}
-                className="fixed inset-x-0 bottom-0 top-[88px] z-40 overflow-y-auto overscroll-contain bg-plum lg:hidden"
+                className="mobile-menu-enter fixed inset-x-0 bottom-0 top-[88px] z-40 overflow-y-auto overscroll-contain bg-plum lg:hidden"
               >
                 <nav
                   aria-label="Mobile navigation"
@@ -205,11 +200,10 @@ export function Header() {
                 >
                   <div className="divide-y divide-warmwhite/12 border-y border-warmwhite/12">
                     {[{ label: "Home", href: "/" }, ...navLinks].map((link, index) => (
-                      <motion.div
+                      <div
                         key={link.href}
-                        initial={{ opacity: 0, x: -14 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.035, duration: 0.28 }}
+                        className="mobile-menu-link-enter"
+                        style={{ animationDelay: `${index * 0.035}s` }}
                       >
                         <Link
                           ref={index === 0 ? firstMobileLinkRef : undefined}
@@ -225,17 +219,18 @@ export function Header() {
                             ↗
                           </span>
                         </Link>
-                      </motion.div>
+                      </div>
                     ))}
                   </div>
 
                   <div className="mt-auto pt-10">
                     <Link
                       href="/contact"
-                      onClick={() => {
-                        setOpen(false);
-                        events.ctaClick(site.primaryCta, "mobile-menu");
-                      }}
+                      onClick={() => setOpen(false)}
+                      {...analyticsDataAttributes("cta_click", {
+                        ctaLabel: site.primaryCta,
+                        ctaLocation: "mobile-menu",
+                      })}
                       className="block bg-gold px-6 py-4 text-center text-[15px] font-semibold text-plum"
                     >
                       {site.primaryCta}
@@ -245,9 +240,8 @@ export function Header() {
                     </p>
                   </div>
                 </nav>
-              </motion.div>
-            )}
-          </AnimatePresence>,
+              </div>
+            ) : null,
           document.body,
         )}
     </>

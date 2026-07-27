@@ -1,6 +1,5 @@
-"use client";
-
 import Image from "next/image";
+import { MobileOptimizedImage } from "@/components/MobileOptimizedImage";
 
 type GallerySlide = {
   src: string;
@@ -15,30 +14,72 @@ function GalleryRibbonGroup({
   slides: GallerySlide[];
   duplicate?: boolean;
 }) {
+  const sizesByAspect = {
+    portrait: {
+      mobile: "185px",
+      widths: [192, 384, 560],
+      desktop:
+        "(min-width: 1280px) 315px, (min-width: 1024px) 285px, 225px",
+    },
+    square: {
+      mobile: "250px",
+      widths: [256, 480, 750],
+      desktop:
+        "(min-width: 1280px) 420px, (min-width: 1024px) 380px, 300px",
+    },
+    landscape: {
+      mobile: "335px",
+      widths: [320, 640, 1080],
+      desktop:
+        "(min-width: 1280px) 560px, (min-width: 1024px) 500px, 400px",
+    },
+  } as const;
+
   return (
     <div className="flex shrink-0 gap-3 pr-3 sm:gap-4 sm:pr-4 lg:gap-5 lg:pr-5" aria-hidden={duplicate || undefined}>
-      {slides.map((slide, index) => (
-        <figure
-          key={`${duplicate ? "duplicate" : "original"}-${slide.src}`}
-          className={`relative h-[250px] shrink-0 overflow-hidden bg-mist sm:h-[300px] lg:h-[380px] xl:h-[420px] ${
-            slide.aspect === "portrait"
-              ? "w-[185px] sm:w-[225px] lg:w-[285px] xl:w-[315px]"
-              : slide.aspect === "square"
-                ? "w-[250px] sm:w-[300px] lg:w-[380px] xl:w-[420px]"
-                : "w-[335px] sm:w-[400px] lg:w-[500px] xl:w-[560px]"
-          }`}
-        >
-          <Image
-            src={slide.src}
-            alt={duplicate ? "" : slide.alt}
-            fill
-            loading={index < 2 ? "eager" : "lazy"}
-            sizes="(min-width: 1280px) 560px, (min-width: 1024px) 500px, (min-width: 640px) 400px, 335px"
-            className="object-cover transition-transform duration-700 ease-out hover:scale-[1.025]"
-          />
-          {!duplicate && <figcaption className="sr-only">{slide.alt}</figcaption>}
-        </figure>
-      ))}
+      {slides.map((slide) => {
+        const aspect = slide.aspect ?? "landscape";
+        const responsiveSizes = sizesByAspect[aspect];
+
+        return (
+          <figure
+            key={`${duplicate ? "duplicate" : "original"}-${slide.src}`}
+            className={`relative h-[250px] shrink-0 overflow-hidden bg-mist sm:h-[300px] lg:h-[380px] xl:h-[420px] ${
+              aspect === "portrait"
+                ? "w-[185px] sm:w-[225px] lg:w-[285px] xl:w-[315px]"
+                : aspect === "square"
+                  ? "w-[250px] sm:w-[300px] lg:w-[380px] xl:w-[420px]"
+                  : "w-[335px] sm:w-[400px] lg:w-[500px] xl:w-[560px]"
+            }`}
+          >
+            {duplicate ? (
+              <Image
+                src={slide.src}
+                alt=""
+                fill
+                loading="lazy"
+                sizes={responsiveSizes.desktop}
+                quality={75}
+                className="object-cover transition-transform duration-700 ease-out hover:scale-[1.025]"
+              />
+            ) : (
+              <MobileOptimizedImage
+                src={slide.src}
+                alt={slide.alt}
+                fill
+                loading="lazy"
+                mobileSizes={responsiveSizes.mobile}
+                mobileWidths={responsiveSizes.widths}
+                sizes={responsiveSizes.desktop}
+                className="object-cover transition-transform duration-700 ease-out hover:scale-[1.025]"
+              />
+            )}
+            {!duplicate && (
+              <figcaption className="sr-only">{slide.alt}</figcaption>
+            )}
+          </figure>
+        );
+      })}
     </div>
   );
 }

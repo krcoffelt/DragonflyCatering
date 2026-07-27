@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -10,10 +8,9 @@ import {
   getMapSearchUrl,
   site,
 } from "@/lib/site";
-import { events } from "@/lib/analytics";
+import { analyticsDataAttributes } from "@/lib/analytics";
 
 export function Footer() {
-  const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
   const address = getFullAddress();
   const mapUrl = getMapSearchUrl();
 
@@ -29,7 +26,10 @@ export function Footer() {
           </div>
           <Link
             href="/contact"
-            onClick={() => events.ctaClick(site.primaryCta, "footer")}
+            {...analyticsDataAttributes("cta_click", {
+              ctaLabel: site.primaryCta,
+              ctaLocation: "footer",
+            })}
             className="inline-flex min-h-12 items-center justify-center bg-gold px-5 py-3 text-[14px] font-semibold text-plum transition-colors hover:bg-warmwhite"
           >
             {site.primaryCta} <span className="ml-2" aria-hidden>↗</span>
@@ -93,7 +93,7 @@ export function Footer() {
               {site.phoneDisplay && site.phone ? (
                 <a
                   href={`tel:${site.phone}`}
-                  onClick={() => events.phoneClick()}
+                  {...analyticsDataAttributes("phone_click")}
                   className="block transition-colors hover:text-gold"
                 >
                   {site.phoneDisplay}
@@ -104,7 +104,7 @@ export function Footer() {
               <p>Consultations & tastings</p>
               <a
                 href={`mailto:${site.email}`}
-                onClick={() => events.emailClick()}
+                {...analyticsDataAttributes("email_click")}
                 className="block transition-colors hover:text-gold"
               >
                 {site.email}
@@ -160,12 +160,13 @@ export function Footer() {
             alt="Dragonfly Catering logo"
             width={420}
             height={277}
+            sizes="97px"
             className="h-16 w-auto invert"
           />
-          <p className="mt-8 text-center text-xs text-warmwhite/45">
+          <p className="mt-8 text-center text-xs text-warmwhite/70 sm:text-warmwhite/45">
             © {new Date().getFullYear()} {site.legalName}. All rights reserved.
           </p>
-          <p className="mt-3 text-center text-xs text-warmwhite/45">
+          <p className="mt-3 text-center text-xs text-warmwhite/70 sm:text-warmwhite/45">
             Website created by{" "}
             <a
               href="https://hometownkc.agency/"
@@ -186,14 +187,13 @@ export function Footer() {
       </div>
 
       <div className="flex justify-center">
-        <button
-          type="button"
-          onClick={scrollTop}
+        <a
+          href="#top"
           aria-label="Back to top"
           className="mb-0 flex h-12 w-24 items-start justify-center border-t border-x border-warmwhite/15 bg-warmwhite/5 pt-3 text-warmwhite transition-colors hover:text-gold"
         >
           <span aria-hidden>↑</span>
-        </button>
+        </a>
       </div>
     </footer>
   );

@@ -1,5 +1,3 @@
-"use client";
-
 import { PrimaryButton, SectionReveal } from "./VerdePrimitives";
 import { getFullAddress, getMapSearchUrl, site } from "@/lib/site";
 
@@ -13,7 +11,7 @@ export function FinalTableCta({ title }: FinalTableCtaProps) {
 
   return (
     <section data-sticky-cta-exclude className="relative overflow-hidden bg-plum py-24 text-warmwhite sm:py-32 lg:py-44">
-      <div className="absolute inset-x-0 top-0 overflow-hidden text-center font-display text-[18vw] leading-none text-warmwhite/[0.025]" aria-hidden>
+      <div className="absolute inset-x-0 top-0 hidden overflow-hidden text-center font-display text-[18vw] leading-none text-warmwhite/[0.025] sm:block" aria-hidden>
         Dragonfly
       </div>
       <div className="vv-container relative">

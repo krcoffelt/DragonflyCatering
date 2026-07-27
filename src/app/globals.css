@@ -252,6 +252,81 @@ textarea.field {
   }
 }
 
+@keyframes hero-media-zoom {
+  from {
+    transform: scale(1.045);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes hero-copy-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(36px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes review-enter {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mobile-menu-enter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes mobile-menu-link-enter {
+  from {
+    opacity: 0;
+    transform: translateX(-14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hero-media {
+  animation: hero-media-zoom 1.8s cubic-bezier(0.21, 0.47, 0.32, 0.98) both;
+}
+
+.review-enter {
+  animation: review-enter 0.36s cubic-bezier(0.21, 0.47, 0.32, 0.98) both;
+}
+
+.mobile-menu-enter {
+  animation: mobile-menu-enter 0.25s ease-out both;
+}
+
+.mobile-menu-link-enter {
+  animation: mobile-menu-link-enter 0.28s ease-out both;
+}
+
+/* Mobile copy stays visible in the initial HTML to avoid hydration-delayed LCP. */
+@media (min-width: 640px) {
+  .hero-copy {
+    animation: hero-copy-reveal 0.9s 0.15s
+      cubic-bezier(0.21, 0.47, 0.32, 0.98) both;
+  }
+}
+
 .gallery-ribbon-track {
   animation: gallery-ribbon-scroll 68s linear infinite;
   will-change: transform;
@@ -289,5 +364,14 @@ textarea.field {
   .gallery-ribbon-track {
     animation: none !important;
     transform: none !important;
+  }
+  .hero-copy,
+  .hero-media,
+  .review-enter {
+    animation: none !important;
+  }
+  .mobile-menu-enter,
+  .mobile-menu-link-enter {
+    animation: none !important;
   }
 }

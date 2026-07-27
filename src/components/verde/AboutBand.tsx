@@ -1,6 +1,4 @@
-"use client";
-
-import Image from "next/image";
+import { MobileOptimizedImage } from "@/components/MobileOptimizedImage";
 import { chefAccolades } from "@/lib/site";
 import { PrimaryButton, SectionReveal } from "./VerdePrimitives";
 
@@ -18,10 +16,12 @@ export function AboutBand({ image, title, body, ctaLabel, ctaHref }: AboutBandPr
       <div className="vv-container grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
         <SectionReveal className="relative">
           <div className="relative aspect-[4/5] overflow-hidden bg-mist sm:aspect-[5/6]">
-            <Image
+            <MobileOptimizedImage
               src={image.src}
               alt={image.alt}
               fill
+              mobileSizes="100vw"
+              mobileWidths={[640, 828, 1080]}
               sizes="(max-width: 1024px) 100vw, 42vw"
               className="object-cover object-center"
             />

@@ -5,6 +5,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { MobileStickyCta } from "@/components/MobileStickyCta";
+import { AnalyticsTracker } from "@/components/AnalyticsTracker";
 import { JsonLd } from "@/components/JsonLd";
 import { catererSchema, websiteSchema } from "@/lib/schema";
 import { GA_MEASUREMENT_ID } from "@/lib/analytics";
@@ -84,7 +85,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${fraunces.variable} ${dmSans.variable} h-full`}>
-      <body className="flex min-h-full flex-col">
+      <body id="top" className="flex min-h-full flex-col">
         <a
           href="#main-content"
           className="fixed left-4 top-4 z-[100] -translate-y-24 bg-warmwhite px-4 py-3 text-sm font-semibold text-plum shadow-lg transition-transform focus:translate-y-0"
@@ -92,14 +93,15 @@ export default function RootLayout({
           Skip to main content
         </a>
         <JsonLd data={[catererSchema(), websiteSchema()]} />
+        <AnalyticsTracker />
         {/* Google Analytics 4 */}
         {GA_MEASUREMENT_ID && (
           <>
             <Script
               src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-              strategy="afterInteractive"
+              strategy="lazyOnload"
             />
-            <Script id="ga4-init" strategy="afterInteractive">
+            <Script id="ga4-init" strategy="lazyOnload">
               {`window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());

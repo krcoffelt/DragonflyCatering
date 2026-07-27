@@ -7,6 +7,13 @@ export const GA_MEASUREMENT_ID = "G-C4TQR2M23G";
 
 type EventParams = Record<string, string | number | boolean | undefined>;
 
+export type AnalyticsDataAttributes = {
+  "data-analytics-event": string;
+  "data-cta-label"?: string;
+  "data-cta-location"?: string;
+  "data-menu-name"?: string;
+};
+
 declare global {
   interface Window {
     dataLayer?: unknown[];
@@ -21,6 +28,22 @@ export function track(event: string, params: EventParams = {}) {
   if (typeof window.gtag === "function") {
     window.gtag("event", event, params);
   }
+}
+
+export function analyticsDataAttributes(
+  event: string,
+  params: {
+    ctaLabel?: string;
+    ctaLocation?: string;
+    menuName?: string;
+  } = {},
+): AnalyticsDataAttributes {
+  return {
+    "data-analytics-event": event,
+    "data-cta-label": params.ctaLabel,
+    "data-cta-location": params.ctaLocation,
+    "data-menu-name": params.menuName,
+  };
 }
 
 export const events = {

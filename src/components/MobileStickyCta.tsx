@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { events } from "@/lib/analytics";
+import { analyticsDataAttributes } from "@/lib/analytics";
 import { site } from "@/lib/site";
 
 /** A compact mobile CTA that appears on upward scroll and clears reading/CTA zones. */
@@ -49,7 +49,10 @@ export function MobileStickyCta() {
     >
       <Link
         href="/contact"
-        onClick={() => events.ctaClick(site.primaryCta, "mobile-sticky")}
+        {...analyticsDataAttributes("cta_click", {
+          ctaLabel: site.primaryCta,
+          ctaLocation: "mobile-sticky",
+        })}
         className="flex min-h-12 items-center bg-gold px-5 py-3 text-[13px] font-semibold text-plum shadow-[0_10px_28px_rgba(31,26,28,0.28)]"
       >
         {site.primaryCta} <span className="ml-2" aria-hidden>↗</span>

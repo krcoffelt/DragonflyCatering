@@ -1,6 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  images: {
+    imageSizes: [96, 128, 192, 256, 320, 384, 480, 560],
+    qualities: [65, 75],
+  },
   async redirects() {
     return [
       {

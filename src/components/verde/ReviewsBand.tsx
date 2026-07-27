@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import type { ClientReview } from "@/lib/reviews";
 import { SectionReveal, StarIcon, TextLink } from "./VerdePrimitives";
 
@@ -15,7 +14,6 @@ type ReviewsBandProps = {
 
 export function ReviewsBand({ title, lead, reviews, ctaLabel, ctaHref }: ReviewsBandProps) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const reduceMotion = useReducedMotion();
   const activeReview = reviews[activeIndex];
 
   function showPrevious() {
@@ -51,7 +49,7 @@ export function ReviewsBand({ title, lead, reviews, ctaLabel, ctaHref }: Reviews
                     <StarIcon key={index} className="h-4 w-4" />
                   ))}
                 </div>
-                <p className="text-right text-[10px] font-semibold uppercase text-charcoal/60 sm:text-[11px]">
+                <p className="text-right text-[10px] font-semibold uppercase text-charcoal/75 sm:text-[11px] sm:text-charcoal/60">
                   Real words from our clients
                 </p>
               </div>
@@ -61,14 +59,10 @@ export function ReviewsBand({ title, lead, reviews, ctaLabel, ctaHref }: Reviews
                 aria-live="polite"
                 aria-atomic="true"
               >
-                <AnimatePresence mode="wait" initial={false}>
-                  <motion.blockquote
-                    key={activeReview.id}
-                    initial={reduceMotion ? false : { opacity: 0, y: 14 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -10 }}
-                    transition={{ duration: reduceMotion ? 0 : 0.36, ease: [0.21, 0.47, 0.32, 0.98] }}
-                  >
+                <blockquote
+                  key={activeReview.id}
+                  className="review-enter"
+                >
                     <p className="max-w-[900px] font-display text-[21px] leading-[1.28] text-plum sm:text-[29px] lg:text-[36px]">
                       &ldquo;{activeReview.featuredText ?? activeReview.text}&rdquo;
                     </p>
@@ -82,8 +76,7 @@ export function ReviewsBand({ title, lead, reviews, ctaLabel, ctaHref }: Reviews
                         </span>
                       </cite>
                     </footer>
-                  </motion.blockquote>
-                </AnimatePresence>
+                </blockquote>
               </div>
 
               <div className="mt-6 flex items-center gap-4 border-t border-plum/12 pt-5 sm:gap-5">
@@ -111,17 +104,17 @@ export function ReviewsBand({ title, lead, reviews, ctaLabel, ctaHref }: Reviews
                 <div className="flex flex-1 gap-2" aria-hidden>
                   {reviews.map((review, index) => (
                     <span key={review.id} className="h-px flex-1 bg-plum/18">
-                      <motion.span
-                        className="block h-px bg-royal"
-                        animate={{ scaleX: index === activeIndex ? 1 : 0 }}
+                      <span
+                        className={`block h-px bg-royal transition-transform duration-300 ${
+                          index === activeIndex ? "scale-x-100" : "scale-x-0"
+                        }`}
                         style={{ transformOrigin: "left" }}
-                        transition={{ duration: reduceMotion ? 0 : 0.3 }}
                       />
                     </span>
                   ))}
                 </div>
 
-                <p className="min-w-[42px] text-right font-display text-base text-charcoal/60 sm:text-lg">
+                <p className="min-w-[42px] text-right font-display text-base text-charcoal/75 sm:text-lg sm:text-charcoal/60">
                   {activeIndex + 1} / {reviews.length}
                 </p>
               </div>

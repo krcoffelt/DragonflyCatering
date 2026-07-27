@@ -1,6 +1,4 @@
-"use client";
-
-import Image from "next/image";
+import { MobileOptimizedImage } from "@/components/MobileOptimizedImage";
 import { PrimaryButton, SectionReveal } from "./VerdePrimitives";
 import type { MenuItem } from "./MenuBand";
 
@@ -27,10 +25,12 @@ export function DrinksMenu({
     <section className="bg-ivory">
       <div className="grid lg:min-h-[820px] lg:grid-cols-[1.08fr_0.92fr]">
         <SectionReveal className="relative min-h-[520px] lg:min-h-full">
-          <Image
+          <MobileOptimizedImage
             src={image.src}
             alt={image.alt}
             fill
+            mobileSizes="100vw"
+            mobileWidths={[640, 828, 1080]}
             sizes="(max-width: 1024px) 100vw, 55vw"
             className="object-cover"
           />

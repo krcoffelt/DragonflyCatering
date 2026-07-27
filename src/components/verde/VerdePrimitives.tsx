@@ -1,8 +1,5 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { events } from "@/lib/analytics";
+import { analyticsDataAttributes } from "@/lib/analytics";
 
 export function StarIcon({ className = "h-4 w-4" }: { className?: string }) {
   return (
@@ -46,19 +43,16 @@ export function NavPill({
   children,
   accent = false,
   current = false,
-  onClick,
 }: {
   href: string;
   children: React.ReactNode;
   accent?: boolean;
   current?: boolean;
-  onClick?: () => void;
 }) {
   return (
     <Link
       href={href}
       aria-current={current ? "page" : undefined}
-      onClick={onClick}
       className={`group relative inline-flex px-3 py-2 transition-colors duration-300 ${
         accent
           ? "text-gold hover:text-warmwhite"
@@ -94,7 +88,10 @@ export function PrimaryButton({
   return (
     <Link
       href={href}
-      onClick={() => events.ctaClick(String(children), location)}
+      {...analyticsDataAttributes("cta_click", {
+        ctaLabel: String(children),
+        ctaLocation: location,
+      })}
       className={`group inline-flex min-h-12 items-center gap-2 px-[18px] py-[12px] text-[14px] font-semibold transition-all duration-300 ${styles} ${className}`}
     >
       <ArrowIcon className="h-3 w-3 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -123,7 +120,10 @@ export function TextLink({
   return (
     <Link
       href={href}
-      onClick={() => events.ctaClick(String(children), location)}
+      {...analyticsDataAttributes("cta_click", {
+        ctaLabel: String(children),
+        ctaLocation: location,
+      })}
       className={`group inline-flex items-center gap-2 text-[15px] font-medium ${color}`}
     >
       <ArrowIcon className="h-3 w-3 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -140,23 +140,12 @@ export function TextLink({
 export function SectionReveal({
   children,
   className = "",
-  delay = 0,
 }: {
   children: React.ReactNode;
   className?: string;
   delay?: number;
 }) {
-  return (
-    <motion.div
-      initial={false}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.7, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  );
+  return <div className={className}>{children}</div>;
 }
 
 export function TrustBadge({

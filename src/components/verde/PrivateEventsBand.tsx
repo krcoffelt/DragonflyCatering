@@ -1,8 +1,5 @@
-"use client";
-
-import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { MobileOptimizedImage } from "@/components/MobileOptimizedImage";
 import { SectionReveal } from "./VerdePrimitives";
 
 export type EventCard = {
@@ -32,10 +29,12 @@ export function PrivateEventsBand({ title, lead, image, cards }: PrivateEventsBa
           </SectionReveal>
 
           <SectionReveal delay={0.1} className="relative aspect-[5/4] overflow-hidden bg-mist sm:aspect-[16/10]">
-            <Image
+            <MobileOptimizedImage
               src={image.src}
               alt={image.alt}
               fill
+              mobileSizes="100vw"
+              mobileWidths={[640, 828, 1080]}
               sizes="(max-width: 1024px) 100vw, 58vw"
               className="object-cover object-[center_32%]"
             />
@@ -43,13 +42,9 @@ export function PrivateEventsBand({ title, lead, image, cards }: PrivateEventsBa
         </div>
 
         <div className="mt-12 grid border-t border-plum/15 md:grid-cols-3 md:divide-x md:divide-plum/15">
-          {cards.map((card, index) => (
-            <motion.article
+          {cards.map((card) => (
+            <article
               key={card.href}
-              initial={false}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.55, delay: index * 0.07 }}
               className="border-b border-plum/15 py-7 md:border-b-0 md:px-8 md:first:pl-0 md:last:pr-0"
             >
               <h3 className="font-display text-[28px] leading-[1.05] text-plum sm:text-[32px] lg:text-[38px]">
@@ -58,11 +53,12 @@ export function PrivateEventsBand({ title, lead, image, cards }: PrivateEventsBa
               <p className="mt-4 text-[14px] leading-[22px] text-body">{card.copy}</p>
               <Link
                 href={card.href}
+                aria-label={`Explore ${card.title}`}
                 className="mt-6 inline-flex items-center gap-2 text-[13px] font-semibold text-royal transition-colors hover:text-plum"
               >
                 Explore <span aria-hidden>↗</span>
               </Link>
-            </motion.article>
+            </article>
           ))}
         </div>
       </div>

@@ -1,5 +1,3 @@
-"use client";
-
 import { PrimaryButton, SectionReveal } from "./VerdePrimitives";
 
 export type MenuItem = {
