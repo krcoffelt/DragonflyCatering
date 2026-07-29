@@ -483,104 +483,62 @@ export const venues: Venue[] = [
   },
 ];
 
-export type MenuCategory = {
+export type SampleMenu = {
+  category: string;
   title: string;
   description: string;
-  items: string[];
+  href: string;
+  pageCount: number;
 };
 
-/**
- * High-level service styles only. Client-approved menu PDFs will replace these
- * summaries when they are supplied.
- */
-export const menuCategories: MenuCategory[] = [
+export const sampleMenus: SampleMenu[] = [
   {
-    title: "Weddings & Rehearsal Dinners",
+    category: "Showers & brunches",
+    title: "Showers, Brunches & Private Dinners",
     description:
-      "Plated, family-style, or stationed dinners built around your ceremony, venue, and guest count.",
-    items: [
-      "Passed hors d'oeuvres & welcome bites",
-      "Seasonal plated dinner courses",
-      "Family-style shared platters",
-      "Late-night comfort food stations",
-    ],
+      "Sixteen real menus spanning baby showers, milestone birthdays, mocktail bars, seasonal dinners, and chef-led celebrations.",
+    href: "/sample-menus/showers-brunches-private-dinners-sample-menus.pdf",
+    pageCount: 16,
   },
   {
-    title: "Corporate Events",
+    category: "Social & community events",
+    title: "Celebrations & Community Events",
     description:
-      "Polished breakfasts, lunches, and board dinners that make the host look good.",
-    items: [
-      "Executive breakfast & brunch spreads",
-      "Composed lunch service",
-      "Client-dinner tasting menus",
-      "Reception-style hors d'oeuvres",
-    ],
+      "Twenty-three menus for graduations, weddings, BBQs, teacher appreciation, holiday gatherings, and community tables.",
+    href: "/sample-menus/graduations-bbq-social-events-sample-menus.pdf",
+    pageCount: 23,
   },
   {
-    title: "Private Chef Dinners",
+    category: "Supper club",
+    title: "The Dragonfly Supper Club",
     description:
-      "Coursed, restaurant-quality menus prepared and plated in your home.",
-    items: [
-      "Multi-course tasting dinners",
-      "Wine & bourbon pairing menus",
-      "Interactive chef's-counter experiences",
-      "Date-night dinners for two",
-    ],
+      "A local three-course prix fixe experience featuring charcuterie, seasonal produce, braised short rib, and a bright summer dessert.",
+    href: "/sample-menus/dragonfly-supper-club-sample-menu.pdf",
+    pageCount: 1,
   },
   {
-    title: "Showers & Brunches",
+    category: "Private chef dinner",
+    title: "Alla Famiglia",
     description:
-      "Bright, seasonal spreads for bridal showers, baby showers, and daytime celebrations.",
-    items: [
-      "Brunch boards & pastry displays",
-      "Garden-inspired salads & tartines",
-      "Mimosa-friendly light bites",
-      "Sweet finishing tables",
-    ],
+      "An intimate family-style dinner with prosciutto caprese, lamb lollipops, lobster risotto, and a composed dessert.",
+    href: "/sample-menus/private-chef-family-dinner-sample-menu.pdf",
+    pageCount: 1,
   },
   {
-    title: "Cocktail Parties",
+    category: "Milestone celebration",
+    title: "Birthday Dinner",
     description:
-      "Passed and stationed hors d'oeuvres designed for mingling, not managing plates.",
-    items: [
-      "Passed canapés & skewers",
-      "Grazing & charcuterie displays",
-      "Tapas-style small plates",
-      "Signature cocktail pairings",
-    ],
+      "A celebratory dinner built around grilled vegetables, cedar-planked halibut, ribeye chimichurri, and cake jars.",
+    href: "/sample-menus/milestone-birthday-dinner-sample-menu.pdf",
+    pageCount: 1,
   },
   {
-    title: "BBQ & Casual Gatherings",
+    category: "Seasonal gathering",
+    title: "Autumn Dinner",
     description:
-      "Elevated comfort food for backyard parties, family reunions, and relaxed celebrations.",
-    items: [
-      "Smoked & grilled mains",
-      "Seasonal picnic sides",
-      "Build-your-own stations",
-      "Family-style dessert platters",
-    ],
-  },
-  {
-    title: "Seasonal Menus",
-    description:
-      "Menus that follow the local growing season — spring through the holidays.",
-    items: [
-      "Spring & summer garden menus",
-      "Autumn harvest dinners",
-      "Holiday gatherings & parties",
-      "International favorites & fusion courses",
-    ],
-  },
-  {
-    title: "Beverage & Bartending",
-    description:
-      "Signature cocktails, elevated mocktails, and pairings served with polished event hospitality.",
-    items: [
-      "Signature cocktail design",
-      "Zero-proof mocktail menus",
-      "Wine & bourbon pairing dinners",
-      "Mixers, garnishes & portable bar setup",
-    ],
+      "A playful fall menu with charcuterie, stuffed acorn squash, shepherd's pie, roasted vegetables, and seasonal sweets.",
+    href: "/sample-menus/autumn-gathering-sample-menu.pdf",
+    pageCount: 1,
   },
 ];
 
