@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ProposalForm } from "@/components/ProposalForm";
+import { ReviewPullQuote } from "@/components/ReviewPullQuote";
 import { Reveal } from "@/components/Reveal";
 import { JsonLd } from "@/components/JsonLd";
+import { getClientReview } from "@/lib/reviews";
 import { buildMetadata } from "@/lib/seo";
 import { breadcrumbSchema } from "@/lib/schema";
+
+const inquiryReview = getClientReview("lisa-sinkiewicz");
 
 export const metadata: Metadata = buildMetadata({
   title: "Request a Custom Proposal | Dragonfly Catering, Downingtown PA",
@@ -34,6 +38,13 @@ export default function ContactPage() {
                 <p className="mt-6 max-w-lg text-base leading-7 text-charcoal/65">
                   Share the basics and Chef Matt will follow up.
                 </p>
+
+                <ReviewPullQuote
+                  review={inquiryReview}
+                  quote="From start to finish we had a great experience. The menu selection was fantastic and the presentation/taste of the food was a hit."
+                  placement="contact-review"
+                  variant="inline"
+                />
 
                 <div className="relative mt-9 hidden aspect-[4/3] overflow-hidden rounded-[24px] lg:block">
                   <Image

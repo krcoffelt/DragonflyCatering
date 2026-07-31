@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
+import { ReviewPullQuote } from "@/components/ReviewPullQuote";
 import { ServicePage } from "@/components/ServicePage";
+import { getClientReview } from "@/lib/reviews";
 import { buildMetadata } from "@/lib/seo";
 import { assets, alt } from "@/lib/site";
+
+const allergyAwareReview = getClientReview("patricia-winstead");
 
 export const metadata: Metadata = buildMetadata({
   title: "Custom Catering in Chester County | Dragonfly Catering",
@@ -73,6 +77,12 @@ export default function CustomCateringPage() {
         title: "Tell us about the gathering you're planning",
         copy: "Share your date, guest count, location, and vision — Chef Matt will shape a custom catering proposal around it.",
       }}
-    />
+    >
+      <ReviewPullQuote
+        review={allergyAwareReview}
+        quote="His bio mentions his experience in allergen food safety and he answered all my questions professionally and compassionately."
+        placement="custom-catering-review"
+      />
+    </ServicePage>
   );
 }

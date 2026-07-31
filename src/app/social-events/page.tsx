@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
+import { ReviewPullQuote } from "@/components/ReviewPullQuote";
 import { ServicePage } from "@/components/ServicePage";
+import { getClientReview } from "@/lib/reviews";
 import { buildMetadata } from "@/lib/seo";
 import { assets, alt } from "@/lib/site";
+
+const socialEventsReview = getClientReview("valerie-dixon");
 
 export const metadata: Metadata = buildMetadata({
   title:
@@ -72,6 +76,12 @@ export default function SocialEventsPage() {
         title: "Let's plan the party you actually get to enjoy",
         copy: "Tell us the occasion, the guest list, and the vibe — we'll bring a menu that fits it perfectly.",
       }}
-    />
+    >
+      <ReviewPullQuote
+        review={socialEventsReview}
+        quote="Cheff Matt and Rhiannon are amazing people. AND they make amazing food. For your family meal … or for a larger dinner crowd or special event … look no where else."
+        placement="social-events-review"
+      />
+    </ServicePage>
   );
 }

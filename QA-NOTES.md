@@ -32,7 +32,8 @@ Updated: 2026-07-31 · Second-round content and photography pass
 - The Downingtown ZIP code is **19335**.
 - Six sample-menu PDFs are published; their supporting copy explains seasonal rotation and custom final menus.
 - All listed preferred venues are confirmed as current Dragonfly partners.
-- All testimonials currently published on the site are approved.
+- All 20 written Google reviews currently published on the site are client-provided and approved.
+- Patricia Winstead, Valerie Dixon, and Lisa Sinkiewicz are also used as targeted pull quotes on Custom Catering, Social Events, and Contact respectively; the remaining new reviews stay exclusive to the Reviews page.
 - The Facebook, Instagram, and LinkedIn profiles in `src/lib/site.ts` are current.
 - The client-provided July photo batch is approved for website publication; 23 selected images were optimized and added.
 - Community special-pricing language, gift-card fulfillment, and analytics are deferred.
@@ -58,9 +59,8 @@ Updated: 2026-07-31 · Second-round content and photography pass
 ## Highest-priority remaining work
 
 1. Enable Netlify Forms for the `dragonflycatering` project, deploy, configure notifications to `dragonflycatering727@gmail.com`, and complete a real production submission test.
-2. Import additional Google reviews when a current export or directly accessible review feed is available; never infer or relabel review wording.
-3. Add or correct official venue website links when supplied.
-4. Revisit community special-pricing language, gift-card fulfillment, and analytics when the client is ready.
+2. Add or correct official venue website links when supplied.
+3. Revisit community special-pricing language, gift-card fulfillment, and analytics when the client is ready.
 
 ## Client confirmations still needed
 

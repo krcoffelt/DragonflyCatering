@@ -8,7 +8,7 @@ These are the main gaps to close before a full production website build.
 - Office-specific corporate catering photos such as boxed lunch, office service, or branded event setups.
 - Community/team photos that support the local, seasonal, personal brand story.
 - Updated sample menu PDFs or approved sample-menu website copy.
-- Additional current Google review exports or client-provided review text beyond the 11 approved reviews already published.
+- Additional current Google review exports or client-provided review text beyond the 20 approved written reviews now published.
 - Final brand palette decision from the liked colors: royal purple, silver, gold, sage green, royal blue.
 - Final confirmation of public phone number, address formatting, and event-space capacity wording.
 - Written rights confirmation for event and guest-facing photos.
