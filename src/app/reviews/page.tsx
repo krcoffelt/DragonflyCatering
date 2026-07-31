@@ -3,10 +3,11 @@ import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { FinalCta } from "@/components/FinalCta";
 import { JsonLd } from "@/components/JsonLd";
+import { ReviewCard } from "@/components/ReviewCard";
 import { StarIcon } from "@/components/verde/VerdePrimitives";
 import { buildMetadata } from "@/lib/seo";
 import { breadcrumbSchema } from "@/lib/schema";
-import { clientReviews } from "@/lib/reviews";
+import { clientReviews, googleReviewsUrl } from "@/lib/reviews";
 
 export const metadata: Metadata = buildMetadata({
   title: "Reviews & Testimonials | Dragonfly Catering",
@@ -48,30 +49,24 @@ export default function ReviewsPage() {
             </p>
           </Reveal>
 
-          <div className="mt-12 border-t border-plum/15 lg:mt-16">
+          <div className="mt-12 grid items-start gap-5 md:grid-cols-2 lg:mt-16 lg:gap-6">
             {clientReviews.map((review, index) => (
               <Reveal key={review.id} delay={Math.min(index * 0.025, 0.15)}>
-                <article className="grid gap-7 border-b border-plum/15 py-9 sm:py-11 lg:grid-cols-[270px_1fr] lg:gap-16 lg:py-14">
-                  <div>
-                    <div className="flex gap-0.5 text-gold" role="img" aria-label="5 out of 5 stars">
-                      {Array.from({ length: 5 }).map((_, starIndex) => (
-                        <StarIcon key={starIndex} className="h-3.5 w-3.5" />
-                      ))}
-                    </div>
-                    <p className="mt-4 text-[13px] font-semibold uppercase text-plum">{review.name}</p>
-                    <p className="mt-1 text-[13px] text-body">{review.event}</p>
-                    <p className="mt-3 text-[11px] font-semibold uppercase text-plum/45">{review.source}</p>
-                  </div>
-
-                  <blockquote className="max-w-[850px]">
-                    <p className="font-display text-[23px] leading-[1.18] text-plum sm:text-[28px] lg:text-[32px]">
-                      &ldquo;{review.text}&rdquo;
-                    </p>
-                  </blockquote>
-                </article>
+                <ReviewCard review={review} />
               </Reveal>
             ))}
           </div>
+
+          <Reveal className="mt-10 text-center">
+            <a
+              href={googleReviewsUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex border-b border-gold pb-1 text-[12px] font-semibold uppercase tracking-[0.16em] text-plum transition-colors hover:text-royal focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+            >
+              View Dragonfly on Google Maps ↗
+            </a>
+          </Reveal>
         </div>
       </section>
 

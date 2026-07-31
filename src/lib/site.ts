@@ -10,7 +10,7 @@ export const site = {
   phoneDisplay: "(484) 947-3296",
   primaryCta: "Request a Custom Proposal",
   address: {
-    street: "4325 W. Lincoln Highway",
+    street: "4325 Lincoln Highway",
     city: "Downingtown",
     state: "PA",
     zip: "19335",
@@ -106,6 +106,52 @@ export const assets = {
     "/assets/dragonfly/photos/gallery/dragonfly-seared-scallops-catering.webp",
   galleryGuestsServingGrazingBuffet:
     "/assets/dragonfly/photos/gallery/dragonfly-guests-serving-grazing-buffet.webp",
+  julyPlatedVegetableAppetizer:
+    "/assets/dragonfly/photos/july-2026/dragonfly-plated-seasonal-vegetable-appetizer.webp",
+  julyRackOfLamb:
+    "/assets/dragonfly/photos/july-2026/dragonfly-herb-rack-of-lamb.webp",
+  julyPassedTomatoAppetizers:
+    "/assets/dragonfly/photos/july-2026/dragonfly-passed-tomato-appetizers.webp",
+  julyFlowerAppetizerCups:
+    "/assets/dragonfly/photos/july-2026/dragonfly-edible-flower-appetizer-cups.webp",
+  julyRaspberryDessertCups:
+    "/assets/dragonfly/photos/july-2026/dragonfly-raspberry-dessert-cups.webp",
+  julyAppetizerSpoons:
+    "/assets/dragonfly/photos/july-2026/dragonfly-passed-appetizer-spoons.webp",
+  julySeasonalCourse:
+    "/assets/dragonfly/photos/july-2026/dragonfly-plated-seasonal-course.webp",
+  julyTomatoBruschetta:
+    "/assets/dragonfly/photos/july-2026/dragonfly-tomato-bruschetta-trays.webp",
+  julyCanapes:
+    "/assets/dragonfly/photos/july-2026/dragonfly-bite-size-canapes.webp",
+  julySoupShooters:
+    "/assets/dragonfly/photos/july-2026/dragonfly-seasonal-soup-shooters.webp",
+  julyPeachBerrySalad:
+    "/assets/dragonfly/photos/july-2026/dragonfly-peach-berry-salad.webp",
+  julyVegetableSkewers:
+    "/assets/dragonfly/photos/july-2026/dragonfly-grilled-vegetable-skewers.webp",
+  julySearedBeefPrep:
+    "/assets/dragonfly/photos/july-2026/dragonfly-seared-beef-roast-prep.webp",
+  julyChefBuffetService:
+    "/assets/dragonfly/photos/july-2026/chef-matt-buffet-service.webp",
+  julyChefPrivateService:
+    "/assets/dragonfly/photos/july-2026/chef-matt-private-chef-service.webp",
+  julyChefSaladPlatter:
+    "/assets/dragonfly/photos/july-2026/chef-matt-seasonal-salad-platter.webp",
+  julyPrivateDinnerTable:
+    "/assets/dragonfly/photos/july-2026/dragonfly-private-dinner-table.webp",
+  julyEventTableSetting:
+    "/assets/dragonfly/photos/july-2026/dragonfly-event-table-setting.webp",
+  julyPrivateDinnerGuests:
+    "/assets/dragonfly/photos/july-2026/dragonfly-guests-private-dinner.webp",
+  julyBuffetTeam:
+    "/assets/dragonfly/photos/july-2026/dragonfly-catering-buffet-team.webp",
+  julyGrazingTableEvent:
+    "/assets/dragonfly/photos/july-2026/dragonfly-grazing-table-event.webp",
+  julyBartendingService:
+    "/assets/dragonfly/photos/july-2026/dragonfly-bartending-service.webp",
+  julyBartenderGlassware:
+    "/assets/dragonfly/photos/july-2026/dragonfly-bartender-glassware.webp",
 };
 
 export const alt = {
@@ -157,6 +203,52 @@ export const alt = {
     "Seared scallops with greens and roasted vegetables prepared by Dragonfly Catering",
   galleryGuestsServingGrazingBuffet:
     "Guests serving vegetables and appetizers from a colorful Dragonfly Catering grazing buffet",
+  julyPlatedVegetableAppetizer:
+    "A colorful seasonal vegetable appetizer plated by Dragonfly Catering",
+  julyRackOfLamb:
+    "Herb-crusted rack of lamb sliced and plated by Dragonfly Catering",
+  julyPassedTomatoAppetizers:
+    "Trays of tomato appetizers ready for passed service at a Dragonfly event",
+  julyFlowerAppetizerCups:
+    "Individual savory appetizer cups finished with edible flowers",
+  julyRaspberryDessertCups:
+    "Individual raspberry desserts arranged for a Dragonfly Catering event",
+  julyAppetizerSpoons:
+    "Passed appetizers presented on tasting spoons by Dragonfly Catering",
+  julySeasonalCourse:
+    "A composed seasonal course plated for a private Dragonfly dinner",
+  julyTomatoBruschetta:
+    "Tomato bruschetta arranged on trays for catered service",
+  julyCanapes:
+    "Bite-size canapes arranged for guests at a Dragonfly event",
+  julySoupShooters:
+    "Seasonal soup shooters prepared for passed service",
+  julyPeachBerrySalad:
+    "Seasonal peach and berry salad prepared by Dragonfly Catering",
+  julyVegetableSkewers:
+    "Grilled seasonal vegetable skewers ready for service",
+  julySearedBeefPrep:
+    "Chef-prepared seared beef roast resting before event service",
+  julyChefBuffetService:
+    "Chef Matt serving guests from a Dragonfly Catering buffet",
+  julyChefPrivateService:
+    "Chef Matt preparing a course during a private chef experience",
+  julyChefSaladPlatter:
+    "Chef Matt presenting a colorful seasonal salad platter",
+  julyPrivateDinnerTable:
+    "An intimate private dinner table set for Dragonfly guests",
+  julyEventTableSetting:
+    "A polished table setting prepared for a private catered event",
+  julyPrivateDinnerGuests:
+    "Guests enjoying conversation during a Dragonfly private dinner",
+  julyBuffetTeam:
+    "The Dragonfly Catering team serving guests at a buffet",
+  julyGrazingTableEvent:
+    "An abundant grazing table arranged for a Dragonfly social event",
+  julyBartendingService:
+    "A Dragonfly bartender preparing drinks for event guests",
+  julyBartenderGlassware:
+    "A Dragonfly bartender arranging glassware behind the event bar",
 };
 
 /** Homepage hero rotation — avoids the raw dragon-fruit prep image as the cover. */
@@ -281,7 +373,161 @@ export const galleryPhotos: GalleryPhoto[] = [
     category: "Food",
     aspect: "square",
   },
+  {
+    src: assets.julyPlatedVegetableAppetizer,
+    alt: alt.julyPlatedVegetableAppetizer,
+    category: "Food",
+    aspect: "square",
+  },
+  {
+    src: assets.julyRackOfLamb,
+    alt: alt.julyRackOfLamb,
+    category: "Food",
+    aspect: "square",
+  },
+  {
+    src: assets.julyPassedTomatoAppetizers,
+    alt: alt.julyPassedTomatoAppetizers,
+    category: "Food",
+    aspect: "square",
+  },
+  {
+    src: assets.julyFlowerAppetizerCups,
+    alt: alt.julyFlowerAppetizerCups,
+    category: "Food",
+    aspect: "square",
+  },
+  {
+    src: assets.julyRaspberryDessertCups,
+    alt: alt.julyRaspberryDessertCups,
+    category: "Food",
+    aspect: "square",
+  },
+  {
+    src: assets.julyAppetizerSpoons,
+    alt: alt.julyAppetizerSpoons,
+    category: "Food",
+    aspect: "landscape",
+  },
+  {
+    src: assets.julySeasonalCourse,
+    alt: alt.julySeasonalCourse,
+    category: "Food",
+    aspect: "square",
+  },
+  {
+    src: assets.julyTomatoBruschetta,
+    alt: alt.julyTomatoBruschetta,
+    category: "Food",
+    aspect: "square",
+  },
+  {
+    src: assets.julyCanapes,
+    alt: alt.julyCanapes,
+    category: "Food",
+    aspect: "landscape",
+  },
+  {
+    src: assets.julySoupShooters,
+    alt: alt.julySoupShooters,
+    category: "Food",
+    aspect: "portrait",
+  },
+  {
+    src: assets.julyPeachBerrySalad,
+    alt: alt.julyPeachBerrySalad,
+    category: "Food",
+    aspect: "portrait",
+  },
+  {
+    src: assets.julyVegetableSkewers,
+    alt: alt.julyVegetableSkewers,
+    category: "Food",
+    aspect: "square",
+  },
+  {
+    src: assets.julySearedBeefPrep,
+    alt: alt.julySearedBeefPrep,
+    category: "Food",
+    aspect: "square",
+  },
+  {
+    src: assets.julyChefBuffetService,
+    alt: alt.julyChefBuffetService,
+    category: "Chef Matt",
+    aspect: "square",
+  },
+  {
+    src: assets.julyChefPrivateService,
+    alt: alt.julyChefPrivateService,
+    category: "Chef Matt",
+    aspect: "portrait",
+  },
+  {
+    src: assets.julyChefSaladPlatter,
+    alt: alt.julyChefSaladPlatter,
+    category: "Chef Matt",
+    aspect: "portrait",
+  },
+  {
+    src: assets.julyPrivateDinnerTable,
+    alt: alt.julyPrivateDinnerTable,
+    category: "Private Events",
+    aspect: "square",
+  },
+  {
+    src: assets.julyEventTableSetting,
+    alt: alt.julyEventTableSetting,
+    category: "Private Events",
+    aspect: "landscape",
+  },
+  {
+    src: assets.julyPrivateDinnerGuests,
+    alt: alt.julyPrivateDinnerGuests,
+    category: "Private Events",
+    aspect: "landscape",
+  },
+  {
+    src: assets.julyBuffetTeam,
+    alt: alt.julyBuffetTeam,
+    category: "Private Events",
+    aspect: "portrait",
+  },
+  {
+    src: assets.julyGrazingTableEvent,
+    alt: alt.julyGrazingTableEvent,
+    category: "Private Events",
+    aspect: "portrait",
+  },
+  {
+    src: assets.julyBartendingService,
+    alt: alt.julyBartendingService,
+    category: "Bartending",
+    aspect: "landscape",
+  },
+  {
+    src: assets.julyBartenderGlassware,
+    alt: alt.julyBartenderGlassware,
+    category: "Bartending",
+    aspect: "portrait",
+  },
 ];
+
+const homepageGallerySources = new Set([
+  assets.julyChefSaladPlatter,
+  assets.julyGrazingTableEvent,
+  assets.julyPassedTomatoAppetizers,
+  assets.julyRaspberryDessertCups,
+  assets.julyBartendingService,
+  assets.julyPrivateDinnerGuests,
+  assets.julyChefPrivateService,
+  assets.julyVegetableSkewers,
+]);
+
+/** A focused homepage edit that keeps the landing-page image payload lean. */
+export const homepageGalleryPhotos = galleryPhotos.filter((photo) =>
+  homepageGallerySources.has(photo.src),
+);
 
 export type NavLink = { label: string; href: string };
 

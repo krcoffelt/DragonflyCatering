@@ -44,9 +44,16 @@ export function ReviewsBand({ title, lead, reviews, ctaLabel, ctaHref }: Reviews
           <SectionReveal delay={0.1}>
             <div className="border border-gold/25 bg-warmwhite p-6 text-plum shadow-[0_24px_70px_rgba(18,10,22,0.2)] sm:p-8 lg:p-10">
               <div className="flex items-center justify-between gap-5">
-                <div className="flex gap-1 text-gold" role="img" aria-label="5 out of 5 stars">
+                <div
+                  className="flex gap-1 text-gold"
+                  role="img"
+                  aria-label={`${activeReview.rating} out of 5 stars`}
+                >
                   {Array.from({ length: 5 }).map((_, index) => (
-                    <StarIcon key={index} className="h-4 w-4" />
+                    <StarIcon
+                      key={index}
+                      className={`h-4 w-4 ${index >= activeReview.rating ? "opacity-20" : ""}`}
+                    />
                   ))}
                 </div>
                 <p className="text-right text-[10px] font-semibold uppercase text-charcoal/75 sm:text-[11px] sm:text-charcoal/60">

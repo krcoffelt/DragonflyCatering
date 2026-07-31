@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ServicePage } from "@/components/ServicePage";
 import { buildMetadata } from "@/lib/seo";
+import { assets, alt } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
   title: "Event Bartending & Mobile Bar Service in Chester County",
@@ -18,6 +19,10 @@ export default function EventBartendingPage() {
       eyebrow="Event bartending"
       title="Event bartending, cocktails & mocktails"
       lead="RAMP-certified bartenders, signature cocktails, elevated mocktails, and a polished portable bar — wherever your event takes you."
+      heroImage={{
+        src: assets.julyBartenderGlassware,
+        alt: alt.julyBartenderGlassware,
+      }}
       coverage={{
         eyebrow: "Behind the bar",
         title: "Everything but the alcohol",
@@ -34,7 +39,10 @@ export default function EventBartendingPage() {
         ],
       }}
       detail={{
-        placeholderLabel: "Bar and mocktail photography coming soon",
+        image: {
+          src: assets.julyBartendingService,
+          alt: alt.julyBartendingService,
+        },
         eyebrow: "The Dragonfly bar",
         title: "Cocktails and mocktails with kitchen-level care",
         paragraphs: [

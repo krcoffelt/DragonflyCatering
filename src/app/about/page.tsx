@@ -61,7 +61,7 @@ export default function AboutPage() {
       <section className="bg-ivory py-20 lg:py-28">
         <div className="mx-auto max-w-[1280px] px-5 sm:px-8">
           <EditorialSplit
-            image={{ src: assets.mattAppetizerBoard, alt: alt.mattAppetizerBoard }}
+            image={{ src: assets.julyChefSaladPlatter, alt: alt.julyChefSaladPlatter }}
             imageAspect="aspect-[4/5]"
           >
             <Reveal>
@@ -92,6 +92,50 @@ export default function AboutPage() {
                   gatherings too. Food is love.
                 </p>
               </div>
+              <details className="group mt-7 max-w-xl border-t border-plum/15 pt-5">
+                <summary className="w-fit cursor-pointer list-none text-[12px] font-semibold uppercase tracking-[0.14em] text-royal underline decoration-gold/60 underline-offset-4 transition-colors hover:text-plum focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold [&::-webkit-details-marker]:hidden">
+                  <span className="group-open:hidden">Read more about Chef Matt</span>
+                  <span className="hidden group-open:inline">Show less</span>
+                </summary>
+                <div className="mt-6 space-y-5 border-l-2 border-gold/50 pl-5 text-[15px] leading-[1.75] text-charcoal/75 sm:text-base">
+                  <h3 className="font-display text-2xl leading-tight text-plum">
+                    About Our Founder and Executive Chef
+                  </h3>
+                  <p>
+                    Chef Matthew Stone is an accomplished culinary professional
+                    with more than two decades of experience across respected
+                    kitchens and hospitality brands. A Johnson &amp; Wales
+                    University graduate with degrees in Culinary Arts and Food
+                    Service Management, he has led high-volume fine dining,
+                    upscale casual, and concept-driven kitchens in Boston,
+                    Atlanta, and Philadelphia. His leadership at The Capital
+                    Grille and True Food Kitchen combined operational discipline
+                    with a commitment to mentoring strong culinary teams. His
+                    work on Bravo TV&apos;s Top Chef Quickfire initiative also
+                    brought that creativity to a branded dining experience built
+                    from concept through execution.
+                  </p>
+                  <p>
+                    In 2020, amid the uncertainty of the pandemic, Chef Matt and
+                    his wife Rhiannon founded Dragonfly Catering to serve their
+                    community through comfort, connection, and culinary craft.
+                    Home-delivered meals grew into full-service catering,
+                    private chef experiences, artisan pop-ups, and curated
+                    events. Dragonfly evolved from a home kitchen into a shared
+                    collaborative space at Artisan Exchange before establishing
+                    its current home in Downingtown.
+                  </p>
+                  <p>
+                    Today, Chef Matt leads Dragonfly&apos;s Downingtown catering
+                    and event-space operation. From elegant plated dinners and
+                    immersive tastings to bourbon pairings and interactive
+                    cooking classes, his approach remains rooted in integrity,
+                    flavor, sustainability, and community. The goal is always
+                    larger than the meal: to create thoughtful moments and make
+                    food feel like love made visible.
+                  </p>
+                </div>
+              </details>
             </Reveal>
           </EditorialSplit>
         </div>

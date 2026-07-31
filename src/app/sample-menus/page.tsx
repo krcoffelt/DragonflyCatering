@@ -43,8 +43,10 @@ export default function SampleMenusPage() {
               Real menus. Made for real gatherings.
             </h2>
             <p className="mt-4 leading-relaxed text-charcoal/70">
-              Browse recent examples for inspiration. Every Dragonfly menu is
-              rewritten around your season, setting, guests, and budget.
+              Browse these sample menus for inspiration. Our seasonal examples
+              rotate throughout the year, and we can send current seasonal menus
+              on request. Every final Dragonfly menu is customized around your
+              event, setting, guests, preferences, and budget.
             </p>
           </Reveal>
 
@@ -107,7 +109,7 @@ export default function SampleMenusPage() {
 
       <FinalCta
         title="Hungry to see your menu?"
-        copy="Tell us about your event and the food you love — Chef Matt will write a sample menu specifically for your gathering."
+        copy="Tell us about your event and the food you love — Chef Matt will create a custom menu specifically for your gathering."
       />
     </>
   );

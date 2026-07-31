@@ -21,8 +21,8 @@ export default function SocialEventsPage() {
       title="Celebrations & milestone moments"
       lead="The best parties feel effortless — because someone else is in the kitchen."
       heroImage={{
-        src: assets.heroAppetizers,
-        alt: alt.heroAppetizers,
+        src: assets.julyGrazingTableEvent,
+        alt: alt.julyGrazingTableEvent,
       }}
       coverage={{
         eyebrow: "Life's occasions",
@@ -41,8 +41,8 @@ export default function SocialEventsPage() {
       }}
       detail={{
         image: {
-          src: assets.mattCrabCakes,
-          alt: alt.mattCrabCakes,
+          src: assets.julyPrivateDinnerGuests,
+          alt: alt.julyPrivateDinnerGuests,
         },
         eyebrow: "Hosting, made easy",
         title: "Be a guest at your own party",

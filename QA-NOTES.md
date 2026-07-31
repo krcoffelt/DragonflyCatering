@@ -1,11 +1,11 @@
 # Dragonfly Catering — QA Notes
 
-Updated: 2026-07-16 · Phase 2 inquiry-form pass
+Updated: 2026-07-31 · Second-round content and photography pass
 
 ## Phase 1 completed
 
 - Standardized the public business name as **Dragonfly Catering & Event Space**.
-- Updated the public address to **4325 W. Lincoln Highway, Downingtown, PA 19335**.
+- Updated the public address to **4325 Lincoln Highway, Downingtown, PA 19335**. This direct client correction supersedes the earlier address note.
 - Updated the public phone number to **(484) 947-3296**.
 - Removed Buchanan Mansion references from public-facing site content and reviews.
 - Moved internal source notes, manifests, and asset guidance out of the public web root to `docs/dragonfly-assets/`.
@@ -30,11 +30,12 @@ Updated: 2026-07-16 · Phase 2 inquiry-form pass
 - The room-rental fee is waived when the Dragonfly event proposal reaches **$2,000 or more**.
 - Event-space capacity should be stated as **up to 50 guests**.
 - The Downingtown ZIP code is **19335**.
-- Sample-menu files and final menu content are deferred to a later phase.
+- Six sample-menu PDFs are published; their supporting copy explains seasonal rotation and custom final menus.
 - All listed preferred venues are confirmed as current Dragonfly partners.
 - All testimonials currently published on the site are approved.
 - The Facebook, Instagram, and LinkedIn profiles in `src/lib/site.ts` are current.
-- Photography and photo-rights review, community special-pricing language, gift-card fulfillment, and analytics are deferred.
+- The client-provided July photo batch is approved for website publication; 23 selected images were optimized and added.
+- Community special-pricing language, gift-card fulfillment, and analytics are deferred.
 - A website privacy policy was requested and added at `/privacy`.
 
 ## Verification completed
@@ -57,10 +58,9 @@ Updated: 2026-07-16 · Phase 2 inquiry-form pass
 ## Highest-priority remaining work
 
 1. Enable Netlify Forms for the `dragonflycatering` project, deploy, configure notifications to `dragonflycatering727@gmail.com`, and complete a real production submission test.
-2. Add approved downloadable sample-menu PDFs without public pricing when the files are ready.
-3. Add or replace photography when the client is ready to resume the deferred photo pass.
-4. Add or correct official venue website links when supplied.
-5. Revisit community special-pricing language, gift-card fulfillment, and analytics when the client is ready.
+2. Import additional Google reviews when a current export or directly accessible review feed is available; never infer or relabel review wording.
+3. Add or correct official venue website links when supplied.
+4. Revisit community special-pricing language, gift-card fulfillment, and analytics when the client is ready.
 
 ## Client confirmations still needed
 

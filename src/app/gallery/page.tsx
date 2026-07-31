@@ -14,12 +14,9 @@ export const metadata: Metadata = buildMetadata({
   path: "/gallery",
 });
 
-const categories = [
-  "Food",
-  "Chef Matt",
-  "Private Events",
-  "Engagement Parties",
-];
+const categories = Array.from(
+  new Set(galleryPhotos.map((photo) => photo.category)),
+);
 
 export default function GalleryPage() {
   return (

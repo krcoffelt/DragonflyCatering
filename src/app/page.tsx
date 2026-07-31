@@ -11,7 +11,7 @@ import { FinalTableCta } from "@/components/verde/FinalTableCta";
 import { JsonLd } from "@/components/JsonLd";
 import { buildMetadata } from "@/lib/seo";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
-import { assets, alt, galleryPhotos } from "@/lib/site";
+import { assets, alt, homepageGalleryPhotos } from "@/lib/site";
 import { featuredReviews } from "@/lib/reviews";
 
 export const metadata: Metadata = buildMetadata({
@@ -119,7 +119,7 @@ export default function HomePage() {
         ctaHref="/about"
       />
 
-      <FoodGallery slides={galleryPhotos} />
+      <FoodGallery slides={homepageGalleryPhotos} />
 
       <MenuBand
         title="Seasonal & local"
