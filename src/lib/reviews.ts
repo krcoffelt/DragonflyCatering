@@ -217,6 +217,8 @@ export const clientReviews: ClientReview[] = [
     source: "Google review",
     rating: 5,
     sourceUrl: googleReviewsUrl,
+    featuredText:
+      "From start to finish we had a great experience. The menu selection was fantastic and the presentation/taste of the food was a hit. Highly recommend Chef Matt!",
     text:
       "From start to finish we had a great experience. The menu selection was fantastic and the presentation/taste of the food was a hit. Highly recommend Chef Matt!",
   },

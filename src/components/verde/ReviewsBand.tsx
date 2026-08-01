@@ -42,10 +42,10 @@ export function ReviewsBand({ title, lead, reviews, ctaLabel, ctaHref }: Reviews
           </SectionReveal>
 
           <SectionReveal delay={0.1}>
-            <div className="border border-gold/25 bg-warmwhite p-6 text-plum shadow-[0_24px_70px_rgba(18,10,22,0.2)] sm:p-8 lg:p-10">
+            <article className="border border-plum/15 bg-warmwhite p-6 text-plum shadow-[0_18px_50px_rgba(18,10,22,0.16)] sm:p-7 lg:p-8">
               <div className="flex items-center justify-between gap-5">
                 <div
-                  className="flex gap-1 text-gold"
+                  className="flex gap-0.5 text-gold"
                   role="img"
                   aria-label={`${activeReview.rating} out of 5 stars`}
                 >
@@ -56,76 +56,98 @@ export function ReviewsBand({ title, lead, reviews, ctaLabel, ctaHref }: Reviews
                     />
                   ))}
                 </div>
-                <p className="text-right text-[10px] font-semibold uppercase text-charcoal/75 sm:text-[11px] sm:text-charcoal/60">
-                  Real words from our clients
+                <p className="text-right text-[11px] font-semibold uppercase tracking-[0.1em] text-charcoal/60">
+                  Review {activeIndex + 1} of {reviews.length}
                 </p>
               </div>
 
               <div
-                className="relative mt-7 min-h-[260px] sm:min-h-[250px] lg:min-h-[300px]"
+                className="relative mt-5 min-h-[165px] sm:min-h-[150px]"
                 aria-live="polite"
                 aria-atomic="true"
               >
-                <blockquote
-                  key={activeReview.id}
-                  className="review-enter"
-                >
-                    <p className="max-w-[900px] font-display text-[21px] leading-[1.28] text-plum sm:text-[29px] lg:text-[36px]">
-                      &ldquo;{activeReview.featuredText ?? activeReview.text}&rdquo;
-                    </p>
-                    <footer className="mt-7 border-l-2 border-gold pl-4">
-                      <cite className="not-italic">
-                        <span className="block text-[12px] font-semibold uppercase text-plum sm:text-[13px]">
-                          {activeReview.name}
-                        </span>
-                        <span className="mt-1 block text-[12px] text-charcoal/65 sm:text-[13px]">
-                          {activeReview.event} · {activeReview.source}
-                        </span>
-                      </cite>
-                    </footer>
+                <blockquote key={activeReview.id} className="review-enter">
+                  <p className="max-w-[850px] text-[16px] leading-[1.7] text-charcoal/80 sm:text-[17px] lg:text-[18px]">
+                    &ldquo;{activeReview.featuredText ?? activeReview.text}&rdquo;
+                  </p>
+                  <footer className="mt-6 border-t border-plum/12 pt-5">
+                    <cite className="not-italic">
+                      <span className="block text-[12px] font-semibold uppercase tracking-[0.08em] text-plum">
+                        {activeReview.name}
+                      </span>
+                      <span className="mt-1 block text-[13px] text-charcoal/65">
+                        {activeReview.event}
+                      </span>
+                      <a
+                        href={activeReview.sourceUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-3 inline-flex text-[11px] font-semibold uppercase tracking-[0.12em] text-plum/55 underline decoration-gold/50 underline-offset-4 transition-colors hover:text-plum focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+                      >
+                        {activeReview.source} ↗
+                      </a>
+                    </cite>
+                  </footer>
                 </blockquote>
               </div>
 
-              <div className="mt-6 flex items-center gap-4 border-t border-plum/12 pt-5 sm:gap-5">
-                <div className="flex gap-2">
-                  <button
-                    type="button"
-                    onClick={showPrevious}
-                    className="flex h-12 w-12 items-center justify-center border border-plum/20 text-xl text-plum transition-colors hover:border-gold hover:bg-gold focus-visible:border-gold focus-visible:outline-none"
-                    aria-label="Show previous review"
-                    title="Previous review"
-                  >
-                    <span aria-hidden>←</span>
-                  </button>
-                  <button
-                    type="button"
-                    onClick={showNext}
-                    className="flex h-12 w-12 items-center justify-center border border-plum/20 text-xl text-plum transition-colors hover:border-gold hover:bg-gold focus-visible:border-gold focus-visible:outline-none"
-                    aria-label="Show next review"
-                    title="Next review"
-                  >
-                    <span aria-hidden>→</span>
-                  </button>
+              <div className="mt-6 border-t border-plum/12 pt-5">
+                <div className="flex items-center justify-between gap-4">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.1em] text-charcoal/60">
+                    Browse client reviews
+                  </p>
+                  <TextLink href={ctaHref} location="reviews-band-card">
+                    {ctaLabel}
+                  </TextLink>
                 </div>
+                <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-center">
+                  <div className="flex gap-2">
+                    <button
+                      type="button"
+                      onClick={showPrevious}
+                      className="inline-flex min-h-11 flex-1 items-center justify-center gap-2 border border-plum/20 px-4 text-[13px] font-semibold text-plum transition-colors hover:border-gold hover:bg-gold focus-visible:border-gold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold sm:flex-none"
+                      aria-label="Show previous review"
+                    >
+                      <span aria-hidden>←</span> Previous
+                    </button>
+                    <button
+                      type="button"
+                      onClick={showNext}
+                      className="inline-flex min-h-11 flex-1 items-center justify-center gap-2 border border-plum/20 px-4 text-[13px] font-semibold text-plum transition-colors hover:border-gold hover:bg-gold focus-visible:border-gold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold sm:flex-none"
+                      aria-label="Show next review"
+                    >
+                      Next <span aria-hidden>→</span>
+                    </button>
+                  </div>
 
-                <div className="flex flex-1 gap-2" aria-hidden>
-                  {reviews.map((review, index) => (
-                    <span key={review.id} className="h-px flex-1 bg-plum/18">
-                      <span
-                        className={`block h-px bg-royal transition-transform duration-300 ${
-                          index === activeIndex ? "scale-x-100" : "scale-x-0"
-                        }`}
-                        style={{ transformOrigin: "left" }}
-                      />
-                    </span>
-                  ))}
+                  <div
+                    className="flex flex-1 gap-2"
+                    role="group"
+                    aria-label="Choose a review"
+                  >
+                    {reviews.map((review, index) => (
+                      <button
+                        key={review.id}
+                        type="button"
+                        onClick={() => setActiveIndex(index)}
+                        className="group flex min-h-11 flex-1 items-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                        aria-label={`Show review ${index + 1} from ${review.name}`}
+                        aria-current={index === activeIndex ? "true" : undefined}
+                      >
+                        <span className="h-1 w-full overflow-hidden bg-plum/15">
+                          <span
+                            className={`block h-full bg-royal transition-transform duration-300 group-hover:scale-x-100 ${
+                              index === activeIndex ? "scale-x-100" : "scale-x-0"
+                            }`}
+                            style={{ transformOrigin: "left" }}
+                          />
+                        </span>
+                      </button>
+                    ))}
+                  </div>
                 </div>
-
-                <p className="min-w-[42px] text-right font-display text-base text-charcoal/75 sm:text-lg sm:text-charcoal/60">
-                  {activeIndex + 1} / {reviews.length}
-                </p>
               </div>
-            </div>
+            </article>
           </SectionReveal>
         </div>
       </div>
