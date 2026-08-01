@@ -4,6 +4,8 @@ import { site } from "@/lib/site";
 const paths = [
   "",
   "/services",
+  "/service-areas",
+  "/service-areas/main-line-catering",
   "/custom-catering",
   "/wedding-catering-rehearsal-dinners-showers",
   "/corporate-catering",

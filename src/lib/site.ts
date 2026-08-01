@@ -558,6 +558,7 @@ export const footerNav: { heading: string; links: NavLink[] }[] = [
     heading: "Explore",
     links: [
       { label: "Dragonfly Event Space", href: "/dragonfly-event-space" },
+      { label: "Service Areas", href: "/service-areas" },
       { label: "Preferred Venues", href: "/preferred-venues" },
       { label: "Sample Menus", href: "/sample-menus" },
       { label: "Gallery", href: "/gallery" },

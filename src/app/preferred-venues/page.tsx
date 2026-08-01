@@ -97,9 +97,16 @@ export default function PreferredVenuesPage() {
             lead="Tell us where you're gathering — we'll handle load-in to last plate."
             align="center"
           />
-          <Reveal className="mt-9">
+          <Reveal className="mt-9 flex flex-wrap justify-center gap-4">
             <CtaButton href="/contact" location="venues-bottom">
               Request a Custom Proposal
+            </CtaButton>
+            <CtaButton
+              href="/service-areas"
+              variant="outline"
+              location="venues-areas"
+            >
+              Explore Service Areas
             </CtaButton>
           </Reveal>
         </div>

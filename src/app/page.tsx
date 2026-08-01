@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { HomeHero } from "@/components/HomeHero";
 import { TrustSignal } from "@/components/TrustSignal";
+import { Reveal } from "@/components/Reveal";
 import { AboutBand } from "@/components/verde/AboutBand";
 import { FoodGallery } from "@/components/verde/FoodGallery";
 import { MenuBand } from "@/components/verde/MenuBand";
@@ -16,7 +18,7 @@ import { featuredReviews } from "@/lib/reviews";
 
 export const metadata: Metadata = buildMetadata({
   title:
-    "Dragonfly Catering | Catering in Chester County, PA",
+    "Catering in Downingtown & Chester County, PA | Dragonfly Catering",
   description:
     "Chef-led custom catering, private chef dinners, bartending, and an intimate event space in Downingtown, PA, serving Chester County and the Main Line.",
   path: "/",
@@ -146,6 +148,31 @@ export default function HomePage() {
         image={{ src: assets.guestToast, alt: alt.guestToast }}
         cards={eventCards}
       />
+
+      <section className="bg-plum py-16 sm:py-20">
+        <div className="vv-container">
+          <Reveal className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
+            <div>
+              <p className="text-[12px] font-semibold uppercase text-gold">
+                Where we cater
+              </p>
+              <h2 className="mt-4 max-w-[820px] font-display text-[42px] leading-[0.98] text-warmwhite sm:text-[56px] lg:text-[68px]">
+                Downingtown, Chester County, the Main Line—and your table.
+              </h2>
+              <p className="mt-5 max-w-[640px] text-[15px] leading-6 text-warmwhite/70">
+                See where Dragonfly travels, the venues we know, and how we
+                shape service around each setting.
+              </p>
+            </div>
+            <Link
+              href="/service-areas"
+              className="inline-flex min-h-12 w-fit items-center justify-center bg-gold px-6 py-3 text-sm font-semibold text-plum transition-colors hover:bg-warmwhite"
+            >
+              Explore service areas <span className="ml-2" aria-hidden>↗</span>
+            </Link>
+          </Reveal>
+        </div>
+      </section>
 
       <ReviewsBand
         title="Stories from the table."

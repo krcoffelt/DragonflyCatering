@@ -53,6 +53,7 @@ export function serviceSchema(opts: {
   name: string;
   description: string;
   path: string;
+  areaServed?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -61,7 +62,9 @@ export function serviceSchema(opts: {
     description: opts.description,
     url: `${site.url}${opts.path}`,
     provider: { "@type": "FoodEstablishment", name: site.legalName, url: site.url },
-    areaServed: "Downingtown, Chester County, and the Main Line, Pennsylvania",
+    areaServed:
+      opts.areaServed ??
+      "Downingtown, Chester County, and the Main Line, Pennsylvania",
   };
 }
 

@@ -4,6 +4,7 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { FinalCta } from "@/components/FinalCta";
 import { Reveal } from "@/components/Reveal";
+import { CtaButton } from "@/components/CtaButton";
 import { JsonLd } from "@/components/JsonLd";
 import { buildMetadata } from "@/lib/seo";
 import { breadcrumbSchema } from "@/lib/schema";
@@ -135,6 +136,24 @@ export default function ServicesPage() {
               <ServiceCard key={service.href} {...service} index={i % 3} />
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="bg-plum py-16 lg:py-20">
+        <div className="mx-auto grid max-w-[1120px] gap-8 px-5 sm:px-8 lg:grid-cols-[1fr_auto] lg:items-end">
+          <SectionHeading
+            eyebrow="Where we cater"
+            title="Local knowledge, wherever you gather"
+            lead="Explore Dragonfly's coverage across Downingtown, Chester County, and the Main Line."
+            tone="dark"
+          />
+          <CtaButton
+            href="/service-areas"
+            variant="gold"
+            location="services-areas"
+          >
+            Explore Service Areas
+          </CtaButton>
         </div>
       </section>
 
