@@ -106,6 +106,16 @@ export const assets = {
     "/assets/dragonfly/photos/gallery/dragonfly-seared-scallops-catering.webp",
   galleryGuestsServingGrazingBuffet:
     "/assets/dragonfly/photos/gallery/dragonfly-guests-serving-grazing-buffet.webp",
+  galleryEnchantedGardenBuffetDisplay:
+    "/assets/dragonfly/photos/gallery/dragonfly-enchanted-garden-buffet-display.webp",
+  galleryGardenBuffetSaladFruit:
+    "/assets/dragonfly/photos/gallery/dragonfly-garden-buffet-salad-fruit.webp",
+  galleryEnchantedGardenCateringTable:
+    "/assets/dragonfly/photos/gallery/dragonfly-enchanted-garden-catering-table.webp",
+  gallerySavoryPuffPastryBites:
+    "/assets/dragonfly/photos/gallery/dragonfly-savory-puff-pastry-bites.webp",
+  galleryMediterraneanDeviledEggs:
+    "/assets/dragonfly/photos/gallery/dragonfly-mediterranean-deviled-eggs.webp",
   julyPlatedVegetableAppetizer:
     "/assets/dragonfly/photos/july-2026/dragonfly-plated-seasonal-vegetable-appetizer.webp",
   julyRackOfLamb:
@@ -203,6 +213,16 @@ export const alt = {
     "Seared scallops with greens and roasted vegetables prepared by Dragonfly Catering",
   galleryGuestsServingGrazingBuffet:
     "Guests serving vegetables and appetizers from a colorful Dragonfly Catering grazing buffet",
+  galleryEnchantedGardenBuffetDisplay:
+    "An enchanted garden buffet with a towering floral arrangement styled by Dragonfly Catering",
+  galleryGardenBuffetSaladFruit:
+    "Seasonal salad, sliced chicken, and fresh fruit arranged for a garden buffet by Dragonfly Catering",
+  galleryEnchantedGardenCateringTable:
+    "A whimsical garden catering table with floral decor and a seasonal buffet by Dragonfly Catering",
+  gallerySavoryPuffPastryBites:
+    "Savory puff pastry bites with tomato and melted cheese prepared by Dragonfly Catering",
+  galleryMediterraneanDeviledEggs:
+    "Mediterranean deviled eggs garnished with cucumber, olives, and chives by Dragonfly Catering",
   julyPlatedVegetableAppetizer:
     "A colorful seasonal vegetable appetizer plated by Dragonfly Catering",
   julyRackOfLamb:
@@ -271,6 +291,36 @@ export type GalleryPhoto = {
 
 /** All approved public gallery photos from the asset manifest. */
 export const galleryPhotos: GalleryPhoto[] = [
+  {
+    src: assets.galleryEnchantedGardenBuffetDisplay,
+    alt: alt.galleryEnchantedGardenBuffetDisplay,
+    category: "Private Events",
+    aspect: "landscape",
+  },
+  {
+    src: assets.galleryGardenBuffetSaladFruit,
+    alt: alt.galleryGardenBuffetSaladFruit,
+    category: "Private Events",
+    aspect: "landscape",
+  },
+  {
+    src: assets.galleryEnchantedGardenCateringTable,
+    alt: alt.galleryEnchantedGardenCateringTable,
+    category: "Private Events",
+    aspect: "portrait",
+  },
+  {
+    src: assets.gallerySavoryPuffPastryBites,
+    alt: alt.gallerySavoryPuffPastryBites,
+    category: "Food",
+    aspect: "portrait",
+  },
+  {
+    src: assets.galleryMediterraneanDeviledEggs,
+    alt: alt.galleryMediterraneanDeviledEggs,
+    category: "Food",
+    aspect: "portrait",
+  },
   {
     src: assets.mattAppetizerBoard,
     alt: alt.mattAppetizerBoard,
