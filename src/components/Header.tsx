@@ -14,6 +14,7 @@ const navLinks = [
   { label: "Menus", href: "/sample-menus" },
   { label: "Gallery", href: "/gallery" },
   { label: "Venues", href: "/preferred-venues" },
+  { label: "Journal", href: "/blog" },
   { label: "About", href: "/about" },
 ];
 

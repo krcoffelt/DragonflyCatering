@@ -52,6 +52,7 @@ export function Footer() {
                 { label: "Gift Cards", href: "/gift-cards" },
                 { label: "About", href: "/about" },
                 { label: "Sample Menus", href: "/sample-menus" },
+                { label: "Journal", href: "/blog" },
                 { label: "Contact", href: "/contact" },
               ].map((link) => (
                 <li key={link.href}>

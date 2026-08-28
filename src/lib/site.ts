@@ -588,6 +588,7 @@ export const mainNav: NavLink[] = [
   { label: "Sample Menus", href: "/sample-menus" },
   { label: "Preferred Venues", href: "/preferred-venues" },
   { label: "Gallery", href: "/gallery" },
+  { label: "Journal", href: "/blog" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
@@ -613,6 +614,7 @@ export const footerNav: { heading: string; links: NavLink[] }[] = [
       { label: "Sample Menus", href: "/sample-menus" },
       { label: "Gallery", href: "/gallery" },
       { label: "Reviews", href: "/reviews" },
+      { label: "Journal", href: "/blog" },
     ],
   },
   {

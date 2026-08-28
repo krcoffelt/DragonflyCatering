@@ -92,3 +92,28 @@ export function faqSchema(faqs: { question: string; answer: string }[]) {
     })),
   };
 }
+
+export function articleSchema(opts: {
+  headline: string;
+  description: string;
+  path: string;
+  image: string;
+  datePublished: string;
+}) {
+  const articleAuthorId = `${site.url}/about#chef-matthew-stone`;
+  const articlePublisherId = `${site.url}/#caterer`;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: opts.headline,
+    description: opts.description,
+    url: `${site.url}${opts.path}`,
+    mainEntityOfPage: `${site.url}${opts.path}`,
+    image: `${site.url}${opts.image}`,
+    datePublished: opts.datePublished,
+    dateModified: opts.datePublished,
+    author: { "@id": articleAuthorId },
+    publisher: { "@id": articlePublisherId },
+  };
+}
