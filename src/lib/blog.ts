@@ -26,6 +26,176 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "holiday-party-catering-chester-county",
+    category: "Holiday events",
+    title: "Holiday Party Catering in Chester County: 2026 Guide",
+    shortTitle: "Plan the holiday party early",
+    description:
+      "Plan holiday party catering in Chester County and the Main Line, including when to book, venue choices, seasonal menus, bartending, dietary needs, and a practical timeline.",
+    intro:
+      "September may feel early to plan a December gathering, but it is exactly when the best version of a holiday party starts taking shape—with room to choose the date, menu, venue, and service style instead of settling for what remains.",
+    quickAnswer:
+      "Start planning a Chester County holiday party in September if the date, venue, or full-service catering matters to you. Confirm the guest range and setting first, then coordinate the menu, staffing, rentals, bar, dietary needs, and event timeline as one plan.",
+    published: "2026-09-03",
+    publishedLabel: "September 3, 2026",
+    readingTime: "10 minute read",
+    hero: {
+      src: "/assets/dragonfly/photos/july-2026/dragonfly-event-table-setting.webp",
+      alt: "An intimate event table set for a catered Chester County gathering",
+      position: "center 52%",
+    },
+    feature: {
+      src: "/assets/dragonfly/photos/july-2026/dragonfly-passed-appetizer-spoons.webp",
+      alt: "Elegant passed appetizers prepared for a holiday cocktail reception",
+      position: "center 48%",
+    },
+    sections: [
+      {
+        id: "why-plan-in-september",
+        heading: "Why September is the right time to start",
+        paragraphs: [
+          "Holiday calendars fill from several directions at once. Companies look for a night that works around year-end deadlines. Families compare school schedules, travel, and traditions. Venues, caterers, bartenders, and rental partners are all working from the same limited set of November and December dates.",
+          "Beginning in September does not mean choosing every detail immediately. It means protecting the decisions with the least flexibility: date, location, approximate guest count, and type of gathering. Once those pieces are stable, the menu and service plan can be developed with intention.",
+        ],
+        bullets: [
+          "Select a preferred date and one or two workable alternatives",
+          "Estimate a realistic guest range before touring spaces",
+          "Decide whether the event is primarily a meal, reception, or activity",
+          "Set a complete budget that includes food, staffing, rentals, and beverages",
+          "Identify one person who can make final planning decisions",
+        ],
+      },
+      {
+        id: "choose-the-setting",
+        heading: "Office, private venue, home, or Dragonfly?",
+        paragraphs: [
+          "An office party can be convenient for the team, but the familiar room may need help feeling celebratory. Consider furniture, lighting, music, food staging, trash, elevators, security, and how work areas will be separated from the gathering. A caterer can make the transformation smoother when access and facilities rules are shared early.",
+          "A private venue gives the event a clearer sense of occasion and may provide tables, chairs, parking, and an established guest flow. A home feels personal for smaller groups but needs an honest look at kitchen capacity, coats, restrooms, parking, and cleanup. Dragonfly’s intimate Downingtown event space offers another option for holiday gatherings of up to 50 guests, with the room and catering planned together.",
+        ],
+        callout:
+          "Tour for the party you are actually hosting. A room that holds 50 people may feel very different after adding dining tables, a buffet, a bar, music, and winter coats.",
+      },
+      {
+        id: "service-style",
+        heading: "Choose a holiday catering style that fits the room",
+        paragraphs: [
+          "The best service style supports how you want guests to spend the evening. Passed appetizers make the first arrival feel welcoming and keep conversation moving. A grazing display creates an easy gathering point. Buffets offer variety and work well for relaxed company celebrations, while stations can add energy and turn the food into part of the experience.",
+          "For a smaller leadership dinner, client event, or family celebration, a plated or family-style meal gives the evening a natural pace. The right choice depends on seating, event length, kitchen access, staffing, and whether the host wants a structured dinner or a more fluid party.",
+        ],
+        bullets: [
+          "Cocktail reception: passed bites, grazing, and a coordinated bar",
+          "Office celebration: streamlined buffet or stations with clear guest flow",
+          "Client or board dinner: paced family-style or plated service",
+          "Open house: replenished displays and food that is easy to enjoy standing",
+          "Private holiday dinner: a chef-led menu served around your own table",
+        ],
+      },
+      {
+        id: "seasonal-menu",
+        heading: "Build a seasonal menu without relying on clichés",
+        paragraphs: [
+          "A holiday menu can feel festive without repeating the same heavy dishes from every December gathering. Start with temperature, texture, and color: a warm passed bite at arrival, something crisp and bright, a comforting centerpiece, seasonal vegetables, and a finish that feels celebratory rather than obligatory.",
+          "Let the occasion guide the level of familiarity. A company Christmas party may benefit from recognizable flavors presented with more polish, while a client dinner can support a more composed progression of courses. For a mixed group, give vegetarian and gluten-aware guests complete choices rather than asking them to assemble a meal from side dishes.",
+        ],
+        bullets: [
+          "Warm, one- or two-bite appetizers that remain neat in conversation",
+          "A bright seasonal salad or vegetable course for contrast",
+          "One memorable main element instead of too many competing entrées",
+          "Substantial plant-forward dishes designed as part of the menu",
+          "Individual desserts or a focused sweet finish that serves cleanly",
+        ],
+      },
+      {
+        id: "bar-and-mocktails",
+        heading: "Plan the bar and mocktails alongside the food",
+        paragraphs: [
+          "The beverage experience affects the same room, rentals, staff, and schedule as the food. Decide where the bar will sit, how guests will approach it, what glassware is needed, and where ice and backup supplies can be stored. Keeping the bar away from the buffet prevents two popular areas from becoming one long line.",
+          "Dragonfly offers RAMP-certified bartending and can coordinate portable bar needs, mixers, garnishes, signature cocktails, elevated mocktails, glassware, and service timing. The client provides the alcohol. Planning all of it with the catering proposal keeps responsibilities clear and gives alcohol-free guests something considered from the start.",
+        ],
+      },
+      {
+        id: "dietary-planning",
+        heading: "Make dietary accommodations feel like hospitality",
+        paragraphs: [
+          "Collect allergies and dietary needs when guests respond, not in the final days before the party. Give the caterer an accurate count and identify medically serious allergies separately from preferences. The kitchen may need to adjust preparation, utensils, packaging, or service procedures.",
+          "At the event, discreet labels help guests make choices without calling attention to themselves. A thoughtful holiday menu incorporates vegetarian, vegan, or gluten-aware dishes naturally, so everyone sees appealing food rather than a main menu and a collection of substitutions.",
+        ],
+      },
+      {
+        id: "planning-timeline",
+        heading: "A practical 2026 holiday-party timeline",
+        paragraphs: [
+          "Use the timeline as a sequence rather than a set of rigid deadlines. A larger company event, a Saturday date, or a venue with limited availability should move earlier. A small weekday dinner may offer more flexibility, but the plan still benefits from clear decision points.",
+        ],
+        bullets: [
+          "September: choose the date, setting, guest range, and budget context",
+          "Early October: approve the menu direction, service style, rentals, and bar plan",
+          "Late October: confirm entertainment, décor, transportation, and building access",
+          "November: collect dietary needs, refine the count, and share the event schedule",
+          "Final week: confirm attendance, vendor arrival times, onsite contacts, and responsibilities",
+          "Event day: protect the agreed setup window so the room is ready before guests arrive",
+        ],
+        callout:
+          "The host should not be answering loading-dock questions while welcoming guests. Give every vendor one informed onsite contact before the event day.",
+      },
+      {
+        id: "organizer-checklist",
+        heading: "The organizer’s final holiday-party checklist",
+        paragraphs: [
+          "Before calling the plan complete, follow the guest experience from arrival to departure. Where will people park and leave coats? What do they see first? When does food begin? Can they move comfortably between conversation, drinks, and dinner? How will the room be cleared, and who is responsible for anything left behind?",
+          "For holiday party catering in Downingtown, Chester County, or the Main Line, send Dragonfly the date, address, guest count, occasion, schedule, dietary needs, and the feeling you want the gathering to have. Chef Matt will shape a custom menu and service proposal around the people and the place.",
+        ],
+        bullets: [
+          "Final guest count and dietary list",
+          "Venue access, parking, accessibility, and winter-weather plan",
+          "Food, coffee, water, bar, and alcohol-free beverage responsibilities",
+          "Tables, chairs, linens, plates, flatware, glassware, and serving pieces",
+          "Music, remarks, gift exchange, or activities added to the timeline",
+          "Setup, clearing, trash, leftovers, and final venue checkout",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "When should I book holiday party catering in Chester County?",
+        answer:
+          "Start in September when possible, especially for a preferred December date, weekend event, venue, or full-service plan. Smaller weekday gatherings may retain more flexibility, but early planning creates better options.",
+      },
+      {
+        question: "Can Dragonfly cater a holiday party at our office?",
+        answer:
+          "Yes. Dragonfly caters in offices, private homes, rented spaces, and event venues. Share building access, loading, kitchen, security, elevator, and cleanup requirements when requesting a proposal.",
+      },
+      {
+        question: "Does Dragonfly have a holiday party venue in Downingtown?",
+        answer:
+          "Yes. Dragonfly’s intimate event space at 4325 Lincoln Highway in Downingtown hosts gatherings of up to 50 guests. The most comfortable layout depends on seating, food service, bar needs, and the event format.",
+      },
+      {
+        question: "Can holiday catering and bartending be included together?",
+        answer:
+          "Yes. Dragonfly can coordinate catering with RAMP-certified bartending, portable bar needs, mixers, garnishes, cocktails, mocktails, glassware, staffing, and timing. The client provides the alcohol.",
+      },
+      {
+        question: "Can you accommodate vegetarian, vegan, or gluten-aware guests?",
+        answer:
+          "Dragonfly builds custom menus around the group’s needs. Share accurate counts and identify serious allergies early so suitable menu, preparation, labeling, and service options can be discussed.",
+      },
+      {
+        question: "Does Dragonfly serve Main Line holiday parties?",
+        answer:
+          "Yes. Dragonfly serves Downingtown, Chester County, the Main Line, and select nearby Pennsylvania communities. Share the venue or address so travel and logistics can be confirmed for your date.",
+      },
+    ],
+    relatedServices: [
+      { label: "Corporate Catering", href: "/corporate-catering" },
+      { label: "Event Bartending", href: "/event-bartending" },
+      { label: "Dragonfly Event Space", href: "/dragonfly-event-space" },
+      { label: "Sample Menus", href: "/sample-menus" },
+      { label: "Main Line Catering", href: "/service-areas/main-line-catering" },
+    ],
+  },
+  {
     slug: "chester-county-catering-cost-per-person",
     category: "Catering planning",
     title: "Chester County Catering Costs: A Practical Price Guide",
