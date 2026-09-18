@@ -15,18 +15,6 @@ export const googleReviewsUrl = getMapSearchUrl();
 
 export const clientReviews: ClientReview[] = [
   {
-    id: "alexandra-barry",
-    name: "Alexandra Barry",
-    event: "Private chef and bartending",
-    source: "Google review",
-    rating: 5,
-    sourceUrl: googleReviewsUrl,
-    featuredText:
-      "The food was absolutely delicious and beautifully presented — every dish was a work of art. The cocktails were equally impressive, crafted with care and creativity.",
-    text:
-      "We had an amazing experience with the private chef and his wife, who was also the bartender. The food was absolutely delicious and beautifully presented — every dish was a work of art. The cocktails were equally impressive, crafted with care and creativity. Highly recommend them to anyone looking for a unique and unforgettable culinary experience!",
-  },
-  {
     id: "deb-a",
     name: "Deb A.",
     event: "Anniversary dinner",
@@ -37,18 +25,6 @@ export const clientReviews: ClientReview[] = [
       "Matt came to the house and took over the kitchen and made amazing appetizers, dinner and desserts. Matt worked in the background and was so friendly and considerate of everyone.",
     text:
       "We had Dragonfly Catering for an intimate anniversary dinner for 8 people. Matt came to the house and took over the kitchen and made amazing appetizers, dinner and desserts. Matt worked in the background and was so friendly and considerate of everyone. It was a very special evening. Highly recommend!",
-  },
-  {
-    id: "katherine-boas",
-    name: "Katherine Boas",
-    event: "Backyard wedding",
-    source: "Google review",
-    rating: 5,
-    sourceUrl: googleReviewsUrl,
-    featuredText:
-      "Chef Matt was an absolute pleasure to work with from the very start. He’s extremely easy to talk to, is so helpful with recommendations and advice, and went above and beyond to make our wedding the most perfect day.",
-    text:
-      "I cannot say enough good things about Dragonfly Catering! I used their services for my backyard wedding on my parents' property with 150 guests. Chef Matt was an absolute pleasure to work with from the very start. He’s extremely easy to talk to, is so helpful with recommendations and advice, and went above and beyond to make our wedding the most perfect day. The food was so delicious and special! Then to make it even more special, Chef Matt’s wife, Rhiannon, runs Dragonfly Libations, which we used for their bartending services. Our specialty cocktails were so yummy and the staff were cross-trained to help out anywhere there was a need. I couldn’t have asked for a better catering/bartending team - so very thankful!",
   },
   {
     id: "linda-barsamian",
@@ -73,16 +49,6 @@ export const clientReviews: ClientReview[] = [
       "My family had the opportunity to work with Matt from dragonfly catering for a recent private chef birthday celebration dinner we had at our house. Matt was so responsive and thorough in the process of booking. On the day of the event he arrived early and was so prepared and professional. He printed menus and prepared a multi course dinner in our home. His food was absolutely amazing and our family loved having options as we all do not usually agree on the same thing! He was amazing and we would be so happy to recommend him to anyone!",
   },
   {
-    id: "lisa-matecki",
-    name: "Lisa Matecki",
-    event: "After-wedding brunch",
-    source: "Google review",
-    rating: 5,
-    sourceUrl: googleReviewsUrl,
-    text:
-      "We had a wonderful after wedding Sunday brunch for family and friends prepared by Dragonfly Catering. Buttermilk Chicken and waffles with sausage gravy, triple cheese laced cavatapi, and refreshing watermelon feta salad, Absolutely delicious and enjoyed by all. The scratch made cookie assortment included a marshmallow cornflake crunch cookie that was a crowd favorite. Thank you Matt and Rhiannon for a great meal and courteous service.",
-  },
-  {
     id: "r-hall",
     name: "R. Hall",
     event: "Jamaican-themed dinner",
@@ -101,16 +67,6 @@ export const clientReviews: ClientReview[] = [
     sourceUrl: googleReviewsUrl,
     text:
       "My friend got me a gift card for Dragonfly Catering when my second baby arrived! It was the perfect gift. The food was so delicious, well-packaged, easy to heat and easy to clean. It was a great alternative to “take-out” and seemed much healthier. I will definitely order from them again for family meals and when we are entering. It was definitely worth the price and a great treat!",
-  },
-  {
-    id: "elizabeth-carney",
-    name: "Elizabeth Carney",
-    event: "Couples shower",
-    source: "Google review",
-    rating: 5,
-    sourceUrl: googleReviewsUrl,
-    text:
-      "Matt catered our couples shower and the food was amazing! Everyone raved about the delicious food and it was all beautifully displayed as well. We also got to top it all off with the scrumptious cupcakes by his wife. Highly recommend!",
   },
   {
     id: "christine-soriano",
@@ -175,12 +131,14 @@ export const clientReviews: ClientReview[] = [
   {
     id: "valerie-dixon",
     name: "Valerie Dixon",
-    event: "Family meals and events",
+    event: "Personal and work events",
     source: "Google review",
     rating: 5,
     sourceUrl: googleReviewsUrl,
+    featuredText:
+      "Every time they NAIL IT with service, kindness, and exceptional customer service. And what exceeds all of that? THE FOOD!",
     text:
-      "Cheff Matt and Rhiannon are amazing people. AND they make amazing food. For your family meal … or for a larger dinner crowd or special event … look no where else. ⭐️⭐️⭐️⭐️⭐️ stars and then some!",
+      "I have used Dragonfly Catering for personal and work events, and every time they NAIL IT with service, kindness, and exceptional customer service. And what exceeds all of that? THE FOOD! Always delicious! Always meticulously displayed and then some. I wish I could give 1,000 stars ... and even then it's not enough!",
   },
   {
     id: "vicki-stone",

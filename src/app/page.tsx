@@ -117,7 +117,7 @@ export default function HomePage() {
         image={{ src: assets.chefMattPortrait, alt: alt.chefMattPortrait }}
         title="Rooted in craft. Refined by taste."
         body="At Dragonfly, catering is more than a meal — it's a quiet celebration of seasonal food, personal attention, and thoughtful hospitality. Every menu is written for your guests, your setting, and the feeling you want to create."
-        ctaLabel="Read Matt & Rhiannon's story"
+        ctaLabel="Read Chef Matt's story"
         ctaHref="/about"
       />
 

@@ -13,7 +13,7 @@ import { assets, alt, chefAccolades } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "Our Story | Dragonfly Catering, Downingtown PA",
   description:
-    "Meet Chef Matthew Stone, Executive Chef of Top Chef Quickfire Philadelphia, and learn how Matt and Rhiannon founded Dragonfly Catering in Downingtown, PA.",
+    "Meet Chef Matthew Stone and follow his path from The Capital Grille, True Food Kitchen, and Top Chef Quickfire Philadelphia to Dragonfly Catering.",
   path: "/about",
 });
 
@@ -28,7 +28,7 @@ const milestones = [
   },
   {
     label: "The leap",
-    copy: "In 2020, Chef Matt and Rhiannon founded Dragonfly Catering — built on the belief that food is comfort, connection, and craft.",
+    copy: "Dragonfly Catering was founded in 2020 on the belief that food is comfort, connection, and craft.",
   },
   {
     label: "Today",
@@ -87,9 +87,9 @@ export default function AboutPage() {
                   including The Capital Grille and True Food Kitchen.
                 </p>
                 <p>
-                  In 2020, he and Rhiannon founded Dragonfly on a simple idea:
-                  the care of a great restaurant kitchen belongs at personal
-                  gatherings too. Food is love.
+                  In 2020, Dragonfly was founded on a simple idea: the care of a
+                  great restaurant kitchen belongs at personal gatherings too.
+                  Food is love.
                 </p>
               </div>
               <details className="group mt-7 max-w-xl border-t border-plum/15 pt-5">
@@ -116,14 +116,14 @@ export default function AboutPage() {
                     from concept through execution.
                   </p>
                   <p>
-                    In 2020, amid the uncertainty of the pandemic, Chef Matt and
-                    his wife Rhiannon founded Dragonfly Catering to serve their
-                    community through comfort, connection, and culinary craft.
-                    Home-delivered meals grew into full-service catering,
-                    private chef experiences, artisan pop-ups, and curated
-                    events. Dragonfly evolved from a home kitchen into a shared
-                    collaborative space at Artisan Exchange before establishing
-                    its current home in Downingtown.
+                    In 2020, amid the uncertainty of the pandemic, Dragonfly
+                    Catering began serving the community through comfort,
+                    connection, and culinary craft. Home-delivered meals grew
+                    into full-service catering, private chef experiences,
+                    artisan pop-ups, and curated events. Dragonfly evolved from
+                    a home kitchen into a shared collaborative space at Artisan
+                    Exchange before establishing its current home in
+                    Downingtown.
                   </p>
                   <p>
                     Today, Chef Matt leads Dragonfly&apos;s Downingtown catering
@@ -188,12 +188,11 @@ export default function AboutPage() {
               <p>
                 After more than twenty years in professional kitchens, Matt
                 wanted to bring the same discipline, timing, and care to
-                gatherings that felt more personal than restaurant service. In
-                2020, he and Rhiannon founded Dragonfly Catering in Chester
-                County.
+                gatherings that felt more personal than restaurant service.
+                Dragonfly Catering was founded in Chester County in 2020.
               </p>
               <p>
-                They built the company around conversation. Every menu starts
+                The company was built around conversation. Every menu starts
                 with the people at the table, the place they are gathering, and
                 the season. That approach carries through weddings and showers,
                 private chef dinners, corporate events, and community work.

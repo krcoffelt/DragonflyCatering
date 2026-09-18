@@ -79,7 +79,7 @@ export default function SocialEventsPage() {
     >
       <ReviewPullQuote
         review={socialEventsReview}
-        quote="Cheff Matt and Rhiannon are amazing people. AND they make amazing food. For your family meal … or for a larger dinner crowd or special event … look no where else."
+        quote="Every time they NAIL IT with service, kindness, and exceptional customer service. And what exceeds all of that? THE FOOD!"
         placement="social-events-review"
       />
     </ServicePage>
