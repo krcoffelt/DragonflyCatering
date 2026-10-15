@@ -18,12 +18,12 @@ export default function PrivateChefPage() {
       serviceDescription="In-home private chef dinners, tasting menus, pairing dinners, and interactive chef-led experiences in Downingtown, Chester County, and the Main Line."
       eyebrow="Private chef"
       title="Private chef, at your table"
-      lead="A restaurant-quality dinner in your own home, prepared and plated by Chef Matt — no reservations, no rushing, no cleanup."
+      lead="A restaurant-quality dinner in your own home, prepared and plated by Chef Matt. No reservations, no rushing, no cleanup."
       heroImage={{ src: assets.chefMattPortrait, alt: alt.chefMattPortrait }}
       coverage={{
         eyebrow: "The experiences",
         title: "Date night to dinner party",
-        lead: "Coursed, plated, and personal — choose the shape of the evening.",
+        lead: "Coursed, plated, and personal. Choose the shape of the evening.",
         items: [
           "In-home coursed dinners",
           "Multi-course tasting menus",
@@ -41,7 +41,7 @@ export default function PrivateChefPage() {
         title: "Your kitchen, Chef Matt's craft",
         paragraphs: [
           "Chef Matt arrives with everything the menu needs, cooks in your kitchen, plates each course, and leaves it cleaner than he found it. You stay at the table.",
-          "Menus are written for your evening — add a pairing conversation, an interactive course at the counter, or a mocktail progression.",
+          "Menus are written for your evening. Add a pairing conversation, an interactive course at the counter, or a mocktail progression.",
         ],
       }}
       faqs={[
@@ -63,11 +63,11 @@ export default function PrivateChefPage() {
         {
           question: "Do you offer beverage pairings?",
           answer:
-            "Yes — wine and bourbon pairing guidance is available, along with crafted mocktail pairings. For full bar service, add our professional event bartending team.",
+            "Yes. Wine and bourbon pairing guidance is available, along with crafted mocktail pairings. For full bar service, add our professional event bartending team.",
         },
       ]}
       finalCta={{
-        title: "Set the table — we'll handle the rest",
+        title: "Set the table. We'll handle the rest",
         copy: "Tell us the occasion, your guest count, and the flavors you love. Chef Matt will design a private dinner around your table.",
       }}
     />

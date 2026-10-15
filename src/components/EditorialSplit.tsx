@@ -32,7 +32,7 @@ export function EditorialSplit({
           />
         </div>
       ) : (
-        /* Placeholder — replace with an approved photo before launch. */
+        /* Placeholder: replace with an approved photo before launch. */
         <div
           className={`flex ${imageAspect} flex-col items-center justify-center gap-3 rounded-[4px] bg-plum p-8 text-center`}
         >

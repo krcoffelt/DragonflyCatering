@@ -28,7 +28,7 @@ function writeSnooze(until: number) {
   try {
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify({ until } satisfies Stored));
   } catch {
-    /* storage unavailable — the popup simply may show again next visit */
+    /* storage unavailable; the popup simply may show again next visit */
   }
 }
 
@@ -87,7 +87,7 @@ export function ThanksgivingPopup() {
       onClick={(event) => {
         if (event.target === dialogRef.current) dismiss();
       }}
-      className={`m-auto w-[calc(100%-2rem)] max-w-[820px] overflow-visible bg-transparent p-0 backdrop:bg-plum/60 backdrop:backdrop-blur-sm backdrop:transition-opacity backdrop:duration-300 ${
+      className={`m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-[820px] overflow-y-auto overscroll-contain bg-transparent p-0 backdrop:bg-plum/60 backdrop:backdrop-blur-sm backdrop:transition-opacity backdrop:duration-300 ${
         visible ? "backdrop:opacity-100" : "backdrop:opacity-0"
       }`}
     >
@@ -96,7 +96,7 @@ export function ThanksgivingPopup() {
           visible ? "translate-y-0 scale-100 opacity-100" : "translate-y-4 scale-[0.98] opacity-0"
         }`}
       >
-        <div className="relative h-44 sm:h-auto sm:min-h-[460px]">
+        <div className="relative h-44 max-sm:[@media(max-height:700px)]:h-32 sm:h-auto sm:min-h-[420px] sm:[@media(max-height:560px)]:min-h-0">
           <Image
             src="/assets/dragonfly/photos/stock/pexels-thanksgiving-pumpkin-puree-roasted-vegetables-5718103.jpg"
             alt="Thanksgiving spread with whipped squash, roasted vegetables and small pumpkins"
@@ -105,12 +105,12 @@ export function ThanksgivingPopup() {
             className="object-cover object-[center_62%]"
           />
           <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-plum/70 via-plum/10 to-transparent" />
-          <p className="absolute bottom-4 left-5 rounded-full bg-warmwhite/95 px-3.5 py-1.5 text-[12px] font-semibold text-plum shadow-sm sm:bottom-6 sm:left-6">
+          <p className="absolute bottom-4 left-5 rounded-full bg-warmwhite px-3.5 py-1.5 text-[12px] font-semibold text-plum shadow-sm sm:bottom-6 sm:left-6">
             Sides from $15
           </p>
         </div>
 
-        <div className="flex flex-col justify-center px-6 pb-7 pt-6 sm:px-10 sm:py-12">
+        <div className="flex flex-col justify-center px-6 pb-7 pt-6 sm:px-10 sm:py-12 sm:[@media(max-height:560px)]:py-7">
           <p className="eyebrow">Thanksgiving {thanksgiving.year} · Now taking orders</p>
           <h2
             id="thanksgiving-popup-title"
@@ -119,16 +119,16 @@ export function ThanksgivingPopup() {
             A dish-free <span className="italic text-royal">Thanksgiving.</span>
           </h2>
           <p id="thanksgiving-popup-copy" className="mt-4 text-[15px] leading-7 text-charcoal/70">
-            Chef-made sides, scratch gravy and dessert — packed oven-ready for pickup or delivery on{" "}
+            Chef-made sides, scratch gravy and dessert, packed oven-ready for pickup or delivery on{" "}
             {thanksgiving.serviceDayShort}.
           </p>
 
-          <div className="mt-6 flex items-center gap-3 rounded-xl border border-gold/40 bg-gold/10 px-4 py-3">
-            <svg aria-hidden viewBox="0 0 20 20" fill="none" className="h-5 w-5 shrink-0 text-[#8a6d2c]">
+          <div className="mt-6 flex items-center gap-3">
+            <svg aria-hidden viewBox="0 0 20 20" fill="none" className="h-5 w-5 shrink-0 text-royal">
               <rect x="3" y="4.5" width="14" height="12" rx="2" stroke="currentColor" strokeWidth="1.5" />
               <path d="M3 8.5h14M7 3v3M13 3v3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
             </svg>
-            <p className="text-[13px] text-plum">
+            <p className="text-[15px] text-plum">
               <span className="font-semibold">Order by {thanksgiving.cutoffLabel}</span>
             </p>
           </div>
@@ -161,7 +161,7 @@ export function ThanksgivingPopup() {
           type="button"
           onClick={dismiss}
           aria-label="Close"
-          className="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-warmwhite/90 text-plum shadow-sm backdrop-blur transition hover:bg-white sm:right-4 sm:top-4"
+          className="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-white text-plum shadow-sm transition hover:bg-ivory sm:right-4 sm:top-4"
         >
           <svg aria-hidden viewBox="0 0 20 20" fill="none" className="h-4 w-4">
             <path d="m5 5 10 10M15 5 5 15" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />

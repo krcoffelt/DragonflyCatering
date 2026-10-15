@@ -30,7 +30,7 @@ export default function PreferredVenuesPage() {
       <PageHero
         eyebrow="Preferred venues"
         title="Beautiful venues. One trusted caterer."
-        lead="These venues are just the beginning — if yours isn't listed, we'd love to meet it."
+        lead="These venues are just the beginning. If yours isn't listed, we'd love to meet it."
         secondaryCta={{ label: "Explore Our Services", href: "/services" }}
       />
 
@@ -94,7 +94,7 @@ export default function PreferredVenuesPage() {
           <SectionHeading
             eyebrow="Your venue, our kitchen"
             title="Booked somewhere else? Bring us along."
-            lead="Tell us where you're gathering — we'll handle load-in to last plate."
+            lead="Tell us where you're gathering, and we'll handle load-in to last plate."
             align="center"
           />
           <Reveal className="mt-9 flex flex-wrap justify-center gap-4">
@@ -114,7 +114,7 @@ export default function PreferredVenuesPage() {
 
       <FinalCta
         title="Found the perfect venue?"
-        copy="Tell us where and when you're celebrating — we'll build a menu and service plan that fits the space beautifully."
+        copy="Tell us where and when you're celebrating, and we'll build a menu and service plan that fits the space beautifully."
       />
     </>
   );

@@ -45,7 +45,7 @@ export function ServiceCard({
             className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
           />
         ) : (
-          /* Placeholder — replace with an approved photo before launch. */
+          /* Placeholder: replace with an approved photo before launch. */
           <div className="absolute inset-0 flex items-center justify-center bg-plum">
             <div className="absolute inset-5 border border-warmwhite/12" />
             <DragonflyMark className="h-14 w-14 text-gold/65" />

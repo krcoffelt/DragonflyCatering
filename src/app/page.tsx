@@ -38,7 +38,7 @@ const faqs = [
   {
     question: "Can you accommodate dietary restrictions?",
     answer:
-      "Yes — vegetarian, vegan, gluten-free, and allergy-aware menus are part of nearly every event we cater.",
+      "Yes. Vegetarian, vegan, gluten-free, and allergy-aware menus are part of nearly every event we cater.",
   },
   {
     question: "Do you travel to our venue?",
@@ -50,7 +50,7 @@ const faqs = [
 const menuItems = [
   {
     name: "Passed Hors d'Oeuvres",
-    detail: "Seasonal canapés designed for mingling — not managing plates.",
+    detail: "Seasonal canapés designed for mingling, not managing plates.",
   },
   {
     name: "Plated Dinners",
@@ -69,7 +69,7 @@ const menuItems = [
 const drinkItems = [
   {
     name: "Signature Cocktails",
-    detail: "Custom builds designed for your event — named, balanced, memorable.",
+    detail: "Custom builds designed for your event: named, balanced, memorable.",
   },
   {
     name: "Elevated Mocktails",
@@ -123,7 +123,7 @@ export default function HomePage() {
             <em className="text-royal">Food is love.</em>
           </>
         }
-        body="That belief guides every menu we create—from weddings and family celebrations to private dinners, corporate events, and meals shared with our community."
+        body="That belief guides every menu we create, from weddings and family celebrations to private dinners, corporate events, and meals shared with our community."
         ctaLabel="Read Chef Matt's story"
         ctaHref="/about"
       />
@@ -164,7 +164,7 @@ export default function HomePage() {
                 Where we cater
               </p>
               <h2 className="mt-4 max-w-[820px] font-display text-[42px] leading-[0.98] text-warmwhite sm:text-[56px] lg:text-[68px]">
-                Downingtown, Chester County, the Main Line—and your table.
+                Downingtown, Chester County, the Main Line, and your table.
               </h2>
               <p className="mt-5 max-w-[640px] text-[15px] leading-6 text-warmwhite/70">
                 See where Dragonfly travels, the venues we know, and how we

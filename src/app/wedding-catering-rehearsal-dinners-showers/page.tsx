@@ -19,7 +19,7 @@ export default function WeddingsPage() {
       serviceDescription="Wedding catering, rehearsal dinners, showers, and celebration brunches with custom seasonal menus across Chester County and the Main Line."
       eyebrow="Weddings & celebrations"
       title="Weddings, rehearsal dinners & showers"
-      lead="Your wedding season is more than one day — we cater the whole arc, from the first shower to the morning-after brunch."
+      lead="Your wedding season is more than one day. We cater the whole arc, from the first shower to the morning-after brunch."
       heroImage={{ src: assets.heroAppetizers, alt: alt.heroAppetizers }}
       coverage={{
         eyebrow: "Every celebration",
@@ -44,7 +44,7 @@ export default function WeddingsPage() {
         eyebrow: "The Dragonfly difference",
         title: "A caterer who knows your name",
         paragraphs: [
-          "We keep a boutique wedding calendar on purpose. Chef Matt is part of every menu, tasting, and service day — so the food tastes like it was made for you, because it was.",
+          "We keep a boutique wedding calendar on purpose. Chef Matt is part of every menu, tasting, and service day, so the food tastes like it was made for you, because it was.",
           "Booked a venue? We work across Chester County and the Main Line. Something smaller? Our Downingtown space hosts showers and rehearsal dinners beautifully.",
         ],
       }}
@@ -52,7 +52,7 @@ export default function WeddingsPage() {
         {
           question: "Do you cater full weddings or only smaller events?",
           answer:
-            "Both. We specialize in intimate weddings and the celebrations around them — rehearsal dinners, showers, welcome parties, and brunches. Share your guest count and we'll confirm the right fit.",
+            "Both. We specialize in intimate weddings and the celebrations around them: rehearsal dinners, showers, welcome parties, and brunches. Share your guest count and we'll confirm the right fit.",
         },
         {
           question: "Can we do a tasting before booking?",
@@ -62,17 +62,17 @@ export default function WeddingsPage() {
         {
           question: "Can you cater at our venue?",
           answer:
-            "Almost certainly. We regularly cater at venues across Chester County, the Main Line, and nearby Pennsylvania communities — see our preferred venues page, or tell us where you're booked.",
+            "Almost certainly. We regularly cater at venues across Chester County, the Main Line, and nearby Pennsylvania communities. See our preferred venues page, or tell us where you're booked.",
         },
         {
           question: "Do you offer bar service for weddings?",
           answer:
-            "Yes — our event bartending team can serve signature cocktails, wine, and elevated mocktails alongside your menu. You provide the alcohol; we handle the service plan.",
+            "Yes. Our event bartending team can serve signature cocktails, wine, and elevated mocktails alongside your menu. You provide the alcohol; we handle the service plan.",
         },
       ]}
       finalCta={{
         title: "Planning a wedding weekend?",
-        copy: "Tell us about your celebration — dates, guest counts, and venues — and we'll design menus that carry your story from rehearsal to brunch.",
+        copy: "Tell us about your celebration (dates, guest counts, and venues), and we'll design menus that carry your story from rehearsal to brunch.",
       }}
     />
   );

@@ -83,7 +83,7 @@ export function GalleryGrid({
 
       {visible.length === 0 && (
         <p className="mt-10 rounded-xl border border-dashed border-gold/50 bg-warmwhite p-8 text-center text-sm text-charcoal/60">
-          Photography for {active.toLowerCase()} is being gathered now — check
+          Photography for {active.toLowerCase()} is being gathered now. Check
           back soon, or{" "}
           <a href="/contact" className="font-semibold text-royal underline">
             ask us about recent events

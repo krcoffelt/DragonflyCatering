@@ -21,7 +21,7 @@ export const metadata: Metadata = buildMetadata({
 const services = [
   {
     title: "Custom Catering",
-    copy: "Weddings, showers, and celebrations — at your venue or ours.",
+    copy: "Weddings, showers, and celebrations, at your venue or ours.",
     href: "/custom-catering",
     ctaLabel: "Custom Catering",
     image: { src: assets.mattAppetizerBoard, alt: alt.mattAppetizerBoard },
@@ -179,7 +179,7 @@ export default function ServicesPage() {
               {
                 step: "03",
                 title: "Gather and enjoy",
-                copy: "We handle the food, the service, and the details — you stay with your guests.",
+                copy: "We handle the food, the service, and the details, so you stay with your guests.",
               },
             ].map((item, i) => (
               <Reveal key={item.step} delay={0.08 * i}>

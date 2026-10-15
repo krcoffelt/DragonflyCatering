@@ -271,7 +271,7 @@ export const alt = {
     "A Dragonfly bartender arranging glassware behind the event bar",
 };
 
-/** Homepage hero rotation — avoids the raw dragon-fruit prep image as the cover. */
+/** Homepage hero rotation; avoids the raw dragon-fruit prep image as the cover. */
 export const heroSlides = [
   { src: assets.heroAppetizers, alt: alt.heroAppetizers },
 ] as const;

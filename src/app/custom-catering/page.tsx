@@ -27,7 +27,7 @@ export default function CustomCateringPage() {
       coverage={{
         eyebrow: "Where we cater",
         title: "Your setting. Our kitchen.",
-        lead: "Any guest count, any location — menus scaled to fit the room.",
+        lead: "Any guest count, any location, with menus scaled to fit the room.",
         items: [
           "Private homes & backyard events",
           "Rental venues & estates",
@@ -48,14 +48,14 @@ export default function CustomCateringPage() {
         title: "Served the way your event flows best",
         paragraphs: [
           "Plated dinners. Family-style platters. Buffets, stations, tapas, and passed hors d'oeuvres. A la carte when you just need the food handled.",
-          "Seasonal and local whenever possible — comfort food, international favorites, and fusion, written for your guests rather than pulled from a package.",
+          "Seasonal and local whenever possible: comfort food, international favorites, and fusion, written for your guests rather than pulled from a package.",
         ],
       }}
       faqs={[
         {
           question: "How far in advance should we book?",
           answer:
-            "Because Dragonfly keeps a boutique calendar, popular dates fill early — especially spring and fall weekends. Reach out as soon as you have a date in mind and we'll confirm availability quickly.",
+            "Because Dragonfly keeps a boutique calendar, popular dates fill early, especially spring and fall weekends. Reach out as soon as you have a date in mind and we'll confirm availability quickly.",
         },
         {
           question: "Can you accommodate dietary restrictions?",
@@ -65,7 +65,7 @@ export default function CustomCateringPage() {
         {
           question: "Do you handle staffing, setup, and cleanup?",
           answer:
-            "Full-service events include professional service staff, setup, and breakdown. For smaller gatherings, we also offer drop-off and a la carte options — tell us what level of service fits your event.",
+            "Full-service events include professional service staff, setup, and breakdown. For smaller gatherings, we also offer drop-off and a la carte options. Tell us what level of service fits your event.",
         },
         {
           question: "Is there a guest minimum or maximum?",
@@ -75,7 +75,7 @@ export default function CustomCateringPage() {
       ]}
       finalCta={{
         title: "Tell us about the gathering you're planning",
-        copy: "Share your date, guest count, location, and vision — Chef Matt will shape a custom catering proposal around it.",
+        copy: "Share your date, guest count, location, and vision, and Chef Matt will shape a custom catering proposal around it.",
       }}
     >
       <ReviewPullQuote

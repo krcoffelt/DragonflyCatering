@@ -67,7 +67,7 @@ const faqs = [
   },
   {
     question: "Where is the space located?",
-    answer: `Dragonfly Catering & Event Space is at ${site.address.street}, ${site.address.city}, ${site.address.state} ${site.address.zip} — on Lincoln Highway with convenient access from Route 30 and the surrounding Chester County area.`,
+    answer: `Dragonfly Catering & Event Space is at ${site.address.street}, ${site.address.city}, ${site.address.state} ${site.address.zip}, on Lincoln Highway with convenient access from Route 30 and the surrounding Chester County area.`,
   },
 ];
 
@@ -92,7 +92,7 @@ export default function EventSpacePage() {
       <PageHero
         eyebrow="Dragonfly Event Space · Downingtown"
         title="An intimate event space in Downingtown"
-        lead={`Some gatherings don't need a ballroom — they need a warm room, exceptional food, and people you love. Best for small events up to ${site.eventSpaceCapacity} guests.`}
+        lead={`Some gatherings don't need a ballroom. They need a warm room, exceptional food, and people you love. Best for small events up to ${site.eventSpaceCapacity} guests.`}
         secondaryCta={{ label: "View Sample Menus", href: "/sample-menus" }}
       />
 
@@ -174,7 +174,7 @@ export default function EventSpacePage() {
         </div>
       </section>
 
-      {/* Photo gallery placeholder — no event-space photos exist in the asset
+      {/* Photo gallery placeholder: no event-space photos exist in the asset
           library yet. Replace this band with a real gallery before launch. */}
       <section className="bg-ivory py-20 lg:py-24">
         <div className="mx-auto max-w-[1280px] px-5 sm:px-8">
@@ -185,7 +185,7 @@ export default function EventSpacePage() {
                 Photos coming soon
               </h2>
               <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-charcoal/70">
-                We&rsquo;re photographing the space now — in the meantime,
+                We&rsquo;re photographing the space now. In the meantime,
                 we&rsquo;d love to show you around in person.
               </p>
               <div className="mt-7">
@@ -213,7 +213,7 @@ export default function EventSpacePage() {
 
       <FinalCta
         title="Host your next gathering at Dragonfly"
-        copy="Tell us the occasion, your date, and your guest count — we'll confirm whether the room is the right fit, then share availability, menu ideas, and everything the space includes."
+        copy="Tell us the occasion, your date, and your guest count, and we'll confirm whether the room is the right fit, then share availability, menu ideas, and everything the space includes."
       />
     </>
   );

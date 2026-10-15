@@ -33,7 +33,7 @@ export default function SampleMenusPage() {
       <PageHero
         eyebrow="Sample menus"
         title="Menus that begin with your event"
-        lead="Our sample menus are starting points, not packages — every proposal is customized to your event, guests, and budget."
+        lead="Our sample menus are starting points, not packages. Every proposal is customized to your event, guests, and budget."
         secondaryCta={{ label: "View the Gallery", href: "/gallery" }}
       />
 
@@ -119,7 +119,7 @@ export default function SampleMenusPage() {
 
       <FinalCta
         title="Hungry to see your menu?"
-        copy="Tell us about your event and the food you love — Chef Matt will create a custom menu specifically for your gathering."
+        copy="Tell us about your event and the food you love, and Chef Matt will create a custom menu specifically for your gathering."
       />
     </>
   );

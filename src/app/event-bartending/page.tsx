@@ -18,7 +18,7 @@ export default function EventBartendingPage() {
       serviceDescription="RAMP-certified event bartending and mobile bar service with signature cocktails and elevated mocktails across Chester County and the Main Line."
       eyebrow="Event bartending"
       title="Event bartending, cocktails & mocktails"
-      lead="RAMP-certified bartenders, signature cocktails, elevated mocktails, and a polished portable bar — wherever your event takes you."
+      lead="RAMP-certified bartenders, signature cocktails, elevated mocktails, and a polished portable bar, wherever your event takes you."
       heroImage={{
         src: assets.julyBartenderGlassware,
         alt: alt.julyBartenderGlassware,
@@ -46,7 +46,7 @@ export default function EventBartendingPage() {
         eyebrow: "The Dragonfly bar",
         title: "Cocktails and mocktails with kitchen-level care",
         paragraphs: [
-          "Fresh ingredients, balanced builds, drinks designed for your event — a signature cocktail named for the couple, a bourbon flight, or a bright mocktail program.",
+          "Fresh ingredients, balanced builds, drinks designed for your event: a signature cocktail named for the couple, a bourbon flight, or a bright mocktail program.",
           "Book the bar on its own or pair it with catering and private chef dinners for one coordinated event team.",
         ],
       }}
@@ -54,7 +54,7 @@ export default function EventBartendingPage() {
         {
           question: "Who provides the alcohol?",
           answer:
-            "You do — Dragonfly provides bartenders, the portable bar, mixers, garnishes, and service support. We'll help you plan quantities and selections so nothing runs short. If arrangements differ for your event, we'll confirm details in your proposal.",
+            "You do. Dragonfly provides bartenders, the portable bar, mixers, garnishes, and service support. We'll help you plan quantities and selections so nothing runs short. If arrangements differ for your event, we'll confirm details in your proposal.",
         },
         {
           question: "How does bar service work?",
@@ -64,7 +64,7 @@ export default function EventBartendingPage() {
         {
           question: "Can you serve non-drinkers something special?",
           answer:
-            "Absolutely — elevated mocktails and zero-proof pairings are one of our favorite parts of the bar menu, not an afterthought.",
+            "Absolutely. Elevated mocktails and zero-proof pairings are one of our favorite parts of the bar menu, not an afterthought.",
         },
         {
           question: "Do you bartend events you're not catering?",
@@ -74,7 +74,7 @@ export default function EventBartendingPage() {
       ]}
       finalCta={{
         title: "Raise the bar at your next event",
-        copy: "Tell us about your event, guest count, and the drinks you love — we'll design a bar service proposal to match.",
+        copy: "Tell us about your event, guest count, and the drinks you love, and we'll design a bar service proposal to match.",
       }}
     />
   );

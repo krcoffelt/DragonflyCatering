@@ -24,7 +24,7 @@ const milestones = [
   },
   {
     label: "The kitchens",
-    copy: "Leadership roles at The Capital Grille and True Food Kitchen, followed by Top Chef Quickfire Philadelphia—his final restaurant role before 2020.",
+    copy: "Leadership roles at The Capital Grille and True Food Kitchen, followed by Top Chef Quickfire Philadelphia, his final restaurant role before 2020.",
   },
   {
     label: "The leap",
@@ -201,7 +201,7 @@ export default function AboutPage() {
               <p>
                 What began with meals for local families grew through the
                 relationships built along the way. Weddings, private
-                dinners, corporate events, and community work followed—not from
+                dinners, corporate events, and community work followed, not from
                 a fixed package, but from listening to what each gathering
                 needed.
               </p>

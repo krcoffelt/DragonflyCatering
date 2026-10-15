@@ -33,7 +33,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "Plan holiday party catering in Chester County and the Main Line, including when to book, venue choices, seasonal menus, bartending, dietary needs, and a practical timeline.",
     intro:
-      "September may feel early to plan a December gathering, but it is exactly when the best version of a holiday party starts taking shape—with room to choose the date, menu, venue, and service style instead of settling for what remains.",
+      "September may feel early to plan a December gathering, but it is exactly when the best version of a holiday party starts taking shape, with room to choose the date, menu, venue, and service style instead of settling for what remains.",
     quickAnswer:
       "Start planning a Chester County holiday party in September if the date, venue, or full-service catering matters to you. Confirm the guest range and setting first, then coordinate the menu, staffing, rentals, bar, dietary needs, and event timeline as one plan.",
     published: "2026-09-03",
@@ -273,7 +273,7 @@ export const blogPosts: BlogPost[] = [
         heading: "How to compare catering proposals fairly",
         paragraphs: [
           "Start by aligning the scope. Confirm the same guest count, service duration, menu courses, staffing, rentals, taxes, gratuities or service charges, delivery, setup, and cleanup. If one proposal is much lower, look for the line item that is handled differently or left to the host.",
-          "Ask what happens if the guest count changes and when the final number is due. Clarify whether dietary meals are included, who provides water and nonalcoholic beverages, and whether leftovers can be safely packaged. A complete proposal should make responsibilities clear—not create a scavenger hunt.",
+          "Ask what happens if the guest count changes and when the final number is due. Clarify whether dietary meals are included, who provides water and nonalcoholic beverages, and whether leftovers can be safely packaged. A complete proposal should make responsibilities clear, not create a scavenger hunt.",
         ],
         bullets: [
           "Is staffing included, and for how many hours?",
@@ -295,7 +295,7 @@ export const blogPosts: BlogPost[] = [
         id: "dragonfly-proposal",
         heading: "What to send for a useful Dragonfly proposal",
         paragraphs: [
-          "The most helpful first inquiry includes the event date, location, estimated guest count, occasion, service style, dietary needs, and the kind of atmosphere you want. If you already have a venue, share its name and any catering rules. If you are still looking, say that too—Dragonfly can point you toward spaces the team knows.",
+          "The most helpful first inquiry includes the event date, location, estimated guest count, occasion, service style, dietary needs, and the kind of atmosphere you want. If you already have a venue, share its name and any catering rules. If you are still looking, say that too. Dragonfly can point you toward spaces the team knows.",
           "From its Downingtown home base, Dragonfly builds custom proposals for gatherings across Chester County, the Main Line, and select nearby communities. Each proposal connects the menu to the real room, schedule, and guest experience.",
         ],
       },
@@ -456,7 +456,7 @@ export const blogPosts: BlogPost[] = [
     intro:
       "Thirty to fifty guests is a wonderfully social size: enough people to create energy, still intimate enough for the food and service to feel personal.",
     quickAnswer:
-      "For 30–50 guests, choose one clear service style, build a focused menu with enough variety for dietary needs, and plan the room around natural guest flow. Food quantities, staff, rentals, and bar service should all be based on the event length and how guests will eat—not guest count alone.",
+      "For 30–50 guests, choose one clear service style, build a focused menu with enough variety for dietary needs, and plan the room around natural guest flow. Food quantities, staff, rentals, and bar service should all be based on the event length and how guests will eat, not guest count alone.",
     published: "2026-08-28",
     publishedLabel: "August 28, 2026",
     readingTime: "9 minute read",
@@ -476,7 +476,7 @@ export const blogPosts: BlogPost[] = [
         heading: "Build a menu for the way guests will eat",
         paragraphs: [
           "Food quantity depends on more than the number of invitations. A two-hour afternoon shower, a four-hour birthday dinner, and an open-house graduation party all create different appetites. Time of day, event length, alcohol service, guest age, and whether the food replaces a meal should guide the menu.",
-          "More choices are not always more generous. Every added dish divides the kitchen’s attention and can increase equipment, table space, and waste. A focused menu with contrast—something bright, something comforting, a strong main element, and a thoughtful finish—usually creates a better experience.",
+          "More choices are not always more generous. Every added dish divides the kitchen’s attention and can increase equipment, table space, and waste. A focused menu with contrast (something bright, something comforting, a strong main element, and a thoughtful finish) usually creates a better experience.",
         ],
       },
       {
@@ -499,7 +499,7 @@ export const blogPosts: BlogPost[] = [
         heading: "Why portion planning is not a simple calculator",
         paragraphs: [
           "Online calculators can offer a rough starting point, but caterers plan a menu as a whole. Several appetizers, for example, are portioned differently when followed by dinner than when they are the entire meal. A buffet needs enough of every item to feel available while also accounting for how guests combine dishes.",
-          "Children, dietary meals, late arrivals, and the event schedule all matter. Tell the caterer how the invitation describes the food—light bites, brunch, dinner, or dessert—so guests and kitchen are planning for the same experience.",
+          "Children, dietary meals, late arrivals, and the event schedule all matter. Tell the caterer how the invitation describes the food (light bites, brunch, dinner, or dessert) so guests and kitchen are planning for the same experience.",
         ],
         callout:
           "The invitation sets an expectation. If guests are told dinner will be served, the menu and quantities need to carry the full evening.",
@@ -582,7 +582,7 @@ export const blogPosts: BlogPost[] = [
     intro:
       "A small event should feel intimate, not undersized. The right room lets guests settle in easily, gives food and drinks a natural place, and leaves enough breathing room for the celebration to unfold.",
     quickAnswer:
-      "For 25–50 guests, compare venues by comfortable seated capacity, catering rules, kitchen and load-in access, parking, accessibility, rentals, event hours, and cleanup—not capacity alone. Tour the room using the layout your event actually needs.",
+      "For 25–50 guests, compare venues by comfortable seated capacity, catering rules, kitchen and load-in access, parking, accessibility, rentals, event hours, and cleanup, not capacity alone. Tour the room using the layout your event actually needs.",
     published: "2026-08-28",
     publishedLabel: "August 28, 2026",
     readingTime: "9 minute read",
@@ -745,7 +745,7 @@ export const blogPosts: BlogPost[] = [
         heading: "What affects private chef cost per person",
         paragraphs: [
           "Guest count matters, but a private dinner also has fixed planning, shopping, travel, preparation, and cleanup time. That is why a dinner for two is not simply one-quarter of the cost of a dinner for eight. The number of courses, ingredient choices, handwork, and level of service all influence the proposal.",
-          "Rentals may be needed if the menu calls for more plates, flatware, or glassware than the home has. An additional server can make sense for a larger table or more formal service. If the kitchen is far from the dining area—or has limited oven, refrigeration, or counter space—the chef may adapt the menu or bring equipment.",
+          "Rentals may be needed if the menu calls for more plates, flatware, or glassware than the home has. An additional server can make sense for a larger table or more formal service. If the kitchen is far from the dining area, or has limited oven, refrigeration, or counter space, the chef may adapt the menu or bring equipment.",
         ],
         callout:
           "The most accurate quote starts with the menu experience and the realities of the home, not a generic per-person package.",

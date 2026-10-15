@@ -56,7 +56,7 @@ export const clientReviews: ClientReview[] = [
     rating: 5,
     sourceUrl: googleReviewsUrl,
     text:
-      "My wife and I had a wedding at Lauxmont Weddings. Matt handled both our catering and bartending services. Everything was provided that we asked for. The food was amazing and exactly the same as what we tasted in our sample run—from the short rib, chicken, and salad to a squash alternative. Matt communicated with us the entire way and was transparent with all agreements. The bartending service was professional and able to accommodate requests from our guests. Our wedding was 120 people and everyone was well fed and satisfied. I recommend anyone looking for top-quality service and food to give Matt a call.",
+      "My wife and I had a wedding at Lauxmont Weddings. Matt handled both our catering and bartending services. Everything was provided that we asked for. The food was amazing and exactly the same as what we tasted in our sample run, from the short rib, chicken, and salad to a squash alternative. Matt communicated with us the entire way and was transparent with all agreements. The bartending service was professional and able to accommodate requests from our guests. Our wedding was 120 people and everyone was well fed and satisfied. I recommend anyone looking for top-quality service and food to give Matt a call.",
   },
   {
     id: "czarlenne-benner",
@@ -76,7 +76,7 @@ export const clientReviews: ClientReview[] = [
     rating: 5,
     sourceUrl: googleReviewsUrl,
     featuredText:
-      "There were over 100 attendees and everyone loved the food. It was absolutely delicious—and I’ve never had a better salad!",
+      "There were over 100 attendees and everyone loved the food. It was absolutely delicious, and I’ve never had a better salad!",
     text:
       "We used Dragonfly for a large party celebrating our high school musical. There were over 100 attendees and everyone loved the food! It was absolutely delicious! And no kidding, I’ve never had a better salad! It was full of vegetables and so colorful! Matt didn’t skimp on ingredients! I would use Dragonfly again and again.",
   },

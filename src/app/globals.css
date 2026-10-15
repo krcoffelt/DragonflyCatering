@@ -59,7 +59,7 @@ body {
   }
 }
 
-/* Legacy Edenly container — kept for interior pages */
+/* Legacy Edenly container, kept for interior pages */
 .eden-container {
   width: 100%;
   max-width: 1270px;
@@ -67,7 +67,7 @@ body {
   padding-inline: 15px;
 }
 
-/* Display serif — Verde H1 ~52.5px */
+/* Display serif: Verde H1 ~52.5px */
 .vv-h1 {
   font-family: var(--font-display);
   font-size: 2.5rem;
@@ -113,7 +113,7 @@ body {
   transform: translateY(-50%);
 }
 
-/* Display serif — hero, accent headings, stat numbers */
+/* Display serif: hero, accent headings, stat numbers */
 .font-display {
   font-family: var(--font-display);
   font-variation-settings: "opsz" 72;
@@ -214,6 +214,12 @@ textarea:focus-visible {
   line-height: 1.4;
   color: var(--color-charcoal);
   transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+}
+
+@media (max-width: 639px) {
+  .field {
+    font-size: 1rem;
+  }
 }
 
 .field::placeholder {

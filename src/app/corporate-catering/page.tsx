@@ -19,7 +19,7 @@ export default function CorporateCateringPage() {
       serviceDescription="Polished corporate catering for meetings, board dinners, retreats, and client events across Chester County and the Main Line."
       eyebrow="Corporate catering"
       title="Corporate catering, done personally"
-      lead="When the food is right, the host looks good — meetings, board dinners, and team celebrations with service that runs quietly in the background."
+      lead="When the food is right, the host looks good: meetings, board dinners, and team celebrations with service that runs quietly in the background."
       coverage={{
         eyebrow: "Corporate occasions",
         title: "Boardroom to holiday party",
@@ -45,7 +45,7 @@ export default function CorporateCateringPage() {
         eyebrow: "Why teams book Dragonfly",
         title: "Food that makes the host look good",
         paragraphs: [
-          "No afterthought trays. The same chef-led, seasonal approach we bring to weddings — composed menus, professional presentation, staff who understand a working room.",
+          "No afterthought trays. The same chef-led, seasonal approach we bring to weddings: composed menus, professional presentation, staff who understand a working room.",
           "On-site at your office, at our Downingtown space, or at venues across the region. Recurring service and dietary needs are part of the conversation.",
         ],
       }}
@@ -53,7 +53,7 @@ export default function CorporateCateringPage() {
         {
           question: "Can you handle recurring office catering?",
           answer:
-            "Yes — we work with teams on recurring lunches and standing events as our boutique calendar allows. Tell us your cadence and we'll design a rotation that stays interesting.",
+            "Yes. We work with teams on recurring lunches and standing events as our boutique calendar allows. Tell us your cadence and we'll design a rotation that stays interesting.",
         },
         {
           question: "Do you cater off-site retreats?",

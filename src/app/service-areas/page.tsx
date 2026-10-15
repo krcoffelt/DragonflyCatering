@@ -113,7 +113,7 @@ export default function ServiceAreasPage() {
           <Reveal>
             <p className="eyebrow">One team, every setting</p>
             <h2 className="mt-4 max-w-[760px] font-display text-[42px] leading-[1.02] text-plum sm:text-[56px] lg:text-[66px]">
-              Your location shapes the plan—not the quality of the experience.
+              Your location shapes the plan, not the quality of the experience.
             </h2>
           </Reveal>
           <Reveal delay={0.08} className="border-t border-plum/20 pt-7 lg:mt-2">

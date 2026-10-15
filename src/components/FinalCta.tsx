@@ -9,7 +9,7 @@ type FinalCtaProps = {
 
 export function FinalCta({
   title = "Let's create something special",
-  copy = "Tell us about your event — Chef Matt will shape a custom proposal around it.",
+  copy = "Tell us about your event, and Chef Matt will shape a custom proposal around it.",
 }: FinalCtaProps) {
   return (
     <section className="bg-plum">

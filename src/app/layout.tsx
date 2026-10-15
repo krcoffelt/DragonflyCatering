@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     template: "%s | Dragonfly Catering",
   },
   description:
-    "Chef-led custom catering, private chef experiences, event bartending, and an intimate event space in Downingtown, PA — serving Chester County and the Main Line.",
+    "Chef-led custom catering, private chef experiences, event bartending, and an intimate event space in Downingtown, PA, serving Chester County and the Main Line.",
   alternates: {
     canonical: "/",
   },
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title:
       "Dragonfly Catering | Catering in Chester County, PA",
     description:
-      "Chef-led custom catering, private chef experiences, event bartending, and an intimate event space in Downingtown, PA — serving Chester County and the Main Line.",
+      "Chef-led custom catering, private chef experiences, event bartending, and an intimate event space in Downingtown, PA, serving Chester County and the Main Line.",
     url: site.url,
     siteName: site.fullName,
     locale: "en_US",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     title:
       "Dragonfly Catering | Catering in Chester County, PA",
     description:
-      "Chef-led custom catering, private chef experiences, event bartending, and an intimate event space in Downingtown, PA — serving Chester County and the Main Line.",
+      "Chef-led custom catering, private chef experiences, event bartending, and an intimate event space in Downingtown, PA, serving Chester County and the Main Line.",
     images: [
       {
         url: assets.twitterPreview,

@@ -18,7 +18,7 @@ export const metadata: Metadata = buildMetadata({
 const commitments = [
   {
     title: "Nonprofits & fundraisers",
-    copy: "Events that raise more than money — they build community.",
+    copy: "Events that raise more than money. They build community.",
   },
   {
     title: "First responders & healthcare",
@@ -43,7 +43,7 @@ export default function CommunityPage() {
       <PageHero
         eyebrow="Community"
         title="Cooking for the people who show up"
-        lead="Supporting local nonprofits, first responders, and healthcare workers is part of how we run the company — not a side project."
+        lead="Supporting local nonprofits, first responders, and healthcare workers is part of how we run the company, not a side project."
         secondaryCta={{ label: "Explore Our Services", href: "/services" }}
       />
 
@@ -71,10 +71,10 @@ export default function CommunityPage() {
           <SectionHeading
             eyebrow="Working together"
             title="Planning a community event?"
-            lead="Tell us about your organization and budget — we'll be straightforward, and generous where we can be."
+            lead="Tell us about your organization and budget. We'll be straightforward, and generous where we can be."
             align="center"
           />
-          {/* NEEDS CONFIRMATION — do not add specific discount/special pricing
+          {/* NEEDS CONFIRMATION: do not add specific discount/special pricing
               language for nonprofits, first responders, or healthcare workers
               until the client approves the exact wording. */}
           <Reveal className="mt-9">
@@ -87,7 +87,7 @@ export default function CommunityPage() {
 
       <FinalCta
         title="Let's feed something bigger than an event"
-        copy="Fundraisers, appreciation dinners, and community gatherings — tell us what you're organizing and we'll help make it memorable."
+        copy="Fundraisers, appreciation dinners, and community gatherings. Tell us what you're organizing and we'll help make it memorable."
       />
     </>
   );

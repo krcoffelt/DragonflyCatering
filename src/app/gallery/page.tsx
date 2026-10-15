@@ -31,7 +31,7 @@ export default function GalleryPage() {
       <PageHero
         eyebrow="The gallery"
         title="Real food. Real events."
-        lead="Everything here was cooked, plated, and served by Dragonfly — the gallery grows after every season."
+        lead="Everything here was cooked, plated, and served by Dragonfly. The gallery grows after every season."
         secondaryCta={{ label: "View Sample Menus", href: "/sample-menus" }}
       />
 

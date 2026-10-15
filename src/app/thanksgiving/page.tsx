@@ -28,7 +28,7 @@ const goodToKnow = [
   },
   {
     title: "Vegan on request",
-    copy: "Every side can be prepared vegan — just toggle it on when you add the dish.",
+    copy: "Every side can be prepared vegan. Just toggle it on when you add the dish.",
   },
   {
     title: "Confirmed personally",
@@ -87,7 +87,7 @@ export default function ThanksgivingPage() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <dl className="mt-14 grid overflow-hidden rounded-2xl border border-warmwhite/12 bg-plum/50 backdrop-blur-md sm:grid-cols-3">
+            <dl className="mt-14 grid overflow-hidden rounded-2xl border border-warmwhite/15 bg-plum sm:grid-cols-3">
               {keyDates.map((item, index) => (
                 <div
                   key={item.label}

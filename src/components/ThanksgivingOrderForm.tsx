@@ -64,7 +64,7 @@ function summaryText(lines: LineItem[], total: number) {
   return [
     ...lines.map(
       (line) =>
-        `${line.qty} × ${line.name}${line.vegan ? " [VEGAN]" : ""} — ${line.option} @ ${formatPrice(line.unit)} = ${formatPrice(line.total)}`,
+        `${line.qty} × ${line.name}${line.vegan ? " [VEGAN]" : ""}, ${line.option} @ ${formatPrice(line.unit)} = ${formatPrice(line.total)}`,
     ),
     "",
     `Estimated total: ${formatPrice(total)}`,
@@ -109,8 +109,8 @@ function Stepper({
   const active = value > 0;
   return (
     <div
-      className={`inline-flex h-10 items-center rounded-full border transition-colors ${
-        active ? "border-royal/30 bg-royal/[0.06]" : "border-plum/12 bg-white"
+      className={`inline-flex h-11 items-center rounded-full border transition-colors ${
+        active ? "border-royal bg-white" : "border-plum/12 bg-white"
       }`}
     >
       <button
@@ -118,7 +118,7 @@ function Stepper({
         onClick={() => onChange(-1)}
         disabled={!active}
         aria-label={`Remove one ${label}`}
-        className="flex h-10 w-10 items-center justify-center rounded-full text-plum transition hover:bg-plum/[0.06] disabled:cursor-not-allowed disabled:opacity-30"
+        className="flex h-11 w-11 items-center justify-center rounded-full text-plum transition hover:bg-ivory disabled:cursor-not-allowed disabled:opacity-30"
       >
         <svg aria-hidden viewBox="0 0 20 20" className="h-4 w-4" fill="none">
           <path d="M5 10h10" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
@@ -136,7 +136,7 @@ function Stepper({
         onClick={() => onChange(1)}
         disabled={value >= MAX_QTY}
         aria-label={`Add one ${label}`}
-        className="flex h-10 w-10 items-center justify-center rounded-full text-plum transition hover:bg-plum/[0.06] disabled:opacity-30"
+        className="flex h-11 w-11 items-center justify-center rounded-full text-plum transition hover:bg-ivory disabled:opacity-30"
       >
         <svg aria-hidden viewBox="0 0 20 20" className="h-4 w-4" fill="none">
           <path d="M10 5v10M5 10h10" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
@@ -161,24 +161,34 @@ function MenuRow({
 }) {
   const itemQty = item.options.reduce((sum, o) => sum + (quantities[lineKey(item.id, o.id)] ?? 0), 0);
   const selected = itemQty > 0;
+  // Items with 3+ sizes (gravy) always stack options under the name so neither gets squeezed.
+  const stacked = item.options.length > 2;
 
   return (
     <li
       className={`rounded-2xl border p-5 transition-all duration-300 sm:p-6 ${
         selected
           ? "border-royal/25 bg-white shadow-[0_14px_40px_rgba(44,22,53,0.08)]"
-          : "border-plum/[0.08] bg-white/70 hover:border-plum/15 hover:bg-white"
+          : "border-plum/[0.08] bg-white hover:border-plum/20"
       }`}
     >
-      <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between md:gap-8 lg:flex-col lg:gap-5 xl:flex-row xl:gap-8">
-        <div className="min-w-0 md:pt-1.5 lg:pt-0 xl:pt-1.5">
+      <div
+        className={`flex flex-col gap-5 ${
+          stacked ? "" : "md:flex-row md:items-start md:justify-between md:gap-8 lg:flex-col lg:gap-5 xl:flex-row xl:gap-8"
+        }`}
+      >
+        <div className={`min-w-0 ${stacked ? "" : "md:min-w-[200px] md:flex-1 md:pt-1.5 lg:pt-0 xl:pt-1.5"}`}>
           <h4 className="font-display text-[21px] leading-snug text-plum">{item.name}</h4>
           {item.description && (
             <p className="mt-1.5 text-[14px] leading-6 text-charcoal/60">{item.description}</p>
           )}
         </div>
 
-        <div className="grid shrink-0 grid-cols-2 gap-x-4 gap-y-4 sm:flex sm:flex-wrap sm:gap-x-5 sm:gap-y-3 md:justify-end lg:justify-start xl:justify-end">
+        <div
+          className={`grid shrink-0 grid-cols-2 gap-x-4 gap-y-4 sm:flex sm:flex-wrap sm:gap-x-5 sm:gap-y-3 ${
+            stacked ? "sm:gap-x-8" : "md:justify-end lg:justify-start xl:justify-end"
+          }`}
+        >
           {item.options.map((option) => {
             const key = lineKey(item.id, option.id);
             return (
@@ -201,12 +211,12 @@ function MenuRow({
       </div>
 
       {item.veganAvailable && selected && (
-        <label className="mt-4 inline-flex cursor-pointer items-center gap-2.5 rounded-full border border-sage/35 bg-sage/[0.08] py-1.5 pl-2 pr-3.5 text-[13px] font-medium text-[#4d5a3a] transition hover:bg-sage/15">
+        <label className="mt-4 inline-flex cursor-pointer items-center gap-2.5 rounded-full border border-[#4d5a3a] bg-white py-1.5 pl-2 pr-3.5 text-[13px] font-semibold text-[#4d5a3a] transition has-[:checked]:bg-[#4d5a3a] has-[:checked]:text-white">
           <input
             type="checkbox"
             checked={Boolean(vegan[item.id])}
             onChange={() => toggleVegan(item.id)}
-            className="h-4 w-4 rounded accent-[#65704f]"
+            className="h-4 w-4 rounded accent-white"
           />
           Make it vegan
         </label>
@@ -300,7 +310,7 @@ function FulfillmentCard({
     <label
       className={`relative flex cursor-pointer gap-4 rounded-2xl border p-5 transition-all duration-200 has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-royal ${
         checked
-          ? "border-royal bg-royal/[0.05] shadow-[0_10px_30px_rgba(91,42,134,0.1)]"
+          ? "border-royal bg-white shadow-[0_0_0_1px_var(--color-royal),0_10px_30px_rgba(91,42,134,0.12)]"
           : "border-plum/12 bg-white hover:border-plum/25"
       }`}
     >
@@ -350,6 +360,7 @@ export function ThanksgivingOrderForm() {
 
   const feedbackRef = useRef<HTMLDivElement>(null);
   const summaryRef = useRef<HTMLDivElement>(null);
+  const detailsRef = useRef<HTMLElement>(null);
   const submittingRef = useRef(false);
 
   const lines = useMemo(() => buildLineItems(quantities, vegan), [quantities, vegan]);
@@ -362,12 +373,19 @@ export function ThanksgivingOrderForm() {
   }, []);
 
   useEffect(() => {
-    const node = summaryRef.current;
-    if (!node) return;
-    const observer = new IntersectionObserver(([entry]) => setSummaryVisible(entry.isIntersecting), {
-      threshold: 0.15,
-    });
-    observer.observe(node);
+    // Hide the mobile checkout bar once the details form or summary is on screen,
+    // so it never covers inputs while the keyboard is open.
+    const nodes = [summaryRef.current, detailsRef.current].filter(Boolean) as Element[];
+    if (nodes.length === 0) return;
+    const visible = new Set<Element>();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => (entry.isIntersecting ? visible.add(entry.target) : visible.delete(entry.target)));
+        setSummaryVisible(visible.size > 0);
+      },
+      { threshold: 0.05 },
+    );
+    nodes.forEach((node) => observer.observe(node));
     return () => observer.disconnect();
   }, [status]);
 
@@ -440,7 +458,7 @@ export function ThanksgivingOrderForm() {
     body.set("veganRequests", veganItems.length ? [...new Set(veganItems)].join(", ") : "None");
     body.set(
       "subject",
-      `Thanksgiving order — ${getValue(data, "fullName")} — ${formatPrice(total)} (${fulfillment === "pickup" ? "Pickup" : "Delivery"})`,
+      `Thanksgiving order: ${getValue(data, "fullName")}, ${formatPrice(total)} (${fulfillment === "pickup" ? "Pickup" : "Delivery"})`,
     );
     if (fulfillment === "pickup") {
       body.set("address", "");
@@ -499,7 +517,7 @@ export function ThanksgivingOrderForm() {
         className="mx-auto max-w-2xl rounded-[28px] border border-plum/10 bg-warmwhite p-8 shadow-[0_24px_70px_rgba(44,22,53,0.09)] outline-none sm:p-12"
       >
         <div className="text-center">
-          <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-sage/15 text-[#4d5a3a]">
+          <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#4d5a3a] text-white">
             <svg aria-hidden viewBox="0 0 24 24" fill="none" className="h-6 w-6">
               <path d="m5 12.5 4.25 4.25L19 7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
@@ -586,7 +604,7 @@ export function ThanksgivingOrderForm() {
             title="The sides"
             note={
               <p className="max-w-[260px] text-[13px] leading-5 text-charcoal/55 sm:text-right">
-                Every side can be made <span className="font-semibold text-[#4d5a3a]">vegan</span> — just toggle it
+                Every side can be made <span className="font-semibold text-[#4d5a3a]">vegan</span>. Just toggle it
                 after adding.
               </p>
             }
@@ -609,6 +627,7 @@ export function ThanksgivingOrderForm() {
 
         {/* ---------- Details ---------- */}
         <section
+          ref={detailsRef}
           id="order-details"
           aria-labelledby="details-heading"
           className="scroll-mt-28 rounded-[28px] border border-plum/10 bg-warmwhite p-5 shadow-[0_24px_70px_rgba(44,22,53,0.07)] sm:p-8 lg:p-10"
@@ -766,7 +785,7 @@ export function ThanksgivingOrderForm() {
                 ref={feedbackRef}
                 role="alert"
                 tabIndex={-1}
-                className="mt-5 rounded-xl bg-warmwhite/[0.08] px-4 py-3 text-[13px] font-medium leading-5 text-warmwhite outline-none"
+                className="mt-5 rounded-xl bg-warmwhite px-4 py-3 text-[13px] font-semibold leading-5 text-red-900 outline-none"
               >
                 {errorKind === "validation" ? (
                   "Please complete the highlighted fields."
@@ -802,7 +821,7 @@ export function ThanksgivingOrderForm() {
               )}
             </button>
             <p className="mt-4 text-center text-[12px] leading-5 text-warmwhite/50">
-              No payment now — we’ll email to confirm your order and total. Orders close {thanksgiving.cutoffLabel}.
+              No payment now. We’ll email to confirm your order and total. Orders close {thanksgiving.cutoffLabel}.
             </p>
           </div>
         </div>

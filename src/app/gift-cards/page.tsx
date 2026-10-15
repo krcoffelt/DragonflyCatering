@@ -18,7 +18,7 @@ export const metadata: Metadata = buildMetadata({
 const occasions = [
   {
     title: "Date nights",
-    copy: "Dinner for two, cooked and plated at home — a gift that clears the calendar instead of filling it.",
+    copy: "Dinner for two, cooked and plated at home: a gift that clears the calendar instead of filling it.",
   },
   {
     title: "For the food lover",
@@ -26,7 +26,7 @@ const occasions = [
   },
   {
     title: "Celebrations",
-    copy: "Birthdays, anniversaries, new homes — exceptional food at the center of the moment.",
+    copy: "Birthdays, anniversaries, new homes. Exceptional food at the center of the moment.",
   },
   {
     title: "Thank-you gifts",
@@ -46,8 +46,8 @@ export default function GiftCardsPage() {
 
       <PageHero
         eyebrow="Gift cards"
-        title="Give someone the best table in town — theirs"
-        lead="A private chef evening, a catered gathering, or a night off from the kitchen. Food is love — it makes a remarkable gift."
+        title="Give someone the best table in town: theirs"
+        lead="A private chef evening, a catered gathering, or a night off from the kitchen. Food is love, and it makes a remarkable gift."
         secondaryCta={{ label: "Private Chef Experiences", href: "/private-chef-experiences" }}
       />
 
@@ -73,7 +73,7 @@ export default function GiftCardsPage() {
           <SectionHeading
             eyebrow="How it works"
             title="Arranged personally"
-            lead="Email us the amount and the occasion — we'll arrange the card and a note for your recipient."
+            lead="Email us the amount and the occasion, and we'll arrange the card and a note for your recipient."
             align="center"
           />
           <Reveal className="mt-9">
@@ -86,7 +86,7 @@ export default function GiftCardsPage() {
 
       <FinalCta
         title="Know someone who deserves a night off?"
-        copy="Tell us who you're gifting and the occasion — we'll take care of the rest."
+        copy="Tell us who you're gifting and the occasion, and we'll take care of the rest."
       />
     </>
   );

@@ -23,7 +23,7 @@ export default function SocialEventsPage() {
       serviceDescription="Catering for birthdays, anniversaries, celebrations of life, holiday events, and family gatherings across Chester County."
       eyebrow="Social events"
       title="Celebrations & milestone moments"
-      lead="The best parties feel effortless — because someone else is in the kitchen."
+      lead="The best parties feel effortless, because someone else is in the kitchen."
       heroImage={{
         src: assets.julyGrazingTableEvent,
         alt: alt.julyGrazingTableEvent,
@@ -59,7 +59,7 @@ export default function SocialEventsPage() {
         {
           question: "Do you cater small home gatherings?",
           answer:
-            "Yes — home gatherings are some of our favorite events. We scale from intimate dinners to full backyard parties, with drop-off, buffet, or fully staffed service.",
+            "Yes. Home gatherings are some of our favorite events. We scale from intimate dinners to full backyard parties, with drop-off, buffet, or fully staffed service.",
         },
         {
           question: "Can you handle a celebration of life on short notice?",
@@ -74,7 +74,7 @@ export default function SocialEventsPage() {
       ]}
       finalCta={{
         title: "Let's plan the party you actually get to enjoy",
-        copy: "Tell us the occasion, the guest list, and the vibe — we'll bring a menu that fits it perfectly.",
+        copy: "Tell us the occasion, the guest list, and the vibe, and we'll bring a menu that fits it perfectly.",
       }}
     >
       <ReviewPullQuote
