@@ -20,6 +20,7 @@ const paths = [
   "/reviews",
   "/about",
   "/community",
+  "/thanksgiving",
   "/gift-cards",
   "/contact",
   "/privacy",

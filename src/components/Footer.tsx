@@ -49,6 +49,7 @@ export function Footer() {
                 { label: "Preferred Venues", href: "/preferred-venues" },
                 { label: "Service Areas", href: "/service-areas" },
                 { label: "Event Space", href: "/dragonfly-event-space" },
+                { label: "Thanksgiving Orders", href: "/thanksgiving" },
                 { label: "Gift Cards", href: "/gift-cards" },
                 { label: "About", href: "/about" },
                 { label: "Sample Menus", href: "/sample-menus" },

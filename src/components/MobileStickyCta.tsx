@@ -37,7 +37,7 @@ export function MobileStickyCta() {
     };
   }, [pathname]);
 
-  if (pathname === "/contact") return null;
+  if (pathname === "/contact" || pathname === "/thanksgiving") return null;
 
   const shown = visible && !blocked;
 

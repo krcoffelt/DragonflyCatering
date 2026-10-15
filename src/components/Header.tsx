@@ -9,12 +9,13 @@ import { assets, site } from "@/lib/site";
 import { analyticsDataAttributes } from "@/lib/analytics";
 import { NavPill, PrimaryButton } from "./verde/VerdePrimitives";
 
-const navLinks = [
+const navLinks: { label: string; href: string; accent?: boolean; desktopClassName?: string }[] = [
+  { label: "Thanksgiving", href: "/thanksgiving", accent: true },
   { label: "Services", href: "/services" },
   { label: "Menus", href: "/sample-menus" },
   { label: "Gallery", href: "/gallery" },
   { label: "Venues", href: "/preferred-venues" },
-  { label: "Journal", href: "/blog" },
+  { label: "Journal", href: "/blog", desktopClassName: "lg:hidden xl:inline-flex" },
   { label: "About", href: "/about" },
 ];
 
@@ -147,6 +148,8 @@ export function Header() {
                   key={link.href}
                   href={link.href}
                   current={pathname === link.href}
+                  accent={link.accent}
+                  className={link.desktopClassName}
                 >
                   {link.label}
                 </NavPill>
