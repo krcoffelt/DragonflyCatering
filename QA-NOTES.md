@@ -32,7 +32,7 @@ Updated: 2026-07-31 · Second-round content and photography pass
 - The Downingtown ZIP code is **19335**.
 - Six sample-menu PDFs are published; their supporting copy explains seasonal rotation and custom final menus.
 - All listed preferred venues are confirmed as current Dragonfly partners.
-- All 20 written Google reviews currently published on the site are client-provided and approved.
+- All 29 written Google reviews currently published on the site are client-provided and approved.
 - Patricia Winstead, Valerie Dixon, and Lisa Sinkiewicz are also used as targeted pull quotes on Custom Catering, Social Events, and Contact respectively; the remaining new reviews stay exclusive to the Reviews page.
 - The Facebook, Instagram, and LinkedIn profiles in `src/lib/site.ts` are current.
 - The client-provided July photo batch is approved for website publication; 23 selected images were optimized and added.

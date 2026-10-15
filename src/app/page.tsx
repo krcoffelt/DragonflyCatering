@@ -14,7 +14,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { buildMetadata } from "@/lib/seo";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 import { assets, alt, homepageGalleryPhotos } from "@/lib/site";
-import { featuredReviews } from "@/lib/reviews";
+import { googleReviewsUrl, homepageReviews } from "@/lib/reviews";
 
 export const metadata: Metadata = buildMetadata({
   title:
@@ -115,8 +115,15 @@ export default function HomePage() {
 
       <AboutBand
         image={{ src: assets.chefMattPortrait, alt: alt.chefMattPortrait }}
-        title="Rooted in craft. Refined by taste."
-        body="At Dragonfly, catering is more than a meal — it's a quiet celebration of seasonal food, personal attention, and thoughtful hospitality. Every menu is written for your guests, your setting, and the feeling you want to create."
+        title={
+          <>
+            Food is tradition. <br />
+            Food is community. <br />
+            Food is celebration. <br />
+            <em className="text-royal">Food is love.</em>
+          </>
+        }
+        body="That belief guides every menu we create—from weddings and family celebrations to private dinners, corporate events, and meals shared with our community."
         ctaLabel="Read Chef Matt's story"
         ctaHref="/about"
       />
@@ -177,9 +184,10 @@ export default function HomePage() {
       <ReviewsBand
         title="Stories from the table."
         lead="From intimate dinners to wedding weekends, our clients remember how the whole experience felt."
-        reviews={featuredReviews}
+        reviews={homepageReviews}
         ctaLabel="Read all reviews"
         ctaHref="/reviews"
+        googleHref={googleReviewsUrl}
       />
 
       <FinalTableCta title="Your table awaits" />

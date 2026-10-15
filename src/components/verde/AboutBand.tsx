@@ -4,7 +4,7 @@ import { PrimaryButton, SectionReveal } from "./VerdePrimitives";
 
 type AboutBandProps = {
   image: { src: string; alt: string };
-  title: string;
+  title: React.ReactNode;
   body: string;
   ctaLabel: string;
   ctaHref: string;
@@ -34,7 +34,7 @@ export function AboutBand({ image, title, body, ctaLabel, ctaHref }: AboutBandPr
 
         <SectionReveal delay={0.1} className="max-w-[650px]">
           <p className="text-[12px] font-semibold uppercase text-royal">Behind the menu</p>
-          <h2 className="mt-5 font-display text-[48px] leading-[0.94] font-medium text-plum sm:text-[64px] lg:text-[86px]">
+          <h2 className="mt-5 font-display text-[46px] leading-[0.96] font-medium text-plum sm:text-[60px] lg:text-[70px]">
             {title}
           </h2>
           <p className="mt-7 max-w-[590px] text-[16px] leading-[27px] text-body sm:text-[17px]">

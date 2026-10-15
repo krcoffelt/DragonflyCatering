@@ -7,7 +7,7 @@ import { Footer } from "@/components/Footer";
 import { MobileStickyCta } from "@/components/MobileStickyCta";
 import { AnalyticsTracker } from "@/components/AnalyticsTracker";
 import { JsonLd } from "@/components/JsonLd";
-import { catererSchema, websiteSchema } from "@/lib/schema";
+import { catererSchema, chefSchema, websiteSchema } from "@/lib/schema";
 import { GA_MEASUREMENT_ID } from "@/lib/analytics";
 import { site, assets } from "@/lib/site";
 
@@ -92,7 +92,7 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <JsonLd data={[catererSchema(), websiteSchema()]} />
+        <JsonLd data={[catererSchema(), chefSchema(), websiteSchema()]} />
         <AnalyticsTracker />
         {/* Google Analytics 4 */}
         {GA_MEASUREMENT_ID && (

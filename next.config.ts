@@ -42,6 +42,16 @@ const nextConfig: NextConfig = {
         destination: "/contact",
         permanent: true,
       },
+      {
+        source: "/holidaypartyandcateringrequest",
+        destination: "/social-events",
+        permanent: true,
+      },
+      {
+        source: "/menus",
+        destination: "/sample-menus",
+        permanent: true,
+      },
     ];
   },
 };

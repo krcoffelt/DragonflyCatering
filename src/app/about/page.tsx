@@ -19,12 +19,12 @@ export const metadata: Metadata = buildMetadata({
 
 const milestones = [
   {
-    label: "The training",
-    copy: "Executive Chef of Top Chef Quickfire Philadelphia and Johnson & Wales University graduate in Culinary Arts and Food Service Management.",
+    label: "The restaurant years",
+    copy: "Classically trained, with experience spanning private clubs, formal steakhouses, and modern clean-eating kitchens.",
   },
   {
     label: "The kitchens",
-    copy: "Over two decades in professional kitchens, with leadership roles in fine dining, upscale casual, and concept-driven restaurants including The Capital Grille and True Food Kitchen.",
+    copy: "Leadership roles at The Capital Grille and True Food Kitchen, followed by Top Chef Quickfire Philadelphia—his final restaurant role before 2020.",
   },
   {
     label: "The leap",
@@ -67,7 +67,7 @@ export default function AboutPage() {
             <Reveal>
               <p className="eyebrow mb-3">Chef Matthew Stone</p>
               <h2 className="font-display text-3xl leading-[1.1] text-plum sm:text-4xl">
-                Two decades in serious kitchens
+                A restaurant career, brought to your table
               </h2>
               <div className="mt-5 flex flex-wrap gap-2">
                 {chefAccolades.map((accolade) => (
@@ -81,10 +81,21 @@ export default function AboutPage() {
               </div>
               <div className="mt-6 max-w-md space-y-4 text-[15px] leading-relaxed text-charcoal/75 sm:text-base">
                 <p>
-                  Chef Matt served as Executive Chef of Top Chef Quickfire
-                  Philadelphia and trained at Johnson &amp; Wales. He then spent
-                  twenty years leading fine-dining and concept-driven kitchens,
-                  including The Capital Grille and True Food Kitchen.
+                  Chef Matt is classically trained, with more than twenty years
+                  working across private clubs, formal steakhouses, and modern
+                  clean-eating cuisine. His career includes The Capital Grille
+                  and True Food Kitchen. His final restaurant role before 2020
+                  was Executive Chef of Top Chef Quickfire Philadelphia.
+                </p>
+                <p className="text-sm">
+                  <a
+                    href="https://www.inquirer.com/food/michael-klein/top-chef-quickfire-philadelphia-restaurants-wings-20200122.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-royal underline decoration-gold/60 underline-offset-4 transition-colors hover:text-plum"
+                  >
+                    Philadelphia Inquirer coverage of Top Chef Quickfire ↗
+                  </a>
                 </p>
                 <p>
                   In 2020, Dragonfly was founded on a simple idea: the care of a
@@ -102,18 +113,15 @@ export default function AboutPage() {
                     About Our Founder and Executive Chef
                   </h3>
                   <p>
-                    Chef Matthew Stone is an accomplished culinary professional
-                    with more than two decades of experience across respected
-                    kitchens and hospitality brands. A Johnson &amp; Wales
-                    University graduate with degrees in Culinary Arts and Food
-                    Service Management, he has led high-volume fine dining,
-                    upscale casual, and concept-driven kitchens in Boston,
-                    Atlanta, and Philadelphia. His leadership at The Capital
-                    Grille and True Food Kitchen combined operational discipline
-                    with a commitment to mentoring strong culinary teams. His
-                    work on Bravo TV&apos;s Top Chef Quickfire initiative also
-                    brought that creativity to a branded dining experience built
-                    from concept through execution.
+                    Chef Matthew Stone is a classically trained culinary
+                    professional whose career spans private clubs, formal
+                    steakhouses, and modern clean-eating cuisine. He led
+                    high-volume and concept-driven kitchens in Boston, Atlanta,
+                    and Philadelphia, including The Capital Grille and True Food
+                    Kitchen. His final restaurant role before Dragonfly was
+                    Executive Chef of Top Chef Quickfire Philadelphia, where he
+                    helped shape the branded dining experience from concept
+                    through execution.
                   </p>
                   <p>
                     In 2020, amid the uncertainty of the pandemic, Dragonfly
@@ -186,22 +194,22 @@ export default function AboutPage() {
           <Reveal delay={0.1} className="border-t border-warmwhite/20 pt-8 lg:border-l lg:border-t-0 lg:pl-12 lg:pt-1">
             <div className="max-w-2xl space-y-6 text-[15px] leading-[1.8] text-warmwhite/78 sm:text-base">
               <p>
-                After more than twenty years in professional kitchens, Matt
-                wanted to bring the same discipline, timing, and care to
-                gatherings that felt more personal than restaurant service.
+                Matt&apos;s restaurant career led directly to Dragonfly. After his
+                final restaurant role at Top Chef Quickfire Philadelphia,
                 Dragonfly Catering was founded in Chester County in 2020.
               </p>
               <p>
-                The company was built around conversation. Every menu starts
-                with the people at the table, the place they are gathering, and
-                the season. That approach carries through weddings and showers,
-                private chef dinners, corporate events, and community work.
+                What began with meals for local families grew through the
+                relationships built along the way. Weddings, private
+                dinners, corporate events, and community work followed—not from
+                a fixed package, but from listening to what each gathering
+                needed.
               </p>
               <p>
                 Today, Dragonfly pairs chef-led catering and bartending with an
-                intimate event space in Downingtown. The setting may change,
-                but the standard does not: thoughtful food, attentive service,
-                and hospitality that lets the host be present.
+                intimate event space in Downingtown. The team still approaches
+                every event the same way: make the food personal, take care of
+                the details, and give the host time to be present.
               </p>
             </div>
           </Reveal>

@@ -1,10 +1,16 @@
 import { assets, getMapSearchUrl, site } from "./site";
 
+const catererId = `${site.url}/#caterer`;
+const chefId = `${site.url}/about#chef-matthew-stone`;
+const topChefCoverageUrl =
+  "https://www.inquirer.com/food/michael-klein/top-chef-quickfire-philadelphia-restaurants-wings-20200122.html";
+
 /** LocalBusiness / Caterer schema for sitewide use. */
 export function catererSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Caterer",
+    "@id": catererId,
     name: site.fullName,
     alternateName: site.name,
     legalName: site.legalName,
@@ -29,9 +35,35 @@ export function catererSchema() {
       { "@type": "Place", name: "Main Line PA" },
     ],
     servesCuisine: ["American", "Seasonal", "International", "Fusion"],
-    founder: { "@type": "Person", name: "Matthew Stone", jobTitle: "Chef & Owner" },
+    founder: { "@id": chefId },
     foundingDate: "2020",
     slogan: "Food Is Love.",
+  };
+}
+
+/** Chef entity with third-party corroboration for experience claims. */
+export function chefSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": chefId,
+    name: "Matthew Stone",
+    url: `${site.url}/about`,
+    image: `${site.url}${assets.chefMattQuickfireHeadshot}`,
+    jobTitle: "Chef & Owner",
+    worksFor: { "@id": catererId },
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: "Johnson & Wales University",
+      url: "https://www.jwu.edu/",
+    },
+    sameAs: [site.social.linkedin],
+    subjectOf: {
+      "@type": "NewsArticle",
+      name: "‘Top Chef’ comes to the Comcast Center",
+      url: topChefCoverageUrl,
+      publisher: { "@type": "Organization", name: "The Philadelphia Inquirer" },
+    },
   };
 }
 
@@ -41,11 +73,7 @@ export function websiteSchema() {
     "@type": "WebSite",
     name: site.fullName,
     url: site.url,
-    publisher: {
-      "@type": "Organization",
-      name: site.fullName,
-      url: site.url,
-    },
+    publisher: { "@id": catererId },
   };
 }
 
@@ -61,7 +89,7 @@ export function serviceSchema(opts: {
     name: opts.name,
     description: opts.description,
     url: `${site.url}${opts.path}`,
-    provider: { "@type": "FoodEstablishment", name: site.legalName, url: site.url },
+    provider: { "@id": catererId },
     areaServed:
       opts.areaServed ??
       "Downingtown, Chester County, and the Main Line, Pennsylvania",

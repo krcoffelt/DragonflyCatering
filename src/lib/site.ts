@@ -6,8 +6,8 @@ export const site = {
   fullName: "Dragonfly Catering & Event Space",
   url: "https://dragonfly-catering.com",
   email: "dragonflycatering727@gmail.com",
-  phone: "+14849473296",
-  phoneDisplay: "(484) 947-3296",
+  phone: "+14842281993",
+  phoneDisplay: "(484) 228-1993",
   primaryCta: "Request a Custom Proposal",
   address: {
     street: "4325 Lincoln Highway",
@@ -277,9 +277,9 @@ export const heroSlides = [
 ] as const;
 
 export const chefAccolades = [
+  { lead: "The Capital Grille", detail: "Formal steakhouse" },
+  { lead: "True Food Kitchen", detail: "Modern clean eating" },
   { lead: "Top Chef Quickfire", detail: "Executive Chef, Philadelphia" },
-  { lead: "Johnson & Wales", detail: "Trained" },
-  { lead: "20+", detail: "Years in professional kitchens" },
 ] as const;
 
 export type GalleryPhoto = {

@@ -4,10 +4,12 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
 import { CtaButton } from "@/components/CtaButton";
 import { FinalCta } from "@/components/FinalCta";
+import { ReviewPullQuote } from "@/components/ReviewPullQuote";
 import { JsonLd } from "@/components/JsonLd";
 import { buildMetadata } from "@/lib/seo";
 import { breadcrumbSchema } from "@/lib/schema";
 import { sampleMenus } from "@/lib/site";
+import { getClientReview } from "@/lib/reviews";
 
 export const metadata: Metadata = buildMetadata({
   title: "Sample Catering Menus | Dragonfly Catering",
@@ -17,6 +19,8 @@ export const metadata: Metadata = buildMetadata({
 });
 
 export default function SampleMenusPage() {
+  const menuReview = getClientReview("donna-hoster");
+
   return (
     <>
       <JsonLd
@@ -90,6 +94,12 @@ export default function SampleMenusPage() {
           </div>
         </div>
       </section>
+
+      <ReviewPullQuote
+        review={menuReview}
+        quote={menuReview.featuredText ?? menuReview.text}
+        placement="sample-menus-review"
+      />
 
       <section className="bg-warmwhite py-20 lg:py-24">
         <div className="mx-auto max-w-[860px] px-5 text-center sm:px-8">

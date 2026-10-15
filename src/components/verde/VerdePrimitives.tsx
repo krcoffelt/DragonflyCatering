@@ -43,11 +43,13 @@ export function NavPill({
   children,
   accent = false,
   current = false,
+  className = "",
 }: {
   href: string;
   children: React.ReactNode;
   accent?: boolean;
   current?: boolean;
+  className?: string;
 }) {
   return (
     <Link
@@ -57,7 +59,7 @@ export function NavPill({
         accent
           ? "text-gold hover:text-warmwhite"
           : "text-warmwhite/82 hover:text-gold"
-      }`}
+      } ${className}`}
     >
       <SlideLabel>{children}</SlideLabel>
     </Link>
@@ -166,9 +168,9 @@ export function TrustBadge({
         ))}
       </div>
       <div className="flex items-baseline gap-1">
-        <span className="font-display text-2xl leading-none">20+</span>
+        <span className="font-display text-2xl leading-none">5-star</span>
         <span className={`text-xs sm:text-sm ${isLight ? "text-warmwhite/80" : "text-plum/70"}`}>
-          years in professional kitchens
+          client reviews
         </span>
       </div>
     </div>

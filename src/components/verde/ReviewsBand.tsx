@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { ClientReview } from "@/lib/reviews";
 import { SectionReveal, StarIcon, TextLink } from "./VerdePrimitives";
 
@@ -10,11 +10,39 @@ type ReviewsBandProps = {
   reviews: ClientReview[];
   ctaLabel: string;
   ctaHref: string;
+  googleHref: string;
 };
 
-export function ReviewsBand({ title, lead, reviews, ctaLabel, ctaHref }: ReviewsBandProps) {
+export function ReviewsBand({
+  title,
+  lead,
+  reviews,
+  ctaLabel,
+  ctaHref,
+  googleHref,
+}: ReviewsBandProps) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [pointerPaused, setPointerPaused] = useState(false);
+  const [focusPaused, setFocusPaused] = useState(false);
+  const [userPaused, setUserPaused] = useState(false);
   const activeReview = reviews[activeIndex];
+  const paused = pointerPaused || focusPaused || userPaused;
+
+  useEffect(() => {
+    if (
+      paused ||
+      reviews.length < 2 ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      return;
+    }
+
+    const timer = window.setTimeout(() => {
+      setActiveIndex((current) => (current + 1) % reviews.length);
+    }, 7000);
+
+    return () => window.clearTimeout(timer);
+  }, [activeIndex, paused, reviews.length]);
 
   function showPrevious() {
     setActiveIndex((current) => (current - 1 + reviews.length) % reviews.length);
@@ -42,7 +70,17 @@ export function ReviewsBand({ title, lead, reviews, ctaLabel, ctaHref }: Reviews
           </SectionReveal>
 
           <SectionReveal delay={0.1}>
-            <article className="border border-plum/15 bg-warmwhite p-6 text-plum shadow-[0_18px_50px_rgba(18,10,22,0.16)] sm:p-7 lg:p-8">
+            <article
+              className="border border-plum/15 bg-warmwhite p-6 text-plum shadow-[0_18px_50px_rgba(18,10,22,0.16)] sm:p-7 lg:p-8"
+              onPointerEnter={() => setPointerPaused(true)}
+              onPointerLeave={() => setPointerPaused(false)}
+              onFocusCapture={() => setFocusPaused(true)}
+              onBlurCapture={(event) => {
+                if (!event.currentTarget.contains(event.relatedTarget)) {
+                  setFocusPaused(false);
+                }
+              }}
+            >
               <div className="flex items-center justify-between gap-5">
                 <div
                   className="flex gap-0.5 text-gold"
@@ -63,7 +101,7 @@ export function ReviewsBand({ title, lead, reviews, ctaLabel, ctaHref }: Reviews
 
               <div
                 className="relative mt-5 min-h-[165px] sm:min-h-[150px]"
-                aria-live="polite"
+                aria-live={paused ? "polite" : "off"}
                 aria-atomic="true"
               >
                 <blockquote key={activeReview.id} className="review-enter">
@@ -100,6 +138,14 @@ export function ReviewsBand({ title, lead, reviews, ctaLabel, ctaHref }: Reviews
                     {ctaLabel}
                   </TextLink>
                 </div>
+                <a
+                  href={googleHref}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-4 inline-flex border-b border-gold pb-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-plum/65 transition-colors hover:text-royal focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+                >
+                  See what people are saying on Google ↗
+                </a>
                 <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-center">
                   <div className="flex gap-2">
                     <button
@@ -117,6 +163,14 @@ export function ReviewsBand({ title, lead, reviews, ctaLabel, ctaHref }: Reviews
                       aria-label="Show next review"
                     >
                       Next <span aria-hidden>→</span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setUserPaused((current) => !current)}
+                      className="inline-flex min-h-11 flex-1 items-center justify-center border border-plum/20 px-4 text-[13px] font-semibold text-plum transition-colors hover:border-gold hover:bg-gold focus-visible:border-gold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold sm:flex-none"
+                      aria-pressed={userPaused}
+                    >
+                      {userPaused ? "Resume" : "Pause"}
                     </button>
                   </div>
 

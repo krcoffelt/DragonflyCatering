@@ -15,6 +15,94 @@ export const googleReviewsUrl = getMapSearchUrl();
 
 export const clientReviews: ClientReview[] = [
   {
+    id: "sam-slater",
+    name: "Sam Slater",
+    event: "Wedding catering for 170 guests",
+    source: "Google review",
+    rating: 5,
+    sourceUrl: googleReviewsUrl,
+    featuredText:
+      "From the start of the process to the day of our event, Chef Matt and Dragonfly Catering were amazing. Everything Matt and his team executed was perfect.",
+    text:
+      "We used Dragonfly Catering for our wedding of roughly 170 people. From the start of the process, to the day of our event, Chef Matt/Dragonfly Catering was amazing! Matt hosted us for a tasting months in advance to determine what we wanted to serve on our wedding day. The food that was served then and what was served on the actual day did not miss! Everything was prepared to perfection, tasted so good, and was exactly what we were looking for. We loved the flexibility we had with Matt and truly making the menu everything we wanted! On the day of the wedding, everything that Matt and his team executed was perfect, and there were no issues. We received tons of feedback from our guests after saying the exact same thing. We highly recommend Chef Matt/Dragonfly for any of your catering needs (weddings, events, birthday parties, etc.), you will not be disappointed!",
+  },
+  {
+    id: "robbe-healey",
+    name: "Robbe Healey",
+    event: "Professional and private events",
+    source: "Google review",
+    rating: 5,
+    sourceUrl: googleReviewsUrl,
+    featuredText:
+      "Excellent food, beautifully presented, and never ‘plug and play.’ They are simply outstanding!",
+    text:
+      "Chef Matt Stone and the Dragonfly Catering team are a creative, responsive, and extraordinarily customer focused catering company. Each time I have worked directly with Chef Matt, or attended an event where Dragonfly Catering was serving lunch, dinner, or a reception, it was excellent food beautifully presented and never “plug and play.” They are simply outstanding!",
+  },
+  {
+    id: "pam-panarese",
+    name: "Pam Panarese",
+    event: "Engagement party and wedding events",
+    source: "Google review",
+    rating: 5,
+    sourceUrl: googleReviewsUrl,
+    text:
+      "We had a great experience with Chef Matt and his team for our son’s recent engagement party. Matt was incredibly responsive to all my questions, start to finish, and instrumental in helping us host a party that exactly matched our vision. The food and presentation were both excellent and his servers very professional and warm. We’ve used Dragonfly Catering now for two wedding-related events, both very different in feel and size, and couldn’t be happier.",
+  },
+  {
+    id: "jangonett1",
+    name: "jangonett1",
+    event: "Wedding catering and bartending for 120 guests",
+    source: "Google review",
+    rating: 5,
+    sourceUrl: googleReviewsUrl,
+    text:
+      "My wife and I had a wedding at Lauxmont Weddings. Matt handled both our catering and bartending services. Everything was provided that we asked for. The food was amazing and exactly the same as what we tasted in our sample run—from the short rib, chicken, and salad to a squash alternative. Matt communicated with us the entire way and was transparent with all agreements. The bartending service was professional and able to accommodate requests from our guests. Our wedding was 120 people and everyone was well fed and satisfied. I recommend anyone looking for top-quality service and food to give Matt a call.",
+  },
+  {
+    id: "czarlenne-benner",
+    name: "Czarlenne Benner",
+    event: "Teacher luncheons",
+    source: "Google review",
+    rating: 5,
+    sourceUrl: googleReviewsUrl,
+    text:
+      "Matt at DFC is great to work with! We’ve used him to cater our teacher luncheons and he always takes into account our ideas and makes great recommendations at affordable prices! He’s done a Mexican taco theme menu, Italian themed and a Mediterranean themed. Our teachers at school rave about his amazingly delicious food. I’ve also had some of the leftovers and highly recommend! Thank you Matt!!!",
+  },
+  {
+    id: "donna-hoster",
+    name: "Donna Hoster",
+    event: "School celebration for 100+ guests",
+    source: "Google review",
+    rating: 5,
+    sourceUrl: googleReviewsUrl,
+    featuredText:
+      "There were over 100 attendees and everyone loved the food. It was absolutely delicious—and I’ve never had a better salad!",
+    text:
+      "We used Dragonfly for a large party celebrating our high school musical. There were over 100 attendees and everyone loved the food! It was absolutely delicious! And no kidding, I’ve never had a better salad! It was full of vegetables and so colorful! Matt didn’t skimp on ingredients! I would use Dragonfly again and again.",
+  },
+  {
+    id: "sue-long",
+    name: "Sue Long",
+    event: "Food and community service",
+    source: "Google review",
+    rating: 5,
+    sourceUrl: googleReviewsUrl,
+    featuredText:
+      "Matt is an excellent chef and remarkable human being. I’m very impressed with his cooking and how he gives his time and talent to serve those with food insecurity.",
+    text:
+      "Matt is an excellent chef and remarkable human being. I’m very impressed with his cooking and how he gives his time and talent to serve those with food insecurity.",
+  },
+  {
+    id: "rikki-myer",
+    name: "Rikki Myer",
+    event: "Surprise anniversary party",
+    source: "Google review",
+    rating: 5,
+    sourceUrl: googleReviewsUrl,
+    text:
+      "Matt helped us build the perfect menu for our parents’ surprise anniversary party! The food was delicious and working with him was great! We look forward to using him again in the future! He gave us different options and really listened to what was important to us!",
+  },
+  {
     id: "deb-a",
     name: "Deb A.",
     event: "Anniversary dinner",
@@ -193,3 +281,11 @@ export function getClientReview(id: string): ClientReview {
 }
 
 export const featuredReviews = clientReviews.filter((review) => review.featuredText);
+
+export const homepageReviews = [
+  getClientReview("valerie-dixon"),
+  getClientReview("sam-slater"),
+  getClientReview("robbe-healey"),
+  getClientReview("donna-hoster"),
+  getClientReview("sue-long"),
+];
