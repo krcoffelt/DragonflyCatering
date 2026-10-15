@@ -5,6 +5,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { MobileStickyCta } from "@/components/MobileStickyCta";
+import { ThanksgivingPopup } from "@/components/ThanksgivingPopup";
 import { AnalyticsTracker } from "@/components/AnalyticsTracker";
 import { JsonLd } from "@/components/JsonLd";
 import { catererSchema, chefSchema, websiteSchema } from "@/lib/schema";
@@ -115,6 +116,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <MobileStickyCta />
+        <ThanksgivingPopup />
       </body>
     </html>
   );
